@@ -1,0 +1,890 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Created by: FRABA B.V. -->
+<!-- 2020-02-20 version 1.3, 
+	- GSDML Version V2.34,
+	- ProfileChanDiag Error Types integration -->
+<!-- 2020-03-03 version 1.4, 
+  	- Integration of PROFIdrive ChanDiag Error types for Warning    -->
+<!-- 2020-03-13 version 1.5,
+	- Telegram 86, 87, 89 Input-Data TextId G1_XIST1 changed to   G1_XIST2   -->
+<!-- 2020-05-05 version 1.6,
+		- AlarmChCtrl  for Version 4.2 is alway active(1) 
+		- Hardware Revision 4.0   -->	
+<!-- 2020-07-07 version 1.7,
+		- GSDML Version V2.35
+		- MaxDataLength="128"
+		- Firmware version V12.1.x
+		- IM5_Supported="true" only valid for Device and Submodule-1 / subslot-1  
+		- NumberOfAR="4" changed to NumberOfAR="1" -->
+<!-- 2020-09-29 version 1.8,
+		-  Adaptating PROFIdrive Fault/Warning Codes -->
+<!-- 2020-10-10 version 1.9,		
+		-  Firmware version V12.2.x, GSDML Firmware V12.x-->
+<!-- 2020-11-03 version 1.10,		
+		-  IM5_Supported="true" removed -->
+<!-- 2021-01-18 version 1.11,		
+		-  PNIO_Version changed to PNIO_Version="V2.34" 
+		-  PowerOnToCommReady="3000" -->
+<!-- 2021-01-18 version 1.12,		
+		-  VendorName Value="FRABA B.V." 
+		-  PowerOnToCommReady="3200" 
+		-  MinDeviceInterval="4" -->
+<!-- 2022-01-11 version 1.13,
+		- T_IO_InputMin="2" -->
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\xsd\GSDML-DeviceProfile-V2.35.xsd">
+	<!-- ProfileHeader Definition as defined in ISO15745-1. Please do not change the content. -->
+	<ProfileHeader>
+		<ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+		<ProfileRevision>1.00</ProfileRevision>
+		<ProfileName>Device Profile for PROFINET Devices</ProfileName>
+		<ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+		<ProfileClassID>Device</ProfileClassID>
+		<ISO15745Reference>
+			<ISO15745Part>4</ISO15745Part>
+			<ISO15745Edition>1</ISO15745Edition>
+			<ProfileTechnology>GSDML</ProfileTechnology>
+		</ISO15745Reference>
+	</ProfileHeader>
+	<ProfileBody>
+		<DeviceIdentity VendorID="0x0110" DeviceID="0x0701">
+			<InfoText TextId="T_AbsoluteEncoder"/>
+			<VendorName Value="FRABA B.V."/>
+		</DeviceIdentity>
+		<DeviceFunction>
+			<Family MainFamily="Encoders" ProductFamily="POSITAL XCD"/>
+		</DeviceFunction>
+		<ApplicationProcess>
+			<DeviceAccessPointList>
+				<DeviceAccessPointItem ID="DAP_XCD_V42" PhysicalSlots="0..1" ModuleIdentNumber="0x07010100" MinDeviceInterval="4" ImplementationType="ERTEC200P" DNS_CompatibleName="encoder" FixedInSlots="0" ObjectUUID_LocalIndex="1" MultipleWriteSupported="true" SharedDeviceSupported="false" DeviceAccessSupported="true" NumberOfDeviceAccessAR="1" MaxSupportedRecordSize="8192" NameOfStationNotTransferable="true" ParameterizationSpeedupSupported="true" LLDP_NoD_Supported="true" ResetToFactoryModes="2" CheckDeviceID_Allowed="true" PowerOnToCommReady="3200" IOXS_Required="false" RequiredSchemaVersion="V2.2" PNIO_Version="V2.34" AddressAssignment="LOCAL;DCP" AdaptsRealIdentification="true">
+					<ModuleInfo>
+						<Name TextId="T_DAP_Name_XCD_V42"/>
+						<InfoText TextId="T_DAP_Info_XCD_V42"/>
+						<VendorName Value="FRABA B.V."/>
+						<OrderNumber Value="XCD-EIXXB-XXXX-XXXX"/>
+						<HardwareRelease Value="400"/>
+						<SoftwareRelease Value="V12.2.x"/>
+					</ModuleInfo>
+					<CertificationInfo ConformanceClass="C" ApplicationClass="Isochronous;HighPerformance" NetloadClass="III"/>
+					<SubslotList>
+						<SubslotItem SubslotNumber="32768" TextId="TOK_Subslot_8000"/>
+						<SubslotItem SubslotNumber="32769" TextId="TOK_Subslot_8001"/>
+						<SubslotItem SubslotNumber="32770" TextId="TOK_Subslot_8002"/>
+					</SubslotList>
+					<IOConfigData MaxInputLength="64" MaxOutputLength="64" MaxDataLength="128"/>
+					<UseableModules>
+						<ModuleItemRef ModuleItemTarget="IDM_XCD_V42" FixedInSlots="1"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP_XCD_V42_MAP" SubmoduleIdentNumber="0x00000001"  Writeable_IM_Records="1 2 3 4" MayIssueProcessAlarm="true">
+							<IOData/>
+							<ModuleInfo>
+								<Name TextId="T_DAP_MT30_MAP_Name"/>
+								<InfoText TextId="T_DAP_MT30_MAP_Info"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<SystemDefinedSubmoduleList>
+						<InterfaceSubmoduleItem ID="IDS_MT30_IF" SubslotNumber="32768" SubmoduleIdentNumber="0x0002" TextId="TOK_DAP_InterfaceModule" IsochroneModeSupported="true" IsochroneModeInRT_Classes="RT_CLASS_3" SupportedRT_Classes="RT_CLASS_1;RT_CLASS_3" SupportedProtocols="SNMP;LLDP" NetworkComponentDiagnosisSupported="true" PTP_BoundarySupported="true" DCP_BoundarySupported="true" MulticastBoundarySupported="true" DCP_HelloSupported="true" MaxFrameStartTime="1600" MinNRT_Gap="960" DelayMeasurementSupported="true">						
+							<RT_Class3Properties ForwardingMode="Absolute;Relative" MaxBridgeDelay="2088" MaxBridgeDelayFFW="1024" MaxRangeIR_FrameID="1024" MaxNumberIR_FrameData="1024" StartupMode="Legacy;Advanced" MaxDFP_Frames="1" MaxDFP_Feed="340" AlignDFP_Subframes="false" FragmentationType="Dynamic" MaxRedPeriodLength="4000" MinFSO="1760" MinRTC3_Gap="1120" MinYellowTime="10240" YellowSafetyMargin="160" DFP_OutboundTruncationSupported="false" MaxRetentionTime="30000"/>
+							<SynchronisationMode SupportedRole="SyncSlave" MaxLocalJitter="300" T_PLL_MAX="1000" SupportedSyncProtocols="PTCP" PeerToPeerJitter="250"/>
+							<ApplicationRelations NumberOfAR="1" StartupMode="Legacy;Advanced" NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" PullModuleAlarmSupported="true">
+								<TimingProperties SendClock="8 16 32 64 128" ReductionRatio="1 2 4 8 16 32 64 128 256 512"/>
+								<RT_Class3TimingProperties SendClock="4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120 124 128" ReductionRatio="1" ReductionRatioPow2="2 4 8 16"/>
+							</ApplicationRelations>
+							<MediaRedundancy SupportedRole="Client" MRPD_Supported="true"/>
+						</InterfaceSubmoduleItem>
+						<PortSubmoduleItem ID="IDS_MT30_P1" SubslotNumber="32769" SubmoduleIdentNumber="0x0003" TextId="TOK_Port1" MaxPortRxDelay="198" MaxPortTxDelay="6" IsDefaultRingport="true" MAUType="100BASETXFD" MAUTypes="16" PortDeactivationSupported="true" LinkStateDiagnosisCapability="Up+Down" ShortPreamble100MBitSupported="true" CheckMAUTypeSupported="true" CheckMAUTypeDifferenceSupported="true" >
+							<MAUTypeList>
+								<MAUTypeItem Value="16" AdjustSupported="true"/>
+							</MAUTypeList>
+						</PortSubmoduleItem>
+						<PortSubmoduleItem ID="IDS_MT30_P2" SubslotNumber="32770" SubmoduleIdentNumber="0x0004" TextId="TOK_Port2" MaxPortRxDelay="198" MaxPortTxDelay="6" IsDefaultRingport="true" MAUType="100BASETXFD" MAUTypes="16" PortDeactivationSupported="true" LinkStateDiagnosisCapability="Up+Down" ShortPreamble100MBitSupported="true" CheckMAUTypeSupported="true" CheckMAUTypeDifferenceSupported="true" >
+						<MAUTypeList>
+							<MAUTypeItem Value="16" AdjustSupported="true"/>
+						</MAUTypeList>
+						</PortSubmoduleItem>
+					</SystemDefinedSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+					</Graphics>
+				</DeviceAccessPointItem>
+			</DeviceAccessPointList>
+			<ModuleList>
+			<ModuleItem ID="IDM_XCD_V42" ModuleIdentNumber="0x3D2A0000" PhysicalSubslots="2" RequiredSchemaVersion="V2.2">
+					<ModuleInfo>
+						<Name TextId="IDT_NAME_XCD_V42"/>
+					<InfoText TextId="IDT_INFO_EO_V20"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+				<VirtualSubmoduleItem ID="ID_MT30_V42_MAP" SubmoduleIdentNumber="0x0000FFFF" API="15616" FixedInSubslots="1" MayIssueProcessAlarm="true">
+					<IOData/>
+					<RecordDataList>
+						<ParameterRecordDataItem Index="4097" Length="2" TransferSequence="1">
+							<Name TextId="IDT_NAME_ENCODER_P65005"/>
+							<Const Data="0x00,0x00"/>
+							<Ref TextId="IDT_PrmInitCtrl"   		ByteOffset="0"  DataType="BitArea" BitOffset="0" BitLength="2" DefaultValue="0" ValueItemTarget="VIT_PrmInitCtrl"/>
+							<Ref TextId="IDT_PrmWriteProtect"       ByteOffset="0"  DataType="BitArea" BitOffset="2" BitLength="3" DefaultValue="0" ValueItemTarget="VIT_PrmWriteProtect"/>
+							<Ref TextId="IDT_Prm65005WriteProtect"  ByteOffset="0"  DataType="BitArea" BitOffset="5" BitLength="1" DefaultValue="0" ValueItemTarget="VIT_Prm65005WriteProtect"/>
+							<Ref TextId="IDT_ResetCtrlWriteProtect" ByteOffset="0"  DataType="BitArea" BitOffset="6" BitLength="1" DefaultValue="0" ValueItemTarget="VIT_ResetCtrlWriteProtect"/>
+						</ParameterRecordDataItem>
+						<ParameterRecordDataItem Index="4098" Length="10" TransferSequence="2">
+							<Name TextId="IDT_EncoderFraction"/>
+							<Const ByteOffset="0" Data="0x10,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00"/>
+							<Ref TextId="IDT_FractionalCtrl" ByteOffset="1" DataType="Unsigned8" DefaultValue="0" AllowedValues="0..1" ValueItemTarget="DisEnable"/>
+							<Ref TextId="IDT_IntendedPulses" ByteOffset="2" DataType="Unsigned32" DefaultValue="8192" AllowedValues="2..2147483648" Changeable="true" Visible="true" />
+							<Ref TextId="IDT_PhysicalPulses" ByteOffset="6" DataType="Unsigned32" DefaultValue="8192" AllowedValues="2..2147483648" Changeable="true" Visible="true" />
+						</ParameterRecordDataItem>
+						<ParameterRecordDataItem Index="48896" Length="31" TransferSequence="3">
+							<Name TextId="IDT_EncoderParameters"/>
+							<Const Data="0x14,0x00,0x00,0x00,0x00,0x00,0x00,0x20,0x00,0x00,0x00,0x00,0x00,0x02,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x2A"/>
+							<Ref TextId="IDT_CodeSequence" 		ByteOffset="0"  DataType="Bit" BitOffset="0" DefaultValue="0" ValueItemTarget="CodeSequence"/>
+							<Ref TextId="IDT_Class4Ctrl" 		ByteOffset="0"  DataType="Bit" BitOffset="1" DefaultValue="1" ValueItemTarget="DisEnable"/>
+							<Ref TextId="IDT_PresetControl" 	ByteOffset="0"  DataType="Bit" BitOffset="2" DefaultValue="1" ValueItemTarget="Not_DisEnable"/>
+							<Ref TextId="IDT_ScalFuncCtrl" 		ByteOffset="0"  DataType="Bit" BitOffset="3" DefaultValue="0" ValueItemTarget="DisEnable"/>
+							<Ref TextId="IDT_AlarmChCtrl" 		ByteOffset="0"  DataType="Bit" BitOffset="4" DefaultValue="1" ValueItemTarget="DisEnable" Changeable="false" />
+							<Ref TextId="IDT_CompatMode"		ByteOffset="0"  DataType="Bit" BitOffset="5" DefaultValue="1" ValueItemTarget="Not_DisEnable"/>
+							<Ref TextId="IDT_EncoderType" 		ByteOffset="0"  DataType="Bit" BitOffset="6" DefaultValue="0" ValueItemTarget="VIT_EncoderType" Changeable="false" />
+							<Ref TextId="IDT_MeasurUnitPerRev"	ByteOffset="5"  DataType="Unsigned32" DefaultValue="8192" AllowedValues="1..65536" Changeable="true" Visible="true"/>
+							<Ref TextId="IDT_TotalMeasurRange" 	ByteOffset="13" DataType="Unsigned32" DefaultValue="8192" AllowedValues="2..1073741824" Changeable="true" Visible="true" />
+							<Ref TextId="IDT_MaxMasterSolFail"	ByteOffset="17" DataType="Unsigned8"  DefaultValue="1"    AllowedValues="0..255" Changeable="true" Visible="true"/>
+							<Ref TextId="IDT_VelocityUnit" 		ByteOffset="18" DataType="Unsigned8"  DefaultValue="4"    AllowedValues="0..4" ValueItemTarget="VelocityMeasuringUnit"/>
+							<Ref TextId="IDT_VelocityRef" 		ByteOffset="19" DataType="Float32"    DefaultValue="3000" AllowedValues="-100000..100000" Changeable="true" Visible="true"/>
+							<Ref TextId="IDT_VelocityFilter" 	ByteOffset="23" DataType="Unsigned8"  DefaultValue="1"    ValueItemTarget="VelocityFilter"/>
+						</ParameterRecordDataItem>
+					</RecordDataList>
+					<ModuleInfo>
+						<Name TextId="T_MOD_Sub1_MAP_Name"/>
+						<InfoText TextId="T_MOD_Sub1_MAP_Info"/>
+					</ModuleInfo>
+				</VirtualSubmoduleItem>
+				</VirtualSubmoduleList>
+				<UseableSubmodules>
+					<SubmoduleItemRef SubmoduleItemTarget="IDS_T81"  AllowedInSubslots="2"/>
+					<SubmoduleItemRef SubmoduleItemTarget="IDS_T82"  AllowedInSubslots="2"/>
+					<SubmoduleItemRef SubmoduleItemTarget="IDS_T83"  AllowedInSubslots="2"/>
+					<SubmoduleItemRef SubmoduleItemTarget="IDS_T84"  AllowedInSubslots="2"/>
+					<SubmoduleItemRef SubmoduleItemTarget="IDS_T86"  AllowedInSubslots="2"/>
+					<SubmoduleItemRef SubmoduleItemTarget="IDS_T87"  AllowedInSubslots="2"/>
+					<SubmoduleItemRef SubmoduleItemTarget="IDS_T88"  AllowedInSubslots="2"/>
+					<SubmoduleItemRef SubmoduleItemTarget="IDS_T89"  AllowedInSubslots="2"/>
+					<SubmoduleItemRef SubmoduleItemTarget="IDS_T862" AllowedInSubslots="2"/>
+					<SubmoduleItemRef SubmoduleItemTarget="IDS_T860" AllowedInSubslots="2"/>
+				</UseableSubmodules>
+			</ModuleItem>
+
+            </ModuleList>
+			<SubmoduleList>
+				<!-- Standard Telegram 81-->
+				<SubmoduleItem ID="IDS_T81" SubmoduleIdentNumber="0x51" API="15616" MayIssueProcessAlarm="false">
+					<IOData>
+						<Input Consistency="All items consistency">
+						  <DataItem DataType="OctetString" TextId="IDT_ZSW2_ENC" Length="2" UseAsBits="true" />
+						  <DataItem DataType="OctetString" TextId="IDT_G1_ZSW"   Length="2" UseAsBits="true" />
+						  <DataItem DataType="OctetString" TextId="IDT_G1_XIST1" Length="4" UseAsBits="true"/>
+						  <DataItem DataType="OctetString" TextId="IDT_G1_XIST2" Length="4" UseAsBits="true" />
+						</Input>
+						<Output Consistency="All items consistency">
+						  <DataItem DataType="OctetString" TextId="IDT_STW2_ENC" Length="2" UseAsBits="true" />
+						  <DataItem DataType="OctetString" TextId="IDT_G1_STW"   Length="2" UseAsBits="true" />
+						</Output>
+					</IOData>
+					<ModuleInfo>
+						<Name TextId="IDT_NAME_T81"/>
+						<InfoText TextId="IDT_INFO_T81"/>
+					</ModuleInfo>
+					<IsochroneMode IsochroneModeRequired="false" T_DC_Base="1" T_DC_Min="4" T_DC_Max="1024" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1"/>
+				</SubmoduleItem>
+				<!-- Standard Telegram 82-->
+				<SubmoduleItem ID="IDS_T82" SubmoduleIdentNumber="0x52" API="15616" MayIssueProcessAlarm="false">
+					<IOData>
+						<Input Consistency="All items consistency">
+						  <DataItem DataType="OctetString" TextId="IDT_ZSW2_ENC" Length="2" UseAsBits="true" />
+						  <DataItem DataType="OctetString" TextId="IDT_G1_ZSW"   Length="2" UseAsBits="true" />
+						  <DataItem DataType="OctetString" TextId="IDT_G1_XIST1" Length="4" UseAsBits="true"/>
+						  <DataItem DataType="OctetString" TextId="IDT_G1_XIST2" Length="4" UseAsBits="true" />
+						  <DataItem DataType="OctetString" TextId="IDT_NIST_A"   Length="2" UseAsBits="true" />
+						</Input>
+						<Output Consistency="All items consistency">
+						  <DataItem DataType="OctetString" TextId="IDT_STW2_ENC" Length="2" UseAsBits="true" />
+						  <DataItem DataType="OctetString" TextId="IDT_G1_STW"   Length="2" UseAsBits="true" />
+						</Output>
+					</IOData>
+					<ModuleInfo>
+						<Name TextId="IDT_NAME_T82"/>
+						<InfoText TextId="IDT_INFO_T82"/>
+					</ModuleInfo>
+					<IsochroneMode IsochroneModeRequired="false" T_DC_Base="1" T_DC_Min="4" T_DC_Max="1024" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1"/>
+				</SubmoduleItem>
+				<!-- Standard Telegram 83-->
+				<SubmoduleItem ID="IDS_T83" SubmoduleIdentNumber="0x53" API="15616" MayIssueProcessAlarm="false">
+					<IOData>
+						<Input Consistency="All items consistency">
+						  <DataItem DataType="OctetString" TextId="IDT_ZSW2_ENC" Length="2" UseAsBits="true" />
+						  <DataItem DataType="OctetString" TextId="IDT_G1_ZSW"   Length="2" UseAsBits="true" />
+						  <DataItem DataType="OctetString" TextId="IDT_G1_XIST1" Length="4" UseAsBits="true"/>
+						  <DataItem DataType="OctetString" TextId="IDT_G1_XIST2" Length="4" UseAsBits="true" />
+						  <DataItem DataType="OctetString" TextId="IDT_NIST_B"   Length="4" UseAsBits="true" />
+						</Input>
+						<Output Consistency="All items consistency">
+						  <DataItem DataType="OctetString" TextId="IDT_STW2_ENC" Length="2" UseAsBits="true" />
+						  <DataItem DataType="OctetString" TextId="IDT_G1_STW"   Length="2" UseAsBits="true" />
+						</Output>
+					</IOData>
+					<ModuleInfo>
+						<Name TextId="IDT_NAME_T83"/>
+						<InfoText TextId="IDT_INFO_T83"/>
+					</ModuleInfo>
+					<IsochroneMode IsochroneModeRequired="false" T_DC_Base="1" T_DC_Min="4" T_DC_Max="1024" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1"/>
+				</SubmoduleItem>
+				<!-- Standard Telegram 84 -->
+				<SubmoduleItem ID="IDS_T84" SubmoduleIdentNumber="0x54" API="15616" MayIssueProcessAlarm="false">
+					<IOData>
+						<Input Consistency="All items consistency">
+						  <DataItem DataType="OctetString" TextId="IDT_ZSW2_ENC" Length="2" UseAsBits="true" />
+						  <DataItem DataType="OctetString" TextId="IDT_G1_ZSW"   Length="2" UseAsBits="true" />
+						  <DataItem DataType="OctetString" TextId="IDT_G1_XIST3" Length="8" UseAsBits="true"/>
+						  <DataItem DataType="OctetString" TextId="IDT_G1_XIST2" Length="4" UseAsBits="true" />
+						  <DataItem DataType="OctetString" TextId="IDT_NIST_B"   Length="4" UseAsBits="true" />
+						</Input>
+						<Output Consistency="All items consistency">
+						  <DataItem DataType="OctetString" TextId="IDT_STW2_ENC" Length="2" UseAsBits="true" />
+						  <DataItem DataType="OctetString" TextId="IDT_G1_STW"   Length="2" UseAsBits="true" />
+						</Output>
+					</IOData>
+					<ModuleInfo>
+						<Name TextId="IDT_NAME_T84"/>
+						<InfoText TextId="IDT_INFO_T84"/>
+					</ModuleInfo>
+					<IsochroneMode IsochroneModeRequired="false" T_DC_Base="1" T_DC_Min="4" T_DC_Max="1024" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1"/>
+				</SubmoduleItem>
+				<!-- Standard Telegram 86 -->
+				<SubmoduleItem ID="IDS_T86" SubmoduleIdentNumber="0x56" API="15616" MayIssueProcessAlarm="false">
+					<IOData>
+						<Input Consistency="All items consistency">
+						  <DataItem DataType="OctetString" TextId="IDT_G1_XIST2" Length="4" UseAsBits="true"/>
+						  <DataItem DataType="OctetString" TextId="IDT_NIST_B"   Length="4" UseAsBits="true" />
+						</Input>
+						<Output  Consistency="All items consistency">
+						  <DataItem DataType="OctetString" TextId="IDT_G1_XIST_PRESET_B" Length="4" UseAsBits="true" />
+						</Output>
+					</IOData>
+					<ModuleInfo>
+						<Name TextId="IDT_NAME_T86"/>
+						<InfoText TextId="IDT_INFO_T86"/>
+					</ModuleInfo>
+				<IsochroneMode IsochroneModeRequired="false" T_DC_Base="1" T_DC_Min="4" T_DC_Max="1024" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1"/>
+				</SubmoduleItem>
+				<!-- Standard Telegram 87 -->
+				<SubmoduleItem ID="IDS_T87" SubmoduleIdentNumber="0x57" API="15616" MayIssueProcessAlarm="false">
+					<IOData>
+						<Input Consistency="All items consistency">
+						  <DataItem DataType="OctetString" TextId="IDT_G1_XIST2" Length="4" UseAsBits="true"/>
+						</Input>
+						<Output Consistency="All items consistency">
+						  <DataItem DataType="OctetString" TextId="IDT_G1_XIST_PRESET_B" Length="4" UseAsBits="true" />
+						</Output>
+					</IOData>
+					<ModuleInfo>
+						<Name TextId="IDT_NAME_T87"/>
+						<InfoText TextId="IDT_INFO_T87"/>
+					</ModuleInfo>
+				<IsochroneMode IsochroneModeRequired="false" T_DC_Base="1" T_DC_Min="4" T_DC_Max="1024" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1"/>
+				</SubmoduleItem>
+				<!-- Standard Telegram 88 -->
+				<SubmoduleItem ID="IDS_T88" SubmoduleIdentNumber="0x58" API="15616" MayIssueProcessAlarm="false">
+					<IOData>
+						<Input Consistency="All items consistency">
+						  <DataItem DataType="OctetString" TextId="IDT_G1_XIST3" Length="8" UseAsBits="true"/>
+						  <DataItem DataType="OctetString" TextId="IDT_NIST_B"   Length="4" UseAsBits="true" />
+						</Input>
+						<Output Consistency="All items consistency">
+						  <DataItem DataType="OctetString" TextId="IDT_G1_XIST_PRESET_C" Length="8" UseAsBits="true" />
+						</Output>
+					</IOData>
+					<ModuleInfo>
+						<Name TextId="IDT_NAME_T88"/>
+						<InfoText TextId="IDT_INFO_T88"/>
+					</ModuleInfo>
+					<IsochroneMode IsochroneModeRequired="false" T_DC_Base="1" T_DC_Min="4" T_DC_Max="1024" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1"/>
+				</SubmoduleItem>
+				<!-- Standard Telegram 89 -->
+				<SubmoduleItem ID="IDS_T89" SubmoduleIdentNumber="0x59" API="15616" MayIssueProcessAlarm="false">
+					<IOData>
+						<Input Consistency="All items consistency">
+						  <DataItem DataType="OctetString" TextId="IDT_ZSW2_ENC" Length="2" UseAsBits="true" />
+						  <DataItem DataType="OctetString" TextId="IDT_G1_XIST2" Length="4" UseAsBits="true"/>
+						  <DataItem DataType="OctetString" TextId="IDT_NIST_B"   Length="4" UseAsBits="true" />
+						</Input>
+						<Output Consistency="All items consistency">
+						  <DataItem DataType="OctetString" TextId="IDT_STW2_ENC"         Length="2" UseAsBits="true" />
+						  <DataItem DataType="OctetString" TextId="IDT_G1_XIST_PRESET_B" Length="4" UseAsBits="true" />
+						</Output>
+					</IOData>
+					<ModuleInfo>
+						<Name TextId="IDT_NAME_T89"/>
+						<InfoText TextId="IDT_INFO_T89"/>
+					</ModuleInfo>
+					<IsochroneMode IsochroneModeRequired="false" T_DC_Base="1" T_DC_Min="4" T_DC_Max="1024" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1"/>
+				</SubmoduleItem>
+				<!-- Standard Telegram 860 -->
+				<SubmoduleItem ID="IDS_T860" SubmoduleIdentNumber="0x035C" API="15616" MayIssueProcessAlarm="false">
+					<IOData>
+						<Input Consistency="All items consistency">
+						  <DataItem DataType="OctetString" TextId="IDT_POSITION32" Length="4" UseAsBits="true"/>
+						  <DataItem DataType="OctetString" TextId="IDT_NIST_B"   Length="4" UseAsBits="true" />
+						</Input>
+						<Output Consistency="All items consistency">
+						  <DataItem DataType="OctetString" TextId="IDT_G1_XIST_PRESET_B" Length="4" UseAsBits="true"/>
+						</Output>
+					</IOData>
+					<ModuleInfo>
+						<Name TextId="IDT_NAME_T860"/>
+						<InfoText TextId="IDT_INFO_T860"/>
+					</ModuleInfo>
+					<IsochroneMode IsochroneModeRequired="false" T_DC_Base="1" T_DC_Min="4" T_DC_Max="1024" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1"/>
+				</SubmoduleItem>
+				<!-- ENCODER Telegram 862 -->
+				<SubmoduleItem ID="IDS_T862" SubmoduleIdentNumber="0x035E" API="15616" MayIssueProcessAlarm="false">
+					<IOData>
+						<Input Consistency="All items consistency">
+						  <DataItem DataType="OctetString" TextId="IDT_POSITION32" Length="4" UseAsBits="true" />
+						  <DataItem DataType="OctetString" TextId="IDT_NIST_B"     Length="4" UseAsBits="true" />
+						  <DataItem DataType="OctetString" TextId="IDT_ACCEL_A"    Length="4" UseAsBits="true" />
+						  <DataItem DataType="OctetString" TextId="IDT_TEMP32"     Length="4" UseAsBits="true" />
+						</Input>
+						<Output Consistency="All items consistency">
+						  <DataItem DataType="OctetString" TextId="IDT_G1_XIST_PRESET_B" Length="4" UseAsBits="true" />
+						</Output>
+					</IOData>
+					<ModuleInfo>
+						<Name TextId="IDT_NAME_T862"/>
+						<InfoText TextId="IDT_INFO_T862"/>
+					</ModuleInfo>
+					<IsochroneMode IsochroneModeRequired="false" T_DC_Base="1" T_DC_Min="4" T_DC_Max="1024" T_IO_Base="125000" T_IO_InputMin="2" T_IO_OutputMin="1"/>
+				</SubmoduleItem>
+			</SubmoduleList>
+
+			<ValueList>
+                <ValueItem ID="DisEnable">
+                    <Assignments>
+                        <Assign TextId="T_disable" Content="0"/>
+                        <Assign TextId="T_enable" Content="1"/>
+                    </Assignments>
+                </ValueItem>
+                <ValueItem ID="Not_DisEnable">
+                    <Assignments>
+                        <Assign TextId="T_disable" Content="1"/>
+                        <Assign TextId="T_enable" Content="0"/>
+                    </Assignments>
+                </ValueItem>
+                <ValueItem ID="CodeSequence">
+                    <Assignments>
+                        <Assign TextId="IDT_CodeSequence_CW" Content="0"/>
+                        <Assign TextId="IDT_CodeSequence_CCW" Content="1"/>
+                    </Assignments>
+                </ValueItem>
+				<ValueItem ID="VelocityMeasuringUnit">
+					<Assignments>
+						<Assign Content="0" TextId="T_StepsPerSec"/>
+						<Assign Content="1" TextId="T_StepsPer100ms"/>
+						<Assign Content="2" TextId="T_StepsPer10ms"/>
+						<Assign Content="3" TextId="T_RevolutionsPerMinute"/>
+						<Assign Content="4" TextId="T_N2N4"/>
+					</Assignments>
+				</ValueItem>
+				<ValueItem ID="VelocityFilter">
+					<Assignments>
+						<Assign Content="0" TextId="T_VelocityAccuracyFine"/>
+						<Assign Content="1" TextId="T_VelocityAccuracyNormal"/>
+						<Assign Content="2" TextId="T_VelocityAccuracyCoarse"/>
+					</Assignments>
+				</ValueItem>
+				<ValueItem ID="VIT_PrmInitCtrl">
+				<Assignments>
+					<Assign TextId="IDT_PrmInitCtrl_PRM" Content="0"/>
+					<Assign TextId="IDT_PrmInitCtrl_NVM" Content="1"/>
+				</Assignments>
+			</ValueItem>	
+			<ValueItem ID="VIT_PrmWriteProtect">
+				<Assignments>
+					<Assign TextId="IDT_PrmWriteProtect_WriteAll" Content="0"/>
+					<Assign TextId="IDT_PrmWriteProtect_ReadOnly" Content="1"/>
+					<Assign TextId="IDT_PrmWriteProtect_WriteController" Content="2"/>
+					<Assign TextId="IDT_PrmWriteProtect_WriteSupervisor" Content="3"/>
+				</Assignments>
+			</ValueItem>
+			<ValueItem ID="VIT_Prm65005WriteProtect">
+				<Assignments>
+					<Assign TextId="IDT_Prm65005WriteProtect_WriteAll" Content="0"/>
+					<Assign TextId="IDT_Prm65005WriteProtect_ReadOnly" Content="1"/>
+				</Assignments>
+			</ValueItem>	
+			<ValueItem ID="VIT_ResetCtrlWriteProtect">
+				<Assignments>
+					<Assign TextId="IDT_ResetCtrlWriteProtect_WriteAll" Content="0"/>
+					<Assign TextId="IDT_ResetCtrlWriteProtect_ReadOnly" Content="1"/>
+				</Assignments>
+			</ValueItem>
+			<ValueItem ID="VIT_EncoderType">
+				<Assignments>
+					<Assign TextId="IDT_EncoderType_Rotary" Content="0"/>
+					<Assign TextId="IDT_EncoderType_Linear" Content="1"/>
+				</Assignments>
+			</ValueItem>
+            </ValueList>
+			<!-- Diag. -->
+			<ChannelDiagList>
+				<!-- Faults -->
+                <ProfileChannelDiagItem API="15616" ErrorType="37120"> <Name TextId="IDT_DIAG_9100"/> </ProfileChannelDiagItem>
+				<ProfileChannelDiagItem API="15616" ErrorType="37121"> <Name TextId="IDT_DIAG_9101"/> </ProfileChannelDiagItem>
+				<ProfileChannelDiagItem API="15616" ErrorType="37122"> <Name TextId="IDT_DIAG_9102"/> </ProfileChannelDiagItem>
+				<ProfileChannelDiagItem API="15616" ErrorType="37125"> <Name TextId="IDT_DIAG_9105"/> </ProfileChannelDiagItem>
+				<ProfileChannelDiagItem API="15616" ErrorType="37126"> <Name TextId="IDT_DIAG_9106"/> </ProfileChannelDiagItem>
+				<ProfileChannelDiagItem API="15616" ErrorType="37130"> <Name TextId="IDT_DIAG_910A"/> </ProfileChannelDiagItem>
+				<ProfileChannelDiagItem API="15616" ErrorType="37131"> <Name TextId="IDT_DIAG_910B"/> </ProfileChannelDiagItem>
+				<ProfileChannelDiagItem API="15616" ErrorType="37139"> <Name TextId="IDT_DIAG_9113"/> </ProfileChannelDiagItem>
+				<ProfileChannelDiagItem API="15616" ErrorType="37142"> <Name TextId="IDT_DIAG_9116"/> </ProfileChannelDiagItem>
+				<!-- Warnings -->
+				<ProfileChannelDiagItem API="15616" ErrorType="37127"> <Name TextId="IDT_DIAG_9107"/> </ProfileChannelDiagItem>
+				<ProfileChannelDiagItem API="15616" ErrorType="37128"> <Name TextId="IDT_DIAG_9108"/> </ProfileChannelDiagItem>
+				<ProfileChannelDiagItem API="15616" ErrorType="37132"> <Name TextId="IDT_DIAG_910C"/> </ProfileChannelDiagItem>
+				<ProfileChannelDiagItem API="15616" ErrorType="37133"> <Name TextId="IDT_DIAG_910D"/> </ProfileChannelDiagItem>
+				<ProfileChannelDiagItem API="15616" ErrorType="37134"> <Name TextId="IDT_DIAG_910E"/> </ProfileChannelDiagItem>
+				<ProfileChannelDiagItem API="15616" ErrorType="37135"> <Name TextId="IDT_DIAG_910F"/> </ProfileChannelDiagItem>
+				<!-- ProfileChannelDiagItem API="15616" ErrorType="37139"> <Name TextId="IDT_DIAG_9113"/> </ProfileChannelDiagItem -->
+            </ChannelDiagList>
+			<GraphicsList>
+                <GraphicItem ID="1" GraphicFile="GSDML-0110-0701-XCD"/>
+            </GraphicsList>
+			<CategoryList>
+				<CategoryItem ID="CatRef_SingleTurn" TextId="T_SingleTurn"/>
+				<CategoryItem ID="CatRef_MultiTurn" TextId="T_MultiTurn"/>
+            </CategoryList>
+			<ExternalTextList>
+                <PrimaryLanguage>
+					<Text TextId="T_AbsoluteEncoder" Value="Decentralized standalone absolute encoder with protection class IP67"/>
+					<Text TextId="T_SingleTurn" Value="Singleturn"/>
+            		<Text TextId="T_MultiTurn" Value="Multiturn"/>
+					<!--port name-->
+					<Text TextId="TOK_Subslot_8000" Value="X1"/>
+					<Text TextId="TOK_Subslot_8001" Value="X1 P1"/>
+					<Text TextId="TOK_Subslot_8002" Value="X1 P2"/>
+					<Text TextId="TOK_DAP_InterfaceModule" Value="PN-IO"/>
+					<Text TextId="TOK_Port1" Value="Port 1"/>
+					<Text TextId="TOK_Port2" Value="Port 2"/>
+
+					<!--DAP - Encoder-->
+					<Text TextId="T_DAP_Name_XCD_V42" Value="XCD"/>
+					<Text TextId="T_DAP_Info_XCD_V42" Value="IO Device Encoder (30 Bit Absolute) with PROFINET-IO-functionality (RT, IRT, cyclic and acyclic communication , Clock synchronization). Resolution 16 bits steps per revolution plus 14Bit for Revolution counter"/>
+
+					<Text TextId="T_DAP1_VSUB_Name" Value="Submodule" />
+					<Text TextId="T_DAP1_VSUB_Info" Value="Submodule" />
+					<Text TextId="T_DAP5_VSUB_Name" Value="Submodule" />
+					<Text TextId="T_DAP5_VSUB_Info" Value="Submodule" />
+					
+					<Text TextId="T_EncoderVendorParameters" Value="Rotation Velocity actual value" />
+
+					<Text TextId="T_DAP_ST16_MAP_Name" Value="MC-Encoder Singleturn 16 Bit"/>
+					<Text TextId="T_DAP_ST16_MAP_Info" Value="MC-Encoder Singleturn 16 Bit"/>
+					<Text TextId="T_DAP_MT30_MAP_Name" Value="MC-Encoder Multiturn 30 Bit"/>
+					<Text TextId="T_DAP_MT30_MAP_Info" Value="MC-Encoder Multiturn 30 Bit"/>
+					<!--module name, info-->
+					<Text TextId="T_MOD_Name_EO_Singleturn" Value="EO Encoder Singleturn"/>
+					<Text TextId="T_MOD_Name_EO_Multiturn" Value="EO Encoder Multiturn"/>
+					<Text TextId="T_STD_PDEV_MOD_Info_Singleturn" Value="Encoder Object (EO) Absolute Encoder Singleturn"/>
+					<Text TextId="T_STD_PDEV_MOD_Info_Multiturn" Value="Encoder Object (EO) Absolute Encoder Multiturn"/>
+
+					<!--Submodeule 1 name , info-->
+					<Text TextId="T_MOD_Sub1_MAP_Name" Value="Module Access Point"/>
+					<Text TextId="T_MOD_Sub1_MAP_Info" Value="Access Point to Encoder Object (EO)."/>
+
+					<!--Submodule 2 telegram x -->
+					<Text TextId="TOK_TextId_Module_81" Value="Standard Telegram 81, PZD2/6"/>
+					<Text TextId="TOK_TextId_Module_82" Value="Standard Telegram 82, PZD2/7"/>
+					<Text TextId="TOK_TextId_Module_83" Value="Standard Telegram 83, PZD2/8"/>
+					<Text TextId="TOK_TextId_Module_84" Value="Standard Telegram 84, PZD2/10"/>
+					<Text TextId="TOK_TextId_Module_860" Value="Encoder Telegram 860, PZD2/4"/>
+					<Text TextId="TOK_InfoTextId_Module_81" Value="Standard Telegram 81 for Encoder: 1 Position value, PZD-length 2/6 words."/>
+					<Text TextId="TOK_InfoTextId_Module_82" Value="Standard Telegram 82 for Encoder: 1 Position value, Velocity 16 bit, PZD-length 2/7 words."/>
+					<Text TextId="TOK_InfoTextId_Module_83" Value="Standard Telegram 83 for Encoder: 1 Position value, Velocity 32 bit, PZD-length 2/8 words."/>
+					<Text TextId="TOK_InfoTextId_Module_84" Value="Standard Telegram 84 for Encoder: 1 Position value, Velocity 32 bit, PZD-length 2/10 words."/>
+					<Text TextId="TOK_InfoTextId_Module_860" Value="Encoder Telegram 860 for Encoder: 1 Position value, Velocity 32 bit, PZD-length 2/4 words."/>
+					<Text TextId="TOK_Std_Telegram_Output" Value="Standard Telegram Output"/>
+					<Text TextId="TOK_Std_Telegram_81_Input" Value="Standard Telegram 81 Input"/>
+					<Text TextId="TOK_Std_Telegram_82_Input" Value="Standard Telegram 82 Input"/>
+					<Text TextId="TOK_Std_Telegram_83_Input" Value="Standard Telegram 83 Input"/>
+					<Text TextId="TOK_Std_Telegram_84_Input" Value="Standard Telegram 84 Input"/>
+					<Text TextId="TOK_Man_Telegram_860_Input" Value="Encoder Telegram 860 Input"/>
+					<Text TextId="TOK_Man_Telegram_860_Output" Value="Encoder Telegram 860 Output"/>
+
+					<!--ParameterRecord name, Item -->
+					<Text TextId="IDT_EncoderVendorParameters" Value="Rotation Velocity actual value"/>
+					<Text TextId="IDT_EncoderFraction" Value="Fractional Calculation"/>
+					<Text TextId="IDT_EncoderParameters" Value="Encoder parameter"/>
+					
+                    <Text TextId="IDT_CodeSequence" Value="Code sequence"/>
+					<Text TextId="IDT_Class4Ctrl" Value="Encoder Class 4 functionality"/>
+                    <Text TextId="IDT_PresetControl" Value="Preset affects XIST1"/>
+                    <Text TextId="IDT_ScalFuncCtrl" Value="Scaling function control"/>
+					<Text TextId="IDT_AlarmChCtrl" Value="Alarm channel control"/>
+					<Text TextId="IDT_CompatMode" Value="Compatibility Mode V3.1"/>
+                    <Text TextId="IDT_MeasurUnitPerRev" Value="Scaling: Measuring units per Revolution"/>
+                    <Text TextId="IDT_TotalMeasurRange" Value="Scaling: Total measuring range"/>
+					<Text TextId="IDT_MaxMasterSolFail" Value="Tolerated sign of life faults"/>
+					<Text TextId="IDT_VelocityUnit" Value="Velocity measuring unit"/>
+
+                  
+					<Text TextId="T_StepsPerSec" Value="Steps/s"/>
+					<Text TextId="T_StepsPer100ms" Value="Steps/100ms"/>
+					<Text TextId="T_StepsPer10ms" Value="Steps/10ms"/>
+					<Text TextId="T_RevolutionsPerMinute" Value="RPM"/>
+					<Text TextId="T_N2N4" Value="N2/N4"/>
+
+ 				    <Text TextId="T_disable" Value="disable"/>
+                    <Text TextId="T_enable" Value="enable"/>
+                    <Text TextId="IDT_CodeSequence_CW" Value="CW"/>
+                    <Text TextId="IDT_CodeSequence_CCW" Value="CCW"/>
+
+ 				   
+					<Text TextId="IDT_VelocityRef" Value="Velocity reference N2/N4 (R/min)"/>
+                    <Text TextId="IDT_VelocityFilter" Value="Velocity filter"/>
+					<Text TextId="T_VelocityAccuracyFine" Value="Fine"/>
+					<Text TextId="T_VelocityAccuracyNormal" Value="Normal"/>
+					<Text TextId="T_VelocityAccuracyCoarse" Value="Coarse"/>
+
+					<Text TextId="IDT_FractionalCtrl" Value="Fractional Calculation Control"/>
+					<Text TextId="IDT_IntendedPulses" Value="Intended Pulses"/>
+					<Text TextId="IDT_PhysicalPulses" Value="Physical Pulses"/>
+
+					<!--module name, info-->
+					<Text TextId="IDT_NAME_XCD_V42" Value="Encoder V12.x"/>
+					<Text TextId="IDT_INFO_EO_V20" Value="Standard Encoder Object Architecture based on Encoder Profile V4.2 specification supporting encoder calss 1 to 4, with MAP (Module Access Point) , Submodule 2: Standard telegram 81/82/83/84/86/87/88/89 (Setpoint: STW2_ENC, G1_STW1, G1_XIST_PRESET_B, G1_XIST_PRESET_C, G1_XIST_PRESET_B1;  Actual value: ZSW2_ENC, G1_ZSW1, G1_XIST1, G1_XIST2, G1_XIST3, NIST_A or NIST_B) or Manufacturer Telegram 860 (Setpoint: 32 Bit-Unsigned Preset Value (Bit 31 Preset Control, Value Range less than Total Resolution),  Actual value: 32 Bit-Unsigned Position Value + 32 Bit-Integer Velocity Value) or Telegram 862 (Setpoint: 32 Bit-Unsigned Preset Value (Bit 31 Preset Control, Value Range less than Total Resolution),  Actual value: 32 Bit-Unsigned Position Value + 32 Bit-Integer Velocity Value + 32 Bit-Integer Acceleration Value + 32 Bit-Signed Temperature Value)"/>
+					
+					
+					<!--Submodeule 1 name , info-->
+					<Text TextId="IDT_NAME_MAP" Value="Module Access Point"/>
+					<Text TextId="IDT_INFO_MAP" Value="Module Access Point (MAP) which is mapped to a dedicated Encoder Object representative Submodule. This MAP Submodule contains at least the mandatory Parameter Access Point (PAP) which is mapped to a dedicated Record Data Object . Via the Encoder Object representative Submodule (MAP) and the specified Record Data Object the access to the EO parameter manager is possible. The EO parameter manager has access to the EO local Parameter Data Base."/>
+
+					<Text TextId="IDT_NAME_T81" Value="Standard Telegram 81, PZD2/6"/>
+					<Text TextId="IDT_NAME_T82" Value="Standard Telegram 82, PZD2/7"/>
+					<Text TextId="IDT_NAME_T83" Value="Standard Telegram 83, PZD2/8"/>
+					<Text TextId="IDT_NAME_T84" Value="Standard Telegram 84, PZD2/10"/>
+					<Text TextId="IDT_NAME_T86" Value="Standard Telegram 86, PZD2/4"/>
+					<Text TextId="IDT_NAME_T87" Value="Standard Telegram 87, PZD2/2"/>
+					<Text TextId="IDT_NAME_T88" Value="Standard Telegram 88, PZD4/6"/>
+					<Text TextId="IDT_NAME_T89" Value="Standard Telegram 89, PZD3/5"/>
+					<Text TextId="IDT_NAME_T100" Value="Encoder Telegram 100, PZD2/6"/>
+					<Text TextId="IDT_NAME_T862" Value="Encoder Telegram 862, PZD2/8"/>
+					<Text TextId="IDT_NAME_T860" Value="Encoder Telegram 860, PZD2/4"/>
+			
+					<Text TextId="IDT_INFO_T81" Value="Standard Telegram 81 for Encoder: Position value 32 bit, PZD-length 2/6 words."/>
+					<Text TextId="IDT_INFO_T82" Value="Standard Telegram 82 for Encoder: Position value 32 bit, Velocity 16 bit, PZD-length 2/7 words."/>
+					<Text TextId="IDT_INFO_T83" Value="Standard Telegram 83 for Encoder: Position value 32 bit, Velocity 32 bit, PZD-length 2/8 words."/>
+					<Text TextId="IDT_INFO_T84" Value="Standard Telegram 84 for Encoder: Position value 32 bit, Velocity 32 bit, PZD-length 2/10 words."/>
+					<Text TextId="IDT_INFO_T86" Value="Standard Telegram 86 for Encoder: Position value 32 bit, Velocity 32 bit, PZD-length 2/4 words."/>
+					<Text TextId="IDT_INFO_T87" Value="Standard Telegram 87 for Encoder: Position value 32 bit, PZD-length 2/2 words."/>
+					<Text TextId="IDT_INFO_T88" Value="Standard Telegram 88 for Encoder: Position value 64 bit, Velocity 32 bit, PZD-length 4/6 words."/>
+					<Text TextId="IDT_INFO_T89" Value="Standard Telegram 89 for Encoder: Position value 32 bit, Velocity 32 bit, PZD-length 3/5 words."/>
+					<Text TextId="IDT_INFO_T862" Value="Encoder Telegram 862 for Encoder: Position value 32 bit, Velocity 32 bit, Acceleration 32 bit, Temperature 32 bit, PZD-length 2/8 words."/>
+					<Text TextId="IDT_INFO_T860" Value="Encoder Telegram 860 for Encoder: Position value 32 bit, Velocity 32 bit, PZD-length 2/4 words."/>
+			
+					<Text TextId="IDT_INPUT_T81" Value="Standard Telegram 81 Input Data: Actual value (ZSW2_ENC | G1_ZSW | G1_XIST1 | G1_XIST2)"/>
+					<Text TextId="IDT_INPUT_T82" Value="Standard Telegram 82 Input Data: Actual value (ZSW2_ENC | G1_ZSW | G1_XIST1 | G1_XIST2 | NIST_A)"/>
+					<Text TextId="IDT_INPUT_T83" Value="Standard Telegram 83 Input Data: Actual value (ZSW2_ENC | G1_ZSW | G1_XIST1 | G1_XIST2 | NIST_B)"/>
+					<Text TextId="IDT_INPUT_T84" Value="Standard Telegram 84 Input Data: Actual value (ZSW2_ENC | G1_ZSW | G1_XIST3 | G1_XIST2 | NIST_A)"/>
+					<Text TextId="IDT_INPUT_T86" Value="Standard Telegram 86 Input Data: Actual value (G1_XIST1 + NIST_B)"/>
+					<Text TextId="IDT_INPUT_T87" Value="Standard Telegram 87 Input Data: Actual value (G1_XIST1)"/>
+					<Text TextId="IDT_INPUT_T88" Value="Standard Telegram 88 Input Data: Actual value (G1_XIST3 | NIST_B)"/>
+					<Text TextId="IDT_INPUT_T89" Value="Standard Telegram 89 Input Data: Actual value (ZSW2_ENC | G1_XIST1 | NIST_B)"/>
+					<Text TextId="IDT_INPUT_T862" Value="Encoder Telegram 862 Input Data: Position 32 bit + Velocity 32 bit + Acceleration 32 bit + Temperature 32 Bit"/>
+					<Text TextId="IDT_INPUT_T860" Value="Encoder Telegram 860 Input Data: Actual value (G1_XIST1 + NIST_B)"/>
+			
+					<Text TextId="IDT_OUTPUT_T81" Value="Standard Telegram 81 Output Data: Setpoint (STW2_ENC | G1_STW)"/>
+					<Text TextId="IDT_OUTPUT_T82" Value="Standard Telegram 82 Output Data: Setpoint (STW2_ENC | G1_STW)"/>
+					<Text TextId="IDT_OUTPUT_T83" Value="Standard Telegram 83 Output Data: Setpoint (STW2_ENC | G1_STW)"/>
+					<Text TextId="IDT_OUTPUT_T84" Value="Standard Telegram 84 Output Data: Setpoint (STW2_ENC | G1_STW)"/>
+					<Text TextId="IDT_OUTPUT_T86" Value="Standard Telegram 86 Output Data: Setpoint (G1_XIST_PRESET_B)"/>
+					<Text TextId="IDT_OUTPUT_T87" Value="Standard Telegram 87 Output Data: Setpoint (G1_XIST_PRESET_B)"/>
+					<Text TextId="IDT_OUTPUT_T88" Value="Standard Telegram 88 Output Data: Setpoint (G1_XIST_PRESET_C)"/>
+					<Text TextId="IDT_OUTPUT_T89" Value="Standard Telegram 89 Output Data: Setpoint (STW2_ENC | G1_XIST_PRESET_B1)"/>
+					<Text TextId="IDT_OUTPUT_T862" Value="Encoder Telegram 862 Output Data: Setpoint (Preset value bits 0..30, Preset Control bit 31)"/>
+					<Text TextId="IDT_OUTPUT_T860" Value="Encoder Telegram 860 Output Data: Setpoint (G1_XIST_PRESET_B)"/>
+					
+					
+	
+					<Text TextId="IDT_ZSW2_ENC" Value="Encoder status word 2 (ZSW2_ENC)"></Text>
+					<Text TextId="IDT_NIST_A" Value="Speed actual value 16 bit (NIST_A)"></Text>
+					<Text TextId="IDT_NIST_B" Value="Speed actual value 32 bit (NIST_B)"></Text>
+					<Text TextId="IDT_ACCEL_A" Value="Accelleraion actual value 32 bit (ACCEL_A)"></Text>
+					<Text TextId="IDT_G1_STW" Value="Sensor 1 control word (G1_STW)"></Text>
+					<Text TextId="IDT_G1_ZSW" Value="Sensor 1 status word (G1_ZSW)"></Text>
+					<Text TextId="IDT_G1_XIST1" Value="Sensor 1 position actual value 1 (G1_XIST1)"></Text>
+					<Text TextId="IDT_G1_XIST2" Value="Sensor 1 position actual value 2 (G1_XIST2)"></Text>
+					<Text TextId="IDT_G1_XIST3" Value="Sensor 1 position actual value 3 (G1_XIST3)"></Text>
+					<Text TextId="IDT_STW2_ENC" Value="Encoder control word 2 (STW2_ENC)"></Text>
+					<Text TextId="IDT_G1_XIST_PRESET_B" Value="Encoder preset control word, 31 bit with trigger bit included (G1_XIST_PRESET_B)"></Text>
+					<Text TextId="IDT_G1_XIST_PRESET_B1" Value="Encoder preset control word 32 bit (G1_XIST_PRESET_B1)"></Text>
+					<Text TextId="IDT_G1_XIST_PRESET_C" Value="Encoder preset control word 64 bit (G1_XIST_PRESET_C)"></Text>
+					<Text TextId="IDT_POSITION32" Value="Position Value 32 Bit"></Text>
+					<Text TextId="IDT_POSITION64" Value="Position Value 64 Bit"></Text>
+					<Text TextId="IDT_TEMP32" Value="Temperature Value 32 Bit"></Text>
+					
+					
+					<Text TextId="IDT_NAME_ENCODER_SENSOR_CONFIG" Value="ENCODER Sensor Configuration"/>
+									
+					<Text TextId="IDT_NAME_ENCODER_P65005" Value="Encoder Parameter control (P65005)"/>
+					<Text TextId="IDT_PrmInitCtrl" Value="Parameter initialization control"/>
+					<Text TextId="IDT_PrmInitCtrl_PRM" Value="PRM (Parametrization)"/>
+					<Text TextId="IDT_PrmInitCtrl_NVM" Value="NV-RAM (Non-Volatile RAM)"/>
+					
+					<Text TextId="IDT_PrmWriteProtect" Value="Parameter write protect"/>
+					<Text TextId="IDT_PrmWriteProtect_WriteAll" Value="Write all"/>
+					<Text TextId="IDT_PrmWriteProtect_ReadOnly" Value="Read omly"/>
+					<Text TextId="IDT_PrmWriteProtect_WriteController" Value="Write controller"/>
+					<Text TextId="IDT_PrmWriteProtect_WriteSupervisor" Value="Write Supervisor"/>
+					
+					<Text TextId="IDT_Prm65005WriteProtect" Value="Parameter 65005 write protect"/>
+					<Text TextId="IDT_Prm65005WriteProtect_WriteAll" Value="Write all"/>
+					<Text TextId="IDT_Prm65005WriteProtect_ReadOnly" Value="Read Only"/>
+					
+					<Text TextId="IDT_ResetCtrlWriteProtect" Value="Reset control write protect"/>
+					<Text TextId="IDT_ResetCtrlWriteProtect_WriteAll" Value="Write all"/>
+					<Text TextId="IDT_ResetCtrlWriteProtect_ReadOnly" Value="Read Only"/>
+					
+					<Text TextId="IDT_EncoderType" Value="Encoder type"/>
+					<Text TextId="IDT_EncoderType_Rotary" Value="Rotary"/>
+					<Text TextId="IDT_EncoderType_Linear" Value="Linear"/>
+				
+					<Text TextId="IDT_DIAG_9100" Value="FAULT_PRESENT: PROFIdrive_Fault_256: Position error (hardware and signal quality)"/>
+					<Text TextId="IDT_DIAG_9101" Value="FAULT_PRESENT: PROFIdrive_Fault_257: Position error (frequency/speed exceeded)"/>
+					<Text TextId="IDT_DIAG_9102" Value="FAULT_PRESENT: PROFIdrive_Fault_258: Position inconsistent (for incremental encoders only)"/>
+					<Text TextId="IDT_DIAG_9105" Value="FAULT_PRESENT: PROFIdrive_Fault_261: Commissioning diagnostics"/>
+					<Text TextId="IDT_DIAG_9106" Value="FAULT_PRESENT: PROFIdrive_Fault_262: Commissioning invalid scaling"/>
+					<Text TextId="IDT_DIAG_910A" Value="FAULT_PRESENT: PROFIdrive_Fault_266: Synchronisation fault (isochronous operation only)"/>
+					<Text TextId="IDT_DIAG_910B" Value="FAULT_PRESENT: PROFIdrive_Fault_267: Master's sign of life fault"/>
+					<Text TextId="IDT_DIAG_9113" Value="FAULT_PRESENT: PROFIdrive_Fault_275: Overtemperature"/>
+					<Text TextId="IDT_DIAG_9116" Value="FAULT_PRESENT: PROFIdrive_Fault_279: Memory error"/>
+							
+					<Text TextId="IDT_DIAG_9107" Value="WARNING_PRESENT: PROFIdrive_Warning_519: Invalid parameter setup in RAM"/>
+					<Text TextId="IDT_DIAG_9108" Value="WARNING_PRESENT: PROFIdrive_Warning_520: Communication"/>
+					<Text TextId="IDT_DIAG_910C" Value="WARNING_PRESENT: PROFIdrive_Warning_524: Overspeed"/>
+					<Text TextId="IDT_DIAG_910D" Value="WARNING_PRESENT: PROFIdrive_Warning_525: Preset failed (speed to high)"/>
+					<Text TextId="IDT_DIAG_910E" Value="WARNING_PRESENT: PROFIdrive_Warning_526: Preset failed (preset value out of range)"/>
+					<Text TextId="IDT_DIAG_910F" Value="WARNING_PRESENT: PROFIdrive_Warning_527: Command not supported"/>
+					<!-- Text TextId="IDT_DIAG_9113" Value="WARNING_PRESENT: PROFIdrive_Warning_575: Overtemperature"/ -->
+				
+				
+                </PrimaryLanguage>
+                <Language xml:lang="de">
+                    <Text TextId="T_AbsoluteEncoder" Value="Dezentralisierter eigenständiger Absolutdrehgeber mit der Schutzklasse IP67. "/>
+                    <Text TextId="T_SingleTurn" Value="Singleturn"/>
+                    <Text TextId="T_MultiTurn" Value="Multiturn"/>
+					<!--port name-->
+					<Text TextId="TOK_Subslot_8000" Value="X1"/>
+					<Text TextId="TOK_Subslot_8001" Value="X1 P1"/>
+					<Text TextId="TOK_Subslot_8002" Value="X1 P2"/>
+					<Text TextId="TOK_DAP_InterfaceModule" Value="PN-IO"/>
+					<Text TextId="TOK_Port1" Value="Port 1"/>
+					<Text TextId="TOK_Port2" Value="Port 2"/>
+
+					<!--DAP - Encoder-->
+                
+					<Text TextId="T_DAP_Name_XCD_V42" Value="XCD"/>
+					<Text TextId="T_DAP1_VSUB_Name" Value="Submodule" />
+					<Text TextId="T_DAP1_VSUB_Info" Value="Submodule" />
+					<Text TextId="T_DAP5_VSUB_Name" Value="Submodule" />
+					<Text TextId="T_DAP5_VSUB_Info" Value="Submodule" />
+					<Text TextId="T_EncoderVendorParameters" Value="Drehzahlistwert" />
+                
+					<Text TextId="T_DAP_Info_XCD_V42" Value="IO Device Encoder (Absolut Rotary) mit PROFINET-IO-Schnittstelle (RT-,IRT- und azyklische Kommunikation , Taktsynchronisation). Auflösung 16it pro Umdrehung plus 14 Bit für Umdrehungszähler."/>
+					
+					<Text TextId="T_DAP_ST16_MAP_Name" Value="MC-Encoder Singleturn 16 Bit"/>
+					<Text TextId="T_DAP_ST16_MAP_Info" Value="MC-Encoder Singleturn 16 Bit"/>
+				
+					<Text TextId="T_DAP_MT30_MAP_Name" Value="MC-Encoder Multiturn 30 Bit"/>
+					<Text TextId="T_DAP_MT30_MAP_Info" Value="MC-Encoder Multiturn 30 Bit"/>
+					<!--module name, info-->
+					<Text TextId="T_MOD_Name_EO_Singleturn" Value="EO Geber Singleturn"/>
+					<Text TextId="T_MOD_Name_EO_Multiturn" Value="EO Geber Multiturn"/>
+                	<Text TextId="T_STD_PDEV_MOD_Info_Singleturn" Value="Encoderobjekt (EO) Absolutgeber Singleturn"/>
+                	<Text TextId="T_STD_PDEV_MOD_Info_Multiturn" Value="Encoderobjekt (EO) Absolutgeber Multiturn"/>
+
+					<!--Submodeule 1 name , info-->
+					<Text TextId="T_MOD_Sub1_MAP_Name" Value="Module Access Point"/>
+					<Text TextId="T_MOD_Sub1_MAP_Info" Value="Zugangspunkt auf die Parameter des Geberobjektes (EO)"/>
+
+					<!--Submodule 2 telegram x -->
+					<Text TextId="TOK_TextId_Module_81" Value="Standard Telegramm 81, PZD2/6"/>
+					<Text TextId="TOK_TextId_Module_82" Value="Standard Telegramm 82, PZD2/7"/>
+					<Text TextId="TOK_TextId_Module_83" Value="Standard Telegramm 83, PZD2/8"/>
+					<Text TextId="TOK_TextId_Module_84" Value="Standard Telegramm 84, PZD2/10"/>
+					<Text TextId="TOK_TextId_Module_860" Value="Encoder Telegramm 860, PZD2/4"/>
+					<Text TextId="TOK_InfoTextId_Module_81" Value="Standard Telegramm 81 für Geber: 1 Lagegeber, PZD-Länge 2/6. Worte"/>
+					<Text TextId="TOK_InfoTextId_Module_82" Value="Standard Telegramm 82 für Geber: 1 Lagegeber, Drehzahlistwert 16Bit, PZD-Länge 2/7 Worte."/>
+					<Text TextId="TOK_InfoTextId_Module_83" Value="Standard Telegramm 83 für Geber: 1 Lagegeber, Drehzahlistwert 32Bit, PZD-Länge 2/8 Worte."/>
+					<Text TextId="TOK_InfoTextId_Module_84" Value="Standard Telegramm 84 für Geber: 1 Lagegeber, Drehzahlistwert 32Bit, PZD-Länge 2/10 Worte."/>
+					<Text TextId="TOK_InfoTextId_Module_860" Value="Encoder Telegramm 860 für Geber: Lage-Presetwert 32-Bit, Lageistwert 32-Bit, Drehzahlistwert 32-Bit, PZD-Länge 2/4 Worte."/>
+					<Text TextId="TOK_Std_Telegram_Output" Value="Standard Telegramm Output"/>
+					<Text TextId="TOK_Std_Telegram_81_Input" Value="Standard Telegramm 81 Input"/>
+					<Text TextId="TOK_Std_Telegram_82_Input" Value="Standard Telegramm 82 Input"/>
+					<Text TextId="TOK_Std_Telegram_83_Input" Value="Standard Telegramm 83 Input"/>
+					<Text TextId="TOK_Std_Telegram_84_Input" Value="Standard Telegramm 84 Input"/>
+					<Text TextId="TOK_Man_Telegram_860_Input" Value="Encoder Telegramm 860 Input"/>
+					<Text TextId="TOK_Man_Telegram_860_Output" Value="Encoder Telegramm 860 Output"/>
+
+					<!--ParameterRecord name, Items -->
+					<Text TextId="IDT_EncoderVendorParameters" Value="Drehzahlistwert"/>
+					<Text TextId="IDT_EncoderParameters" Value="Encoder-Parameter"/>
+                	<Text TextId="IDT_EncoderFraction" Value="Bruchrechnung"/>
+					
+					<Text TextId="IDT_CodeSequence" Value="Drehrichtung"/>
+					<Text TextId="IDT_Class4Ctrl" Value="Encoder Class 4 Funktionalität"/>
+					<Text TextId="IDT_PresetControl" Value="Preset beeinflusst XIST1"/>
+					<Text TextId="IDT_ScalFuncCtrl" Value="Skalierungsfunktion"/>
+					<Text TextId="IDT_AlarmChCtrl" Value="Diagnose über Alarmkanal"/>
+					<Text TextId="IDT_CompatMode" Value="Kompatibilitätsmodus V3.1"/>
+					<Text TextId="IDT_MeasurUnitPerRev" Value="Skalierung: Auflösung pro Umdrehung"/>
+					<Text TextId="IDT_TotalMeasurRange" Value="Skalierung: Gesamtauflösung"/>
+					<Text TextId="IDT_MaxMasterSolFail" Value="Tolerierte Lebenszeichenfehler"/>
+					<Text TextId="IDT_VelocityUnit" Value="Drehzahlnormierung"/>
+
+					<Text TextId="T_StepsPerSec" Value="Schritte/s"/>
+					<Text TextId="T_StepsPer100ms" Value="Schritte/100ms"/>
+					<Text TextId="T_StepsPer10ms" Value="Schritte/10ms"/>
+					<Text TextId="T_RevolutionsPerMinute" Value="RPM"/>
+					<Text TextId="T_N2N4" Value="N2/N4"/>
+	
+					 <Text TextId="T_disable" Value="sperren"/>
+					<Text TextId="T_enable" Value="freigeben"/>
+					<Text TextId="IDT_CodeSequence_CW" Value="Steigend im Uhrzeigersinn"/>
+					<Text TextId="IDT_CodeSequence_CCW" Value="Fallend im Uhrzeigersinn"/>
+	
+					<Text TextId="IDT_VelocityFilter" Value="Drehzahlfilterung"/>
+					<Text TextId="IDT_VelocityRef" Value="Bezugsdrehzahl N2/N4 (U/min)"/>
+					<Text TextId="T_VelocityAccuracyFine" Value="Fein"/>
+					<Text TextId="T_VelocityAccuracyNormal" Value="Normal"/>
+					<Text TextId="T_VelocityAccuracyCoarse" Value="Grob"/>
+
+                	<Text TextId="IDT_FractionalCtrl" Value="Bruchrechnungs-Aktivierung"/>
+					<Text TextId="IDT_IntendedPulses" Value="Gewünschte Pulse (Zähler)"/>
+					<Text TextId="IDT_PhysicalPulses" Value="Physikalische Pulse (Nenner)"/>
+
+					<!--module name, info-->
+					<Text TextId="IDT_NAME_XCD_V42" Value="Encoder V12.x"/>			
+					<Text TextId="IDT_INFO_EO_V20" Value="Standard Drehgeber-Objekt-Architektur basierend auf Encoder Profile V4.2 Spezifikation bestehend aus Submodule 1:  MAP (Module Access Point), Submodule 2: Standard-Telegram 81/82/83/84/86/87/88/89 (Setpoint: STW2_ENC, G1_STW1;  Actual value: ZSW2_ENC, G1_ZSW1, G1_XIST1, G1_XIST2, NIST_A oder NIST_B) oder Hersteller-Telegramm 860: Ausgang: 32 Bit-Unsigned Presetwert (Bit 31 Preset-Kontrolle , Wertebereich kleiner als Gesamtauflösung),  Eingang: 32 Bit-Unsigned Positionswert + 32 Bit-Integer Geschwindigkeitswert, Ausgang: 32 Bit-Unsigned Presetwert (Bit 31 Preset-Kontrolle , Wertebereich kleiner als Gesamtauflösung) bzw. Telegramm 862: Ausgang: 32 Bit-Unsigned Presetwert (Bit 31 Preset-Kontrolle , Wertebereich kleiner als Gesamtauflösung),  Eingang: 32 Bit-Unsigned Positionswert + 32 Bit-Integer Geschwindigkeitswert + 32 Bit-Integer Beschleunigungswert + 32 Bit-Signed Temperaturwert."/>
+					
+					<!--Submodeule 1 name , info-->
+					<Text TextId="IDT_NAME_MAP" Value="Module Access Point"/>
+					<Text TextId="IDT_INFO_MAP" Value="Module Access Point (MAP) Zugangspunkt für Drehgeber-Parameter"/>
+
+					<!--Submodule 2 telegram x -->
+					<Text TextId="IDT_NAME_T81" Value="Standard-Telegramm 81, PZD2/6"/>
+					<Text TextId="IDT_NAME_T82" Value="Standard-Telegramm 82, PZD2/7"/>
+					<Text TextId="IDT_NAME_T83" Value="Standard-Telegramm 83, PZD2/8"/>
+					<Text TextId="IDT_NAME_T84" Value="Standard-Telegramm 84, PZD2/10"/>
+					<Text TextId="IDT_NAME_T86" Value="Standard-Telegramm 86, PZD2/4"/>
+					<Text TextId="IDT_NAME_T87" Value="Standard-Telegramm 87, PZD2/2"/>
+					<Text TextId="IDT_NAME_T88" Value="Standard-Telegramm 88, PZD4/6"/>
+					<Text TextId="IDT_NAME_T89" Value="Standard-Telegramm 89, PZD3/5"/>
+					<Text TextId="IDT_NAME_T862" Value="Encoder-Telegramm 862, PZD2/8"/>
+					<Text TextId="IDT_NAME_T860" Value="Encoder-Telegramm 860, PZD2/4"/>
+
+					<Text TextId="IDT_INFO_T81" Value="Standard-Telegramm 81 für Encoder: Lagegeber 32 bit, PZD-Länge 2/6 Worte."/>
+					<Text TextId="IDT_INFO_T82" Value="Standard-Telegramm 82 für Encoder: Lagegeber 32 bit, Drehzahlistwert 16 bit, PZD-Länge 2/7 Worte."/>
+					<Text TextId="IDT_INFO_T83" Value="Standard-Telegramm 83 für Encoder: Lagegeber 32 bit, Drehzahlistwert 32 bit, PZD-Länge 2/8 Worte. "/>
+					<Text TextId="IDT_INFO_T84" Value="Standard-Telegramm 84 für Encoder: Lagegeber 32 bit, Drehzahlistwert 32 bit, PZD-Länge 2/10 Worte. "/>
+					<Text TextId="IDT_INFO_T86" Value="Standard-Telegramm 86 für Encoder: Lagegeber 32 bit, Drehzahlistwert 32 bit, PZD-Länge 2/4 Worte."/>
+					<Text TextId="IDT_INFO_T87" Value="Standard-Telegramm 87 für Encoder: Lagegeber 32 bit, PZD-Länge 2/2 Worte."/>
+					<Text TextId="IDT_INFO_T88" Value="Standard-Telegramm 88 für Encoder: Lagegeber 64 bit, Drehzahlistwert 32 bit, PZD-Länge 4/6 Worte."/>
+					<Text TextId="IDT_INFO_T89" Value="Standard-Telegramm 89 für Encoder: Lagegeber 32 bit, Drehzahlistwert 32 bit, PZD-Länge 3/5 Worte."/>
+					<Text TextId="IDT_INFO_T862" Value="Encoder-Telegramm 862 für Encoder: Lagegeber 32 bit, Drehzahlistwert 32 bit, Beschleunigung 32 bit, Temperatur 32 Bit,  PZD-Länge 2/8 Worte."/>
+					<Text TextId="IDT_INFO_T860" Value="Encoder-Telegramm 860 für Encoder: Lagegeber 32 bit, PZD-Länge 2/4 Worte."/>
+				
+					<Text TextId="IDT_INPUT_T81" Value="Standard-Telegramm 81 Eingangdaten: Actual value (ZSW2_ENC | G1_ZSW | G1_XIST1 | G1_XIST2)"/>
+					<Text TextId="IDT_INPUT_T82" Value="Standard-Telegramm 82 Eingangdaten: Actual value (ZSW2_ENC | G1_ZSW | G1_XIST1 | G1_XIST2 | NIST_A)"/>
+					<Text TextId="IDT_INPUT_T83" Value="Standard-Telegramm 83 Eingangdaten: Actual value (ZSW2_ENC | G1_ZSW | G1_XIST1 | G1_XIST2 | NIST_B)"/>
+					<Text TextId="IDT_INPUT_T84" Value="Standard-Telegramm 84 Eingangdaten: Actual value (ZSW2_ENC | G1_ZSW | G1_XIST3 | G1_XIST2 | NIST_A)"/>
+					<Text TextId="IDT_INPUT_T86" Value="Standard-Telegramm 86 Eingangdaten: Actual value (G1_XIST1 + NIST_B)"/>
+					<Text TextId="IDT_INPUT_T87" Value="Standard-Telegramm 87 Eingangdaten: Actual value (G1_XIST1)"/>
+					<Text TextId="IDT_INPUT_T88" Value="Standard-Telegramm 88 Eingangdaten: Actual value (G1_XIST3 | NIST_B)"/>
+					<Text TextId="IDT_INPUT_T89" Value="Standard-Telegramm 89 Eingangdaten: Actual value (ZSW2_ENC | G1_XIST1 | NIST_B)"/>
+					<Text TextId="IDT_INPUT_T862" Value="Encoder-Telegramm 862 Eingangdaten: Lageistwert 32 bit + Drehzahlistwert 32 bit + Beschleunigung 32 bit + Temperatur 32 Bit"/>
+					<Text TextId="IDT_INPUT_T860" Value="Encoder-Telegramm 860 Eingangdaten: Actual value (G1_XIST1 + NIST_B)"/>
+				
+					<Text TextId="IDT_OUTPUT_T81" Value="Standard-Telegramm 81 Ausgangsdaten: Setpoint (STW2_ENC | G1_STW)"/>
+					<Text TextId="IDT_OUTPUT_T82" Value="Standard-Telegramm 82 Ausgangsdaten: Setpoint (STW2_ENC | G1_STW)"/>
+					<Text TextId="IDT_OUTPUT_T83" Value="Standard-Telegramm 83 Ausgangsdaten: Setpoint (STW2_ENC | G1_STW)"/>
+					<Text TextId="IDT_OUTPUT_T84" Value="Standard-Telegramm 84 Ausgangsdaten: Setpoint (STW2_ENC | G1_STW)"/>
+					<Text TextId="IDT_OUTPUT_T86" Value="Standard-Telegramm 86 Ausgangsdaten: Setpoint (G1_XIST_PRESET_B)"/>
+					<Text TextId="IDT_OUTPUT_T87" Value="Standard-Telegramm 87 Ausgangsdaten: Setpoint (G1_XIST_PRESET_B)"/>
+					<Text TextId="IDT_OUTPUT_T88" Value="Standard-Telegramm 88 Ausgangsdaten: Setpoint (G1_XIST_PRESET_C)"/>
+					<Text TextId="IDT_OUTPUT_T89" Value="Standard-Telegramm 89 Ausgangsdaten: Setpoint (STW2_ENC | G1_XIST_PRESET_B1)"/>
+					<Text TextId="IDT_OUTPUT_T862" Value="Encoder-Telegramm 862 Ausgangsdaten: Setpoint (Lage-Presetwert Bits 0..30, Preset-Control Bit 31)"/>
+					<Text TextId="IDT_OUTPUT_T860" Value="Encoder-Telegramm 860 Ausgangsdaten: Setpoint (G1_XIST_PRESET_B)"/>
+				
+					<Text TextId="IDT_ZSW2_ENC" Value="Drehgeber Status Wort 2 (ZSW2_ENC)"></Text>
+					<Text TextId="IDT_NIST_A" Value="Aktuelle Geschwindigkeit 16 bit (NIST_A)"></Text>
+					<Text TextId="IDT_NIST_B" Value="Aktuelle Geschwindigkeit 32 bit (NIST_B)"></Text>
+					<Text TextId="IDT_ACCEL_A" Value="Aktuelle Beschleunigung 32 bit (ACCEL_A)"></Text>
+					<Text TextId="IDT_G1_STW" Value="Sensor 1 Steuer Wort (G1_STW)"></Text>
+					<Text TextId="IDT_G1_ZSW" Value="Sensor 1 Status Wort (G1_ZSW)"></Text>
+					<Text TextId="IDT_G1_XIST1" Value="Sensor 1 aktueller Positionswert 1 (G1_XIST1)"></Text>
+					<Text TextId="IDT_G1_XIST2" Value="Sensor 1 aktueller Positionswert 2 (G1_XIST2)"></Text>
+					<Text TextId="IDT_G1_XIST3" Value="Sensor 1 aktueller Positionswert 3 (G1_XIST3)"></Text>
+					<Text TextId="IDT_STW2_ENC" Value="Drehgeber Steuer Wort 2 (STW2_ENC)"></Text>
+					<Text TextId="IDT_G1_XIST_PRESET_B" Value="Drehgeber preset control word, 31 bit with trigger bit included (G1_XIST_PRESET_B)"></Text>
+					<Text TextId="IDT_G1_XIST_PRESET_B1" Value="Drehgeber preset control word 32 bit (G1_XIST_PRESET_B1)"></Text>
+					<Text TextId="IDT_G1_XIST_PRESET_C" Value="Drehgeber preset control word 64 bit (G1_XIST_PRESET_C)"></Text>
+					<Text TextId="IDT_POSITION32" Value="Positionswert 32 Bit"></Text>
+					<Text TextId="IDT_POSITION64" Value="Positionswert 64 Bit"></Text>
+                	<Text TextId="IDT_TEMP32" Value="Temperaturwert 32 Bit"></Text>
+					
+		
+					<Text TextId="IDT_NAME_ENCODER_SENSOR_CONFIG" Value="ENCODER Sensor-Konfiguration"/>
+		
+					<Text TextId="IDT_NAME_ENCODER_P65005" Value="Encoder Parameter-Kontrolle (P65005)"/>
+					<Text TextId="IDT_PrmInitCtrl" Value="Parameter-Initialisierungskontrolle"/>
+					<Text TextId="IDT_PrmInitCtrl_PRM" Value="PRM (Parametrierung)"/>
+					<Text TextId="IDT_PrmInitCtrl_NVM" Value="NV-RAM (Non-Volatile RAM)"/>
+				
+					<Text TextId="IDT_PrmWriteProtect" Value="Parameter-Schreibschutz"/>
+					<Text TextId="IDT_PrmWriteProtect_WriteAll" Value="Alle schreibbar"/>
+					<Text TextId="IDT_PrmWriteProtect_ReadOnly" Value="Nur lesbar"/>
+					<Text TextId="IDT_PrmWriteProtect_WriteController" Value="Schreibbar durch Controller"/>
+					<Text TextId="IDT_PrmWriteProtect_WriteSupervisor" Value="Schreibbar durch Supervisor"/>
+					
+					<Text TextId="IDT_Prm65005WriteProtect" Value="Parameter 65005 Schreibschutz"/>
+					<Text TextId="IDT_Prm65005WriteProtect_WriteAll" Value="Alle schreibbar"/>
+					<Text TextId="IDT_Prm65005WriteProtect_ReadOnly" Value="Nur lesbar"/>
+					
+					<Text TextId="IDT_ResetCtrlWriteProtect" Value="Reset-Kontrolle Schreibschutz"/>
+					<Text TextId="IDT_ResetCtrlWriteProtect_WriteAll" Value="Alle schreibbar"/>
+					<Text TextId="IDT_ResetCtrlWriteProtect_ReadOnly" Value="Nur lesbar"/>
+				
+					<Text TextId="IDT_EncoderType" Value="Encoder-Typ"/>
+					<Text TextId="IDT_EncoderType_Rotary" Value="Drehgeber"/>
+					<Text TextId="IDT_EncoderType_Linear" Value="Lineargeber"/>
+                
+                	<Text TextId="IDT_DIAG_9100" Value="FAULT_PRESENT: PROFIdrive_Fault_256: Position error (hardware and signal quality)"/>
+					<Text TextId="IDT_DIAG_9101" Value="FAULT_PRESENT: PROFIdrive_Fault_257: Position error (frequency/speed exceeded)"/>
+					<Text TextId="IDT_DIAG_9102" Value="FAULT_PRESENT: PROFIdrive_Fault_258: Position inconsistent (for incremental encoders only)"/>
+					<Text TextId="IDT_DIAG_9105" Value="FAULT_PRESENT: PROFIdrive_Fault_261: Commissioning diagnostics"/>
+					<Text TextId="IDT_DIAG_9106" Value="FAULT_PRESENT: PROFIdrive_Fault_262: Commissioning invalid scaling"/>
+					<Text TextId="IDT_DIAG_910A" Value="FAULT_PRESENT: PROFIdrive_Fault_266: Synchronisation fault (isochronous operation only)"/>
+					<Text TextId="IDT_DIAG_910B" Value="FAULT_PRESENT: PROFIdrive_Fault_267: Master's sign of life fault"/>
+					<Text TextId="IDT_DIAG_9113" Value="FAULT_PRESENT: PROFIdrive_Fault_275: Overtemperature"/>
+					<Text TextId="IDT_DIAG_9116" Value="FAULT_PRESENT: PROFIdrive_Fault_279: Memory error"/>
+				
+					<Text TextId="IDT_DIAG_9107" Value="WARNING_PRESENT: PROFIdrive_Warning_519: Invalid parameter setup in RAM"/>
+					<Text TextId="IDT_DIAG_9108" Value="WARNING_PRESENT: PROFIdrive_Warning_520: Communication"/>
+					<Text TextId="IDT_DIAG_910C" Value="WARNING_PRESENT: PROFIdrive_Warning_524: Overspeed"/>
+					<Text TextId="IDT_DIAG_910D" Value="WARNING_PRESENT: PROFIdrive_Warning_525: Preset failed (speed to high)"/>
+					<Text TextId="IDT_DIAG_910E" Value="WARNING_PRESENT: PROFIdrive_Warning_526: Preset failed (preset value out of range)"/>
+					<Text TextId="IDT_DIAG_910F" Value="WARNING_PRESENT: PROFIdrive_Warning_527: Command not supported"/>
+					<!-- Text TextId="IDT_DIAG_9113" Value="WARNING_PRESENT: PROFIdrive_Warning_575: Overtemperature"/ -->
+                
+                </Language>
+            </ExternalTextList>
+		</ApplicationProcess>
+	</ProfileBody>
+</ISO15745Profile>

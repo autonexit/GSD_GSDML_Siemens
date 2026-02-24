@@ -1,0 +1,579 @@
+;************************ COMPANY INFORMATION *************************
+;*                                                                    *
+;* CREATED by Endress+Hauser Flowtec AG                               *
+;*                                                                    *
+;* PUBLISHED by Endress+Hauser Process Solution AG , CH-4153 Reinach  *
+;*                                                                    *
+;******************** DEVICE and FILE INFORMATION *********************
+;*                                                                    *
+;* FILE NAME: Eh3_1526.gsd                                            *
+;* DEVICE TYPE: PROFIBUS-DP                                           *
+;* DEVICE INFORMATION: PROMAG 53 DP                                   *
+;* PROFILE COMPATIBILITY: PROFILE 3.0                                 *
+;* DPV1 IMPLEMENTATION: MSAC1_Read/Write                              *
+;*                      MSAC2_Read/Write                              *
+;*                                                                    *
+;* IDENTIFIER FORMAT: Standard                                        *
+;*                                                                    *
+;********************** GSD REVISION INFORMATION **********************
+;* $Revision: 1.13 $                                                  *
+;* $Date: 2001/12/20 13:10:38Z $                                      *
+;*                                                                    *
+;* DATE d.m.j | NAME | VERSION | COMMENT                              *
+;* ------------------------------------------------------------------ *
+;* 20.12.2001 | CHA   | 0.3 |Slave Related Keywords For DP Extensions *
+;*            | STI   |     |and from All 1 to All 2                  *
+;*                          |Slave Specific diagnose added            *
+;* 05.12.2005 | BM | 1.1     | SLAVE_FAMILY = 12									*
+;* 05.12.2005 | BM | 1.1     | Diagnostic_Alarm_supp = 0			     *
+;* 05.12.2005 | BM | 1.1     | Extra_Alarm_SAP_supp = 0			        *
+;* 05.12.2005 | BM | 1.1     | Alarm_Type_Mode_supp = 0			        * 
+;* 7.11.2006  | RM | 1.2 | corrected Vendor_Name ="Endress+Hauser" *
+;*	 modification: Max_Diag_Data_Len = 69    *
+;*	 entry: Unit_Diag_Bit(144) to Unit_Diag_Bit(495)      
+;*	 are added										
+;* 28.02.2007 | JP | 1.3 | Slave_Family=12@Endress+Hauser@Flow@Electro-magnetic
+;**********************************************************************
+#Profibus_DP
+;**************************** General DP Keywords *********************
+GSD_Revision    =3
+Vendor_Name     ="Endress+Hauser"
+Model_Name      ="PROMAG 53 DP"
+Revision        ="Profile 3.0"
+Ident_Number    = 0x1526
+Protocol_Ident  = 0
+Station_Type    = 0
+FMS_supp        = 0
+Hardware_Release= "All 2"
+Software_Release= "All 2"
+
+9.6_supp        = 1
+19.2_supp       = 1
+31.25_supp      = 0
+45.45_supp      = 1
+93.75_supp      = 1
+187.5_supp      = 1
+500_supp        = 1
+1.5M_supp       = 1
+3M_supp         = 1
+6M_supp         = 1
+12M_supp        = 1
+MaxTsdr_9.6     = 60
+MaxTsdr_19.2    = 60
+MaxTsdr_45.45   = 250
+MaxTsdr_93.75   = 60
+MaxTsdr_187.5   = 60
+MaxTsdr_500     = 100
+MaxTsdr_1.5M    = 150
+MaxTsdr_3M      = 250
+MaxTsdr_6M      = 450
+MaxTsdr_12M     = 800
+Repeater_Ctrl_Sig	= 0
+
+Implementation_Type  ="SPC4.x/TMG-itec"
+Bitmap_Device        ="EH1526_N"
+Bitmap_Diag          ="EH1526_D"
+Bitmap_SF            ="EH1526_S"
+;
+;********* Additional Keywords For Different Physical Interfaces ********
+;***************** DP Master (Class 1) Related Keywords *****************
+;********* Additional Master Related Keywords For DP Extensions *********
+
+;******************** Basic DP-Slave Related Keywords *******************
+Freeze_Mode_supp     = 1
+Sync_Mode_supp       = 1
+Auto_Baud_supp       = 1
+Set_Slave_Add_Supp   = 1
+Min_Slave_Intervall  = 6
+Modular_Station      = 1
+Fail_Safe            = 0
+Max_Diag_Data_Len    = 69
+Modul_Offset         = 1
+Slave_Family         = 12@Endress+Hauser@Flow@Electro-magnetic
+Max_Module           = 7
+Max_Input_len        = 25
+Max_Output_len       = 12
+Max_Data_len         = 37
+;
+User_Prm_Data_Len   	= 3
+User_Prm_Data       	= 0, 0, 0
+
+Unit_Diag_Bit(16) = "Error appears"
+Unit_Diag_Bit(17) = "Error disappears"
+Unit_Diag_Bit(24) = "Hardware failure electronics"
+Unit_Diag_Bit(25) = "Hardware failure mechanics"
+Unit_Diag_Bit(26) = "Motor temperature too high"
+Unit_Diag_Bit(27) = "Electronic temperature too high"
+Unit_Diag_Bit(28) = "Memory error"
+Unit_Diag_Bit(29) = "Measurement failure"
+Unit_Diag_Bit(30) = "Device not initialized"
+Unit_Diag_Bit(31) = "Device initialization failed"
+Unit_Diag_Bit(32) = "Zero point error"
+Unit_Diag_Bit(33) = "Power supply failed"
+Unit_Diag_Bit(34) = "Configuration invalid"
+Unit_Diag_Bit(35) = "Restart"
+Unit_Diag_Bit(36) = "Coldstart"
+Unit_Diag_Bit(37) = "Maintenance required"
+Unit_Diag_Bit(38) = "Characteristics invalid"
+Unit_Diag_Bit(39) = "Ident_Number violation"
+Unit_Diag_Bit(55) = "Extension Available"
+Unit_Diag_Bit(57) = "Simulation failsafe active   691"
+Unit_Diag_Bit(60) = "Amplifier EEPROM failure     011"
+Unit_Diag_Bit(61) = "ROM / RAM Failure            001"
+Unit_Diag_Bit(62) = "Coil current out of tol.     321"
+Unit_Diag_Bit(64) = "Amp EEPROM data inconsistent 012"
+Unit_Diag_Bit(65) = "S-DAT failure / not inserted 031"
+Unit_Diag_Bit(66) = "S-DAT data inconsistent      032"
+Unit_Diag_Bit(67) = "T-DAT failure                041"
+Unit_Diag_Bit(68) = "T-DAT data inconsistent      042"
+Unit_Diag_Bit(69) = "Tot could not be restarted   111"
+Unit_Diag_Bit(70) = "Save to T-DAT failed         205"
+Unit_Diag_Bit(71) = "Restore from T-DAT failed    206"
+Unit_Diag_Bit(72) = "Communication Failure        261"
+Unit_Diag_Bit(96) = "Empty pipe detected          401"
+Unit_Diag_Bit(97) = "EPD Adj not possible         461"
+Unit_Diag_Bit(98) = "EPD Adj wrong                463"
+Unit_Diag_Bit(99) = "Positive Zero Return active  601"
+Unit_Diag_Bit(101) = "Simulation Volume Flow       692"
+Unit_Diag_Bit(102) = "Simulation Mass Flow         693"
+Unit_Diag_Bit(136) = "Software download active     501"
+Unit_Diag_Bit(142) = "Amp-I/O soft only part.comp. 121"
+Unit_Diag_Bit(143) = "F-CHIP defect. / not plugged 061"
+
+Unit_Diag_Bit(144)  = "Diag Bit 144 not sup. by GSD"
+Unit_Diag_Bit(145)  = "Diag Bit 145 not sup. by GSD"
+Unit_Diag_Bit(146)  = "Diag Bit 146 not sup. by GSD"
+Unit_Diag_Bit(147)  = "Diag Bit 147 not sup. by GSD"
+Unit_Diag_Bit(148)  = "Diag Bit 148 not sup. by GSD"
+Unit_Diag_Bit(149)  = "Diag Bit 149 not sup. by GSD"
+Unit_Diag_Bit(150)  = "Diag Bit 150 not sup. by GSD"
+Unit_Diag_Bit(151)  = "Diag Bit 151 not sup. by GSD"
+Unit_Diag_Bit(152)  = "Diag Bit 152 not sup. by GSD"
+Unit_Diag_Bit(153)  = "Diag Bit 153 not sup. by GSD"
+Unit_Diag_Bit(154)  = "Diag Bit 154 not sup. by GSD"
+Unit_Diag_Bit(155)  = "Diag Bit 155 not sup. by GSD"
+Unit_Diag_Bit(156)  = "Diag Bit 156 not sup. by GSD"
+Unit_Diag_Bit(157)  = "Diag Bit 157 not sup. by GSD"
+Unit_Diag_Bit(158)  = "Diag Bit 158 not sup. by GSD"
+Unit_Diag_Bit(159)  = "Diag Bit 159 not sup. by GSD"
+Unit_Diag_Bit(160)  = "Diag Bit 160 not sup. by GSD"
+Unit_Diag_Bit(161)  = "Diag Bit 161 not sup. by GSD"
+Unit_Diag_Bit(162)  = "Diag Bit 162 not sup. by GSD"
+Unit_Diag_Bit(163)  = "Diag Bit 163 not sup. by GSD"
+Unit_Diag_Bit(164)  = "Diag Bit 164 not sup. by GSD"
+Unit_Diag_Bit(165)  = "Diag Bit 165 not sup. by GSD"
+Unit_Diag_Bit(166)  = "Diag Bit 166 not sup. by GSD"
+Unit_Diag_Bit(167)  = "Diag Bit 167 not sup. by GSD"
+Unit_Diag_Bit(168)  = "Diag Bit 168 not sup. by GSD"
+Unit_Diag_Bit(169)  = "Diag Bit 169 not sup. by GSD"
+Unit_Diag_Bit(170)  = "Diag Bit 170 not sup. by GSD"
+Unit_Diag_Bit(171)  = "Diag Bit 171 not sup. by GSD"
+Unit_Diag_Bit(172)  = "Diag Bit 172 not sup. by GSD"
+Unit_Diag_Bit(173)  = "Diag Bit 173 not sup. by GSD"
+Unit_Diag_Bit(174)  = "Diag Bit 174 not sup. by GSD"
+Unit_Diag_Bit(175)  = "Diag Bit 175 not sup. by GSD"
+Unit_Diag_Bit(176)  = "Diag Bit 176 not sup. by GSD"
+Unit_Diag_Bit(177)  = "Diag Bit 177 not sup. by GSD"
+Unit_Diag_Bit(178)  = "Diag Bit 178 not sup. by GSD"
+Unit_Diag_Bit(179)  = "Diag Bit 179 not sup. by GSD"
+Unit_Diag_Bit(180)  = "Diag Bit 180 not sup. by GSD"
+Unit_Diag_Bit(181)  = "Diag Bit 181 not sup. by GSD"
+Unit_Diag_Bit(182)  = "Diag Bit 182 not sup. by GSD"
+Unit_Diag_Bit(183)  = "Diag Bit 183 not sup. by GSD"
+Unit_Diag_Bit(184)  = "Diag Bit 184 not sup. by GSD"
+Unit_Diag_Bit(185)  = "Diag Bit 185 not sup. by GSD"
+Unit_Diag_Bit(186)  = "Diag Bit 186 not sup. by GSD"
+Unit_Diag_Bit(187)  = "Diag Bit 187 not sup. by GSD"
+Unit_Diag_Bit(188)  = "Diag Bit 188 not sup. by GSD"
+Unit_Diag_Bit(189)  = "Diag Bit 189 not sup. by GSD"
+Unit_Diag_Bit(190)  = "Diag Bit 190 not sup. by GSD"
+Unit_Diag_Bit(191)  = "Diag Bit 191 not sup. by GSD"
+Unit_Diag_Bit(192)  = "Diag Bit 192 not sup. by GSD"
+Unit_Diag_Bit(193)  = "Diag Bit 193 not sup. by GSD"
+Unit_Diag_Bit(194)  = "Diag Bit 194 not sup. by GSD"
+Unit_Diag_Bit(195)  = "Diag Bit 195 not sup. by GSD"
+Unit_Diag_Bit(196)  = "Diag Bit 196 not sup. by GSD"
+Unit_Diag_Bit(197)  = "Diag Bit 197 not sup. by GSD"
+Unit_Diag_Bit(198)  = "Diag Bit 198 not sup. by GSD"
+Unit_Diag_Bit(199)  = "Diag Bit 199 not sup. by GSD"
+Unit_Diag_Bit(200)  = "Diag Bit 200 not sup. by GSD"
+Unit_Diag_Bit(201)  = "Diag Bit 201 not sup. by GSD"
+Unit_Diag_Bit(202)  = "Diag Bit 202 not sup. by GSD"
+Unit_Diag_Bit(203)  = "Diag Bit 203 not sup. by GSD"
+Unit_Diag_Bit(204)  = "Diag Bit 204 not sup. by GSD"
+Unit_Diag_Bit(205)  = "Diag Bit 205 not sup. by GSD"
+Unit_Diag_Bit(206)  = "Diag Bit 206 not sup. by GSD"
+Unit_Diag_Bit(207)  = "Diag Bit 207 not sup. by GSD"
+Unit_Diag_Bit(208)  = "Diag Bit 208 not sup. by GSD"
+Unit_Diag_Bit(209)  = "Diag Bit 209 not sup. by GSD"
+Unit_Diag_Bit(210)  = "Diag Bit 210 not sup. by GSD"
+Unit_Diag_Bit(211)  = "Diag Bit 211 not sup. by GSD"
+Unit_Diag_Bit(212)  = "Diag Bit 212 not sup. by GSD"
+Unit_Diag_Bit(213)  = "Diag Bit 213 not sup. by GSD"
+Unit_Diag_Bit(214)  = "Diag Bit 214 not sup. by GSD"
+Unit_Diag_Bit(215)  = "Diag Bit 215 not sup. by GSD"
+Unit_Diag_Bit(216)  = "Diag Bit 216 not sup. by GSD"
+Unit_Diag_Bit(217)  = "Diag Bit 217 not sup. by GSD"
+Unit_Diag_Bit(218)  = "Diag Bit 218 not sup. by GSD"
+Unit_Diag_Bit(219)  = "Diag Bit 219 not sup. by GSD"
+Unit_Diag_Bit(220)  = "Diag Bit 220 not sup. by GSD"
+Unit_Diag_Bit(221)  = "Diag Bit 221 not sup. by GSD"
+Unit_Diag_Bit(222)  = "Diag Bit 222 not sup. by GSD"
+Unit_Diag_Bit(223)  = "Diag Bit 223 not sup. by GSD"
+Unit_Diag_Bit(224)  = "Diag Bit 224 not sup. by GSD"
+Unit_Diag_Bit(225)  = "Diag Bit 225 not sup. by GSD"
+Unit_Diag_Bit(226)  = "Diag Bit 226 not sup. by GSD"
+Unit_Diag_Bit(227)  = "Diag Bit 227 not sup. by GSD"
+Unit_Diag_Bit(228)  = "Diag Bit 228 not sup. by GSD"
+Unit_Diag_Bit(229)  = "Diag Bit 229 not sup. by GSD"
+Unit_Diag_Bit(230)  = "Diag Bit 230 not sup. by GSD"
+Unit_Diag_Bit(231)  = "Diag Bit 231 not sup. by GSD"
+Unit_Diag_Bit(232)  = "Diag Bit 232 not sup. by GSD"
+Unit_Diag_Bit(233)  = "Diag Bit 233 not sup. by GSD"
+Unit_Diag_Bit(234)  = "Diag Bit 234 not sup. by GSD"
+Unit_Diag_Bit(235)  = "Diag Bit 235 not sup. by GSD"
+Unit_Diag_Bit(236)  = "Diag Bit 236 not sup. by GSD"
+Unit_Diag_Bit(237)  = "Diag Bit 237 not sup. by GSD"
+Unit_Diag_Bit(238)  = "Diag Bit 238 not sup. by GSD"
+Unit_Diag_Bit(239)  = "Diag Bit 239 not sup. by GSD"
+Unit_Diag_Bit(240)  = "Diag Bit 240 not sup. by GSD"
+Unit_Diag_Bit(241)  = "Diag Bit 241 not sup. by GSD"
+Unit_Diag_Bit(242)  = "Diag Bit 242 not sup. by GSD"
+Unit_Diag_Bit(243)  = "Diag Bit 243 not sup. by GSD"
+Unit_Diag_Bit(244)  = "Diag Bit 244 not sup. by GSD"
+Unit_Diag_Bit(245)  = "Diag Bit 245 not sup. by GSD"
+Unit_Diag_Bit(246)  = "Diag Bit 246 not sup. by GSD"
+Unit_Diag_Bit(247)  = "Diag Bit 247 not sup. by GSD"
+Unit_Diag_Bit(248)  = "Diag Bit 248 not sup. by GSD"
+Unit_Diag_Bit(249)  = "Diag Bit 249 not sup. by GSD"
+Unit_Diag_Bit(250)  = "Diag Bit 250 not sup. by GSD"
+Unit_Diag_Bit(251)  = "Diag Bit 251 not sup. by GSD"
+Unit_Diag_Bit(252)  = "Diag Bit 252 not sup. by GSD"
+Unit_Diag_Bit(253)  = "Diag Bit 253 not sup. by GSD"
+Unit_Diag_Bit(254)  = "Diag Bit 254 not sup. by GSD"
+Unit_Diag_Bit(255)  = "Diag Bit 255 not sup. by GSD"
+Unit_Diag_Bit(256)  = "Diag Bit 256 not sup. by GSD"
+Unit_Diag_Bit(257)  = "Diag Bit 257 not sup. by GSD"
+Unit_Diag_Bit(258)  = "Diag Bit 258 not sup. by GSD"
+Unit_Diag_Bit(259)  = "Diag Bit 259 not sup. by GSD"
+Unit_Diag_Bit(260)  = "Diag Bit 260 not sup. by GSD"
+Unit_Diag_Bit(261)  = "Diag Bit 261 not sup. by GSD"
+Unit_Diag_Bit(262)  = "Diag Bit 262 not sup. by GSD"
+Unit_Diag_Bit(263)  = "Diag Bit 263 not sup. by GSD"
+Unit_Diag_Bit(264)  = "Diag Bit 264 not sup. by GSD"
+Unit_Diag_Bit(265)  = "Diag Bit 265 not sup. by GSD"
+Unit_Diag_Bit(266)  = "Diag Bit 266 not sup. by GSD"
+Unit_Diag_Bit(267)  = "Diag Bit 267 not sup. by GSD"
+Unit_Diag_Bit(268)  = "Diag Bit 268 not sup. by GSD"
+Unit_Diag_Bit(269)  = "Diag Bit 269 not sup. by GSD"
+Unit_Diag_Bit(270)  = "Diag Bit 270 not sup. by GSD"
+Unit_Diag_Bit(271)  = "Diag Bit 271 not sup. by GSD"
+Unit_Diag_Bit(272)  = "Diag Bit 272 not sup. by GSD"
+Unit_Diag_Bit(273)  = "Diag Bit 273 not sup. by GSD"
+Unit_Diag_Bit(274)  = "Diag Bit 274 not sup. by GSD"
+Unit_Diag_Bit(275)  = "Diag Bit 275 not sup. by GSD"
+Unit_Diag_Bit(276)  = "Diag Bit 276 not sup. by GSD"
+Unit_Diag_Bit(277)  = "Diag Bit 277 not sup. by GSD"
+Unit_Diag_Bit(278)  = "Diag Bit 278 not sup. by GSD"
+Unit_Diag_Bit(279)  = "Diag Bit 279 not sup. by GSD"
+Unit_Diag_Bit(280)  = "Diag Bit 280 not sup. by GSD"
+Unit_Diag_Bit(281)  = "Diag Bit 281 not sup. by GSD"
+Unit_Diag_Bit(282)  = "Diag Bit 282 not sup. by GSD"
+Unit_Diag_Bit(283)  = "Diag Bit 283 not sup. by GSD"
+Unit_Diag_Bit(284)  = "Diag Bit 284 not sup. by GSD"
+Unit_Diag_Bit(285)  = "Diag Bit 285 not sup. by GSD"
+Unit_Diag_Bit(286)  = "Diag Bit 286 not sup. by GSD"
+Unit_Diag_Bit(287)  = "Diag Bit 287 not sup. by GSD"
+Unit_Diag_Bit(288)  = "Diag Bit 288 not sup. by GSD"
+Unit_Diag_Bit(289)  = "Diag Bit 289 not sup. by GSD"
+Unit_Diag_Bit(290)  = "Diag Bit 290 not sup. by GSD"
+Unit_Diag_Bit(291)  = "Diag Bit 291 not sup. by GSD"
+Unit_Diag_Bit(292)  = "Diag Bit 292 not sup. by GSD"
+Unit_Diag_Bit(293)  = "Diag Bit 293 not sup. by GSD"
+Unit_Diag_Bit(294)  = "Diag Bit 294 not sup. by GSD"
+Unit_Diag_Bit(295)  = "Diag Bit 295 not sup. by GSD"
+Unit_Diag_Bit(296)  = "Diag Bit 296 not sup. by GSD"
+Unit_Diag_Bit(297)  = "Diag Bit 297 not sup. by GSD"
+Unit_Diag_Bit(298)  = "Diag Bit 298 not sup. by GSD"
+Unit_Diag_Bit(299)  = "Diag Bit 299 not sup. by GSD"
+Unit_Diag_Bit(300)  = "Diag Bit 300 not sup. by GSD"
+Unit_Diag_Bit(301)  = "Diag Bit 101 not sup. by GSD"
+Unit_Diag_Bit(302)  = "Diag Bit 302 not sup. by GSD"
+Unit_Diag_Bit(303)  = "Diag Bit 303 not sup. by GSD"
+Unit_Diag_Bit(304)  = "Diag Bit 304 not sup. by GSD"
+Unit_Diag_Bit(305)  = "Diag Bit 305 not sup. by GSD"
+Unit_Diag_Bit(306)  = "Diag Bit 306 not sup. by GSD"
+Unit_Diag_Bit(307)  = "Diag Bit 307 not sup. by GSD"
+Unit_Diag_Bit(308)  = "Diag Bit 308 not sup. by GSD"
+Unit_Diag_Bit(309)  = "Diag Bit 309 not sup. by GSD"
+Unit_Diag_Bit(310)  = "Diag Bit 310 not sup. by GSD"
+Unit_Diag_Bit(311)  = "Diag Bit 311 not sup. by GSD"
+Unit_Diag_Bit(312)  = "Diag Bit 312 not sup. by GSD"
+Unit_Diag_Bit(313)  = "Diag Bit 313 not sup. by GSD"
+Unit_Diag_Bit(314)  = "Diag Bit 314 not sup. by GSD"
+Unit_Diag_Bit(315)  = "Diag Bit 315 not sup. by GSD"
+Unit_Diag_Bit(316)  = "Diag Bit 316 not sup. by GSD"
+Unit_Diag_Bit(317)  = "Diag Bit 317 not sup. by GSD"
+Unit_Diag_Bit(318)  = "Diag Bit 318 not sup. by GSD"
+Unit_Diag_Bit(319)  = "Diag Bit 319 not sup. by GSD"
+Unit_Diag_Bit(320)  = "Diag Bit 320 not sup. by GSD"
+Unit_Diag_Bit(321)  = "Diag Bit 321 not sup. by GSD"
+Unit_Diag_Bit(322)  = "Diag Bit 322 not sup. by GSD"
+Unit_Diag_Bit(323)  = "Diag Bit 323 not sup. by GSD"
+Unit_Diag_Bit(324)  = "Diag Bit 324 not sup. by GSD"
+Unit_Diag_Bit(325)  = "Diag Bit 325 not sup. by GSD"
+Unit_Diag_Bit(326)  = "Diag Bit 326 not sup. by GSD"
+Unit_Diag_Bit(327)  = "Diag Bit 327 not sup. by GSD"
+Unit_Diag_Bit(328)  = "Diag Bit 328 not sup. by GSD"
+Unit_Diag_Bit(329)  = "Diag Bit 329 not sup. by GSD"
+Unit_Diag_Bit(330)  = "Diag Bit 330 not sup. by GSD"
+Unit_Diag_Bit(331)  = "Diag Bit 331 not sup. by GSD"
+Unit_Diag_Bit(332)  = "Diag Bit 332 not sup. by GSD"
+Unit_Diag_Bit(333)  = "Diag Bit 333 not sup. by GSD"
+Unit_Diag_Bit(334)  = "Diag Bit 334 not sup. by GSD"
+Unit_Diag_Bit(335)  = "Diag Bit 335 not sup. by GSD"
+Unit_Diag_Bit(336)  = "Diag Bit 336 not sup. by GSD"
+Unit_Diag_Bit(337)  = "Diag Bit 337 not sup. by GSD"
+Unit_Diag_Bit(338)  = "Diag Bit 338 not sup. by GSD"
+Unit_Diag_Bit(339)  = "Diag Bit 339 not sup. by GSD"
+Unit_Diag_Bit(340)  = "Diag Bit 340 not sup. by GSD"
+Unit_Diag_Bit(341)  = "Diag Bit 341 not sup. by GSD"
+Unit_Diag_Bit(342)  = "Diag Bit 342 not sup. by GSD"
+Unit_Diag_Bit(343)  = "Diag Bit 343 not sup. by GSD"
+Unit_Diag_Bit(344)  = "Diag Bit 344 not sup. by GSD"
+Unit_Diag_Bit(345)  = "Diag Bit 345 not sup. by GSD"
+Unit_Diag_Bit(346)  = "Diag Bit 346 not sup. by GSD"
+Unit_Diag_Bit(347)  = "Diag Bit 347 not sup. by GSD"
+Unit_Diag_Bit(348)  = "Diag Bit 348 not sup. by GSD"
+Unit_Diag_Bit(349)  = "Diag Bit 349 not sup. by GSD"
+Unit_Diag_Bit(350)  = "Diag Bit 350 not sup. by GSD"
+Unit_Diag_Bit(351)  = "Diag Bit 351 not sup. by GSD"
+Unit_Diag_Bit(352)  = "Diag Bit 352 not sup. by GSD"
+Unit_Diag_Bit(353)  = "Diag Bit 353 not sup. by GSD"
+Unit_Diag_Bit(354)  = "Diag Bit 354 not sup. by GSD"
+Unit_Diag_Bit(355)  = "Diag Bit 355 not sup. by GSD"
+Unit_Diag_Bit(356)  = "Diag Bit 356 not sup. by GSD"
+Unit_Diag_Bit(357)  = "Diag Bit 357 not sup. by GSD"
+Unit_Diag_Bit(358)  = "Diag Bit 358 not sup. by GSD"
+Unit_Diag_Bit(359)  = "Diag Bit 359 not sup. by GSD"
+Unit_Diag_Bit(360)  = "Diag Bit 360 not sup. by GSD"
+Unit_Diag_Bit(361)  = "Diag Bit 361 not sup. by GSD"
+Unit_Diag_Bit(362)  = "Diag Bit 362 not sup. by GSD"
+Unit_Diag_Bit(363)  = "Diag Bit 363 not sup. by GSD"
+Unit_Diag_Bit(364)  = "Diag Bit 364 not sup. by GSD"
+Unit_Diag_Bit(365)  = "Diag Bit 365 not sup. by GSD"
+Unit_Diag_Bit(366)  = "Diag Bit 366 not sup. by GSD"
+Unit_Diag_Bit(367)  = "Diag Bit 367 not sup. by GSD"
+Unit_Diag_Bit(368)  = "Diag Bit 368 not sup. by GSD"
+Unit_Diag_Bit(369)  = "Diag Bit 369 not sup. by GSD"
+Unit_Diag_Bit(370)  = "Diag Bit 370 not sup. by GSD"
+Unit_Diag_Bit(371)  = "Diag Bit 371 not sup. by GSD"
+Unit_Diag_Bit(372)  = "Diag Bit 372 not sup. by GSD"
+Unit_Diag_Bit(373)  = "Diag Bit 373 not sup. by GSD"
+Unit_Diag_Bit(374)  = "Diag Bit 374 not sup. by GSD"
+Unit_Diag_Bit(375)  = "Diag Bit 375 not sup. by GSD"
+Unit_Diag_Bit(376)  = "Diag Bit 376 not sup. by GSD"
+Unit_Diag_Bit(377)  = "Diag Bit 377 not sup. by GSD"
+Unit_Diag_Bit(378)  = "Diag Bit 378 not sup. by GSD"
+Unit_Diag_Bit(379)  = "Diag Bit 379 not sup. by GSD"
+Unit_Diag_Bit(380)  = "Diag Bit 380 not sup. by GSD"
+Unit_Diag_Bit(381)  = "Diag Bit 381 not sup. by GSD"
+Unit_Diag_Bit(382)  = "Diag Bit 382 not sup. by GSD"
+Unit_Diag_Bit(383)  = "Diag Bit 383 not sup. by GSD"
+Unit_Diag_Bit(384)  = "Diag Bit 384 not sup. by GSD"
+Unit_Diag_Bit(385)  = "Diag Bit 385 not sup. by GSD"
+Unit_Diag_Bit(386)  = "Diag Bit 386 not sup. by GSD"
+Unit_Diag_Bit(387)  = "Diag Bit 387 not sup. by GSD"
+Unit_Diag_Bit(388)  = "Diag Bit 388 not sup. by GSD"
+Unit_Diag_Bit(389)  = "Diag Bit 389 not sup. by GSD"
+Unit_Diag_Bit(390)  = "Diag Bit 390 not sup. by GSD"
+Unit_Diag_Bit(391)  = "Diag Bit 391 not sup. by GSD"
+Unit_Diag_Bit(392)  = "Diag Bit 392 not sup. by GSD"
+Unit_Diag_Bit(393)  = "Diag Bit 393 not sup. by GSD"
+Unit_Diag_Bit(394)  = "Diag Bit 394 not sup. by GSD"
+Unit_Diag_Bit(395)  = "Diag Bit 395 not sup. by GSD"
+Unit_Diag_Bit(396)  = "Diag Bit 396 not sup. by GSD"
+Unit_Diag_Bit(397)  = "Diag Bit 397 not sup. by GSD"
+Unit_Diag_Bit(398)  = "Diag Bit 398 not sup. by GSD"
+Unit_Diag_Bit(399)  = "Diag Bit 399 not sup. by GSD"
+Unit_Diag_Bit(400)  = "Diag Bit 400 not sup. by GSD"
+Unit_Diag_Bit(401)  = "Diag Bit 401 not sup. by GSD"
+Unit_Diag_Bit(402)  = "Diag Bit 402 not sup. by GSD"
+Unit_Diag_Bit(403)  = "Diag Bit 403 not sup. by GSD"
+Unit_Diag_Bit(404)  = "Diag Bit 404 not sup. by GSD"
+Unit_Diag_Bit(405)  = "Diag Bit 405 not sup. by GSD"
+Unit_Diag_Bit(406)  = "Diag Bit 406 not sup. by GSD"
+Unit_Diag_Bit(407)  = "Diag Bit 407 not sup. by GSD"
+Unit_Diag_Bit(408)  = "Diag Bit 408 not sup. by GSD"
+Unit_Diag_Bit(409)  = "Diag Bit 409 not sup. by GSD"
+Unit_Diag_Bit(410)  = "Diag Bit 410 not sup. by GSD"
+Unit_Diag_Bit(411)  = "Diag Bit 411 not sup. by GSD"
+Unit_Diag_Bit(412)  = "Diag Bit 412 not sup. by GSD"
+Unit_Diag_Bit(413)  = "Diag Bit 413 not sup. by GSD"
+Unit_Diag_Bit(414)  = "Diag Bit 414 not sup. by GSD"
+Unit_Diag_Bit(415)  = "Diag Bit 415 not sup. by GSD"
+Unit_Diag_Bit(416)  = "Diag Bit 416 not sup. by GSD"
+Unit_Diag_Bit(417)  = "Diag Bit 417 not sup. by GSD"
+Unit_Diag_Bit(418)  = "Diag Bit 418 not sup. by GSD"
+Unit_Diag_Bit(419)  = "Diag Bit 419 not sup. by GSD"
+Unit_Diag_Bit(420)  = "Diag Bit 420 not sup. by GSD"
+Unit_Diag_Bit(421)  = "Diag Bit 421 not sup. by GSD"
+Unit_Diag_Bit(422)  = "Diag Bit 422 not sup. by GSD"
+Unit_Diag_Bit(423)  = "Diag Bit 423 not sup. by GSD"
+Unit_Diag_Bit(424)  = "Diag Bit 424 not sup. by GSD"
+Unit_Diag_Bit(425)  = "Diag Bit 425 not sup. by GSD"
+Unit_Diag_Bit(426)  = "Diag Bit 426 not sup. by GSD"
+Unit_Diag_Bit(427)  = "Diag Bit 427 not sup. by GSD"
+Unit_Diag_Bit(428)  = "Diag Bit 428 not sup. by GSD"
+Unit_Diag_Bit(429)  = "Diag Bit 429 not sup. by GSD"
+Unit_Diag_Bit(430)  = "Diag Bit 430 not sup. by GSD"
+Unit_Diag_Bit(431)  = "Diag Bit 431 not sup. by GSD"
+Unit_Diag_Bit(432)  = "Diag Bit 432 not sup. by GSD"
+Unit_Diag_Bit(433)  = "Diag Bit 433 not sup. by GSD"
+Unit_Diag_Bit(434)  = "Diag Bit 434 not sup. by GSD"
+Unit_Diag_Bit(435)  = "Diag Bit 435 not sup. by GSD"
+Unit_Diag_Bit(436)  = "Diag Bit 436 not sup. by GSD"
+Unit_Diag_Bit(437)  = "Diag Bit 437 not sup. by GSD"
+Unit_Diag_Bit(438)  = "Diag Bit 438 not sup. by GSD"
+Unit_Diag_Bit(439)  = "Diag Bit 439 not sup. by GSD"
+Unit_Diag_Bit(440)  = "Diag Bit 440 not sup. by GSD"
+Unit_Diag_Bit(441)  = "Diag Bit 441 not sup. by GSD"
+Unit_Diag_Bit(442)  = "Diag Bit 442 not sup. by GSD"
+Unit_Diag_Bit(443)  = "Diag Bit 443 not sup. by GSD"
+Unit_Diag_Bit(444)  = "Diag Bit 444 not sup. by GSD"
+Unit_Diag_Bit(445)  = "Diag Bit 445 not sup. by GSD"
+Unit_Diag_Bit(446)  = "Diag Bit 446 not sup. by GSD"
+Unit_Diag_Bit(447)  = "Diag Bit 447 not sup. by GSD"
+Unit_Diag_Bit(448)  = "Diag Bit 448 not sup. by GSD"
+Unit_Diag_Bit(449)  = "Diag Bit 449 not sup. by GSD"
+Unit_Diag_Bit(450)  = "Diag Bit 450 not sup. by GSD"
+Unit_Diag_Bit(451)  = "Diag Bit 451 not sup. by GSD"
+Unit_Diag_Bit(452)  = "Diag Bit 452 not sup. by GSD"
+Unit_Diag_Bit(453)  = "Diag Bit 453 not sup. by GSD"
+Unit_Diag_Bit(454)  = "Diag Bit 454 not sup. by GSD"
+Unit_Diag_Bit(455)  = "Diag Bit 455 not sup. by GSD"
+Unit_Diag_Bit(456)  = "Diag Bit 456 not sup. by GSD"
+Unit_Diag_Bit(457)  = "Diag Bit 457 not sup. by GSD"
+Unit_Diag_Bit(458)  = "Diag Bit 458 not sup. by GSD"
+Unit_Diag_Bit(459)  = "Diag Bit 459 not sup. by GSD"
+Unit_Diag_Bit(460)  = "Diag Bit 460 not sup. by GSD"
+Unit_Diag_Bit(461)  = "Diag Bit 461 not sup. by GSD"
+Unit_Diag_Bit(462)  = "Diag Bit 462 not sup. by GSD"
+Unit_Diag_Bit(463)  = "Diag Bit 463 not sup. by GSD"
+Unit_Diag_Bit(464)  = "Diag Bit 464 not sup. by GSD"
+Unit_Diag_Bit(465)  = "Diag Bit 465 not sup. by GSD"
+Unit_Diag_Bit(466)  = "Diag Bit 466 not sup. by GSD"
+Unit_Diag_Bit(467)  = "Diag Bit 467 not sup. by GSD"
+Unit_Diag_Bit(468)  = "Diag Bit 468 not sup. by GSD"
+Unit_Diag_Bit(469)  = "Diag Bit 469 not sup. by GSD"
+Unit_Diag_Bit(470)  = "Diag Bit 470 not sup. by GSD"
+Unit_Diag_Bit(471)  = "Diag Bit 471 not sup. by GSD"
+Unit_Diag_Bit(472)  = "Diag Bit 472 not sup. by GSD"
+Unit_Diag_Bit(473)  = "Diag Bit 473 not sup. by GSD"
+Unit_Diag_Bit(474)  = "Diag Bit 474 not sup. by GSD"
+Unit_Diag_Bit(475)  = "Diag Bit 475 not sup. by GSD"
+Unit_Diag_Bit(476)  = "Diag Bit 476 not sup. by GSD"
+Unit_Diag_Bit(477)  = "Diag Bit 477 not sup. by GSD"
+Unit_Diag_Bit(478)  = "Diag Bit 478 not sup. by GSD"
+Unit_Diag_Bit(479)  = "Diag Bit 479 not sup. by GSD"
+Unit_Diag_Bit(480)  = "Diag Bit 480 not sup. by GSD"
+Unit_Diag_Bit(481)  = "Diag Bit 481 not sup. by GSD"
+Unit_Diag_Bit(482)  = "Diag Bit 482 not sup. by GSD"
+Unit_Diag_Bit(483)  = "Diag Bit 483 not sup. by GSD"
+Unit_Diag_Bit(484)  = "Diag Bit 484 not sup. by GSD"
+Unit_Diag_Bit(485)  = "Diag Bit 485 not sup. by GSD"
+Unit_Diag_Bit(486)  = "Diag Bit 486 not sup. by GSD"
+Unit_Diag_Bit(487)  = "Diag Bit 487 not sup. by GSD"
+Unit_Diag_Bit(488)  = "Diag Bit 488 not sup. by GSD"
+Unit_Diag_Bit(489)  = "Diag Bit 489 not sup. by GSD"
+Unit_Diag_Bit(490)  = "Diag Bit 490 not sup. by GSD"
+Unit_Diag_Bit(491)  = "Diag Bit 491 not sup. by GSD"
+Unit_Diag_Bit(492)  = "Diag Bit 492 not sup. by GSD"
+Unit_Diag_Bit(493)  = "Diag Bit 493 not sup. by GSD"
+Unit_Diag_Bit(494)  = "Diag Bit 494 not sup. by GSD"
+Unit_Diag_Bit(495)  = "Diag Bit 495 not sup. by GSD"
+
+; Module Definition List
+;
+Module              = "EMPTY_MODULE" 0x00
+1
+EndModule
+Module              = "AI" 0x94
+2
+EndModule
+Module              = "TOTAL" 0x41, 0x84, 0x85
+3
+EndModule
+Module              = "SETTOT_TOTAL" 0xC1, 0x80, 0x84, 0x85
+4
+EndModule
+Module              = "SETTOT_MODETOT_TOTAL" 0xC1, 0x81, 0x84, 0x85
+5
+EndModule
+Module              = "DISPLAY_VALUE" 0xA4
+6
+EndModule
+Module              = "CONTROL_BLOCK" 0x20
+7
+EndModule
+
+; Description of the module assignment
+;
+SlotDefinition
+Slot(1) = "Volumeflow Block"         2  1,2
+Slot(2) = "Totalizer 1 Block"        3  1,3,4,5
+Slot(3) = "Totalizer 2 Block"        3  1,3,4,5
+Slot(4) = "Totalizer 3 Block"        3  1,3,4,5
+Slot(5) = "Massflow Block"           2  1,2
+Slot(6) = "Display Value"            6  1,6
+Slot(7) = "Control Block"            7  1,7
+EndSlotDefinition
+
+
+;*************** Additional Keywords For Module Assignment **************
+;*************** Slave Related Keywords For DP Extensions ***************
+DPV1_Slave = 1
+C1_Read_Write_supp = 1
+C2_Read_Write_supp = 1
+C1_Max_Data_Len = 70
+C2_Max_Data_Len = 70
+C1_Response_Timeout = 100
+C2_Response_Timeout = 100
+C2_Max_Count_Channels = 2
+Max_Initiate_PDU_Length = 70
+Diagnostic_Alarm_supp = 0
+Extra_Alarm_SAP_supp = 0
+Alarm_Type_Mode_supp = 0
+
+;************* Slave Related Keywords For ProfiSafe Profile *************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

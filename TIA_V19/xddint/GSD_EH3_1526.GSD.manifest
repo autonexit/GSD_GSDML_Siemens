@@ -1,0 +1,1070 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Manifests xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Manifest codefilename="gsd\eh3_1526.gsd\device\mdd_device_v1.0_v1.0.0.1.mdd.bin">
+    <Identification>
+      <OrderNumber value="" />
+      <FwVersion value="" />
+      <ViewDescription value="GSD\DEVICE\_global\Device.vd.xml" />
+      <SourceRootFile name="gsd\eh3_1526.gsd\device\mdd_device_v1.0_v1.0.0.1.mdd" />
+    </Identification>
+    <ConfigObjectType name="GSD\eh3_1526.gsd\DEVICE" hasCatalogEntry="false">
+      <Version major="1" minor="0" build="0" revision="1" />
+    </ConfigObjectType>
+    <Sources>
+      <File filename="gsd\eh3_1526.gsd\device\mdd_device_v1.0_v1.0.0.1.mdd" date="07/19/2025 07:52:35" type="Root" index="0" />
+      <File filename="_systemglobal\mdd_profibus-gsd-device-general_v14.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="1" />
+      <File filename="_systemglobal\mdd_simatic-classic-devicegeneral_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="2" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-ibrowsingattributes_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="3" />
+      <File filename="_systemglobal\mdd_simatic-error-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:06" type="131" index="4" />
+      <File filename="_systemglobal\mdd_simatic-propertyview-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:06" type="131" index="5" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-idevicedata_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="6" />
+      <File filename="_systemglobal\mdd_simatic-classic-hwobjectgeneral_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="7" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-icoreattributes_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="8" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-iconfigbasedata_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="9" />
+      <File filename="_systemglobal\mdd_simatic-enums-engineeringsystemstate_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="10" />
+      <File filename="_systemglobal\mdd_simatic-address-laddr-propertyview_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="11" />
+      <File filename="_systemglobal\mdd_simatic-address-laddr-propertyview-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:02" type="131" index="12" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-hwdevice_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="13" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-object-base_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="14" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-texts_v12.0_en.dct.bin" date="10/19/2023 05:34:12" type="131" index="15" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-deviceitem-base_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="16" />
+      <File filename="_systemglobal\mdd_profibus-gsd-device-sysdiag_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="17" />
+      <File filename="_systemglobal\mdd_sdiag-base_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="18" />
+      <File filename="_systemglobal\mdd_profibus-gsd-device-information-texts_v11.0_en.dct.bin" date="10/19/2023 05:34:00" type="131" index="19" />
+      <File filename="gsd\eh3_1526.gsd\_global\mdd_catalog_v11.0.mdd.iimp" date="07/19/2025 07:52:35" type="None" index="20" />
+      <File filename="_systemglobal\mdd_additionalfielddevices-catalog_v11.0.mdd.iimp" date="01/01/1601 03:30:00" type="None" index="21" />
+      <File filename="gsd\eh3_1526.gsd\_global\mdd_component_v11.0.mdd.iimp" date="07/19/2025 07:52:35" type="None" index="22" />
+      <File filename="_systemglobal\mdd_additionalfielddevices-identification_v11.0.mdd.iimp" date="01/01/1601 03:30:00" type="None" index="23" />
+      <File filename="_systemglobal\mdd_gsd-openness-common_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="24" />
+      <File filename="_systemglobal\mdd_eomvariables_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="25" />
+      <File filename="_systemglobal\mdd_profibus-gsd-commonpropertyview-texts_v11.0_en.dct.bin" date="10/19/2023 05:34:00" type="131" index="26" />
+      <File filename="gsd\eh3_1526.gsd\_global\mdd_eh3_1526_v1.1_en.dct.bin" date="07/19/2025 07:52:35" type="131" index="27" />
+    </Sources>
+    <Dictionaries>
+      <Entry name="_systemglobal\mdd_simatic-error-texts" type="131" index="0" />
+      <Entry name="_systemglobal\mdd_simatic-propertyview-texts" type="131" index="1" />
+      <Entry name="_systemglobal\mdd_simatic-address-laddr-propertyview-texts" type="131" index="2" />
+      <Entry name="_systemglobal\mdd_simatic-diagnostic-texts" type="131" index="3" />
+      <Entry name="_systemglobal\mdd_profibus-gsd-device-information-texts" type="131" index="4" />
+      <Entry name="_systemglobal\mdd_profibus-gsd-commonpropertyview-texts" type="131" index="5" />
+      <Entry name="gsd\eh3_1526.gsd\_global\mdd_eh3_1526" type="131" index="6" />
+    </Dictionaries>
+    <CreatedFiles>
+      <File filename="gsd\eh3_1526.gsd\device\mdd_device_v1.0_v1.0.0.1.mdd.bin" type="Binary" />
+    </CreatedFiles>
+    <Acfs>
+      <Acf name="AcfDiagPartialTypeConverterProvider" type="ACF" />
+      <Acf name="AcfDiagDataTypeSupportProvider" type="ACF" />
+      <Acf name="AcfDiagPropertyAdapterFactory" type="ACF" />
+      <Acf name="AcfDiagSpecialPropertyAdapterProvider" type="ACF" />
+      <Acf name="AcfDiagDebug" type="ACF" />
+      <Acf name="AcfDiagOnlineDevice" type="ACF" />
+      <Acf name="AcfDevice" type="ACF" />
+      <Acf name="AcfAddressContainerManager" type="ACF" />
+      <Acf name="AcfLAddressManagerLoader" type="ACF" />
+      <Acf name="AcfDiagItem" type="ACF" />
+      <Acf name="AcfSdal" type="ACF" />
+    </Acfs>
+    <AutoCreatedSubmodules />
+  </Manifest>
+  <Manifest codefilename="gsd\eh3_1526.gsd\rack\mdd_rack_v1.0_v1.0.0.1.mdd.bin">
+    <Identification>
+      <OrderNumber value="" />
+      <FwVersion value="" />
+      <ViewDescription value="GSD\RACK\_global\Rack.vd.xml" />
+      <SourceRootFile name="gsd\eh3_1526.gsd\rack\mdd_rack_v1.0_v1.0.0.1.mdd" />
+    </Identification>
+    <ConfigObjectType name="GSD\eh3_1526.gsd\Rack" hasCatalogEntry="false">
+      <Version major="1" minor="0" build="0" revision="1" />
+    </ConfigObjectType>
+    <Sources>
+      <File filename="gsd\eh3_1526.gsd\rack\mdd_rack_v1.0_v1.0.0.1.mdd" date="07/19/2025 07:52:35" type="Root" index="0" />
+      <File filename="_systemglobal\mdd_profibus-gsd-rack-general_v14.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="1" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-gsd-rack_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="2" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-rack_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="3" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-hwdeviceitem-classic_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="4" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-hwdeviceitem_v12.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="5" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-object-base_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="6" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-texts_v12.0_en.dct.bin" date="10/19/2023 05:34:12" type="131" index="7" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-deviceitem-base_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="8" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-idiagnosticattributes_v12.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="9" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-general_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="10" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-accustatesmall_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="11" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-standarddiagnose_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="12" />
+      <File filename="_systemglobal\mdd_simatic-classic-rackgeneral_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="13" />
+      <File filename="_systemglobal\mdd_simatic-classic-deviceitemgeneral_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="14" />
+      <File filename="_systemglobal\mdd_simatic-classic-hwobjectgeneral_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="15" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-icoreattributes_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="16" />
+      <File filename="_systemglobal\mdd_simatic-error-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:06" type="131" index="17" />
+      <File filename="_systemglobal\mdd_simatic-propertyview-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:06" type="131" index="18" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-iconfigbasedata_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="19" />
+      <File filename="_systemglobal\mdd_simatic-enums-engineeringsystemstate_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="20" />
+      <File filename="_systemglobal\mdd_simatic-enums-actioncodes_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="21" />
+      <File filename="_systemglobal\mdd_simatic-enums-deviceitemtypes_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="22" />
+      <File filename="_systemglobal\mdd_simatic-enums-iotypes_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="23" />
+      <File filename="_systemglobal\mdd_simatic-enums-migration_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="24" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-ibrowsingattributes_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="25" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-ideviceitemdata_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="26" />
+      <File filename="_systemglobal\mdd_simatic-address-laddr-propertyview_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="27" />
+      <File filename="_systemglobal\mdd_simatic-address-laddr-propertyview-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:02" type="131" index="28" />
+      <File filename="_systemglobal\mdd_simatic-classic-containerdeviceitem_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="29" />
+      <File filename="_systemglobal\mdd_simatic-enums-generatenumbertypes_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="30" />
+      <File filename="_systemglobal\mdd_simatic-changefirmwarecontrol_v18.0.10.0.imp" date="01/01/1601 03:30:00" type="Import" index="31" />
+      <File filename="_systemglobal\mdd_profibus-gsd-device-information-texts_v11.0_en.dct.bin" date="10/19/2023 05:34:00" type="131" index="32" />
+      <File filename="gsd\eh3_1526.gsd\_global\mdd_catalog_v11.0.mdd.iimp" date="07/19/2025 07:52:35" type="None" index="33" />
+      <File filename="_systemglobal\mdd_additionalfielddevices-catalog_v11.0.mdd.iimp" date="01/01/1601 03:30:00" type="None" index="34" />
+      <File filename="gsd\eh3_1526.gsd\_global\mdd_component_v11.0.mdd.iimp" date="07/19/2025 07:52:35" type="None" index="35" />
+      <File filename="_systemglobal\mdd_additionalfielddevices-identification_v11.0.mdd.iimp" date="01/01/1601 03:30:00" type="None" index="36" />
+      <File filename="_systemglobal\mdd_gsd-openness-common_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="37" />
+      <File filename="_systemglobal\mdd_eomvariables_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="38" />
+      <File filename="_systemglobal\mdd_profibus-gsd-commonpropertyview-texts_v11.0_en.dct.bin" date="10/19/2023 05:34:00" type="131" index="39" />
+      <File filename="gsd\eh3_1526.gsd\_global\mdd_eh3_1526_v1.1_en.dct.bin" date="07/19/2025 07:52:35" type="131" index="40" />
+    </Sources>
+    <Dictionaries>
+      <Entry name="_systemglobal\mdd_simatic-diagnostic-texts" type="131" index="0" />
+      <Entry name="_systemglobal\mdd_simatic-error-texts" type="131" index="1" />
+      <Entry name="_systemglobal\mdd_simatic-propertyview-texts" type="131" index="2" />
+      <Entry name="_systemglobal\mdd_simatic-address-laddr-propertyview-texts" type="131" index="3" />
+      <Entry name="_systemglobal\mdd_profibus-gsd-device-information-texts" type="131" index="4" />
+      <Entry name="_systemglobal\mdd_profibus-gsd-commonpropertyview-texts" type="131" index="5" />
+      <Entry name="gsd\eh3_1526.gsd\_global\mdd_eh3_1526" type="131" index="6" />
+    </Dictionaries>
+    <CreatedFiles>
+      <File filename="gsd\eh3_1526.gsd\rack\mdd_rack_v1.0_v1.0.0.1.mdd.bin" type="Binary" />
+    </CreatedFiles>
+    <Acfs>
+      <Acf name="AcfDiagPartialTypeConverterProvider" type="ACF" />
+      <Acf name="AcfDiagDataTypeSupportProvider" type="ACF" />
+      <Acf name="AcfDiagCommonCommandPropertyContainerProvider" type="ACF" />
+      <Acf name="AcfDiagPropertyAdapterFactory" type="ACF" />
+      <Acf name="AcfDiagSpecialPropertyAdapterProvider" type="ACF" />
+      <Acf name="AcfDiagDebug" type="ACF" />
+      <Acf name="AcfDiagOnlineDeviceItem" type="ACF" />
+      <Acf name="AcfDiagFunctionProviderSps7" type="ACF" />
+      <Acf name="AcfDiagDcpFunctions" type="ACF" />
+      <Acf name="AcfDeviceItem" type="ACF" />
+      <Acf name="AcfLAddressDeviceItem" type="ACF" />
+      <Acf name="AcfContainerDeviceItem" type="ACF" />
+    </Acfs>
+    <AutoCreatedSubmodules />
+  </Manifest>
+  <Manifest codefilename="gsd\eh3_1526.gsd\headmodules\mdd_headmodule_v1.0_v1.0.0.1.mdd.bin">
+    <Identification>
+      <OrderNumber value="" />
+      <FwVersion value="All 2" />
+      <ViewDescription value="GSD\HeadModules\_global\HeadModule.vd.xml" />
+      <SourceRootFile name="gsd\eh3_1526.gsd\headmodules\mdd_headmodule_v1.0_v1.0.0.1.mdd" />
+    </Identification>
+    <ConfigObjectType name="GSD\eh3_1526.gsd\Headmodule" hasCatalogEntry="true">
+      <Version major="1" minor="0" build="0" revision="1" />
+    </ConfigObjectType>
+    <Sources>
+      <File filename="gsd\eh3_1526.gsd\headmodules\mdd_headmodule_v1.0_v1.0.0.1.mdd" date="07/19/2025 07:52:35" type="Root" index="0" />
+      <File filename="_systemglobal\mdd_profibus-gsd-hm-general_v15.1.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="1" />
+      <File filename="_systemglobal\mdd_simatic-address-diagnostic-propertyview_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="2" />
+      <File filename="_systemglobal\mdd_simatic-address-general-propertyview_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="3" />
+      <File filename="_systemglobal\mdd_simatic-address-base_1.0_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="4" />
+      <File filename="_systemglobal\mdd_simatic-enums-consistencycheckcontrol_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="5" />
+      <File filename="_systemglobal\mdd_simatic-enums-deviceitemtypes_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="6" />
+      <File filename="_systemglobal\mdd_simatic-enums-compilecache_v13.0.1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="7" />
+      <File filename="_systemglobal\mdd_simatic-enums-iotypes_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="8" />
+      <File filename="_systemglobal\mdd_simatic-enums-engineeringsystemstate_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="9" />
+      <File filename="_systemglobal\mdd_simatic-address-base-pip-ob-link_1.0_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="10" />
+      <File filename="_systemglobal\mdd_simatic-address-propertyview-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:02" type="131" index="11" />
+      <File filename="_systemglobal\mdd_simatic-address-diagnosis_1.0_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="12" />
+      <File filename="_systemglobal\mdd_simatic-classic-pb-headmodulegeneral_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="13" />
+      <File filename="_systemglobal\mdd_simatic-classic-modulegeneral_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="14" />
+      <File filename="_systemglobal\mdd_simatic-classic-deviceitemgeneral_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="15" />
+      <File filename="_systemglobal\mdd_simatic-classic-hwobjectgeneral_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="16" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-icoreattributes_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="17" />
+      <File filename="_systemglobal\mdd_simatic-error-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:06" type="131" index="18" />
+      <File filename="_systemglobal\mdd_simatic-propertyview-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:06" type="131" index="19" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-iconfigbasedata_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="20" />
+      <File filename="_systemglobal\mdd_simatic-enums-actioncodes_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="21" />
+      <File filename="_systemglobal\mdd_simatic-enums-migration_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="22" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-ibrowsingattributes_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="23" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-ideviceitemdata_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="24" />
+      <File filename="_systemglobal\mdd_simatic-address-laddr-propertyview_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="25" />
+      <File filename="_systemglobal\mdd_simatic-address-laddr-propertyview-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:02" type="131" index="26" />
+      <File filename="_systemglobal\mdd_simatic-changefirmwarecontrol_v18.0.10.0.imp" date="01/01/1601 03:30:00" type="Import" index="27" />
+      <File filename="_systemglobal\mdd_simatic-classic-logicaladdresses_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="28" />
+      <File filename="_systemglobal\mdd_simatic-enums-disableslaveparam_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="29" />
+      <File filename="_systemglobal\mdd_simatic-enums-dpversion_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="30" />
+      <File filename="_systemglobal\mdd_simatic-navigation_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="31" />
+      <File filename="_systemglobal\mdd_simatic-stringconversion_v14.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="32" />
+      <File filename="gsd\eh3_1526.gsd\_global\mdd_catalog_v11.0.mdd.iimp" date="07/19/2025 07:52:35" type="None" index="33" />
+      <File filename="_systemglobal\mdd_additionalfielddevices-catalog_v11.0.mdd.iimp" date="01/01/1601 03:30:00" type="None" index="34" />
+      <File filename="gsd\eh3_1526.gsd\_global\mdd_component_v11.0.mdd.iimp" date="07/19/2025 07:52:35" type="None" index="35" />
+      <File filename="_systemglobal\mdd_additionalfielddevices-identification_v11.0.mdd.iimp" date="01/01/1601 03:30:00" type="None" index="36" />
+      <File filename="_systemglobal\mdd_gsd-openness-common_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="37" />
+      <File filename="_systemglobal\mdd_eomvariables_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="38" />
+      <File filename="_systemglobal\mdd_profibus-gsd-hm-manufacturerspecific-sysdiag_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="39" />
+      <File filename="_systemglobal\mdd_sdiag-base_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="40" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-gsd-headmodule_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="41" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-restricted-onlineaccess_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="42" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-texts_v12.0_en.dct.bin" date="10/19/2023 05:34:12" type="131" index="43" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-hwdeviceitem-classic_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="44" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-hwdeviceitem_v12.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="45" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-object-base_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="46" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-deviceitem-base_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="47" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-idiagnosticattributes_v12.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="48" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-identandmaintenance_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="49" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-general_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="50" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-accustatesmall_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="51" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-standarddiagnose_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="52" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-fwupdate_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="53" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-channeldiagnose_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="54" />
+      <File filename="_systemglobal\mdd_profibus-gsd-hm-hexparameter-menu_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="55" />
+      <File filename="_systemglobal\mdd_profibus-gsd-hm-dpv1_v12.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="56" />
+      <File filename="_systemglobal\mdd_profibusdp-slavesyncfreeze_v13.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="57" />
+      <File filename="_systemglobal\mdd_profibusdp-syncfreezegeneral_v13.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="58" />
+      <File filename="_systemglobal\mdd_profibusdp-syncfreeze-texts_v11.0_en.dct.bin" date="10/19/2023 05:34:00" type="131" index="59" />
+      <File filename="_systemglobal\mdd_profibus-gsd-commonpropertyview-texts_v11.0_en.dct.bin" date="10/19/2023 05:34:00" type="131" index="60" />
+      <File filename="gsd\eh3_1526.gsd\_global\mdd_eh3_1526_v1.1_en.dct.bin" date="07/19/2025 07:52:35" type="131" index="61" />
+    </Sources>
+    <Dictionaries>
+      <Entry name="_systemglobal\mdd_simatic-address-propertyview-texts" type="131" index="0" />
+      <Entry name="_systemglobal\mdd_simatic-error-texts" type="131" index="1" />
+      <Entry name="_systemglobal\mdd_simatic-propertyview-texts" type="131" index="2" />
+      <Entry name="_systemglobal\mdd_simatic-address-laddr-propertyview-texts" type="131" index="3" />
+      <Entry name="_systemglobal\mdd_simatic-diagnostic-texts" type="131" index="4" />
+      <Entry name="_systemglobal\mdd_profibusdp-syncfreeze-texts" type="131" index="5" />
+      <Entry name="_systemglobal\mdd_profibus-gsd-commonpropertyview-texts" type="131" index="6" />
+      <Entry name="gsd\eh3_1526.gsd\_global\mdd_eh3_1526" type="131" index="7" />
+    </Dictionaries>
+    <CreatedFiles>
+      <File filename="gsd\eh3_1526.gsd\headmodules\mdd_headmodule_v1.0_v1.0.0.1.mdd.bin" type="Binary" />
+    </CreatedFiles>
+    <Acfs>
+      <Acf name="AcfDeviceItem" type="ACF" />
+      <Acf name="AcfLAddressDeviceItem" type="ACF" />
+      <Acf name="AcfBasicAddressLogic" type="ACF" />
+      <Acf name="AcfSlave" type="ACF" />
+      <Acf name="AcfSlaveBase" type="ACF" />
+      <Acf name="AcfSlaveSDB" type="ACF" />
+      <Acf name="AcfNodeCarrierPBMpi" type="ACF" />
+      <Acf name="AcfTciSupport" type="ACF" />
+      <Acf name="AcfGsdConsistencyCheck" type="ACF" />
+      <Acf name="AcfGsdSwitcher" type="ACF" />
+      <Acf name="AcfDiagItem" type="ACF" />
+      <Acf name="AcfSdal" type="ACF" />
+      <Acf name="AcfDiagPartialTypeConverterProvider" type="ACF" />
+      <Acf name="AcfDiagDataTypeSupportProvider" type="ACF" />
+      <Acf name="AcfDiagCommonCommandPropertyContainerProvider" type="ACF" />
+      <Acf name="AcfDiagPropertyAdapterFactory" type="ACF" />
+      <Acf name="AcfDiagSpecialPropertyAdapterProvider" type="ACF" />
+      <Acf name="AcfDiagDebug" type="ACF" />
+      <Acf name="AcfDiagOnlineDeviceItem" type="ACF" />
+      <Acf name="AcfDiagFunctionProviderSps7" type="ACF" />
+      <Acf name="AcfDiagDcpFunctions" type="ACF" />
+      <Acf name="AcfOfctFunctionProviderSps7" type="ACF" />
+      <Acf name="AcfDiagFwUpdate" type="ACF" />
+      <Acf name="AcfGsdCopyMoveNotifyContainer" type="ACF" />
+    </Acfs>
+    <AutoCreatedSubmodules>
+      <SubModule name="gsd\eh3_1526.gsd\module_00002" />
+      <SubModule name="gsd\eh3_1526.gsd\module_00003" />
+      <SubModule name="gsd\eh3_1526.gsd\module_00006" />
+      <SubModule name="gsd\eh3_1526.gsd\module_00007" />
+    </AutoCreatedSubmodules>
+  </Manifest>
+  <Manifest codefilename="gsd\eh3_1526.gsd\modules\mdd_module-00001_v1.0_v1.0.0.1.mdd.bin">
+    <Identification>
+      <OrderNumber value="" />
+      <FwVersion value="" />
+      <ViewDescription value="GSD\Modules\_global\Module.vd.xml" />
+      <SourceRootFile name="gsd\eh3_1526.gsd\modules\mdd_module-00001_v1.0_v1.0.0.1.mdd" />
+    </Identification>
+    <ConfigObjectType name="GSD\eh3_1526.gsd\Module_00001" hasCatalogEntry="true">
+      <Version major="1" minor="0" build="0" revision="1" />
+    </ConfigObjectType>
+    <Sources>
+      <File filename="gsd\eh3_1526.gsd\modules\mdd_module-00001_v1.0_v1.0.0.1.mdd" date="07/19/2025 07:52:35" type="Root" index="0" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-general_v19.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="1" />
+      <File filename="_systemglobal\mdd_simatic-classic-modulegeneral_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="2" />
+      <File filename="_systemglobal\mdd_simatic-classic-deviceitemgeneral_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="3" />
+      <File filename="_systemglobal\mdd_simatic-classic-hwobjectgeneral_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="4" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-icoreattributes_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="5" />
+      <File filename="_systemglobal\mdd_simatic-error-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:06" type="131" index="6" />
+      <File filename="_systemglobal\mdd_simatic-propertyview-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:06" type="131" index="7" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-iconfigbasedata_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="8" />
+      <File filename="_systemglobal\mdd_simatic-enums-engineeringsystemstate_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="9" />
+      <File filename="_systemglobal\mdd_simatic-enums-actioncodes_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="10" />
+      <File filename="_systemglobal\mdd_simatic-enums-deviceitemtypes_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="11" />
+      <File filename="_systemglobal\mdd_simatic-enums-iotypes_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="12" />
+      <File filename="_systemglobal\mdd_simatic-enums-migration_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="13" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-ibrowsingattributes_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="14" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-ideviceitemdata_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="15" />
+      <File filename="_systemglobal\mdd_simatic-address-laddr-propertyview_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="16" />
+      <File filename="_systemglobal\mdd_simatic-address-laddr-propertyview-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:02" type="131" index="17" />
+      <File filename="_systemglobal\mdd_simatic-changefirmwarecontrol_v18.0.10.0.imp" date="01/01/1601 03:30:00" type="Import" index="18" />
+      <File filename="_systemglobal\mdd_simatic-stringconversion_v13.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="19" />
+      <File filename="gsd\eh3_1526.gsd\_global\mdd_catalog_v11.0.mdd.iimp" date="07/19/2025 07:52:35" type="None" index="20" />
+      <File filename="_systemglobal\mdd_additionalfielddevices-catalog_v11.0.mdd.iimp" date="01/01/1601 03:30:00" type="None" index="21" />
+      <File filename="gsd\eh3_1526.gsd\_global\mdd_component_v11.0.mdd.iimp" date="07/19/2025 07:52:35" type="None" index="22" />
+      <File filename="_systemglobal\mdd_additionalfielddevices-identification_v11.0.mdd.iimp" date="01/01/1601 03:30:00" type="None" index="23" />
+      <File filename="_systemglobal\mdd_gsd-openness-common_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="24" />
+      <File filename="_systemglobal\mdd_eomvariables_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="25" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-dpv1-sysdiag_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="26" />
+      <File filename="_systemglobal\mdd_sdiag-base_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="27" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-gsd-module_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="28" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-hwdeviceitem-classic_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="29" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-hwdeviceitem_v12.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="30" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-object-base_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="31" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-texts_v12.0_en.dct.bin" date="10/19/2023 05:34:12" type="131" index="32" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-deviceitem-base_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="33" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-idiagnosticattributes_v12.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="34" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-general_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="35" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-accustatesmall_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="36" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-standarddiagnose_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="37" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-channeldiagnose_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="38" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-identandmaintenance_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="39" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-dpv1_omsp_processalarm_v12.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="40" />
+      <File filename="_systemglobal\mdd_profibus-gsd-commonpropertyview-texts_v11.0_en.dct.bin" date="10/19/2023 05:34:00" type="131" index="41" />
+      <File filename="gsd\eh3_1526.gsd\_global\mdd_eh3_1526_v1.1_en.dct.bin" date="07/19/2025 07:52:35" type="131" index="42" />
+    </Sources>
+    <Dictionaries>
+      <Entry name="_systemglobal\mdd_simatic-error-texts" type="131" index="0" />
+      <Entry name="_systemglobal\mdd_simatic-propertyview-texts" type="131" index="1" />
+      <Entry name="_systemglobal\mdd_simatic-address-laddr-propertyview-texts" type="131" index="2" />
+      <Entry name="_systemglobal\mdd_simatic-diagnostic-texts" type="131" index="3" />
+      <Entry name="_systemglobal\mdd_profibus-gsd-commonpropertyview-texts" type="131" index="4" />
+      <Entry name="gsd\eh3_1526.gsd\_global\mdd_eh3_1526" type="131" index="5" />
+    </Dictionaries>
+    <CreatedFiles>
+      <File filename="gsd\eh3_1526.gsd\modules\mdd_module-00001_v1.0_v1.0.0.1.mdd.bin" type="Binary" />
+    </CreatedFiles>
+    <Acfs>
+      <Acf name="AcfDeviceItem" type="ACF" />
+      <Acf name="AcfLAddressDeviceItem" type="ACF" />
+      <Acf name="AcfPrimaryAssignment" type="ACF" />
+      <Acf name="AcfTciSupport" type="ACF" />
+      <Acf name="AcfGsdSwitcher" type="ACF" />
+      <Acf name="AcfDiagItem" type="ACF" />
+      <Acf name="AcfSdal" type="ACF" />
+      <Acf name="AcfDiagPartialTypeConverterProvider" type="ACF" />
+      <Acf name="AcfDiagDataTypeSupportProvider" type="ACF" />
+      <Acf name="AcfDiagCommonCommandPropertyContainerProvider" type="ACF" />
+      <Acf name="AcfDiagPropertyAdapterFactory" type="ACF" />
+      <Acf name="AcfDiagSpecialPropertyAdapterProvider" type="ACF" />
+      <Acf name="AcfDiagDebug" type="ACF" />
+      <Acf name="AcfDiagOnlineDeviceItem" type="ACF" />
+      <Acf name="AcfDiagFunctionProviderSps7" type="ACF" />
+      <Acf name="AcfDiagDcpFunctions" type="ACF" />
+      <Acf name="AcfOfctFunctionProviderSps7" type="ACF" />
+      <Acf name="AcfGsdModuleAddressLogic" type="ACF" />
+      <Acf name="AcfGsdCopyMoveNotifyContainer" type="ACF" />
+    </Acfs>
+    <AutoCreatedSubmodules />
+  </Manifest>
+  <Manifest codefilename="gsd\eh3_1526.gsd\modules\mdd_module-00002_v1.0_v1.0.0.1.mdd.bin">
+    <Identification>
+      <OrderNumber value="" />
+      <FwVersion value="" />
+      <ViewDescription value="GSD\Modules\_global\Module.vd.xml" />
+      <SourceRootFile name="gsd\eh3_1526.gsd\modules\mdd_module-00002_v1.0_v1.0.0.1.mdd" />
+    </Identification>
+    <ConfigObjectType name="GSD\eh3_1526.gsd\Module_00002" hasCatalogEntry="true">
+      <Version major="1" minor="0" build="0" revision="1" />
+    </ConfigObjectType>
+    <Sources>
+      <File filename="gsd\eh3_1526.gsd\modules\mdd_module-00002_v1.0_v1.0.0.1.mdd" date="07/19/2025 07:52:35" type="Root" index="0" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-general_v19.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="1" />
+      <File filename="_systemglobal\mdd_simatic-classic-modulegeneral_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="2" />
+      <File filename="_systemglobal\mdd_simatic-classic-deviceitemgeneral_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="3" />
+      <File filename="_systemglobal\mdd_simatic-classic-hwobjectgeneral_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="4" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-icoreattributes_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="5" />
+      <File filename="_systemglobal\mdd_simatic-error-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:06" type="131" index="6" />
+      <File filename="_systemglobal\mdd_simatic-propertyview-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:06" type="131" index="7" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-iconfigbasedata_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="8" />
+      <File filename="_systemglobal\mdd_simatic-enums-engineeringsystemstate_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="9" />
+      <File filename="_systemglobal\mdd_simatic-enums-actioncodes_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="10" />
+      <File filename="_systemglobal\mdd_simatic-enums-deviceitemtypes_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="11" />
+      <File filename="_systemglobal\mdd_simatic-enums-iotypes_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="12" />
+      <File filename="_systemglobal\mdd_simatic-enums-migration_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="13" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-ibrowsingattributes_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="14" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-ideviceitemdata_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="15" />
+      <File filename="_systemglobal\mdd_simatic-address-laddr-propertyview_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="16" />
+      <File filename="_systemglobal\mdd_simatic-address-laddr-propertyview-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:02" type="131" index="17" />
+      <File filename="_systemglobal\mdd_simatic-changefirmwarecontrol_v18.0.10.0.imp" date="01/01/1601 03:30:00" type="Import" index="18" />
+      <File filename="_systemglobal\mdd_simatic-stringconversion_v13.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="19" />
+      <File filename="gsd\eh3_1526.gsd\_global\mdd_catalog_v11.0.mdd.iimp" date="07/19/2025 07:52:35" type="None" index="20" />
+      <File filename="_systemglobal\mdd_additionalfielddevices-catalog_v11.0.mdd.iimp" date="01/01/1601 03:30:00" type="None" index="21" />
+      <File filename="gsd\eh3_1526.gsd\_global\mdd_component_v11.0.mdd.iimp" date="07/19/2025 07:52:35" type="None" index="22" />
+      <File filename="_systemglobal\mdd_additionalfielddevices-identification_v11.0.mdd.iimp" date="01/01/1601 03:30:00" type="None" index="23" />
+      <File filename="_systemglobal\mdd_gsd-openness-common_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="24" />
+      <File filename="_systemglobal\mdd_eomvariables_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="25" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-dpv1-sysdiag_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="26" />
+      <File filename="_systemglobal\mdd_sdiag-base_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="27" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-gsd-module_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="28" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-hwdeviceitem-classic_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="29" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-hwdeviceitem_v12.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="30" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-object-base_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="31" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-texts_v12.0_en.dct.bin" date="10/19/2023 05:34:12" type="131" index="32" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-deviceitem-base_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="33" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-idiagnosticattributes_v12.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="34" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-general_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="35" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-accustatesmall_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="36" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-standarddiagnose_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="37" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-channeldiagnose_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="38" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-identandmaintenance_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="39" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-dpv1_omsp_processalarm_v12.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="40" />
+      <File filename="_systemglobal\mdd_profibus-gsd-commonpropertyview-texts_v11.0_en.dct.bin" date="10/19/2023 05:34:00" type="131" index="41" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-addressproperties_v18.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="42" />
+      <File filename="_systemglobal\mdd_simatic-address-in+output-propertyview_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="43" />
+      <File filename="_systemglobal\mdd_simatic-address-general-propertyview_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="44" />
+      <File filename="_systemglobal\mdd_simatic-address-base_1.0_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="45" />
+      <File filename="_systemglobal\mdd_simatic-enums-consistencycheckcontrol_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="46" />
+      <File filename="_systemglobal\mdd_simatic-enums-compilecache_v13.0.1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="47" />
+      <File filename="_systemglobal\mdd_simatic-address-base-pip-ob-link_1.0_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="48" />
+      <File filename="_systemglobal\mdd_simatic-address-propertyview-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:02" type="131" index="49" />
+      <File filename="_systemglobal\mdd_simatic-address-input_1.0_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="50" />
+      <File filename="_systemglobal\mdd_simatic-address-output_1.0_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="51" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-substitutevalues_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="52" />
+      <File filename="gsd\eh3_1526.gsd\_global\mdd_eh3_1526_v1.1_en.dct.bin" date="07/19/2025 07:52:35" type="131" index="53" />
+    </Sources>
+    <Dictionaries>
+      <Entry name="_systemglobal\mdd_simatic-error-texts" type="131" index="0" />
+      <Entry name="_systemglobal\mdd_simatic-propertyview-texts" type="131" index="1" />
+      <Entry name="_systemglobal\mdd_simatic-address-laddr-propertyview-texts" type="131" index="2" />
+      <Entry name="_systemglobal\mdd_simatic-diagnostic-texts" type="131" index="3" />
+      <Entry name="_systemglobal\mdd_profibus-gsd-commonpropertyview-texts" type="131" index="4" />
+      <Entry name="_systemglobal\mdd_simatic-address-propertyview-texts" type="131" index="5" />
+      <Entry name="gsd\eh3_1526.gsd\_global\mdd_eh3_1526" type="131" index="6" />
+    </Dictionaries>
+    <CreatedFiles>
+      <File filename="gsd\eh3_1526.gsd\modules\mdd_module-00002_v1.0_v1.0.0.1.mdd.bin" type="Binary" />
+    </CreatedFiles>
+    <Acfs>
+      <Acf name="AcfDeviceItem" type="ACF" />
+      <Acf name="AcfLAddressDeviceItem" type="ACF" />
+      <Acf name="AcfPrimaryAssignment" type="ACF" />
+      <Acf name="AcfTciSupport" type="ACF" />
+      <Acf name="AcfGsdSwitcher" type="ACF" />
+      <Acf name="AcfDiagItem" type="ACF" />
+      <Acf name="AcfSdal" type="ACF" />
+      <Acf name="AcfDiagPartialTypeConverterProvider" type="ACF" />
+      <Acf name="AcfDiagDataTypeSupportProvider" type="ACF" />
+      <Acf name="AcfDiagCommonCommandPropertyContainerProvider" type="ACF" />
+      <Acf name="AcfDiagPropertyAdapterFactory" type="ACF" />
+      <Acf name="AcfDiagSpecialPropertyAdapterProvider" type="ACF" />
+      <Acf name="AcfDiagDebug" type="ACF" />
+      <Acf name="AcfDiagOnlineDeviceItem" type="ACF" />
+      <Acf name="AcfDiagFunctionProviderSps7" type="ACF" />
+      <Acf name="AcfDiagDcpFunctions" type="ACF" />
+      <Acf name="AcfOfctFunctionProviderSps7" type="ACF" />
+      <Acf name="AcfGsdModuleAddressLogic" type="ACF" />
+      <Acf name="AcfGsdCopyMoveNotifyContainer" type="ACF" />
+    </Acfs>
+    <AutoCreatedSubmodules />
+  </Manifest>
+  <Manifest codefilename="gsd\eh3_1526.gsd\modules\mdd_module-00003_v1.0_v1.0.0.1.mdd.bin">
+    <Identification>
+      <OrderNumber value="" />
+      <FwVersion value="" />
+      <ViewDescription value="GSD\Modules\_global\Module.vd.xml" />
+      <SourceRootFile name="gsd\eh3_1526.gsd\modules\mdd_module-00003_v1.0_v1.0.0.1.mdd" />
+    </Identification>
+    <ConfigObjectType name="GSD\eh3_1526.gsd\Module_00003" hasCatalogEntry="true">
+      <Version major="1" minor="0" build="0" revision="1" />
+    </ConfigObjectType>
+    <Sources>
+      <File filename="gsd\eh3_1526.gsd\modules\mdd_module-00003_v1.0_v1.0.0.1.mdd" date="07/19/2025 07:52:35" type="Root" index="0" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-general_v19.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="1" />
+      <File filename="_systemglobal\mdd_simatic-classic-modulegeneral_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="2" />
+      <File filename="_systemglobal\mdd_simatic-classic-deviceitemgeneral_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="3" />
+      <File filename="_systemglobal\mdd_simatic-classic-hwobjectgeneral_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="4" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-icoreattributes_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="5" />
+      <File filename="_systemglobal\mdd_simatic-error-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:06" type="131" index="6" />
+      <File filename="_systemglobal\mdd_simatic-propertyview-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:06" type="131" index="7" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-iconfigbasedata_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="8" />
+      <File filename="_systemglobal\mdd_simatic-enums-engineeringsystemstate_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="9" />
+      <File filename="_systemglobal\mdd_simatic-enums-actioncodes_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="10" />
+      <File filename="_systemglobal\mdd_simatic-enums-deviceitemtypes_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="11" />
+      <File filename="_systemglobal\mdd_simatic-enums-iotypes_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="12" />
+      <File filename="_systemglobal\mdd_simatic-enums-migration_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="13" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-ibrowsingattributes_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="14" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-ideviceitemdata_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="15" />
+      <File filename="_systemglobal\mdd_simatic-address-laddr-propertyview_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="16" />
+      <File filename="_systemglobal\mdd_simatic-address-laddr-propertyview-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:02" type="131" index="17" />
+      <File filename="_systemglobal\mdd_simatic-changefirmwarecontrol_v18.0.10.0.imp" date="01/01/1601 03:30:00" type="Import" index="18" />
+      <File filename="_systemglobal\mdd_simatic-stringconversion_v13.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="19" />
+      <File filename="gsd\eh3_1526.gsd\_global\mdd_catalog_v11.0.mdd.iimp" date="07/19/2025 07:52:35" type="None" index="20" />
+      <File filename="_systemglobal\mdd_additionalfielddevices-catalog_v11.0.mdd.iimp" date="01/01/1601 03:30:00" type="None" index="21" />
+      <File filename="gsd\eh3_1526.gsd\_global\mdd_component_v11.0.mdd.iimp" date="07/19/2025 07:52:35" type="None" index="22" />
+      <File filename="_systemglobal\mdd_additionalfielddevices-identification_v11.0.mdd.iimp" date="01/01/1601 03:30:00" type="None" index="23" />
+      <File filename="_systemglobal\mdd_gsd-openness-common_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="24" />
+      <File filename="_systemglobal\mdd_eomvariables_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="25" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-dpv1-sysdiag_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="26" />
+      <File filename="_systemglobal\mdd_sdiag-base_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="27" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-gsd-module_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="28" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-hwdeviceitem-classic_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="29" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-hwdeviceitem_v12.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="30" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-object-base_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="31" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-texts_v12.0_en.dct.bin" date="10/19/2023 05:34:12" type="131" index="32" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-deviceitem-base_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="33" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-idiagnosticattributes_v12.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="34" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-general_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="35" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-accustatesmall_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="36" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-standarddiagnose_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="37" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-channeldiagnose_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="38" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-identandmaintenance_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="39" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-dpv1_omsp_processalarm_v12.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="40" />
+      <File filename="_systemglobal\mdd_profibus-gsd-commonpropertyview-texts_v11.0_en.dct.bin" date="10/19/2023 05:34:00" type="131" index="41" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-addressproperties_v18.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="42" />
+      <File filename="_systemglobal\mdd_simatic-address-in+output-propertyview_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="43" />
+      <File filename="_systemglobal\mdd_simatic-address-general-propertyview_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="44" />
+      <File filename="_systemglobal\mdd_simatic-address-base_1.0_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="45" />
+      <File filename="_systemglobal\mdd_simatic-enums-consistencycheckcontrol_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="46" />
+      <File filename="_systemglobal\mdd_simatic-enums-compilecache_v13.0.1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="47" />
+      <File filename="_systemglobal\mdd_simatic-address-base-pip-ob-link_1.0_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="48" />
+      <File filename="_systemglobal\mdd_simatic-address-propertyview-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:02" type="131" index="49" />
+      <File filename="_systemglobal\mdd_simatic-address-input_1.0_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="50" />
+      <File filename="_systemglobal\mdd_simatic-address-output_1.0_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="51" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-substitutevalues_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="52" />
+      <File filename="gsd\eh3_1526.gsd\_global\mdd_eh3_1526_v1.1_en.dct.bin" date="07/19/2025 07:52:35" type="131" index="53" />
+    </Sources>
+    <Dictionaries>
+      <Entry name="_systemglobal\mdd_simatic-error-texts" type="131" index="0" />
+      <Entry name="_systemglobal\mdd_simatic-propertyview-texts" type="131" index="1" />
+      <Entry name="_systemglobal\mdd_simatic-address-laddr-propertyview-texts" type="131" index="2" />
+      <Entry name="_systemglobal\mdd_simatic-diagnostic-texts" type="131" index="3" />
+      <Entry name="_systemglobal\mdd_profibus-gsd-commonpropertyview-texts" type="131" index="4" />
+      <Entry name="_systemglobal\mdd_simatic-address-propertyview-texts" type="131" index="5" />
+      <Entry name="gsd\eh3_1526.gsd\_global\mdd_eh3_1526" type="131" index="6" />
+    </Dictionaries>
+    <CreatedFiles>
+      <File filename="gsd\eh3_1526.gsd\modules\mdd_module-00003_v1.0_v1.0.0.1.mdd.bin" type="Binary" />
+    </CreatedFiles>
+    <Acfs>
+      <Acf name="AcfDeviceItem" type="ACF" />
+      <Acf name="AcfLAddressDeviceItem" type="ACF" />
+      <Acf name="AcfPrimaryAssignment" type="ACF" />
+      <Acf name="AcfTciSupport" type="ACF" />
+      <Acf name="AcfGsdSwitcher" type="ACF" />
+      <Acf name="AcfDiagItem" type="ACF" />
+      <Acf name="AcfSdal" type="ACF" />
+      <Acf name="AcfDiagPartialTypeConverterProvider" type="ACF" />
+      <Acf name="AcfDiagDataTypeSupportProvider" type="ACF" />
+      <Acf name="AcfDiagCommonCommandPropertyContainerProvider" type="ACF" />
+      <Acf name="AcfDiagPropertyAdapterFactory" type="ACF" />
+      <Acf name="AcfDiagSpecialPropertyAdapterProvider" type="ACF" />
+      <Acf name="AcfDiagDebug" type="ACF" />
+      <Acf name="AcfDiagOnlineDeviceItem" type="ACF" />
+      <Acf name="AcfDiagFunctionProviderSps7" type="ACF" />
+      <Acf name="AcfDiagDcpFunctions" type="ACF" />
+      <Acf name="AcfOfctFunctionProviderSps7" type="ACF" />
+      <Acf name="AcfGsdModuleAddressLogic" type="ACF" />
+      <Acf name="AcfGsdCopyMoveNotifyContainer" type="ACF" />
+    </Acfs>
+    <AutoCreatedSubmodules />
+  </Manifest>
+  <Manifest codefilename="gsd\eh3_1526.gsd\modules\mdd_module-00004_v1.0_v1.0.0.1.mdd.bin">
+    <Identification>
+      <OrderNumber value="" />
+      <FwVersion value="" />
+      <ViewDescription value="GSD\Modules\_global\Module.vd.xml" />
+      <SourceRootFile name="gsd\eh3_1526.gsd\modules\mdd_module-00004_v1.0_v1.0.0.1.mdd" />
+    </Identification>
+    <ConfigObjectType name="GSD\eh3_1526.gsd\Module_00004" hasCatalogEntry="true">
+      <Version major="1" minor="0" build="0" revision="1" />
+    </ConfigObjectType>
+    <Sources>
+      <File filename="gsd\eh3_1526.gsd\modules\mdd_module-00004_v1.0_v1.0.0.1.mdd" date="07/19/2025 07:52:35" type="Root" index="0" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-general_v19.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="1" />
+      <File filename="_systemglobal\mdd_simatic-classic-modulegeneral_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="2" />
+      <File filename="_systemglobal\mdd_simatic-classic-deviceitemgeneral_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="3" />
+      <File filename="_systemglobal\mdd_simatic-classic-hwobjectgeneral_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="4" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-icoreattributes_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="5" />
+      <File filename="_systemglobal\mdd_simatic-error-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:06" type="131" index="6" />
+      <File filename="_systemglobal\mdd_simatic-propertyview-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:06" type="131" index="7" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-iconfigbasedata_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="8" />
+      <File filename="_systemglobal\mdd_simatic-enums-engineeringsystemstate_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="9" />
+      <File filename="_systemglobal\mdd_simatic-enums-actioncodes_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="10" />
+      <File filename="_systemglobal\mdd_simatic-enums-deviceitemtypes_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="11" />
+      <File filename="_systemglobal\mdd_simatic-enums-iotypes_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="12" />
+      <File filename="_systemglobal\mdd_simatic-enums-migration_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="13" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-ibrowsingattributes_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="14" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-ideviceitemdata_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="15" />
+      <File filename="_systemglobal\mdd_simatic-address-laddr-propertyview_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="16" />
+      <File filename="_systemglobal\mdd_simatic-address-laddr-propertyview-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:02" type="131" index="17" />
+      <File filename="_systemglobal\mdd_simatic-changefirmwarecontrol_v18.0.10.0.imp" date="01/01/1601 03:30:00" type="Import" index="18" />
+      <File filename="_systemglobal\mdd_simatic-stringconversion_v13.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="19" />
+      <File filename="gsd\eh3_1526.gsd\_global\mdd_catalog_v11.0.mdd.iimp" date="07/19/2025 07:52:35" type="None" index="20" />
+      <File filename="_systemglobal\mdd_additionalfielddevices-catalog_v11.0.mdd.iimp" date="01/01/1601 03:30:00" type="None" index="21" />
+      <File filename="gsd\eh3_1526.gsd\_global\mdd_component_v11.0.mdd.iimp" date="07/19/2025 07:52:35" type="None" index="22" />
+      <File filename="_systemglobal\mdd_additionalfielddevices-identification_v11.0.mdd.iimp" date="01/01/1601 03:30:00" type="None" index="23" />
+      <File filename="_systemglobal\mdd_gsd-openness-common_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="24" />
+      <File filename="_systemglobal\mdd_eomvariables_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="25" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-dpv1-sysdiag_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="26" />
+      <File filename="_systemglobal\mdd_sdiag-base_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="27" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-gsd-module_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="28" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-hwdeviceitem-classic_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="29" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-hwdeviceitem_v12.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="30" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-object-base_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="31" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-texts_v12.0_en.dct.bin" date="10/19/2023 05:34:12" type="131" index="32" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-deviceitem-base_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="33" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-idiagnosticattributes_v12.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="34" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-general_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="35" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-accustatesmall_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="36" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-standarddiagnose_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="37" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-channeldiagnose_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="38" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-identandmaintenance_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="39" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-dpv1_omsp_processalarm_v12.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="40" />
+      <File filename="_systemglobal\mdd_profibus-gsd-commonpropertyview-texts_v11.0_en.dct.bin" date="10/19/2023 05:34:00" type="131" index="41" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-addressproperties_v18.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="42" />
+      <File filename="_systemglobal\mdd_simatic-address-in+output-propertyview_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="43" />
+      <File filename="_systemglobal\mdd_simatic-address-general-propertyview_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="44" />
+      <File filename="_systemglobal\mdd_simatic-address-base_1.0_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="45" />
+      <File filename="_systemglobal\mdd_simatic-enums-consistencycheckcontrol_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="46" />
+      <File filename="_systemglobal\mdd_simatic-enums-compilecache_v13.0.1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="47" />
+      <File filename="_systemglobal\mdd_simatic-address-base-pip-ob-link_1.0_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="48" />
+      <File filename="_systemglobal\mdd_simatic-address-propertyview-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:02" type="131" index="49" />
+      <File filename="_systemglobal\mdd_simatic-address-input_1.0_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="50" />
+      <File filename="_systemglobal\mdd_simatic-address-output_1.0_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="51" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-substitutevalues_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="52" />
+      <File filename="gsd\eh3_1526.gsd\_global\mdd_eh3_1526_v1.1_en.dct.bin" date="07/19/2025 07:52:35" type="131" index="53" />
+    </Sources>
+    <Dictionaries>
+      <Entry name="_systemglobal\mdd_simatic-error-texts" type="131" index="0" />
+      <Entry name="_systemglobal\mdd_simatic-propertyview-texts" type="131" index="1" />
+      <Entry name="_systemglobal\mdd_simatic-address-laddr-propertyview-texts" type="131" index="2" />
+      <Entry name="_systemglobal\mdd_simatic-diagnostic-texts" type="131" index="3" />
+      <Entry name="_systemglobal\mdd_profibus-gsd-commonpropertyview-texts" type="131" index="4" />
+      <Entry name="_systemglobal\mdd_simatic-address-propertyview-texts" type="131" index="5" />
+      <Entry name="gsd\eh3_1526.gsd\_global\mdd_eh3_1526" type="131" index="6" />
+    </Dictionaries>
+    <CreatedFiles>
+      <File filename="gsd\eh3_1526.gsd\modules\mdd_module-00004_v1.0_v1.0.0.1.mdd.bin" type="Binary" />
+    </CreatedFiles>
+    <Acfs>
+      <Acf name="AcfDeviceItem" type="ACF" />
+      <Acf name="AcfLAddressDeviceItem" type="ACF" />
+      <Acf name="AcfPrimaryAssignment" type="ACF" />
+      <Acf name="AcfTciSupport" type="ACF" />
+      <Acf name="AcfGsdSwitcher" type="ACF" />
+      <Acf name="AcfDiagItem" type="ACF" />
+      <Acf name="AcfSdal" type="ACF" />
+      <Acf name="AcfDiagPartialTypeConverterProvider" type="ACF" />
+      <Acf name="AcfDiagDataTypeSupportProvider" type="ACF" />
+      <Acf name="AcfDiagCommonCommandPropertyContainerProvider" type="ACF" />
+      <Acf name="AcfDiagPropertyAdapterFactory" type="ACF" />
+      <Acf name="AcfDiagSpecialPropertyAdapterProvider" type="ACF" />
+      <Acf name="AcfDiagDebug" type="ACF" />
+      <Acf name="AcfDiagOnlineDeviceItem" type="ACF" />
+      <Acf name="AcfDiagFunctionProviderSps7" type="ACF" />
+      <Acf name="AcfDiagDcpFunctions" type="ACF" />
+      <Acf name="AcfOfctFunctionProviderSps7" type="ACF" />
+      <Acf name="AcfGsdModuleAddressLogic" type="ACF" />
+      <Acf name="AcfGsdCopyMoveNotifyContainer" type="ACF" />
+    </Acfs>
+    <AutoCreatedSubmodules />
+  </Manifest>
+  <Manifest codefilename="gsd\eh3_1526.gsd\modules\mdd_module-00005_v1.0_v1.0.0.1.mdd.bin">
+    <Identification>
+      <OrderNumber value="" />
+      <FwVersion value="" />
+      <ViewDescription value="GSD\Modules\_global\Module.vd.xml" />
+      <SourceRootFile name="gsd\eh3_1526.gsd\modules\mdd_module-00005_v1.0_v1.0.0.1.mdd" />
+    </Identification>
+    <ConfigObjectType name="GSD\eh3_1526.gsd\Module_00005" hasCatalogEntry="true">
+      <Version major="1" minor="0" build="0" revision="1" />
+    </ConfigObjectType>
+    <Sources>
+      <File filename="gsd\eh3_1526.gsd\modules\mdd_module-00005_v1.0_v1.0.0.1.mdd" date="07/19/2025 07:52:35" type="Root" index="0" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-general_v19.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="1" />
+      <File filename="_systemglobal\mdd_simatic-classic-modulegeneral_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="2" />
+      <File filename="_systemglobal\mdd_simatic-classic-deviceitemgeneral_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="3" />
+      <File filename="_systemglobal\mdd_simatic-classic-hwobjectgeneral_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="4" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-icoreattributes_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="5" />
+      <File filename="_systemglobal\mdd_simatic-error-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:06" type="131" index="6" />
+      <File filename="_systemglobal\mdd_simatic-propertyview-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:06" type="131" index="7" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-iconfigbasedata_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="8" />
+      <File filename="_systemglobal\mdd_simatic-enums-engineeringsystemstate_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="9" />
+      <File filename="_systemglobal\mdd_simatic-enums-actioncodes_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="10" />
+      <File filename="_systemglobal\mdd_simatic-enums-deviceitemtypes_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="11" />
+      <File filename="_systemglobal\mdd_simatic-enums-iotypes_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="12" />
+      <File filename="_systemglobal\mdd_simatic-enums-migration_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="13" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-ibrowsingattributes_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="14" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-ideviceitemdata_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="15" />
+      <File filename="_systemglobal\mdd_simatic-address-laddr-propertyview_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="16" />
+      <File filename="_systemglobal\mdd_simatic-address-laddr-propertyview-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:02" type="131" index="17" />
+      <File filename="_systemglobal\mdd_simatic-changefirmwarecontrol_v18.0.10.0.imp" date="01/01/1601 03:30:00" type="Import" index="18" />
+      <File filename="_systemglobal\mdd_simatic-stringconversion_v13.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="19" />
+      <File filename="gsd\eh3_1526.gsd\_global\mdd_catalog_v11.0.mdd.iimp" date="07/19/2025 07:52:35" type="None" index="20" />
+      <File filename="_systemglobal\mdd_additionalfielddevices-catalog_v11.0.mdd.iimp" date="01/01/1601 03:30:00" type="None" index="21" />
+      <File filename="gsd\eh3_1526.gsd\_global\mdd_component_v11.0.mdd.iimp" date="07/19/2025 07:52:35" type="None" index="22" />
+      <File filename="_systemglobal\mdd_additionalfielddevices-identification_v11.0.mdd.iimp" date="01/01/1601 03:30:00" type="None" index="23" />
+      <File filename="_systemglobal\mdd_gsd-openness-common_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="24" />
+      <File filename="_systemglobal\mdd_eomvariables_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="25" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-dpv1-sysdiag_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="26" />
+      <File filename="_systemglobal\mdd_sdiag-base_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="27" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-gsd-module_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="28" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-hwdeviceitem-classic_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="29" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-hwdeviceitem_v12.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="30" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-object-base_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="31" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-texts_v12.0_en.dct.bin" date="10/19/2023 05:34:12" type="131" index="32" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-deviceitem-base_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="33" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-idiagnosticattributes_v12.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="34" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-general_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="35" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-accustatesmall_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="36" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-standarddiagnose_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="37" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-channeldiagnose_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="38" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-identandmaintenance_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="39" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-dpv1_omsp_processalarm_v12.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="40" />
+      <File filename="_systemglobal\mdd_profibus-gsd-commonpropertyview-texts_v11.0_en.dct.bin" date="10/19/2023 05:34:00" type="131" index="41" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-addressproperties_v18.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="42" />
+      <File filename="_systemglobal\mdd_simatic-address-in+output-propertyview_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="43" />
+      <File filename="_systemglobal\mdd_simatic-address-general-propertyview_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="44" />
+      <File filename="_systemglobal\mdd_simatic-address-base_1.0_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="45" />
+      <File filename="_systemglobal\mdd_simatic-enums-consistencycheckcontrol_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="46" />
+      <File filename="_systemglobal\mdd_simatic-enums-compilecache_v13.0.1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="47" />
+      <File filename="_systemglobal\mdd_simatic-address-base-pip-ob-link_1.0_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="48" />
+      <File filename="_systemglobal\mdd_simatic-address-propertyview-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:02" type="131" index="49" />
+      <File filename="_systemglobal\mdd_simatic-address-input_1.0_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="50" />
+      <File filename="_systemglobal\mdd_simatic-address-output_1.0_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="51" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-substitutevalues_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="52" />
+      <File filename="gsd\eh3_1526.gsd\_global\mdd_eh3_1526_v1.1_en.dct.bin" date="07/19/2025 07:52:35" type="131" index="53" />
+    </Sources>
+    <Dictionaries>
+      <Entry name="_systemglobal\mdd_simatic-error-texts" type="131" index="0" />
+      <Entry name="_systemglobal\mdd_simatic-propertyview-texts" type="131" index="1" />
+      <Entry name="_systemglobal\mdd_simatic-address-laddr-propertyview-texts" type="131" index="2" />
+      <Entry name="_systemglobal\mdd_simatic-diagnostic-texts" type="131" index="3" />
+      <Entry name="_systemglobal\mdd_profibus-gsd-commonpropertyview-texts" type="131" index="4" />
+      <Entry name="_systemglobal\mdd_simatic-address-propertyview-texts" type="131" index="5" />
+      <Entry name="gsd\eh3_1526.gsd\_global\mdd_eh3_1526" type="131" index="6" />
+    </Dictionaries>
+    <CreatedFiles>
+      <File filename="gsd\eh3_1526.gsd\modules\mdd_module-00005_v1.0_v1.0.0.1.mdd.bin" type="Binary" />
+    </CreatedFiles>
+    <Acfs>
+      <Acf name="AcfDeviceItem" type="ACF" />
+      <Acf name="AcfLAddressDeviceItem" type="ACF" />
+      <Acf name="AcfPrimaryAssignment" type="ACF" />
+      <Acf name="AcfTciSupport" type="ACF" />
+      <Acf name="AcfGsdSwitcher" type="ACF" />
+      <Acf name="AcfDiagItem" type="ACF" />
+      <Acf name="AcfSdal" type="ACF" />
+      <Acf name="AcfDiagPartialTypeConverterProvider" type="ACF" />
+      <Acf name="AcfDiagDataTypeSupportProvider" type="ACF" />
+      <Acf name="AcfDiagCommonCommandPropertyContainerProvider" type="ACF" />
+      <Acf name="AcfDiagPropertyAdapterFactory" type="ACF" />
+      <Acf name="AcfDiagSpecialPropertyAdapterProvider" type="ACF" />
+      <Acf name="AcfDiagDebug" type="ACF" />
+      <Acf name="AcfDiagOnlineDeviceItem" type="ACF" />
+      <Acf name="AcfDiagFunctionProviderSps7" type="ACF" />
+      <Acf name="AcfDiagDcpFunctions" type="ACF" />
+      <Acf name="AcfOfctFunctionProviderSps7" type="ACF" />
+      <Acf name="AcfGsdModuleAddressLogic" type="ACF" />
+      <Acf name="AcfGsdCopyMoveNotifyContainer" type="ACF" />
+    </Acfs>
+    <AutoCreatedSubmodules />
+  </Manifest>
+  <Manifest codefilename="gsd\eh3_1526.gsd\modules\mdd_module-00006_v1.0_v1.0.0.1.mdd.bin">
+    <Identification>
+      <OrderNumber value="" />
+      <FwVersion value="" />
+      <ViewDescription value="GSD\Modules\_global\Module.vd.xml" />
+      <SourceRootFile name="gsd\eh3_1526.gsd\modules\mdd_module-00006_v1.0_v1.0.0.1.mdd" />
+    </Identification>
+    <ConfigObjectType name="GSD\eh3_1526.gsd\Module_00006" hasCatalogEntry="true">
+      <Version major="1" minor="0" build="0" revision="1" />
+    </ConfigObjectType>
+    <Sources>
+      <File filename="gsd\eh3_1526.gsd\modules\mdd_module-00006_v1.0_v1.0.0.1.mdd" date="07/19/2025 07:52:35" type="Root" index="0" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-general_v19.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="1" />
+      <File filename="_systemglobal\mdd_simatic-classic-modulegeneral_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="2" />
+      <File filename="_systemglobal\mdd_simatic-classic-deviceitemgeneral_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="3" />
+      <File filename="_systemglobal\mdd_simatic-classic-hwobjectgeneral_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="4" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-icoreattributes_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="5" />
+      <File filename="_systemglobal\mdd_simatic-error-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:06" type="131" index="6" />
+      <File filename="_systemglobal\mdd_simatic-propertyview-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:06" type="131" index="7" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-iconfigbasedata_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="8" />
+      <File filename="_systemglobal\mdd_simatic-enums-engineeringsystemstate_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="9" />
+      <File filename="_systemglobal\mdd_simatic-enums-actioncodes_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="10" />
+      <File filename="_systemglobal\mdd_simatic-enums-deviceitemtypes_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="11" />
+      <File filename="_systemglobal\mdd_simatic-enums-iotypes_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="12" />
+      <File filename="_systemglobal\mdd_simatic-enums-migration_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="13" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-ibrowsingattributes_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="14" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-ideviceitemdata_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="15" />
+      <File filename="_systemglobal\mdd_simatic-address-laddr-propertyview_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="16" />
+      <File filename="_systemglobal\mdd_simatic-address-laddr-propertyview-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:02" type="131" index="17" />
+      <File filename="_systemglobal\mdd_simatic-changefirmwarecontrol_v18.0.10.0.imp" date="01/01/1601 03:30:00" type="Import" index="18" />
+      <File filename="_systemglobal\mdd_simatic-stringconversion_v13.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="19" />
+      <File filename="gsd\eh3_1526.gsd\_global\mdd_catalog_v11.0.mdd.iimp" date="07/19/2025 07:52:35" type="None" index="20" />
+      <File filename="_systemglobal\mdd_additionalfielddevices-catalog_v11.0.mdd.iimp" date="01/01/1601 03:30:00" type="None" index="21" />
+      <File filename="gsd\eh3_1526.gsd\_global\mdd_component_v11.0.mdd.iimp" date="07/19/2025 07:52:35" type="None" index="22" />
+      <File filename="_systemglobal\mdd_additionalfielddevices-identification_v11.0.mdd.iimp" date="01/01/1601 03:30:00" type="None" index="23" />
+      <File filename="_systemglobal\mdd_gsd-openness-common_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="24" />
+      <File filename="_systemglobal\mdd_eomvariables_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="25" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-dpv1-sysdiag_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="26" />
+      <File filename="_systemglobal\mdd_sdiag-base_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="27" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-gsd-module_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="28" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-hwdeviceitem-classic_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="29" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-hwdeviceitem_v12.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="30" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-object-base_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="31" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-texts_v12.0_en.dct.bin" date="10/19/2023 05:34:12" type="131" index="32" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-deviceitem-base_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="33" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-idiagnosticattributes_v12.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="34" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-general_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="35" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-accustatesmall_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="36" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-standarddiagnose_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="37" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-channeldiagnose_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="38" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-identandmaintenance_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="39" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-dpv1_omsp_processalarm_v12.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="40" />
+      <File filename="_systemglobal\mdd_profibus-gsd-commonpropertyview-texts_v11.0_en.dct.bin" date="10/19/2023 05:34:00" type="131" index="41" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-addressproperties_v18.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="42" />
+      <File filename="_systemglobal\mdd_simatic-address-in+output-propertyview_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="43" />
+      <File filename="_systemglobal\mdd_simatic-address-general-propertyview_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="44" />
+      <File filename="_systemglobal\mdd_simatic-address-base_1.0_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="45" />
+      <File filename="_systemglobal\mdd_simatic-enums-consistencycheckcontrol_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="46" />
+      <File filename="_systemglobal\mdd_simatic-enums-compilecache_v13.0.1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="47" />
+      <File filename="_systemglobal\mdd_simatic-address-base-pip-ob-link_1.0_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="48" />
+      <File filename="_systemglobal\mdd_simatic-address-propertyview-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:02" type="131" index="49" />
+      <File filename="_systemglobal\mdd_simatic-address-input_1.0_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="50" />
+      <File filename="_systemglobal\mdd_simatic-address-output_1.0_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="51" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-substitutevalues_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="52" />
+      <File filename="gsd\eh3_1526.gsd\_global\mdd_eh3_1526_v1.1_en.dct.bin" date="07/19/2025 07:52:35" type="131" index="53" />
+    </Sources>
+    <Dictionaries>
+      <Entry name="_systemglobal\mdd_simatic-error-texts" type="131" index="0" />
+      <Entry name="_systemglobal\mdd_simatic-propertyview-texts" type="131" index="1" />
+      <Entry name="_systemglobal\mdd_simatic-address-laddr-propertyview-texts" type="131" index="2" />
+      <Entry name="_systemglobal\mdd_simatic-diagnostic-texts" type="131" index="3" />
+      <Entry name="_systemglobal\mdd_profibus-gsd-commonpropertyview-texts" type="131" index="4" />
+      <Entry name="_systemglobal\mdd_simatic-address-propertyview-texts" type="131" index="5" />
+      <Entry name="gsd\eh3_1526.gsd\_global\mdd_eh3_1526" type="131" index="6" />
+    </Dictionaries>
+    <CreatedFiles>
+      <File filename="gsd\eh3_1526.gsd\modules\mdd_module-00006_v1.0_v1.0.0.1.mdd.bin" type="Binary" />
+    </CreatedFiles>
+    <Acfs>
+      <Acf name="AcfDeviceItem" type="ACF" />
+      <Acf name="AcfLAddressDeviceItem" type="ACF" />
+      <Acf name="AcfPrimaryAssignment" type="ACF" />
+      <Acf name="AcfTciSupport" type="ACF" />
+      <Acf name="AcfGsdSwitcher" type="ACF" />
+      <Acf name="AcfDiagItem" type="ACF" />
+      <Acf name="AcfSdal" type="ACF" />
+      <Acf name="AcfDiagPartialTypeConverterProvider" type="ACF" />
+      <Acf name="AcfDiagDataTypeSupportProvider" type="ACF" />
+      <Acf name="AcfDiagCommonCommandPropertyContainerProvider" type="ACF" />
+      <Acf name="AcfDiagPropertyAdapterFactory" type="ACF" />
+      <Acf name="AcfDiagSpecialPropertyAdapterProvider" type="ACF" />
+      <Acf name="AcfDiagDebug" type="ACF" />
+      <Acf name="AcfDiagOnlineDeviceItem" type="ACF" />
+      <Acf name="AcfDiagFunctionProviderSps7" type="ACF" />
+      <Acf name="AcfDiagDcpFunctions" type="ACF" />
+      <Acf name="AcfOfctFunctionProviderSps7" type="ACF" />
+      <Acf name="AcfGsdModuleAddressLogic" type="ACF" />
+      <Acf name="AcfGsdCopyMoveNotifyContainer" type="ACF" />
+    </Acfs>
+    <AutoCreatedSubmodules />
+  </Manifest>
+  <Manifest codefilename="gsd\eh3_1526.gsd\modules\mdd_module-00007_v1.0_v1.0.0.1.mdd.bin">
+    <Identification>
+      <OrderNumber value="" />
+      <FwVersion value="" />
+      <ViewDescription value="GSD\Modules\_global\Module.vd.xml" />
+      <SourceRootFile name="gsd\eh3_1526.gsd\modules\mdd_module-00007_v1.0_v1.0.0.1.mdd" />
+    </Identification>
+    <ConfigObjectType name="GSD\eh3_1526.gsd\Module_00007" hasCatalogEntry="true">
+      <Version major="1" minor="0" build="0" revision="1" />
+    </ConfigObjectType>
+    <Sources>
+      <File filename="gsd\eh3_1526.gsd\modules\mdd_module-00007_v1.0_v1.0.0.1.mdd" date="07/19/2025 07:52:35" type="Root" index="0" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-general_v19.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="1" />
+      <File filename="_systemglobal\mdd_simatic-classic-modulegeneral_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="2" />
+      <File filename="_systemglobal\mdd_simatic-classic-deviceitemgeneral_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="3" />
+      <File filename="_systemglobal\mdd_simatic-classic-hwobjectgeneral_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="4" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-icoreattributes_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="5" />
+      <File filename="_systemglobal\mdd_simatic-error-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:06" type="131" index="6" />
+      <File filename="_systemglobal\mdd_simatic-propertyview-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:06" type="131" index="7" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-iconfigbasedata_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="8" />
+      <File filename="_systemglobal\mdd_simatic-enums-engineeringsystemstate_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="9" />
+      <File filename="_systemglobal\mdd_simatic-enums-actioncodes_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="10" />
+      <File filename="_systemglobal\mdd_simatic-enums-deviceitemtypes_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="11" />
+      <File filename="_systemglobal\mdd_simatic-enums-iotypes_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="12" />
+      <File filename="_systemglobal\mdd_simatic-enums-migration_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="13" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-ibrowsingattributes_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="14" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-ideviceitemdata_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="15" />
+      <File filename="_systemglobal\mdd_simatic-address-laddr-propertyview_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="16" />
+      <File filename="_systemglobal\mdd_simatic-address-laddr-propertyview-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:02" type="131" index="17" />
+      <File filename="_systemglobal\mdd_simatic-changefirmwarecontrol_v18.0.10.0.imp" date="01/01/1601 03:30:00" type="Import" index="18" />
+      <File filename="_systemglobal\mdd_simatic-stringconversion_v13.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="19" />
+      <File filename="gsd\eh3_1526.gsd\_global\mdd_catalog_v11.0.mdd.iimp" date="07/19/2025 07:52:35" type="None" index="20" />
+      <File filename="_systemglobal\mdd_additionalfielddevices-catalog_v11.0.mdd.iimp" date="01/01/1601 03:30:00" type="None" index="21" />
+      <File filename="gsd\eh3_1526.gsd\_global\mdd_component_v11.0.mdd.iimp" date="07/19/2025 07:52:35" type="None" index="22" />
+      <File filename="_systemglobal\mdd_additionalfielddevices-identification_v11.0.mdd.iimp" date="01/01/1601 03:30:00" type="None" index="23" />
+      <File filename="_systemglobal\mdd_gsd-openness-common_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="24" />
+      <File filename="_systemglobal\mdd_eomvariables_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="25" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-dpv1-sysdiag_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="26" />
+      <File filename="_systemglobal\mdd_sdiag-base_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="27" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-gsd-module_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="28" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-hwdeviceitem-classic_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="29" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-hwdeviceitem_v12.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="30" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-object-base_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="31" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-texts_v12.0_en.dct.bin" date="10/19/2023 05:34:12" type="131" index="32" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-deviceitem-base_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="33" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-idiagnosticattributes_v12.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="34" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-general_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="35" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-accustatesmall_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="36" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-standarddiagnose_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="37" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-channeldiagnose_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="38" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-identandmaintenance_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="39" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-dpv1_omsp_processalarm_v12.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="40" />
+      <File filename="_systemglobal\mdd_profibus-gsd-commonpropertyview-texts_v11.0_en.dct.bin" date="10/19/2023 05:34:00" type="131" index="41" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-addressproperties_v18.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="42" />
+      <File filename="_systemglobal\mdd_simatic-address-in+output-propertyview_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="43" />
+      <File filename="_systemglobal\mdd_simatic-address-general-propertyview_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="44" />
+      <File filename="_systemglobal\mdd_simatic-address-base_1.0_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="45" />
+      <File filename="_systemglobal\mdd_simatic-enums-consistencycheckcontrol_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="46" />
+      <File filename="_systemglobal\mdd_simatic-enums-compilecache_v13.0.1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="47" />
+      <File filename="_systemglobal\mdd_simatic-address-base-pip-ob-link_1.0_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="48" />
+      <File filename="_systemglobal\mdd_simatic-address-propertyview-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:02" type="131" index="49" />
+      <File filename="_systemglobal\mdd_simatic-address-input_1.0_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="50" />
+      <File filename="_systemglobal\mdd_simatic-address-output_1.0_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="51" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-substitutevalues_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="52" />
+      <File filename="gsd\eh3_1526.gsd\_global\mdd_eh3_1526_v1.1_en.dct.bin" date="07/19/2025 07:52:35" type="131" index="53" />
+    </Sources>
+    <Dictionaries>
+      <Entry name="_systemglobal\mdd_simatic-error-texts" type="131" index="0" />
+      <Entry name="_systemglobal\mdd_simatic-propertyview-texts" type="131" index="1" />
+      <Entry name="_systemglobal\mdd_simatic-address-laddr-propertyview-texts" type="131" index="2" />
+      <Entry name="_systemglobal\mdd_simatic-diagnostic-texts" type="131" index="3" />
+      <Entry name="_systemglobal\mdd_profibus-gsd-commonpropertyview-texts" type="131" index="4" />
+      <Entry name="_systemglobal\mdd_simatic-address-propertyview-texts" type="131" index="5" />
+      <Entry name="gsd\eh3_1526.gsd\_global\mdd_eh3_1526" type="131" index="6" />
+    </Dictionaries>
+    <CreatedFiles>
+      <File filename="gsd\eh3_1526.gsd\modules\mdd_module-00007_v1.0_v1.0.0.1.mdd.bin" type="Binary" />
+    </CreatedFiles>
+    <Acfs>
+      <Acf name="AcfDeviceItem" type="ACF" />
+      <Acf name="AcfLAddressDeviceItem" type="ACF" />
+      <Acf name="AcfPrimaryAssignment" type="ACF" />
+      <Acf name="AcfTciSupport" type="ACF" />
+      <Acf name="AcfGsdSwitcher" type="ACF" />
+      <Acf name="AcfDiagItem" type="ACF" />
+      <Acf name="AcfSdal" type="ACF" />
+      <Acf name="AcfDiagPartialTypeConverterProvider" type="ACF" />
+      <Acf name="AcfDiagDataTypeSupportProvider" type="ACF" />
+      <Acf name="AcfDiagCommonCommandPropertyContainerProvider" type="ACF" />
+      <Acf name="AcfDiagPropertyAdapterFactory" type="ACF" />
+      <Acf name="AcfDiagSpecialPropertyAdapterProvider" type="ACF" />
+      <Acf name="AcfDiagDebug" type="ACF" />
+      <Acf name="AcfDiagOnlineDeviceItem" type="ACF" />
+      <Acf name="AcfDiagFunctionProviderSps7" type="ACF" />
+      <Acf name="AcfDiagDcpFunctions" type="ACF" />
+      <Acf name="AcfOfctFunctionProviderSps7" type="ACF" />
+      <Acf name="AcfGsdModuleAddressLogic" type="ACF" />
+      <Acf name="AcfGsdCopyMoveNotifyContainer" type="ACF" />
+    </Acfs>
+    <AutoCreatedSubmodules />
+  </Manifest>
+  <Manifest codefilename="gsd\eh3_1526.gsd\modules\mdd_universalmodule-componentdescription_v1.0_v1.0.0.1.mdd.bin">
+    <Identification>
+      <OrderNumber value="" />
+      <FwVersion value="" />
+      <ViewDescription value="GSD\Modules\_global\Module.vd.xml" />
+      <SourceRootFile name="gsd\eh3_1526.gsd\modules\mdd_universalmodule-componentdescription_v1.0_v1.0.0.1.mdd" />
+    </Identification>
+    <ConfigObjectType name="GSD\eh3_1526.gsd\UniversalModule" hasCatalogEntry="true">
+      <Version major="1" minor="0" build="0" revision="1" />
+    </ConfigObjectType>
+    <Sources>
+      <File filename="gsd\eh3_1526.gsd\modules\mdd_universalmodule-componentdescription_v1.0_v1.0.0.1.mdd" date="07/19/2025 07:52:35" type="Root" index="0" />
+      <File filename="_systemglobal\mdd_profibus-gsd-universalmodule-general_v18.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="1" />
+      <File filename="_systemglobal\mdd_simatic-classic-modulegeneral_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="2" />
+      <File filename="_systemglobal\mdd_simatic-classic-deviceitemgeneral_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="3" />
+      <File filename="_systemglobal\mdd_simatic-classic-hwobjectgeneral_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="4" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-icoreattributes_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="5" />
+      <File filename="_systemglobal\mdd_simatic-error-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:06" type="131" index="6" />
+      <File filename="_systemglobal\mdd_simatic-propertyview-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:06" type="131" index="7" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-iconfigbasedata_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="8" />
+      <File filename="_systemglobal\mdd_simatic-enums-engineeringsystemstate_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="9" />
+      <File filename="_systemglobal\mdd_simatic-enums-actioncodes_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="10" />
+      <File filename="_systemglobal\mdd_simatic-enums-deviceitemtypes_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="11" />
+      <File filename="_systemglobal\mdd_simatic-enums-iotypes_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="12" />
+      <File filename="_systemglobal\mdd_simatic-enums-migration_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="13" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-ibrowsingattributes_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="14" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-ideviceitemdata_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="15" />
+      <File filename="_systemglobal\mdd_simatic-address-laddr-propertyview_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="16" />
+      <File filename="_systemglobal\mdd_simatic-address-laddr-propertyview-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:02" type="131" index="17" />
+      <File filename="_systemglobal\mdd_simatic-changefirmwarecontrol_v18.0.10.0.imp" date="01/01/1601 03:30:00" type="Import" index="18" />
+      <File filename="_systemglobal\mdd_simatic-classic-logicaladdresses_v12.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="19" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-substitutevalues_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="20" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-addressproperties_v18.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="21" />
+      <File filename="_systemglobal\mdd_simatic-address-in+output-propertyview_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="22" />
+      <File filename="_systemglobal\mdd_simatic-address-general-propertyview_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="23" />
+      <File filename="_systemglobal\mdd_simatic-address-base_1.0_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="24" />
+      <File filename="_systemglobal\mdd_simatic-enums-consistencycheckcontrol_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="25" />
+      <File filename="_systemglobal\mdd_simatic-enums-compilecache_v13.0.1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="26" />
+      <File filename="_systemglobal\mdd_simatic-address-base-pip-ob-link_1.0_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="27" />
+      <File filename="_systemglobal\mdd_simatic-address-propertyview-texts_v1.0_en.dct.bin" date="10/19/2023 05:34:02" type="131" index="28" />
+      <File filename="_systemglobal\mdd_simatic-address-input_1.0_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="29" />
+      <File filename="_systemglobal\mdd_simatic-address-output_1.0_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="30" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-dpv1_omsp_processalarm_v12.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="31" />
+      <File filename="_systemglobal\mdd_profibus-gsd-commonpropertyview-texts_v11.0_en.dct.bin" date="10/19/2023 05:34:00" type="131" index="32" />
+      <File filename="_systemglobal\mdd_simatic-stringconversion_v14.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="33" />
+      <File filename="_systemglobal\mdd_profibus-gsd-device-information-texts_v11.0_en.dct.bin" date="10/19/2023 05:34:00" type="131" index="34" />
+      <File filename="gsd\eh3_1526.gsd\_global\mdd_catalog_v11.0.mdd.iimp" date="07/19/2025 07:52:35" type="None" index="35" />
+      <File filename="_systemglobal\mdd_additionalfielddevices-catalog_v11.0.mdd.iimp" date="01/01/1601 03:30:00" type="None" index="36" />
+      <File filename="gsd\eh3_1526.gsd\_global\mdd_component_v11.0.mdd.iimp" date="07/19/2025 07:52:35" type="None" index="37" />
+      <File filename="_systemglobal\mdd_additionalfielddevices-identification_v11.0.mdd.iimp" date="01/01/1601 03:30:00" type="None" index="38" />
+      <File filename="_systemglobal\mdd_gsd-openness-common_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="39" />
+      <File filename="_systemglobal\mdd_eomvariables_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="40" />
+      <File filename="_systemglobal\mdd_profibus-gsd-module-dpv1-sysdiag_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="41" />
+      <File filename="_systemglobal\mdd_sdiag-base_v11.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="42" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-gsd-module_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="43" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-hwdeviceitem-classic_v14.0.0.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="44" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-hwdeviceitem_v12.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="45" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-object-base_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="46" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-texts_v12.0_en.dct.bin" date="10/19/2023 05:34:12" type="131" index="47" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-online-deviceitem-base_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="48" />
+      <File filename="_systemglobal\mdd_simatic-attributeset-idiagnosticattributes_v12.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="49" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-general_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="50" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-accustatesmall_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="51" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-standarddiagnose_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="52" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-channeldiagnose_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="53" />
+      <File filename="_systemglobal\mdd_simatic-diagnostic-identandmaintenance_v1.0.mdd.imp" date="01/01/1601 03:30:00" type="Import" index="54" />
+      <File filename="gsd\eh3_1526.gsd\_global\mdd_eh3_1526_v1.1_en.dct.bin" date="07/19/2025 07:52:35" type="131" index="55" />
+    </Sources>
+    <Dictionaries>
+      <Entry name="_systemglobal\mdd_simatic-error-texts" type="131" index="0" />
+      <Entry name="_systemglobal\mdd_simatic-propertyview-texts" type="131" index="1" />
+      <Entry name="_systemglobal\mdd_simatic-address-laddr-propertyview-texts" type="131" index="2" />
+      <Entry name="_systemglobal\mdd_simatic-address-propertyview-texts" type="131" index="3" />
+      <Entry name="_systemglobal\mdd_profibus-gsd-commonpropertyview-texts" type="131" index="4" />
+      <Entry name="_systemglobal\mdd_profibus-gsd-device-information-texts" type="131" index="5" />
+      <Entry name="_systemglobal\mdd_simatic-diagnostic-texts" type="131" index="6" />
+      <Entry name="gsd\eh3_1526.gsd\_global\mdd_eh3_1526" type="131" index="7" />
+    </Dictionaries>
+    <CreatedFiles>
+      <File filename="gsd\eh3_1526.gsd\modules\mdd_universalmodule-componentdescription_v1.0_v1.0.0.1.mdd.bin" type="Binary" />
+    </CreatedFiles>
+    <Acfs>
+      <Acf name="AcfDeviceItem" type="ACF" />
+      <Acf name="AcfLAddressDeviceItem" type="ACF" />
+      <Acf name="AcfPrimaryAssignment" type="ACF" />
+      <Acf name="AcfGsdModuleAddressLogic" type="ACF" />
+      <Acf name="AcfGsdUniversalModule" type="ACF" />
+      <Acf name="AcfGsdSwitcher" type="ACF" />
+      <Acf name="AcfDiagItem" type="ACF" />
+      <Acf name="AcfSdal" type="ACF" />
+      <Acf name="AcfDiagPartialTypeConverterProvider" type="ACF" />
+      <Acf name="AcfDiagDataTypeSupportProvider" type="ACF" />
+      <Acf name="AcfDiagCommonCommandPropertyContainerProvider" type="ACF" />
+      <Acf name="AcfDiagPropertyAdapterFactory" type="ACF" />
+      <Acf name="AcfDiagSpecialPropertyAdapterProvider" type="ACF" />
+      <Acf name="AcfDiagDebug" type="ACF" />
+      <Acf name="AcfDiagOnlineDeviceItem" type="ACF" />
+      <Acf name="AcfDiagFunctionProviderSps7" type="ACF" />
+      <Acf name="AcfDiagDcpFunctions" type="ACF" />
+      <Acf name="AcfOfctFunctionProviderSps7" type="ACF" />
+      <Acf name="AcfGsdCopyMoveNotifyContainer" type="ACF" />
+    </Acfs>
+    <AutoCreatedSubmodules />
+  </Manifest>
+</Manifests>

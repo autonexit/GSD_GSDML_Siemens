@@ -1,0 +1,2027 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\xsd\GSDML-DeviceProfile-V2.3.xsd">
+	<ProfileHeader>
+		<ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+		<ProfileRevision>1.00</ProfileRevision>
+		<ProfileName>Device Profile for PROFINET Devices</ProfileName>
+		<ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+		<ProfileClassID>Device</ProfileClassID>
+		<ISO15745Reference>
+			<ISO15745Part>4</ISO15745Part>
+			<ISO15745Edition>1</ISO15745Edition>
+			<ProfileTechnology>GSDML</ProfileTechnology>
+		</ISO15745Reference>
+	</ProfileHeader>
+	<ProfileBody>
+		<DeviceIdentity VendorID="0x0129" DeviceID="0x1810">
+			<InfoText TextId="T_ID_DEV_DESCRIPTION"/>
+			<VendorName Value="Schneider Electric"/>
+		</DeviceIdentity>
+		<DeviceFunction>
+			<Family MainFamily="Drives" ProductFamily="ATV6xx"/>
+		</DeviceFunction>
+		<ApplicationProcess>
+			<!-- ============================================================================================ -->
+			<!--   List of Device Access Points (DAP)                 									              -->
+			<!-- ============================================================================================ -->
+			<DeviceAccessPointList>
+				<!--* ATV600 *-->
+				<DeviceAccessPointItem ID="DAP V1.5 (ATV600)" PhysicalSlots="0..1" ModuleIdentNumber="0x00000258" MinDeviceInterval="128" ImplementationType="NP30" DNS_CompatibleName="ATV600" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" PNIO_Version="V2.2" NameOfStationNotTransferable="true">
+					<ModuleInfo CategoryRef="CAT_REF_MIGRATION_DAP">
+						<Name TextId="T_ID_DAP_V15_ATV600"/>
+						<InfoText TextId="T_ID_V15_DEV_DESCRIPTION"/>
+						<VendorName Value="Schneider Electric"/>
+						<OrderNumber Value="ATV600"/>
+					</ModuleInfo>
+					<IOConfigData MaxInputLength="46" MaxOutputLength="46"/>
+					<UseableModules>
+						<!--References to the ModuleList-->
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_STD_TGM1" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM100" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM101" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM102" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM106" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM107" AllowedInSlots="1"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP V1.5 (ATV600)" SubmoduleIdentNumber="0x00000001" API="0">
+							<IOData IOPS_Length="1" IOCS_Length="1"/>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="1" TransferSequence="0">
+									<Name TextId="T_ID_DAP_PARAMETERS"/>
+									<Ref ValueItemTarget="VI_ID_DAP_ENABLE_DISABLE" DataType="Integer8" ByteOffset="0" DefaultValue="1" AllowedValues="0..1" TextId="T_ID_DAP_ALARM_DIAGNOSTICS"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_ID_DAP_V15_ATV600"/>
+								<InfoText TextId="T_ID_V15_DEV_DESCRIPTION"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+					</Graphics>
+				</DeviceAccessPointItem>
+				<DeviceAccessPointItem ID="DAP V2.0 (ATV600)" PhysicalSlots="0..1" ModuleIdentNumber="0x00000258" MinDeviceInterval="128" ImplementationType="NP30" DNS_CompatibleName="ATV600" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" RequiredSchemaVersion="V2.25" PNIO_Version="V2.2" NameOfStationNotTransferable="true">
+					<ModuleInfo>
+						<Name TextId="T_ID_DAP_V2_ATV600"/>
+						<InfoText TextId="T_ID_V2_DEV_DESCRIPTION"/>
+						<VendorName Value="Schneider Electric"/>
+						<OrderNumber Value="ATV600"/>
+					</ModuleInfo>
+					<SubslotList>
+						<SubslotItem SubslotNumber="32768" TextId="T_ID_SS_INTERFACE"/>
+						<SubslotItem SubslotNumber="32769" TextId="T_ID_SS_PORT1"/>
+						<SubslotItem SubslotNumber="32770" TextId="T_ID_SS_PORT2"/>
+					</SubslotList>
+					<IOConfigData MaxInputLength="46" MaxOutputLength="46"/>
+					<UseableModules>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_STD_TGM1" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM100" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM101" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM102" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM106" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM107" AllowedInSlots="1"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP V2.0 (ATV600)" SubmoduleIdentNumber="0x00000001" API="0">
+							<IOData IOPS_Length="1" IOCS_Length="1"/>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="1" TransferSequence="0">
+									<Name TextId="T_ID_DAP_PARAMETERS"/>
+									<Ref ValueItemTarget="VI_ID_DAP_ENABLE_DISABLE" DataType="Integer8" ByteOffset="0" DefaultValue="1" AllowedValues="0..1" TextId="T_ID_DAP_ALARM_DIAGNOSTICS"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_ID_DAP_V2_ATV600"/>
+								<InfoText TextId="T_ID_V2_DEV_DESCRIPTION"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<SystemDefinedSubmoduleList>
+						<InterfaceSubmoduleItem ID="Interface" SubslotNumber="32768" SubmoduleIdentNumber="0x0002" SupportedRT_Classes="RT_CLASS_1" TextId="T_ID_DAP_INTERFACE_MODULE" SupportedMibs="MIB2" SupportedProtocols="SNMP;LLDP">
+							<ApplicationRelations NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" PullModuleAlarmSupported="false">
+								<TimingProperties SendClock="32" ReductionRatio="1 2 4 8 16 32 64 128 256 512"/>
+							</ApplicationRelations>
+							<MediaRedundancy SupportedRole="Client"/>
+						</InterfaceSubmoduleItem>
+						<PortSubmoduleItem ID="Port 1" SubslotNumber="32769" SubmoduleIdentNumber="0x0003" MAUTypes="16" TextId="T_ID_PORT" SupportsRingportConfig="false" IsDefaultRingport="true"/>
+						<PortSubmoduleItem ID="Port 2" SubslotNumber="32770" SubmoduleIdentNumber="0x0003" MAUTypes="16" TextId="T_ID_PORT2" SupportsRingportConfig="false" IsDefaultRingport="true"/>
+					</SystemDefinedSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+					</Graphics>
+				</DeviceAccessPointItem>
+				<!--* ATV610 *-->
+				<DeviceAccessPointItem ID="DAP V1.5 (ATV610)" PhysicalSlots="0..1" ModuleIdentNumber="0x00000262" MinDeviceInterval="128" ImplementationType="NP30" DNS_CompatibleName="ATV610" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" PNIO_Version="V2.2" NameOfStationNotTransferable="true">
+					<ModuleInfo CategoryRef="CAT_REF_MIGRATION_DAP">
+						<Name TextId="T_ID_DAP_V15_ATV610"/>
+						<InfoText TextId="T_ID_V15_DEV_DESCRIPTION"/>
+						<VendorName Value="Schneider Electric"/>
+						<OrderNumber Value="ATV610"/>
+					</ModuleInfo>
+					<IOConfigData MaxInputLength="46" MaxOutputLength="46"/>
+					<UseableModules>
+						<!--References to the ModuleList-->
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_STD_TGM1" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM100" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM101" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM102" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM106" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM107" AllowedInSlots="1"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP V1.5 (ATV610)" SubmoduleIdentNumber="0x00000001" API="0">
+							<IOData IOPS_Length="1" IOCS_Length="1"/>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="1" TransferSequence="0">
+									<Name TextId="T_ID_DAP_PARAMETERS"/>
+									<Ref ValueItemTarget="VI_ID_DAP_ENABLE_DISABLE" DataType="Integer8" ByteOffset="0" DefaultValue="1" AllowedValues="0..1" TextId="T_ID_DAP_ALARM_DIAGNOSTICS"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_ID_DAP_V15_ATV610"/>
+								<InfoText TextId="T_ID_V15_DEV_DESCRIPTION"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+					</Graphics>
+				</DeviceAccessPointItem>
+				<DeviceAccessPointItem ID="DAP V2.0 (ATV610)" PhysicalSlots="0..1" ModuleIdentNumber="0x00000262" MinDeviceInterval="128" ImplementationType="NP30" DNS_CompatibleName="ATV610" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" RequiredSchemaVersion="V2.25" PNIO_Version="V2.2" NameOfStationNotTransferable="true">
+					<ModuleInfo>
+						<Name TextId="T_ID_DAP_V2_ATV610"/>
+						<InfoText TextId="T_ID_V2_DEV_DESCRIPTION"/>
+						<VendorName Value="Schneider Electric"/>
+						<OrderNumber Value="ATV610"/>
+					</ModuleInfo>
+					<SubslotList>
+						<SubslotItem SubslotNumber="32768" TextId="T_ID_SS_INTERFACE"/>
+						<SubslotItem SubslotNumber="32769" TextId="T_ID_SS_PORT1"/>
+						<SubslotItem SubslotNumber="32770" TextId="T_ID_SS_PORT2"/>
+					</SubslotList>
+					<IOConfigData MaxInputLength="46" MaxOutputLength="46"/>
+					<UseableModules>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_STD_TGM1" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM100" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM101" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM102" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM106" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM107" AllowedInSlots="1"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP V2.0 (ATV610)" SubmoduleIdentNumber="0x00000001" API="0">
+							<IOData IOPS_Length="1" IOCS_Length="1"/>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="1" TransferSequence="0">
+									<Name TextId="T_ID_DAP_PARAMETERS"/>
+									<Ref ValueItemTarget="VI_ID_DAP_ENABLE_DISABLE" DataType="Integer8" ByteOffset="0" DefaultValue="1" AllowedValues="0..1" TextId="T_ID_DAP_ALARM_DIAGNOSTICS"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_ID_DAP_V2_ATV610"/>
+								<InfoText TextId="T_ID_V2_DEV_DESCRIPTION"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<SystemDefinedSubmoduleList>
+						<InterfaceSubmoduleItem ID="Interface (ATV610)" SubslotNumber="32768" SubmoduleIdentNumber="0x0002" SupportedRT_Classes="RT_CLASS_1" TextId="T_ID_DAP_INTERFACE_MODULE" SupportedMibs="MIB2" SupportedProtocols="SNMP;LLDP">
+							<ApplicationRelations NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" PullModuleAlarmSupported="false">
+								<TimingProperties SendClock="32" ReductionRatio="1 2 4 8 16 32 64 128 256 512"/>
+							</ApplicationRelations>
+							<MediaRedundancy SupportedRole="Client"/>
+						</InterfaceSubmoduleItem>
+						<PortSubmoduleItem ID="Port 1 (ATV610)" SubslotNumber="32769" SubmoduleIdentNumber="0x0003" MAUTypes="16" TextId="T_ID_PORT" SupportsRingportConfig="false" IsDefaultRingport="true"/>
+						<PortSubmoduleItem ID="Port 2 (ATV610)" SubslotNumber="32770" SubmoduleIdentNumber="0x0003" MAUTypes="16" TextId="T_ID_PORT2" SupportsRingportConfig="false" IsDefaultRingport="true"/>
+					</SystemDefinedSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+					</Graphics>
+				</DeviceAccessPointItem>
+				<!--* ATV620 *-->
+				<DeviceAccessPointItem ID="DAP V1.5 (ATV620)" PhysicalSlots="0..1" ModuleIdentNumber="0x0000026C" MinDeviceInterval="128" ImplementationType="NP30" DNS_CompatibleName="ATV620" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" PNIO_Version="V2.2" NameOfStationNotTransferable="true">
+					<ModuleInfo CategoryRef="CAT_REF_MIGRATION_DAP">
+						<Name TextId="T_ID_DAP_V15_ATV620"/>
+						<InfoText TextId="T_ID_V15_DEV_DESCRIPTION"/>
+						<VendorName Value="Schneider Electric"/>
+						<OrderNumber Value="ATV620"/>
+					</ModuleInfo>
+					<IOConfigData MaxInputLength="46" MaxOutputLength="46"/>
+					<UseableModules>
+						<!--References to the ModuleList-->
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_STD_TGM1" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM100" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM101" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM102" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM106" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM107" AllowedInSlots="1"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP V1.5 (ATV620)" SubmoduleIdentNumber="0x00000001" API="0">
+							<IOData IOPS_Length="1" IOCS_Length="1"/>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="1" TransferSequence="0">
+									<Name TextId="T_ID_DAP_PARAMETERS"/>
+									<Ref ValueItemTarget="VI_ID_DAP_ENABLE_DISABLE" DataType="Integer8" ByteOffset="0" DefaultValue="1" AllowedValues="0..1" TextId="T_ID_DAP_ALARM_DIAGNOSTICS"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_ID_DAP_V15_ATV620"/>
+								<InfoText TextId="T_ID_V15_DEV_DESCRIPTION"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+					</Graphics>
+				</DeviceAccessPointItem>
+				<DeviceAccessPointItem ID="DAP V2.0 (ATV620)" PhysicalSlots="0..1" ModuleIdentNumber="0x0000026C" MinDeviceInterval="128" ImplementationType="NP30" DNS_CompatibleName="ATV620" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" RequiredSchemaVersion="V2.25" PNIO_Version="V2.2" NameOfStationNotTransferable="true">
+					<ModuleInfo>
+						<Name TextId="T_ID_DAP_V2_ATV620"/>
+						<InfoText TextId="T_ID_V2_DEV_DESCRIPTION"/>
+						<VendorName Value="Schneider Electric"/>
+						<OrderNumber Value="ATV620"/>
+					</ModuleInfo>
+					<SubslotList>
+						<SubslotItem SubslotNumber="32768" TextId="T_ID_SS_INTERFACE"/>
+						<SubslotItem SubslotNumber="32769" TextId="T_ID_SS_PORT1"/>
+						<SubslotItem SubslotNumber="32770" TextId="T_ID_SS_PORT2"/>
+					</SubslotList>
+					<IOConfigData MaxInputLength="46" MaxOutputLength="46"/>
+					<UseableModules>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_STD_TGM1" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM100" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM101" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM102" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM106" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM107" AllowedInSlots="1"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP V2.0 (ATV620)" SubmoduleIdentNumber="0x00000001" API="0">
+							<IOData IOPS_Length="1" IOCS_Length="1"/>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="1" TransferSequence="0">
+									<Name TextId="T_ID_DAP_PARAMETERS"/>
+									<Ref ValueItemTarget="VI_ID_DAP_ENABLE_DISABLE" DataType="Integer8" ByteOffset="0" DefaultValue="1" AllowedValues="0..1" TextId="T_ID_DAP_ALARM_DIAGNOSTICS"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_ID_DAP_V2_ATV620"/>
+								<InfoText TextId="T_ID_V2_DEV_DESCRIPTION"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<SystemDefinedSubmoduleList>
+						<InterfaceSubmoduleItem ID="Interface (ATV620)" SubslotNumber="32768" SubmoduleIdentNumber="0x0002" SupportedRT_Classes="RT_CLASS_1" TextId="T_ID_DAP_INTERFACE_MODULE" SupportedMibs="MIB2" SupportedProtocols="SNMP;LLDP">
+							<ApplicationRelations NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" PullModuleAlarmSupported="false">
+								<TimingProperties SendClock="32" ReductionRatio="1 2 4 8 16 32 64 128 256 512"/>
+							</ApplicationRelations>
+							<MediaRedundancy SupportedRole="Client"/>
+						</InterfaceSubmoduleItem>
+						<PortSubmoduleItem ID="Port 1 (ATV620)" SubslotNumber="32769" SubmoduleIdentNumber="0x0003" MAUTypes="16" TextId="T_ID_PORT" SupportsRingportConfig="false" IsDefaultRingport="true"/>
+						<PortSubmoduleItem ID="Port 2 (ATV620)" SubslotNumber="32770" SubmoduleIdentNumber="0x0003" MAUTypes="16" TextId="T_ID_PORT2" SupportsRingportConfig="false" IsDefaultRingport="true"/>
+					</SystemDefinedSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+					</Graphics>
+				</DeviceAccessPointItem>
+				<!--* ATV630 *-->
+				<DeviceAccessPointItem ID="DAP V1.5 (ATV630)" PhysicalSlots="0..1" ModuleIdentNumber="0x00000276" MinDeviceInterval="128" ImplementationType="NP30" DNS_CompatibleName="ATV630" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" PNIO_Version="V2.2" NameOfStationNotTransferable="true">
+					<ModuleInfo CategoryRef="CAT_REF_MIGRATION_DAP">
+						<Name TextId="T_ID_DAP_V15_ATV630"/>
+						<InfoText TextId="T_ID_V15_DEV_DESCRIPTION"/>
+						<VendorName Value="Schneider Electric"/>
+						<OrderNumber Value="ATV630"/>
+					</ModuleInfo>
+					<IOConfigData MaxInputLength="46" MaxOutputLength="46"/>
+					<UseableModules>
+						<!--References to the ModuleList-->
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_STD_TGM1" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM100" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM101" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM102" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM106" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM107" AllowedInSlots="1"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP V1.5 (ATV630)" SubmoduleIdentNumber="0x00000001" API="0">
+							<IOData IOPS_Length="1" IOCS_Length="1"/>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="1" TransferSequence="0">
+									<Name TextId="T_ID_DAP_PARAMETERS"/>
+									<Ref ValueItemTarget="VI_ID_DAP_ENABLE_DISABLE" DataType="Integer8" ByteOffset="0" DefaultValue="1" AllowedValues="0..1" TextId="T_ID_DAP_ALARM_DIAGNOSTICS"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_ID_DAP_V15_ATV630"/>
+								<InfoText TextId="T_ID_V15_DEV_DESCRIPTION"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+					</Graphics>
+				</DeviceAccessPointItem>
+				<DeviceAccessPointItem ID="DAP V2.0 (ATV630)" PhysicalSlots="0..1" ModuleIdentNumber="0x00000276" MinDeviceInterval="128" ImplementationType="NP30" DNS_CompatibleName="ATV630" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" RequiredSchemaVersion="V2.25" PNIO_Version="V2.2" NameOfStationNotTransferable="true">
+					<ModuleInfo>
+						<Name TextId="T_ID_DAP_V2_ATV630"/>
+						<InfoText TextId="T_ID_V2_DEV_DESCRIPTION"/>
+						<VendorName Value="Schneider Electric"/>
+						<OrderNumber Value="ATV630"/>
+					</ModuleInfo>
+					<SubslotList>
+						<SubslotItem SubslotNumber="32768" TextId="T_ID_SS_INTERFACE"/>
+						<SubslotItem SubslotNumber="32769" TextId="T_ID_SS_PORT1"/>
+						<SubslotItem SubslotNumber="32770" TextId="T_ID_SS_PORT2"/>
+					</SubslotList>
+					<IOConfigData MaxInputLength="46" MaxOutputLength="46"/>
+					<UseableModules>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_STD_TGM1" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM100" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM101" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM102" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM106" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM107" AllowedInSlots="1"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP V2.0 (ATV630)" SubmoduleIdentNumber="0x00000001" API="0">
+							<IOData IOPS_Length="1" IOCS_Length="1"/>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="1" TransferSequence="0">
+									<Name TextId="T_ID_DAP_PARAMETERS"/>
+									<Ref ValueItemTarget="VI_ID_DAP_ENABLE_DISABLE" DataType="Integer8" ByteOffset="0" DefaultValue="1" AllowedValues="0..1" TextId="T_ID_DAP_ALARM_DIAGNOSTICS"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_ID_DAP_V2_ATV630"/>
+								<InfoText TextId="T_ID_V2_DEV_DESCRIPTION"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<SystemDefinedSubmoduleList>
+						<InterfaceSubmoduleItem ID="Interface (ATV630)" SubslotNumber="32768" SubmoduleIdentNumber="0x0002" SupportedRT_Classes="RT_CLASS_1" TextId="T_ID_DAP_INTERFACE_MODULE" SupportedMibs="MIB2" SupportedProtocols="SNMP;LLDP">
+							<ApplicationRelations NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" PullModuleAlarmSupported="false">
+								<TimingProperties SendClock="32" ReductionRatio="1 2 4 8 16 32 64 128 256 512"/>
+							</ApplicationRelations>
+							<MediaRedundancy SupportedRole="Client"/>
+						</InterfaceSubmoduleItem>
+						<PortSubmoduleItem ID="Port 1 (ATV630)" SubslotNumber="32769" SubmoduleIdentNumber="0x0003" MAUTypes="16" TextId="T_ID_PORT" SupportsRingportConfig="false" IsDefaultRingport="true"/>
+						<PortSubmoduleItem ID="Port 2 (ATV630)" SubslotNumber="32770" SubmoduleIdentNumber="0x0003" MAUTypes="16" TextId="T_ID_PORT2" SupportsRingportConfig="false" IsDefaultRingport="true"/>
+					</SystemDefinedSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+					</Graphics>
+				</DeviceAccessPointItem>
+				<!--* ATV640 *-->
+				<DeviceAccessPointItem ID="DAP V1.5 (ATV640)" PhysicalSlots="0..1" ModuleIdentNumber="0x00000280" MinDeviceInterval="128" ImplementationType="NP30" DNS_CompatibleName="ATV640" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" PNIO_Version="V2.2" NameOfStationNotTransferable="true">
+					<ModuleInfo CategoryRef="CAT_REF_MIGRATION_DAP">
+						<Name TextId="T_ID_DAP_V15_ATV640"/>
+						<InfoText TextId="T_ID_V15_DEV_DESCRIPTION"/>
+						<VendorName Value="Schneider Electric"/>
+						<OrderNumber Value="ATV640"/>
+					</ModuleInfo>
+					<IOConfigData MaxInputLength="46" MaxOutputLength="46"/>
+					<UseableModules>
+						<!--References to the ModuleList-->
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_STD_TGM1" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM100" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM101" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM102" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM106" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM107" AllowedInSlots="1"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP V1.5 (ATV640)" SubmoduleIdentNumber="0x00000001" API="0">
+							<IOData IOPS_Length="1" IOCS_Length="1"/>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="1" TransferSequence="0">
+									<Name TextId="T_ID_DAP_PARAMETERS"/>
+									<Ref ValueItemTarget="VI_ID_DAP_ENABLE_DISABLE" DataType="Integer8" ByteOffset="0" DefaultValue="1" AllowedValues="0..1" TextId="T_ID_DAP_ALARM_DIAGNOSTICS"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_ID_DAP_V15_ATV640"/>
+								<InfoText TextId="T_ID_V15_DEV_DESCRIPTION"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+					</Graphics>
+				</DeviceAccessPointItem>
+				<DeviceAccessPointItem ID="DAP V2.0 (ATV640)" PhysicalSlots="0..1" ModuleIdentNumber="0x00000280" MinDeviceInterval="128" ImplementationType="NP30" DNS_CompatibleName="ATV640" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" RequiredSchemaVersion="V2.25" PNIO_Version="V2.2" NameOfStationNotTransferable="true">
+					<ModuleInfo>
+						<Name TextId="T_ID_DAP_V2_ATV640"/>
+						<InfoText TextId="T_ID_V2_DEV_DESCRIPTION"/>
+						<VendorName Value="Schneider Electric"/>
+						<OrderNumber Value="ATV640"/>
+					</ModuleInfo>
+					<SubslotList>
+						<SubslotItem SubslotNumber="32768" TextId="T_ID_SS_INTERFACE"/>
+						<SubslotItem SubslotNumber="32769" TextId="T_ID_SS_PORT1"/>
+						<SubslotItem SubslotNumber="32770" TextId="T_ID_SS_PORT2"/>
+					</SubslotList>
+					<IOConfigData MaxInputLength="46" MaxOutputLength="46"/>
+					<UseableModules>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_STD_TGM1" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM100" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM101" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM102" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM106" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM107" AllowedInSlots="1"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP V2.0 (ATV640)" SubmoduleIdentNumber="0x00000001" API="0">
+							<IOData IOPS_Length="1" IOCS_Length="1"/>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="1" TransferSequence="0">
+									<Name TextId="T_ID_DAP_PARAMETERS"/>
+									<Ref ValueItemTarget="VI_ID_DAP_ENABLE_DISABLE" DataType="Integer8" ByteOffset="0" DefaultValue="1" AllowedValues="0..1" TextId="T_ID_DAP_ALARM_DIAGNOSTICS"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_ID_DAP_V2_ATV640"/>
+								<InfoText TextId="T_ID_V2_DEV_DESCRIPTION"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<SystemDefinedSubmoduleList>
+						<InterfaceSubmoduleItem ID="Interface (ATV640)" SubslotNumber="32768" SubmoduleIdentNumber="0x0002" SupportedRT_Classes="RT_CLASS_1" TextId="T_ID_DAP_INTERFACE_MODULE" SupportedMibs="MIB2" SupportedProtocols="SNMP;LLDP">
+							<ApplicationRelations NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" PullModuleAlarmSupported="false">
+								<TimingProperties SendClock="32" ReductionRatio="1 2 4 8 16 32 64 128 256 512"/>
+							</ApplicationRelations>
+							<MediaRedundancy SupportedRole="Client"/>
+						</InterfaceSubmoduleItem>
+						<PortSubmoduleItem ID="Port 1 (ATV640)" SubslotNumber="32769" SubmoduleIdentNumber="0x0003" MAUTypes="16" TextId="T_ID_PORT" SupportsRingportConfig="false" IsDefaultRingport="true"/>
+						<PortSubmoduleItem ID="Port 2 (ATV640)" SubslotNumber="32770" SubmoduleIdentNumber="0x0003" MAUTypes="16" TextId="T_ID_PORT2" SupportsRingportConfig="false" IsDefaultRingport="true"/>
+					</SystemDefinedSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+					</Graphics>
+				</DeviceAccessPointItem>
+				<!--* ATV650 *-->
+				<DeviceAccessPointItem ID="DAP V1.5 (ATV650)" PhysicalSlots="0..1" ModuleIdentNumber="0x0000028A" MinDeviceInterval="128" ImplementationType="NP30" DNS_CompatibleName="ATV650" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" PNIO_Version="V2.2" NameOfStationNotTransferable="true">
+					<ModuleInfo CategoryRef="CAT_REF_MIGRATION_DAP">
+						<Name TextId="T_ID_DAP_V15_ATV650"/>
+						<InfoText TextId="T_ID_V15_DEV_DESCRIPTION"/>
+						<VendorName Value="Schneider Electric"/>
+						<OrderNumber Value="ATV650"/>
+					</ModuleInfo>
+					<IOConfigData MaxInputLength="46" MaxOutputLength="46"/>
+					<UseableModules>
+						<!--References to the ModuleList-->
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_STD_TGM1" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM100" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM101" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM102" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM106" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM107" AllowedInSlots="1"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP V1.5 (ATV650)" SubmoduleIdentNumber="0x00000001" API="0">
+							<IOData IOPS_Length="1" IOCS_Length="1"/>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="1" TransferSequence="0">
+									<Name TextId="T_ID_DAP_PARAMETERS"/>
+									<Ref ValueItemTarget="VI_ID_DAP_ENABLE_DISABLE" DataType="Integer8" ByteOffset="0" DefaultValue="1" AllowedValues="0..1" TextId="T_ID_DAP_ALARM_DIAGNOSTICS"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_ID_DAP_V15_ATV650"/>
+								<InfoText TextId="T_ID_V15_DEV_DESCRIPTION"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+					</Graphics>
+				</DeviceAccessPointItem>
+				<DeviceAccessPointItem ID="DAP V2.0 (ATV650)" PhysicalSlots="0..1" ModuleIdentNumber="0x0000028A" MinDeviceInterval="128" ImplementationType="NP30" DNS_CompatibleName="ATV650" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" RequiredSchemaVersion="V2.25" PNIO_Version="V2.2" NameOfStationNotTransferable="true">
+					<ModuleInfo>
+						<Name TextId="T_ID_DAP_V2_ATV650"/>
+						<InfoText TextId="T_ID_V2_DEV_DESCRIPTION"/>
+						<VendorName Value="Schneider Electric"/>
+						<OrderNumber Value="ATV650"/>
+					</ModuleInfo>
+					<SubslotList>
+						<SubslotItem SubslotNumber="32768" TextId="T_ID_SS_INTERFACE"/>
+						<SubslotItem SubslotNumber="32769" TextId="T_ID_SS_PORT1"/>
+						<SubslotItem SubslotNumber="32770" TextId="T_ID_SS_PORT2"/>
+					</SubslotList>
+					<IOConfigData MaxInputLength="46" MaxOutputLength="46"/>
+					<UseableModules>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_STD_TGM1" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM100" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM101" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM102" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM106" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM107" AllowedInSlots="1"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP V2.0 (ATV650)" SubmoduleIdentNumber="0x00000001" API="0">
+							<IOData IOPS_Length="1" IOCS_Length="1"/>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="1" TransferSequence="0">
+									<Name TextId="T_ID_DAP_PARAMETERS"/>
+									<Ref ValueItemTarget="VI_ID_DAP_ENABLE_DISABLE" DataType="Integer8" ByteOffset="0" DefaultValue="1" AllowedValues="0..1" TextId="T_ID_DAP_ALARM_DIAGNOSTICS"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_ID_DAP_V2_ATV650"/>
+								<InfoText TextId="T_ID_V2_DEV_DESCRIPTION"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<SystemDefinedSubmoduleList>
+						<InterfaceSubmoduleItem ID="Interface (ATV650)" SubslotNumber="32768" SubmoduleIdentNumber="0x0002" SupportedRT_Classes="RT_CLASS_1" TextId="T_ID_DAP_INTERFACE_MODULE" SupportedMibs="MIB2" SupportedProtocols="SNMP;LLDP">
+							<ApplicationRelations NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" PullModuleAlarmSupported="false">
+								<TimingProperties SendClock="32" ReductionRatio="1 2 4 8 16 32 64 128 256 512"/>
+							</ApplicationRelations>
+							<MediaRedundancy SupportedRole="Client"/>
+						</InterfaceSubmoduleItem>
+						<PortSubmoduleItem ID="Port 1 (ATV650)" SubslotNumber="32769" SubmoduleIdentNumber="0x0003" MAUTypes="16" TextId="T_ID_PORT" SupportsRingportConfig="false" IsDefaultRingport="true"/>
+						<PortSubmoduleItem ID="Port 2 (ATV650)" SubslotNumber="32770" SubmoduleIdentNumber="0x0003" MAUTypes="16" TextId="T_ID_PORT2" SupportsRingportConfig="false" IsDefaultRingport="true"/>
+					</SystemDefinedSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+					</Graphics>
+				</DeviceAccessPointItem>
+				<!--* ATV660 *-->
+				<DeviceAccessPointItem ID="DAP V1.5 (ATV660)" PhysicalSlots="0..1" ModuleIdentNumber="0x00000294" MinDeviceInterval="128" ImplementationType="NP30" DNS_CompatibleName="ATV660" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" PNIO_Version="V2.2" NameOfStationNotTransferable="true">
+					<ModuleInfo CategoryRef="CAT_REF_MIGRATION_DAP">
+						<Name TextId="T_ID_DAP_V15_ATV660"/>
+						<InfoText TextId="T_ID_V15_DEV_DESCRIPTION"/>
+						<VendorName Value="Schneider Electric"/>
+						<OrderNumber Value="ATV660"/>
+					</ModuleInfo>
+					<IOConfigData MaxInputLength="46" MaxOutputLength="46"/>
+					<UseableModules>
+						<!--References to the ModuleList-->
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_STD_TGM1" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM100" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM101" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM102" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM106" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM107" AllowedInSlots="1"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP V1.5 (ATV660)" SubmoduleIdentNumber="0x00000001" API="0">
+							<IOData IOPS_Length="1" IOCS_Length="1"/>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="1" TransferSequence="0">
+									<Name TextId="T_ID_DAP_PARAMETERS"/>
+									<Ref ValueItemTarget="VI_ID_DAP_ENABLE_DISABLE" DataType="Integer8" ByteOffset="0" DefaultValue="1" AllowedValues="0..1" TextId="T_ID_DAP_ALARM_DIAGNOSTICS"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_ID_DAP_V15_ATV660"/>
+								<InfoText TextId="T_ID_V15_DEV_DESCRIPTION"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+					</Graphics>
+				</DeviceAccessPointItem>
+				<DeviceAccessPointItem ID="DAP V2.0 (ATV660)" PhysicalSlots="0..1" ModuleIdentNumber="0x00000294" MinDeviceInterval="128" ImplementationType="NP30" DNS_CompatibleName="ATV660" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" RequiredSchemaVersion="V2.25" PNIO_Version="V2.2" NameOfStationNotTransferable="true">
+					<ModuleInfo>
+						<Name TextId="T_ID_DAP_V2_ATV660"/>
+						<InfoText TextId="T_ID_V2_DEV_DESCRIPTION"/>
+						<VendorName Value="Schneider Electric"/>
+						<OrderNumber Value="ATV660"/>
+					</ModuleInfo>
+					<SubslotList>
+						<SubslotItem SubslotNumber="32768" TextId="T_ID_SS_INTERFACE"/>
+						<SubslotItem SubslotNumber="32769" TextId="T_ID_SS_PORT1"/>
+						<SubslotItem SubslotNumber="32770" TextId="T_ID_SS_PORT2"/>
+					</SubslotList>
+					<IOConfigData MaxInputLength="46" MaxOutputLength="46"/>
+					<UseableModules>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_STD_TGM1" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM100" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM101" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM102" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM106" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM107" AllowedInSlots="1"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP V2.0 (ATV660)" SubmoduleIdentNumber="0x00000001" API="0">
+							<IOData IOPS_Length="1" IOCS_Length="1"/>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="1" TransferSequence="0">
+									<Name TextId="T_ID_DAP_PARAMETERS"/>
+									<Ref ValueItemTarget="VI_ID_DAP_ENABLE_DISABLE" DataType="Integer8" ByteOffset="0" DefaultValue="1" AllowedValues="0..1" TextId="T_ID_DAP_ALARM_DIAGNOSTICS"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_ID_DAP_V2_ATV660"/>
+								<InfoText TextId="T_ID_V2_DEV_DESCRIPTION"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<SystemDefinedSubmoduleList>
+						<InterfaceSubmoduleItem ID="Interface (ATV660)" SubslotNumber="32768" SubmoduleIdentNumber="0x0002" SupportedRT_Classes="RT_CLASS_1" TextId="T_ID_DAP_INTERFACE_MODULE" SupportedMibs="MIB2" SupportedProtocols="SNMP;LLDP">
+							<ApplicationRelations NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" PullModuleAlarmSupported="false">
+								<TimingProperties SendClock="32" ReductionRatio="1 2 4 8 16 32 64 128 256 512"/>
+							</ApplicationRelations>
+							<MediaRedundancy SupportedRole="Client"/>
+						</InterfaceSubmoduleItem>
+						<PortSubmoduleItem ID="Port 1 (ATV660)" SubslotNumber="32769" SubmoduleIdentNumber="0x0003" MAUTypes="16" TextId="T_ID_PORT" SupportsRingportConfig="false" IsDefaultRingport="true"/>
+						<PortSubmoduleItem ID="Port 2 (ATV660)" SubslotNumber="32770" SubmoduleIdentNumber="0x0003" MAUTypes="16" TextId="T_ID_PORT2" SupportsRingportConfig="false" IsDefaultRingport="true"/>
+					</SystemDefinedSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+					</Graphics>
+				</DeviceAccessPointItem>
+				<!--* ATV670 *-->
+				<DeviceAccessPointItem ID="DAP V1.5 (ATV670)" PhysicalSlots="0..1" ModuleIdentNumber="0x0000029E" MinDeviceInterval="128" ImplementationType="NP30" DNS_CompatibleName="ATV670" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" PNIO_Version="V2.2" NameOfStationNotTransferable="true">
+					<ModuleInfo CategoryRef="CAT_REF_MIGRATION_DAP">
+						<Name TextId="T_ID_DAP_V15_ATV670"/>
+						<InfoText TextId="T_ID_V15_DEV_DESCRIPTION"/>
+						<VendorName Value="Schneider Electric"/>
+						<OrderNumber Value="ATV670"/>
+					</ModuleInfo>
+					<IOConfigData MaxInputLength="46" MaxOutputLength="46"/>
+					<UseableModules>
+						<!--References to the ModuleList-->
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_STD_TGM1" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM100" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM101" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM102" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM106" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM107" AllowedInSlots="1"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP V1.5 (ATV670)" SubmoduleIdentNumber="0x00000001" API="0">
+							<IOData IOPS_Length="1" IOCS_Length="1"/>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="1" TransferSequence="0">
+									<Name TextId="T_ID_DAP_PARAMETERS"/>
+									<Ref ValueItemTarget="VI_ID_DAP_ENABLE_DISABLE" DataType="Integer8" ByteOffset="0" DefaultValue="1" AllowedValues="0..1" TextId="T_ID_DAP_ALARM_DIAGNOSTICS"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_ID_DAP_V15_ATV670"/>
+								<InfoText TextId="T_ID_V15_DEV_DESCRIPTION"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+					</Graphics>
+				</DeviceAccessPointItem>
+				<DeviceAccessPointItem ID="DAP V2.0 (ATV670)" PhysicalSlots="0..1" ModuleIdentNumber="0x0000029E" MinDeviceInterval="128" ImplementationType="NP30" DNS_CompatibleName="ATV670" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" RequiredSchemaVersion="V2.25" PNIO_Version="V2.2" NameOfStationNotTransferable="true">
+					<ModuleInfo>
+						<Name TextId="T_ID_DAP_V2_ATV670"/>
+						<InfoText TextId="T_ID_V2_DEV_DESCRIPTION"/>
+						<VendorName Value="Schneider Electric"/>
+						<OrderNumber Value="ATV670"/>
+					</ModuleInfo>
+					<SubslotList>
+						<SubslotItem SubslotNumber="32768" TextId="T_ID_SS_INTERFACE"/>
+						<SubslotItem SubslotNumber="32769" TextId="T_ID_SS_PORT1"/>
+						<SubslotItem SubslotNumber="32770" TextId="T_ID_SS_PORT2"/>
+					</SubslotList>
+					<IOConfigData MaxInputLength="46" MaxOutputLength="46"/>
+					<UseableModules>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_STD_TGM1" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM100" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM101" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM102" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM106" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM107" AllowedInSlots="1"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP V2.0 (ATV670)" SubmoduleIdentNumber="0x00000001" API="0">
+							<IOData IOPS_Length="1" IOCS_Length="1"/>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="1" TransferSequence="0">
+									<Name TextId="T_ID_DAP_PARAMETERS"/>
+									<Ref ValueItemTarget="VI_ID_DAP_ENABLE_DISABLE" DataType="Integer8" ByteOffset="0" DefaultValue="1" AllowedValues="0..1" TextId="T_ID_DAP_ALARM_DIAGNOSTICS"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_ID_DAP_V2_ATV670"/>
+								<InfoText TextId="T_ID_V2_DEV_DESCRIPTION"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<SystemDefinedSubmoduleList>
+						<InterfaceSubmoduleItem ID="Interface (ATV670)" SubslotNumber="32768" SubmoduleIdentNumber="0x0002" SupportedRT_Classes="RT_CLASS_1" TextId="T_ID_DAP_INTERFACE_MODULE" SupportedMibs="MIB2" SupportedProtocols="SNMP;LLDP">
+							<ApplicationRelations NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" PullModuleAlarmSupported="false">
+								<TimingProperties SendClock="32" ReductionRatio="1 2 4 8 16 32 64 128 256 512"/>
+							</ApplicationRelations>
+							<MediaRedundancy SupportedRole="Client"/>
+						</InterfaceSubmoduleItem>
+						<PortSubmoduleItem ID="Port 1 (ATV670)" SubslotNumber="32769" SubmoduleIdentNumber="0x0003" MAUTypes="16" TextId="T_ID_PORT" SupportsRingportConfig="false" IsDefaultRingport="true"/>
+						<PortSubmoduleItem ID="Port 2 (ATV670)" SubslotNumber="32770" SubmoduleIdentNumber="0x0003" MAUTypes="16" TextId="T_ID_PORT2" SupportsRingportConfig="false" IsDefaultRingport="true"/>
+					</SystemDefinedSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+					</Graphics>
+				</DeviceAccessPointItem>
+				<!--* ATV680 *-->
+				<DeviceAccessPointItem ID="DAP V1.5 (ATV680)" PhysicalSlots="0..1" ModuleIdentNumber="0x000002A8" MinDeviceInterval="128" ImplementationType="NP30" DNS_CompatibleName="ATV680" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" PNIO_Version="V2.2" NameOfStationNotTransferable="true">
+					<ModuleInfo CategoryRef="CAT_REF_MIGRATION_DAP">
+						<Name TextId="T_ID_DAP_V15_ATV680"/>
+						<InfoText TextId="T_ID_V15_DEV_DESCRIPTION"/>
+						<VendorName Value="Schneider Electric"/>
+						<OrderNumber Value="ATV680"/>
+					</ModuleInfo>
+					<IOConfigData MaxInputLength="46" MaxOutputLength="46"/>
+					<UseableModules>
+						<!--References to the ModuleList-->
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_STD_TGM1" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM100" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM101" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM102" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM106" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM107" AllowedInSlots="1"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP V1.5 (ATV680)" SubmoduleIdentNumber="0x00000001" API="0">
+							<IOData IOPS_Length="1" IOCS_Length="1"/>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="1" TransferSequence="0">
+									<Name TextId="T_ID_DAP_PARAMETERS"/>
+									<Ref ValueItemTarget="VI_ID_DAP_ENABLE_DISABLE" DataType="Integer8" ByteOffset="0" DefaultValue="1" AllowedValues="0..1" TextId="T_ID_DAP_ALARM_DIAGNOSTICS"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_ID_DAP_V15_ATV680"/>
+								<InfoText TextId="T_ID_V15_DEV_DESCRIPTION"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+					</Graphics>
+				</DeviceAccessPointItem>
+				<DeviceAccessPointItem ID="DAP V2.0 (ATV680)" PhysicalSlots="0..1" ModuleIdentNumber="0x000002A8" MinDeviceInterval="128" ImplementationType="NP30" DNS_CompatibleName="ATV680" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" RequiredSchemaVersion="V2.25" PNIO_Version="V2.2" NameOfStationNotTransferable="true">
+					<ModuleInfo>
+						<Name TextId="T_ID_DAP_V2_ATV680"/>
+						<InfoText TextId="T_ID_V2_DEV_DESCRIPTION"/>
+						<VendorName Value="Schneider Electric"/>
+						<OrderNumber Value="ATV680"/>
+					</ModuleInfo>
+					<SubslotList>
+						<SubslotItem SubslotNumber="32768" TextId="T_ID_SS_INTERFACE"/>
+						<SubslotItem SubslotNumber="32769" TextId="T_ID_SS_PORT1"/>
+						<SubslotItem SubslotNumber="32770" TextId="T_ID_SS_PORT2"/>
+					</SubslotList>
+					<IOConfigData MaxInputLength="46" MaxOutputLength="46"/>
+					<UseableModules>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_STD_TGM1" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM100" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM101" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM102" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM106" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM107" AllowedInSlots="1"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP V2.0 (ATV680)" SubmoduleIdentNumber="0x00000001" API="0">
+							<IOData IOPS_Length="1" IOCS_Length="1"/>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="1" TransferSequence="0">
+									<Name TextId="T_ID_DAP_PARAMETERS"/>
+									<Ref ValueItemTarget="VI_ID_DAP_ENABLE_DISABLE" DataType="Integer8" ByteOffset="0" DefaultValue="1" AllowedValues="0..1" TextId="T_ID_DAP_ALARM_DIAGNOSTICS"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_ID_DAP_V2_ATV680"/>
+								<InfoText TextId="T_ID_V2_DEV_DESCRIPTION"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<SystemDefinedSubmoduleList>
+						<InterfaceSubmoduleItem ID="Interface (ATV680)" SubslotNumber="32768" SubmoduleIdentNumber="0x0002" SupportedRT_Classes="RT_CLASS_1" TextId="T_ID_DAP_INTERFACE_MODULE" SupportedMibs="MIB2" SupportedProtocols="SNMP;LLDP">
+							<ApplicationRelations NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" PullModuleAlarmSupported="false">
+								<TimingProperties SendClock="32" ReductionRatio="1 2 4 8 16 32 64 128 256 512"/>
+							</ApplicationRelations>
+							<MediaRedundancy SupportedRole="Client"/>
+						</InterfaceSubmoduleItem>
+						<PortSubmoduleItem ID="Port 1 (ATV680)" SubslotNumber="32769" SubmoduleIdentNumber="0x0003" MAUTypes="16" TextId="T_ID_PORT" SupportsRingportConfig="false" IsDefaultRingport="true"/>
+						<PortSubmoduleItem ID="Port 2 (ATV680)" SubslotNumber="32770" SubmoduleIdentNumber="0x0003" MAUTypes="16" TextId="T_ID_PORT2" SupportsRingportConfig="false" IsDefaultRingport="true"/>
+					</SystemDefinedSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+					</Graphics>
+				</DeviceAccessPointItem>
+				<!--* ATV690 *-->
+				<DeviceAccessPointItem ID="DAP V1.5 (ATV690)" PhysicalSlots="0..1" ModuleIdentNumber="0x000002B2" MinDeviceInterval="128" ImplementationType="NP30" DNS_CompatibleName="ATV690" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" PNIO_Version="V2.2" NameOfStationNotTransferable="true">
+					<ModuleInfo CategoryRef="CAT_REF_MIGRATION_DAP">
+						<Name TextId="T_ID_DAP_V15_ATV690"/>
+						<InfoText TextId="T_ID_V15_DEV_DESCRIPTION"/>
+						<VendorName Value="Schneider Electric"/>
+						<OrderNumber Value="ATV690"/>
+					</ModuleInfo>
+					<IOConfigData MaxInputLength="46" MaxOutputLength="46"/>
+					<UseableModules>
+						<!--References to the ModuleList-->
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_STD_TGM1" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM100" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM101" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM102" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM106" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM107" AllowedInSlots="1"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP V1.5 (ATV690)" SubmoduleIdentNumber="0x00000001" API="0">
+							<IOData IOPS_Length="1" IOCS_Length="1"/>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="1" TransferSequence="0">
+									<Name TextId="T_ID_DAP_PARAMETERS"/>
+									<Ref ValueItemTarget="VI_ID_DAP_ENABLE_DISABLE" DataType="Integer8" ByteOffset="0" DefaultValue="1" AllowedValues="0..1" TextId="T_ID_DAP_ALARM_DIAGNOSTICS"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_ID_DAP_V15_ATV690"/>
+								<InfoText TextId="T_ID_V15_DEV_DESCRIPTION"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+					</Graphics>
+				</DeviceAccessPointItem>
+				<DeviceAccessPointItem ID="DAP V2.0 (ATV690)" PhysicalSlots="0..1" ModuleIdentNumber="0x000002B2" MinDeviceInterval="128" ImplementationType="NP30" DNS_CompatibleName="ATV690" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" RequiredSchemaVersion="V2.25" PNIO_Version="V2.2" NameOfStationNotTransferable="true">
+					<ModuleInfo>
+						<Name TextId="T_ID_DAP_V2_ATV690"/>
+						<InfoText TextId="T_ID_V2_DEV_DESCRIPTION"/>
+						<VendorName Value="Schneider Electric"/>
+						<OrderNumber Value="ATV690"/>
+					</ModuleInfo>
+					<SubslotList>
+						<SubslotItem SubslotNumber="32768" TextId="T_ID_SS_INTERFACE"/>
+						<SubslotItem SubslotNumber="32769" TextId="T_ID_SS_PORT1"/>
+						<SubslotItem SubslotNumber="32770" TextId="T_ID_SS_PORT2"/>
+					</SubslotList>
+					<IOConfigData MaxInputLength="46" MaxOutputLength="46"/>
+					<UseableModules>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_STD_TGM1" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM100" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM101" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM102" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM106" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM107" AllowedInSlots="1"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP V2.0 (ATV690)" SubmoduleIdentNumber="0x00000001" API="0">
+							<IOData IOPS_Length="1" IOCS_Length="1"/>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="1" TransferSequence="0">
+									<Name TextId="T_ID_DAP_PARAMETERS"/>
+									<Ref ValueItemTarget="VI_ID_DAP_ENABLE_DISABLE" DataType="Integer8" ByteOffset="0" DefaultValue="1" AllowedValues="0..1" TextId="T_ID_DAP_ALARM_DIAGNOSTICS"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_ID_DAP_V2_ATV690"/>
+								<InfoText TextId="T_ID_V2_DEV_DESCRIPTION"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<SystemDefinedSubmoduleList>
+						<InterfaceSubmoduleItem ID="Interface (ATV690)" SubslotNumber="32768" SubmoduleIdentNumber="0x0002" SupportedRT_Classes="RT_CLASS_1" TextId="T_ID_DAP_INTERFACE_MODULE" SupportedMibs="MIB2" SupportedProtocols="SNMP;LLDP">
+							<ApplicationRelations NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" PullModuleAlarmSupported="false">
+								<TimingProperties SendClock="32" ReductionRatio="1 2 4 8 16 32 64 128 256 512"/>
+							</ApplicationRelations>
+							<MediaRedundancy SupportedRole="Client"/>
+						</InterfaceSubmoduleItem>
+						<PortSubmoduleItem ID="Port 1 (ATV690)" SubslotNumber="32769" SubmoduleIdentNumber="0x0003" MAUTypes="16" TextId="T_ID_PORT" SupportsRingportConfig="false" IsDefaultRingport="true"/>
+						<PortSubmoduleItem ID="Port 2 (ATV690)" SubslotNumber="32770" SubmoduleIdentNumber="0x0003" MAUTypes="16" TextId="T_ID_PORT2" SupportsRingportConfig="false" IsDefaultRingport="true"/>
+					</SystemDefinedSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+					</Graphics>
+				</DeviceAccessPointItem>
+				<!--* ATV6A0 *-->
+				<DeviceAccessPointItem ID="DAP V1.5 (ATV6A0)" PhysicalSlots="0..1" ModuleIdentNumber="0x00000302" MinDeviceInterval="128" ImplementationType="NP30" DNS_CompatibleName="ATV6A0" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" PNIO_Version="V2.2" NameOfStationNotTransferable="true">
+					<ModuleInfo CategoryRef="CAT_REF_MIGRATION_DAP">
+						<Name TextId="T_ID_DAP_V15_ATV6A0"/>
+						<InfoText TextId="T_ID_V15_DEV_DESCRIPTION"/>
+						<VendorName Value="Schneider Electric"/>
+						<OrderNumber Value="ATV6A0"/>
+					</ModuleInfo>
+					<IOConfigData MaxInputLength="46" MaxOutputLength="46"/>
+					<UseableModules>
+						<!--References to the ModuleList-->
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_STD_TGM1" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM100" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM101" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM102" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM106" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM107" AllowedInSlots="1"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP V1.5 (ATV6A0)" SubmoduleIdentNumber="0x00000001" API="0">
+							<IOData IOPS_Length="1" IOCS_Length="1"/>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="1" TransferSequence="0">
+									<Name TextId="T_ID_DAP_PARAMETERS"/>
+									<Ref ValueItemTarget="VI_ID_DAP_ENABLE_DISABLE" DataType="Integer8" ByteOffset="0" DefaultValue="1" AllowedValues="0..1" TextId="T_ID_DAP_ALARM_DIAGNOSTICS"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_ID_DAP_V15_ATV6A0"/>
+								<InfoText TextId="T_ID_V15_DEV_DESCRIPTION"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+					</Graphics>
+				</DeviceAccessPointItem>
+				<DeviceAccessPointItem ID="DAP V2.0 (ATV6A0)" PhysicalSlots="0..1" ModuleIdentNumber="0x00000302" MinDeviceInterval="128" ImplementationType="NP30" DNS_CompatibleName="ATV6A0" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" RequiredSchemaVersion="V2.25" PNIO_Version="V2.2" NameOfStationNotTransferable="true">
+					<ModuleInfo>
+						<Name TextId="T_ID_DAP_V2_ATV6A0"/>
+						<InfoText TextId="T_ID_V2_DEV_DESCRIPTION"/>
+						<VendorName Value="Schneider Electric"/>
+						<OrderNumber Value="ATV6A0"/>
+					</ModuleInfo>
+					<SubslotList>
+						<SubslotItem SubslotNumber="32768" TextId="T_ID_SS_INTERFACE"/>
+						<SubslotItem SubslotNumber="32769" TextId="T_ID_SS_PORT1"/>
+						<SubslotItem SubslotNumber="32770" TextId="T_ID_SS_PORT2"/>
+					</SubslotList>
+					<IOConfigData MaxInputLength="46" MaxOutputLength="46"/>
+					<UseableModules>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_STD_TGM1" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM100" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM101" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM102" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM106" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM107" AllowedInSlots="1"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP V2.0 (ATV6A0)" SubmoduleIdentNumber="0x00000001" API="0">
+							<IOData IOPS_Length="1" IOCS_Length="1"/>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="1" TransferSequence="0">
+									<Name TextId="T_ID_DAP_PARAMETERS"/>
+									<Ref ValueItemTarget="VI_ID_DAP_ENABLE_DISABLE" DataType="Integer8" ByteOffset="0" DefaultValue="1" AllowedValues="0..1" TextId="T_ID_DAP_ALARM_DIAGNOSTICS"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_ID_DAP_V2_ATV6A0"/>
+								<InfoText TextId="T_ID_V2_DEV_DESCRIPTION"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<SystemDefinedSubmoduleList>
+						<InterfaceSubmoduleItem ID="Interface (ATV6A0)" SubslotNumber="32768" SubmoduleIdentNumber="0x0002" SupportedRT_Classes="RT_CLASS_1" TextId="T_ID_DAP_INTERFACE_MODULE" SupportedMibs="MIB2" SupportedProtocols="SNMP;LLDP">
+							<ApplicationRelations NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" PullModuleAlarmSupported="false">
+								<TimingProperties SendClock="32" ReductionRatio="1 2 4 8 16 32 64 128 256 512"/>
+							</ApplicationRelations>
+							<MediaRedundancy SupportedRole="Client"/>
+						</InterfaceSubmoduleItem>
+						<PortSubmoduleItem ID="Port 1 (ATV6A0)" SubslotNumber="32769" SubmoduleIdentNumber="0x0003" MAUTypes="16" TextId="T_ID_PORT" SupportsRingportConfig="false" IsDefaultRingport="true"/>
+						<PortSubmoduleItem ID="Port 2 (ATV6A0)" SubslotNumber="32770" SubmoduleIdentNumber="0x0003" MAUTypes="16" TextId="T_ID_PORT2" SupportsRingportConfig="false" IsDefaultRingport="true"/>
+					</SystemDefinedSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+					</Graphics>
+				</DeviceAccessPointItem>
+				<!--* ATV6B0 *-->
+				<DeviceAccessPointItem ID="DAP V1.5 (ATV6B0)" PhysicalSlots="0..1" ModuleIdentNumber="0x0000030C" MinDeviceInterval="128" ImplementationType="NP30" DNS_CompatibleName="ATV6B0" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" PNIO_Version="V2.2" NameOfStationNotTransferable="true">
+					<ModuleInfo CategoryRef="CAT_REF_MIGRATION_DAP">
+						<Name TextId="T_ID_DAP_V15_ATV6B0"/>
+						<InfoText TextId="T_ID_V15_DEV_DESCRIPTION"/>
+						<VendorName Value="Schneider Electric"/>
+						<OrderNumber Value="ATV6B0"/>
+					</ModuleInfo>
+					<IOConfigData MaxInputLength="46" MaxOutputLength="46"/>
+					<UseableModules>
+						<!--References to the ModuleList-->
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_STD_TGM1" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM100" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM101" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM102" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM106" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM107" AllowedInSlots="1"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP V1.5 (ATV6B0)" SubmoduleIdentNumber="0x00000001" API="0">
+							<IOData IOPS_Length="1" IOCS_Length="1"/>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="1" TransferSequence="0">
+									<Name TextId="T_ID_DAP_PARAMETERS"/>
+									<Ref ValueItemTarget="VI_ID_DAP_ENABLE_DISABLE" DataType="Integer8" ByteOffset="0" DefaultValue="1" AllowedValues="0..1" TextId="T_ID_DAP_ALARM_DIAGNOSTICS"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_ID_DAP_V15_ATV6B0"/>
+								<InfoText TextId="T_ID_V15_DEV_DESCRIPTION"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+					</Graphics>
+				</DeviceAccessPointItem>
+				<DeviceAccessPointItem ID="DAP V2.0 (ATV6B0)" PhysicalSlots="0..1" ModuleIdentNumber="0x0000030C" MinDeviceInterval="128" ImplementationType="NP30" DNS_CompatibleName="ATV6B0" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" RequiredSchemaVersion="V2.25" PNIO_Version="V2.2" NameOfStationNotTransferable="true">
+					<ModuleInfo>
+						<Name TextId="T_ID_DAP_V2_ATV6B0"/>
+						<InfoText TextId="T_ID_V2_DEV_DESCRIPTION"/>
+						<VendorName Value="Schneider Electric"/>
+						<OrderNumber Value="ATV6B0"/>
+					</ModuleInfo>
+					<SubslotList>
+						<SubslotItem SubslotNumber="32768" TextId="T_ID_SS_INTERFACE"/>
+						<SubslotItem SubslotNumber="32769" TextId="T_ID_SS_PORT1"/>
+						<SubslotItem SubslotNumber="32770" TextId="T_ID_SS_PORT2"/>
+					</SubslotList>
+					<IOConfigData MaxInputLength="46" MaxOutputLength="46"/>
+					<UseableModules>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_STD_TGM1" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM100" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM101" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM102" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM106" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM107" AllowedInSlots="1"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP V2.0 (ATV6B0)" SubmoduleIdentNumber="0x00000001" API="0">
+							<IOData IOPS_Length="1" IOCS_Length="1"/>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="1" TransferSequence="0">
+									<Name TextId="T_ID_DAP_PARAMETERS"/>
+									<Ref ValueItemTarget="VI_ID_DAP_ENABLE_DISABLE" DataType="Integer8" ByteOffset="0" DefaultValue="1" AllowedValues="0..1" TextId="T_ID_DAP_ALARM_DIAGNOSTICS"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_ID_DAP_V2_ATV6B0"/>
+								<InfoText TextId="T_ID_V2_DEV_DESCRIPTION"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<SystemDefinedSubmoduleList>
+						<InterfaceSubmoduleItem ID="Interface (ATV6B0)" SubslotNumber="32768" SubmoduleIdentNumber="0x0002" SupportedRT_Classes="RT_CLASS_1" TextId="T_ID_DAP_INTERFACE_MODULE" SupportedMibs="MIB2" SupportedProtocols="SNMP;LLDP">
+							<ApplicationRelations NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" PullModuleAlarmSupported="false">
+								<TimingProperties SendClock="32" ReductionRatio="1 2 4 8 16 32 64 128 256 512"/>
+							</ApplicationRelations>
+							<MediaRedundancy SupportedRole="Client"/>
+						</InterfaceSubmoduleItem>
+						<PortSubmoduleItem ID="Port 1 (ATV6B0)" SubslotNumber="32769" SubmoduleIdentNumber="0x0003" MAUTypes="16" TextId="T_ID_PORT" SupportsRingportConfig="false" IsDefaultRingport="true"/>
+						<PortSubmoduleItem ID="Port 2 (ATV6B0)" SubslotNumber="32770" SubmoduleIdentNumber="0x0003" MAUTypes="16" TextId="T_ID_PORT2" SupportsRingportConfig="false" IsDefaultRingport="true"/>
+					</SystemDefinedSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+					</Graphics>
+				</DeviceAccessPointItem>
+				<!--* ATV6L0 *-->
+				<DeviceAccessPointItem ID="DAP V1.5 (ATV6L0)" PhysicalSlots="0..1" ModuleIdentNumber="0x00000370" MinDeviceInterval="128" ImplementationType="NP30" DNS_CompatibleName="ATV6L0" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" PNIO_Version="V2.2" NameOfStationNotTransferable="true">
+					<ModuleInfo CategoryRef="CAT_REF_MIGRATION_DAP">
+						<Name TextId="T_ID_DAP_V15_ATV6L0"/>
+						<InfoText TextId="T_ID_V15_DEV_DESCRIPTION"/>
+						<VendorName Value="Schneider Electric"/>
+						<OrderNumber Value="ATV6L0"/>
+					</ModuleInfo>
+					<IOConfigData MaxInputLength="46" MaxOutputLength="46"/>
+					<UseableModules>
+						<!--References to the ModuleList-->
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_STD_TGM1" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM100" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM101" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM102" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM106" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM107" AllowedInSlots="1"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP V1.5 (ATV6L0)" SubmoduleIdentNumber="0x00000001" API="0">
+							<IOData IOPS_Length="1" IOCS_Length="1"/>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="1" TransferSequence="0">
+									<Name TextId="T_ID_DAP_PARAMETERS"/>
+									<Ref ValueItemTarget="VI_ID_DAP_ENABLE_DISABLE" DataType="Integer8" ByteOffset="0" DefaultValue="1" AllowedValues="0..1" TextId="T_ID_DAP_ALARM_DIAGNOSTICS"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_ID_DAP_V15_ATV6L0"/>
+								<InfoText TextId="T_ID_V15_DEV_DESCRIPTION"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+					</Graphics>
+				</DeviceAccessPointItem>
+				<DeviceAccessPointItem ID="DAP V2.0 (ATV6L0)" PhysicalSlots="0..1" ModuleIdentNumber="0x00000370" MinDeviceInterval="128" ImplementationType="NP30" DNS_CompatibleName="ATV6L0" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" RequiredSchemaVersion="V2.25" PNIO_Version="V2.2" NameOfStationNotTransferable="true">
+					<ModuleInfo>
+						<Name TextId="T_ID_DAP_V2_ATV6L0"/>
+						<InfoText TextId="T_ID_V2_DEV_DESCRIPTION"/>
+						<VendorName Value="Schneider Electric"/>
+						<OrderNumber Value="ATV6L0"/>
+					</ModuleInfo>
+					<SubslotList>
+						<SubslotItem SubslotNumber="32768" TextId="T_ID_SS_INTERFACE"/>
+						<SubslotItem SubslotNumber="32769" TextId="T_ID_SS_PORT1"/>
+						<SubslotItem SubslotNumber="32770" TextId="T_ID_SS_PORT2"/>
+					</SubslotList>
+					<IOConfigData MaxInputLength="46" MaxOutputLength="46"/>
+					<UseableModules>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_STD_TGM1" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM100" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM101" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM102" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM106" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_TGM107" AllowedInSlots="1"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP V2.0 (ATV6L0)" SubmoduleIdentNumber="0x00000001" API="0">
+							<IOData IOPS_Length="1" IOCS_Length="1"/>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="1" TransferSequence="0">
+									<Name TextId="T_ID_DAP_PARAMETERS"/>
+									<Ref ValueItemTarget="VI_ID_DAP_ENABLE_DISABLE" DataType="Integer8" ByteOffset="0" DefaultValue="1" AllowedValues="0..1" TextId="T_ID_DAP_ALARM_DIAGNOSTICS"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_ID_DAP_V2_ATV6L0"/>
+								<InfoText TextId="T_ID_V2_DEV_DESCRIPTION"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<SystemDefinedSubmoduleList>
+						<InterfaceSubmoduleItem ID="Interface (ATV6L0)" SubslotNumber="32768" SubmoduleIdentNumber="0x0002" SupportedRT_Classes="RT_CLASS_1" TextId="T_ID_DAP_INTERFACE_MODULE" SupportedMibs="MIB2" SupportedProtocols="SNMP;LLDP">
+							<ApplicationRelations NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" PullModuleAlarmSupported="false">
+								<TimingProperties SendClock="32" ReductionRatio="1 2 4 8 16 32 64 128 256 512"/>
+							</ApplicationRelations>
+							<MediaRedundancy SupportedRole="Client"/>
+						</InterfaceSubmoduleItem>
+						<PortSubmoduleItem ID="Port 1 (ATV6L0)" SubslotNumber="32769" SubmoduleIdentNumber="0x0003" MAUTypes="16" TextId="T_ID_PORT" SupportsRingportConfig="false" IsDefaultRingport="true"/>
+						<PortSubmoduleItem ID="Port 2 (ATV6L0)" SubslotNumber="32770" SubmoduleIdentNumber="0x0003" MAUTypes="16" TextId="T_ID_PORT2" SupportsRingportConfig="false" IsDefaultRingport="true"/>
+					</SystemDefinedSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+					</Graphics>
+				</DeviceAccessPointItem>
+			</DeviceAccessPointList>
+			<!-- List of modules -->
+			<ModuleList>
+				<!--* Standard Telegram #1 *-->
+				<ModuleItem ID="ID_MODULE_STD_TGM1" ModuleIdentNumber="0x00000010">
+					<ModuleInfo CategoryRef="CAT_REF_MODULES">
+						<Name TextId="T_ID_PROFILE_MODULE_MAP_STD_TGM_NAME"/>
+						<InfoText TextId="T_ID_PROFILE_MODULE_MAP_STD_TGM_INFO_TEXT"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_PROFILE_MAPPAP_1" SubmoduleIdentNumber="0x0000FFFF" API="14848" FixedInSubslots="1" Max_iParameterSize="8192">
+							<IOData/>
+							<ModuleInfo>
+								<Name TextId="T_ID_PROFILE_MAPPAP_NAME"/>
+								<InfoText TextId="T_ID_PROFILE_MAPPAP_INFO_TEXT"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+						<VirtualSubmoduleItem ID="ID_PROFILE_STD_TGM1_1" SubmoduleIdentNumber="0x00000001" API="14848" FixedInSubslots="2">
+							<IOData IOPS_Length="1" IOCS_Length="1">
+								<Input Consistency="All items consistency">
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+								</Input>
+								<Output Consistency="All items consistency">
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+								</Output>
+							</IOData>
+							<ModuleInfo>
+								<Name TextId="T_ID_PROFILE_STD_TGM1_NAME"/>
+								<InfoText TextId="T_ID_PROFILE_STD_TGM1_INFO_TEXT"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+				<!--* Telegram #100 *-->
+				<ModuleItem ID="ID_MODULE_TGM100" ModuleIdentNumber="0x00000064">
+					<ModuleInfo CategoryRef="CAT_REF_MODULES">
+						<Name TextId="T_ID_TGM100_NAME"/>
+						<InfoText TextId="T_ID_INFO_TGM100"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMOD_TGM100" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1" Max_iParameterSize="8192">
+							<IOData IOPS_Length="1" IOCS_Length="1">
+								<Input Consistency="All items consistency">
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+								</Input>
+								<Output Consistency="All items consistency">
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+								</Output>
+							</IOData>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="15" TransferSequence="0">
+									<Name TextId="T_ID_TGM100_PARAMETERS"/>
+									<Ref ValueItemTarget="VI_ID_YES_NO" DataType="Unsigned8" ByteOffset="0" DefaultValue="1" Changeable="false" Visible="false" TextId="T_ID_HASPKW"/>
+									<Ref ValueItemTarget="VI_ID_TGM_INFO" DataType="Unsigned16" ByteOffset="1" DefaultValue="100" Changeable="false" Visible="false" TextId="T_ID_TGMINFO"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="3" DefaultValue="3" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM1_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="4" DefaultValue="8501" AllowedValues="0..65535" TextId="T_ID_TGM100_OUT1_NAME"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="6" DefaultValue="3" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM2_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="7" DefaultValue="8602" AllowedValues="0..65535" TextId="T_ID_TGM100_OUT2_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="9" DefaultValue="5" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM1_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="10" DefaultValue="3201" AllowedValues="0..65535" TextId="T_ID_TGM100_IN1_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="12" DefaultValue="5" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM2_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="13" DefaultValue="8604" AllowedValues="0..65535" TextId="T_ID_TGM100_IN2_NAME"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_ID_SUBMOD_NAME_TGM100"/>
+								<InfoText TextId="T_ID_SUBMOD_INFO_TGM100"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+				<!--* Telegram #101 *-->
+				<ModuleItem ID="ID_MODULE_TGM101" ModuleIdentNumber="0x00000065">
+					<ModuleInfo CategoryRef="CAT_REF_MODULES">
+						<Name TextId="T_ID_TGM101_NAME"/>
+						<InfoText TextId="T_ID_INFO_TGM101"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMOD_TGM101" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1" Max_iParameterSize="8192">
+							<IOData IOPS_Length="1" IOCS_Length="1">
+								<Input Consistency="All items consistency">
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+								</Input>
+								<Output Consistency="All items consistency">
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+								</Output>
+							</IOData>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="39" TransferSequence="0">
+									<Name TextId="T_ID_TGM101_PARAMETERS"/>
+									<Ref ValueItemTarget="VI_ID_YES_NO" DataType="Unsigned8" ByteOffset="0" DefaultValue="1" Changeable="false" Visible="false" TextId="T_ID_HASPKW"/>
+									<Ref ValueItemTarget="VI_ID_TGM_INFO" DataType="Unsigned16" ByteOffset="1" DefaultValue="101" Changeable="false" Visible="false" TextId="T_ID_TGMINFO"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="3" DefaultValue="3" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM1_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="4" DefaultValue="8501" AllowedValues="0..65535" TextId="T_ID_TGM101_OUT1_NAME"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="6" DefaultValue="3" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM2_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="7" DefaultValue="8602" AllowedValues="0..65535" TextId="T_ID_TGM101_OUT2_NAME"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="9" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM3_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="10" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM101_OUT3_NAME"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="12" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM4_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="13" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM101_OUT4_NAME"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="15" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM5_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="16" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM101_OUT5_NAME"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="18" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM6_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="19" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM101_OUT6_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="21" DefaultValue="5" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM1_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="22" DefaultValue="3201" AllowedValues="0..65535" TextId="T_ID_TGM101_IN1_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="24" DefaultValue="5" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM2_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="25" DefaultValue="8604" AllowedValues="0..65535" TextId="T_ID_TGM101_IN2_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="27" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM3_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="28" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM101_IN3_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="30" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM4_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="31" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM101_IN4_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="33" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM5_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="34" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM101_IN5_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="36" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM6_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="37" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM101_IN6_NAME"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_ID_SUBMOD_NAME_TGM101"/>
+								<InfoText TextId="T_ID_SUBMOD_INFO_TGM101"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+				<!--* Telegram #102 *-->
+				<ModuleItem ID="ID_MODULE_TGM102" ModuleIdentNumber="0x00000066">
+					<ModuleInfo CategoryRef="CAT_REF_MODULES">
+						<Name TextId="T_ID_TGM102_NAME"/>
+						<InfoText TextId="T_ID_INFO_TGM102"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMOD_TGM102" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1" Max_iParameterSize="8192">
+							<IOData IOPS_Length="1" IOCS_Length="1">
+								<Input Consistency="All items consistency">
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+								</Input>
+								<Output Consistency="All items consistency">
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+								</Output>
+							</IOData>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="39" TransferSequence="0">
+									<Name TextId="T_ID_TGM102_PARAMETERS"/>
+									<Ref ValueItemTarget="VI_ID_YES_NO" DataType="Unsigned8" ByteOffset="0" DefaultValue="0" Changeable="false" Visible="false" TextId="T_ID_HASPKW"/>
+									<Ref ValueItemTarget="VI_ID_TGM_INFO" DataType="Unsigned16" ByteOffset="1" DefaultValue="102" Changeable="false" Visible="false" TextId="T_ID_TGMINFO"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="3" DefaultValue="3" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM1_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="4" DefaultValue="8501" AllowedValues="0..65535" TextId="T_ID_TGM102_OUT1_NAME"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="6" DefaultValue="3" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM2_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="7" DefaultValue="8602" AllowedValues="0..65535" TextId="T_ID_TGM102_OUT2_NAME"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="9" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM3_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="10" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM102_OUT3_NAME"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="12" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM4_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="13" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM102_OUT4_NAME"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="15" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM5_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="16" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM102_OUT5_NAME"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="18" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM6_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="19" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM102_OUT6_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="21" DefaultValue="5" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM1_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="22" DefaultValue="3201" AllowedValues="0..65535" TextId="T_ID_TGM102_IN1_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="24" DefaultValue="5" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM2_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="25" DefaultValue="8604" AllowedValues="0..65535" TextId="T_ID_TGM102_IN2_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="27" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM3_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="28" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM102_IN3_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="30" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM4_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="31" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM102_IN4_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="33" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM5_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="34" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM102_IN5_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="36" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM6_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="37" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM102_IN6_NAME"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_ID_SUBMOD_NAME_TGM102"/>
+								<InfoText TextId="T_ID_SUBMOD_INFO_TGM102"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+				<!--* Telegram #106 *-->
+				<ModuleItem ID="ID_MODULE_TGM106" ModuleIdentNumber="0x0000006A">
+					<ModuleInfo CategoryRef="CAT_REF_MODULES">
+						<Name TextId="T_ID_TGM106_NAME"/>
+						<InfoText TextId="T_ID_INFO_TGM106"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMOD_TGM106" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1" Max_iParameterSize="8192">
+							<IOData IOPS_Length="1" IOCS_Length="1">
+								<Input Consistency="All items consistency">
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+								</Input>
+								<Output Consistency="All items consistency">
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+								</Output>
+							</IOData>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="51" TransferSequence="0">
+									<Name TextId="T_ID_TGM106_PARAMETERS"/>
+									<Ref ValueItemTarget="VI_ID_YES_NO" DataType="Unsigned8" ByteOffset="0" DefaultValue="1" Changeable="false" Visible="false" TextId="T_ID_HASPKW"/>
+									<Ref ValueItemTarget="VI_ID_TGM_INFO" DataType="Unsigned16" ByteOffset="1" DefaultValue="106" Changeable="false" Visible="false" TextId="T_ID_TGMINFO"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="3" DefaultValue="3" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM1_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="4" DefaultValue="8501" AllowedValues="0..65535" TextId="T_ID_TGM106_OUT1_NAME"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="6" DefaultValue="3" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM2_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="7" DefaultValue="8602" AllowedValues="0..65535" TextId="T_ID_TGM106_OUT2_NAME"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="9" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM3_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="10" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM106_OUT3_NAME"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="12" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM4_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="13" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM106_OUT4_NAME"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="15" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM5_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="16" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM106_OUT5_NAME"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="18" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM6_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="19" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM106_OUT6_NAME"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="21" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM7_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="22" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM106_OUT7_NAME"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="24" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM8_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="25" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM106_OUT8_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="27" DefaultValue="5" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM1_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="28" DefaultValue="3201" AllowedValues="0..65535" TextId="T_ID_TGM106_IN1_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="30" DefaultValue="5" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM2_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="31" DefaultValue="8604" AllowedValues="0..65535" TextId="T_ID_TGM106_IN2_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="33" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM3_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="34" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM106_IN3_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="36" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM4_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="37" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM106_IN4_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="39" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM5_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="40" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM106_IN5_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="42" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM6_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="43" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM106_IN6_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="45" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM7_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="46" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM106_IN7_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="48" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM8_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="49" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM106_IN8_NAME"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_ID_SUBMOD_NAME_TGM106"/>
+								<InfoText TextId="T_ID_SUBMOD_INFO_TGM106"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+				<!--* Telegram #107 *-->
+				<ModuleItem ID="ID_MODULE_TGM107" ModuleIdentNumber="0x0000006B">
+					<ModuleInfo CategoryRef="CAT_REF_MODULES">
+						<Name TextId="T_ID_TGM107_NAME"/>
+						<InfoText TextId="T_ID_INFO_TGM107"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMOD_TGM107" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1" Max_iParameterSize="8192">
+							<IOData IOPS_Length="1" IOCS_Length="1">
+								<Input Consistency="All items consistency">
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+								</Input>
+								<Output Consistency="All items consistency">
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+								</Output>
+							</IOData>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="99" TransferSequence="0">
+									<Name TextId="T_ID_TGM107_PARAMETERS"/>
+									<Ref ValueItemTarget="VI_ID_YES_NO" DataType="Unsigned8" ByteOffset="0" DefaultValue="1" Changeable="false" Visible="false" TextId="T_ID_HASPKW"/>
+									<Ref ValueItemTarget="VI_ID_TGM_INFO" DataType="Unsigned16" ByteOffset="1" DefaultValue="107" Changeable="false" Visible="false" TextId="T_ID_TGMINFO"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="3" DefaultValue="3" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM1_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="4" DefaultValue="8501" AllowedValues="0..65535" TextId="T_ID_TGM107_OUT1_NAME"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="6" DefaultValue="3" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM2_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="7" DefaultValue="8602" AllowedValues="0..65535" TextId="T_ID_TGM107_OUT2_NAME"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="9" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM3_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="10" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM107_OUT3_NAME"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="12" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM4_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="13" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM107_OUT4_NAME"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="15" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM5_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="16" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM107_OUT5_NAME"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="18" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM6_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="19" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM107_OUT6_NAME"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="21" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM7_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="22" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM107_OUT7_NAME"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="24" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM8_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="25" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM107_OUT8_NAME"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="27" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM9_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="28" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM107_OUT9_NAME"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="30" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM10_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="31" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM107_OUT10_NAME"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="33" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM11_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="34" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM107_OUT11_NAME"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="36" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM12_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="37" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM107_OUT12_NAME"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="39" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM13_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="40" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM107_OUT13_NAME"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="42" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM14_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="43" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM107_OUT14_NAME"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="45" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM15_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="46" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM107_OUT15_NAME"/>
+									<Ref ValueItemTarget="VI_ID_OUTPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="48" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_OUTPUT_PARAM16_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="49" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM107_OUT16_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="51" DefaultValue="5" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM1_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="52" DefaultValue="3201" AllowedValues="0..65535" TextId="T_ID_TGM107_IN1_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="54" DefaultValue="5" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM2_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="55" DefaultValue="8604" AllowedValues="0..65535" TextId="T_ID_TGM107_IN2_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="57" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM3_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="58" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM107_IN3_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="60" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM4_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="61" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM107_IN4_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="63" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM5_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="64" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM107_IN5_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="66" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM6_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="67" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM107_IN6_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="69" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM7_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="70" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM107_IN7_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="72" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM8_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="73" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM107_IN8_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="75" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM9_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="76" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM107_IN9_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="78" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM10_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="79" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM107_IN10_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="81" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM11_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="82" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM107_IN11_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="84" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM12_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="85" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM107_IN12_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="87" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM13_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="88" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM107_IN13_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="90" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM14_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="91" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM107_IN14_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="93" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM15_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="94" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM107_IN15_NAME"/>
+									<Ref ValueItemTarget="VI_ID_INPUT_PARAM_INFO" DataType="Unsigned8" ByteOffset="96" DefaultValue="0" Changeable="true" Visible="true" TextId="T_ID_INPUT_PARAM16_INFO"/>
+									<Ref DataType="Unsigned16" ByteOffset="97" DefaultValue="0" AllowedValues="0..65535" TextId="T_ID_TGM107_IN16_NAME"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_ID_SUBMOD_NAME_TGM107"/>
+								<InfoText TextId="T_ID_SUBMOD_INFO_TGM107"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+			</ModuleList>
+			<!-- List of values -->
+			<ValueList>
+				<ValueItem ID="VI_ID_DAP_ENABLE_DISABLE">
+					<Assignments>
+						<Assign Content="0" TextId="T_ID_DISABLE"/>
+						<Assign Content="1" TextId="T_ID_ENABLE"/>
+					</Assignments>
+				</ValueItem>
+				<ValueItem ID="VI_ID_YES_NO">
+					<Assignments>
+						<Assign Content="0" TextId="T_ID_NO"/>
+						<Assign Content="1" TextId="T_ID_YES"/>
+					</Assignments>
+				</ValueItem>
+				<ValueItem ID="VI_ID_TGM_INFO">
+					<Assignments>
+						<Assign Content="1" TextId="T_ID_PROFILE_STD_TGM1_NAME"/>
+						<Assign Content="100" TextId="T_ID_TGM100_NAME"/>
+						<Assign Content="101" TextId="T_ID_TGM101_NAME"/>
+						<Assign Content="102" TextId="T_ID_TGM102_NAME"/>
+						<Assign Content="106" TextId="T_ID_TGM106_NAME"/>
+						<Assign Content="107" TextId="T_ID_TGM107_NAME"/>
+					</Assignments>
+				</ValueItem>
+				<ValueItem ID="VI_ID_INPUT_PARAM_INFO">
+					<Assignments>
+						<Assign Content="0" TextId="T_ID_NOT_USED"/>
+						<Assign Content="4" TextId="T_ID_INPUT_32BITS"/>
+						<Assign Content="5" TextId="T_ID_INPUT_16BITS"/>
+					</Assignments>
+				</ValueItem>
+				<ValueItem ID="VI_ID_OUTPUT_PARAM_INFO">
+					<Assignments>
+						<Assign Content="0" TextId="T_ID_NOT_USED"/>
+						<Assign Content="2" TextId="T_ID_OUTPUT_32BITS"/>
+						<Assign Content="3" TextId="T_ID_OUTPUT_16BITS"/>
+					</Assignments>
+				</ValueItem>
+				<!-- List of possible values for LFT -->
+				<ValueItem ID="VI_ID_MANSPEC_DIAG_LFT">
+					<Assignments>
+						<Assign Content="0" TextId="T_ID_MANSPEC_DIAG_LFT_NOF"/>
+						<Assign Content="1" TextId="T_ID_MANSPEC_DIAG_LFT_INF"/>
+						<Assign Content="2" TextId="T_ID_MANSPEC_DIAG_LFT_EEF1"/>
+						<Assign Content="3" TextId="T_ID_MANSPEC_DIAG_LFT_CFF"/>
+						<Assign Content="4" TextId="T_ID_MANSPEC_DIAG_LFT_CFI"/>
+						<Assign Content="5" TextId="T_ID_MANSPEC_DIAG_LFT_SLF1"/>
+						<Assign Content="6" TextId="T_ID_MANSPEC_DIAG_LFT_ILF"/>
+						<Assign Content="7" TextId="T_ID_MANSPEC_DIAG_LFT_CNF"/>
+						<Assign Content="8" TextId="T_ID_MANSPEC_DIAG_LFT_EPF1"/>
+						<Assign Content="9" TextId="T_ID_MANSPEC_DIAG_LFT_OCF"/>
+						<Assign Content="10" TextId="T_ID_MANSPEC_DIAG_LFT_CRF"/>
+						<Assign Content="11" TextId="T_ID_MANSPEC_DIAG_LFT_SPF"/>
+						<Assign Content="12" TextId="T_ID_MANSPEC_DIAG_LFT_ANF"/>
+						<Assign Content="13" TextId="T_ID_MANSPEC_DIAG_LFT_LFF2"/>
+						<Assign Content="14" TextId="T_ID_MANSPEC_DIAG_LFT_PTF1"/>
+						<Assign Content="15" TextId="T_ID_MANSPEC_DIAG_LFT_OTF1"/>
+						<Assign Content="16" TextId="T_ID_MANSPEC_DIAG_LFT_OHF"/>
+						<Assign Content="17" TextId="T_ID_MANSPEC_DIAG_LFT_OLF"/>
+						<Assign Content="18" TextId="T_ID_MANSPEC_DIAG_LFT_OBF"/>
+						<Assign Content="19" TextId="T_ID_MANSPEC_DIAG_LFT_OSF"/>
+						<Assign Content="20" TextId="T_ID_MANSPEC_DIAG_LFT_OPF1"/>
+						<Assign Content="21" TextId="T_ID_MANSPEC_DIAG_LFT_PHF"/>
+						<Assign Content="22" TextId="T_ID_MANSPEC_DIAG_LFT_USF"/>
+						<Assign Content="23" TextId="T_ID_MANSPEC_DIAG_LFT_SCF1"/>
+						<Assign Content="24" TextId="T_ID_MANSPEC_DIAG_LFT_SOF"/>
+						<Assign Content="25" TextId="T_ID_MANSPEC_DIAG_LFT_TNF"/>
+						<Assign Content="26" TextId="T_ID_MANSPEC_DIAG_LFT_INF1"/>
+						<Assign Content="27" TextId="T_ID_MANSPEC_DIAG_LFT_INF2"/>
+						<Assign Content="28" TextId="T_ID_MANSPEC_DIAG_LFT_INF3"/>
+						<Assign Content="29" TextId="T_ID_MANSPEC_DIAG_LFT_INF4"/>
+						<Assign Content="30" TextId="T_ID_MANSPEC_DIAG_LFT_EEF2"/>
+						<Assign Content="31" TextId="T_ID_MANSPEC_DIAG_LFT_SCF2"/>
+						<Assign Content="32" TextId="T_ID_MANSPEC_DIAG_LFT_SCF3"/>
+						<Assign Content="33" TextId="T_ID_MANSPEC_DIAG_LFT_OPF2"/>
+						<Assign Content="34" TextId="T_ID_MANSPEC_DIAG_LFT_COF"/>
+						<Assign Content="35" TextId="T_ID_MANSPEC_DIAG_LFT_BLF"/>
+						<Assign Content="37" TextId="T_ID_MANSPEC_DIAG_LFT_INF7"/>
+						<Assign Content="38" TextId="T_ID_MANSPEC_DIAG_LFT_EPF2"/>
+						<Assign Content="39" TextId="T_ID_MANSPEC_DIAG_LFT_APF"/>
+						<Assign Content="40" TextId="T_ID_MANSPEC_DIAG_LFT_INF8"/>
+						<Assign Content="41" TextId="T_ID_MANSPEC_DIAG_LFT_BRF"/>
+						<Assign Content="42" TextId="T_ID_MANSPEC_DIAG_LFT_SLF2"/>
+						<Assign Content="43" TextId="T_ID_MANSPEC_DIAG_LFT_ECF"/>
+						<Assign Content="44" TextId="T_ID_MANSPEC_DIAG_LFT_SSF"/>
+						<Assign Content="45" TextId="T_ID_MANSPEC_DIAG_LFT_SLF3"/>
+						<Assign Content="46" TextId="T_ID_MANSPEC_DIAG_LFT_PRF"/>
+						<Assign Content="47" TextId="T_ID_MANSPEC_DIAG_LFT_PTF2"/>
+						<Assign Content="48" TextId="T_ID_MANSPEC_DIAG_LFT_OTF2"/>
+						<Assign Content="49" TextId="T_ID_MANSPEC_DIAG_LFT_PTFL"/>
+						<Assign Content="50" TextId="T_ID_MANSPEC_DIAG_LFT_OTFL"/>
+						<Assign Content="51" TextId="T_ID_MANSPEC_DIAG_LFT_INF9"/>
+						<Assign Content="52" TextId="T_ID_MANSPEC_DIAG_LFT_INFA"/>
+						<Assign Content="53" TextId="T_ID_MANSPEC_DIAG_LFT_INFB"/>
+						<Assign Content="54" TextId="T_ID_MANSPEC_DIAG_LFT_TJF"/>
+						<Assign Content="55" TextId="T_ID_MANSPEC_DIAG_LFT_SCF4"/>
+						<Assign Content="56" TextId="T_ID_MANSPEC_DIAG_LFT_SCF5"/>
+						<Assign Content="57" TextId="T_ID_MANSPEC_DIAG_LFT_SRF"/>
+						<Assign Content="58" TextId="T_ID_MANSPEC_DIAG_LFT_FCF1"/>
+						<Assign Content="59" TextId="T_ID_MANSPEC_DIAG_LFT_FCF2"/>
+						<Assign Content="60" TextId="T_ID_MANSPEC_DIAG_LFT_INFC"/>
+						<Assign Content="61" TextId="T_ID_MANSPEC_DIAG_LFT_AI2F"/>
+						<Assign Content="62" TextId="T_ID_MANSPEC_DIAG_LFT_ENF"/>
+						<Assign Content="63" TextId="T_ID_MANSPEC_DIAG_LFT_CRF2"/>
+						<Assign Content="64" TextId="T_ID_MANSPEC_DIAG_LFT_LCF"/>
+						<Assign Content="65" TextId="T_ID_MANSPEC_DIAG_LFT_BUF"/>
+						<Assign Content="66" TextId="T_ID_MANSPEC_DIAG_LFT_DCF"/>
+						<Assign Content="67" TextId="T_ID_MANSPEC_DIAG_LFT_HDF"/>
+						<Assign Content="68" TextId="T_ID_MANSPEC_DIAG_LFT_INF6"/>
+						<Assign Content="69" TextId="T_ID_MANSPEC_DIAG_LFT_INFE"/>
+						<Assign Content="70" TextId="T_ID_MANSPEC_DIAG_LFT_BOF"/>
+						<Assign Content="71" TextId="T_ID_MANSPEC_DIAG_LFT_LFF3"/>
+						<Assign Content="72" TextId="T_ID_MANSPEC_DIAG_LFT_LFF4"/>
+						<Assign Content="73" TextId="T_ID_MANSPEC_DIAG_LFT_HCF"/>
+						<Assign Content="76" TextId="T_ID_MANSPEC_DIAG_LFT_DLF"/>
+						<Assign Content="99" TextId="T_ID_MANSPEC_DIAG_LFT_CSF"/>
+					</Assignments>
+				</ValueItem>
+			</ValueList>
+			<!-- List of manufacturer specific diagnostic alarms -->
+			<UnitDiagTypeList>
+				<UnitDiagTypeItem UserStructureIdentifier="0">
+					<Ref ValueItemTarget="VI_ID_MANSPEC_DIAG_LFT" ByteOffset="1" DataType="Unsigned8" DefaultValue="0" TextId="T_ID_MANSPEC_DIAG_LFT"/>
+				</UnitDiagTypeItem>
+			</UnitDiagTypeList>
+			<!-- List of graphic files -->
+			<GraphicsList>
+				<GraphicItem ID="1" GraphicFile="GSDML-0129-1810-ATV6xx"/>
+			</GraphicsList>
+			<!-- List of categorys -->
+			<CategoryList>
+				<CategoryItem ID="CAT_REF_MODULES" TextId="T_ID_CAT_REF_MODULES"/>
+				<CategoryItem ID="CAT_REF_MIGRATION_DAP" TextId="T_ID_MIGRATION_DAP"/>
+			</CategoryList>
+			<!-- List of texts -->
+			<ExternalTextList>
+				<PrimaryLanguage>
+					<!--Device Access Point information etc -->
+					<Text TextId="T_ID_DEV_DESCRIPTION" Value="Schneider ATV6xx-PNT 2-Port"/>
+					<Text TextId="T_ID_V1_DEV_DESCRIPTION" Value="This Device Access Point may be used by IO Controllers that do not support extended PROFINET diagnostics."/>
+					<Text TextId="T_ID_V15_DEV_DESCRIPTION" Value="This Device Access Point may be used by IO Controllers that do not support extended PROFINET diagnostics."/>
+					<Text TextId="T_ID_V2_DEV_DESCRIPTION" Value="This Device Access Point supports RT communication"/>
+					<Text TextId="T_ID_DAP_V15" Value="RT"/>
+					<Text TextId="T_ID_DAP_V15_ATV600" Value="ATV600"/>
+					<Text TextId="T_ID_DAP_V15_ATV610" Value="ATV610"/>
+					<Text TextId="T_ID_DAP_V15_ATV620" Value="ATV620"/>
+					<Text TextId="T_ID_DAP_V15_ATV630" Value="ATV630"/>
+					<Text TextId="T_ID_DAP_V15_ATV640" Value="ATV640"/>
+					<Text TextId="T_ID_DAP_V15_ATV650" Value="ATV650"/>
+					<Text TextId="T_ID_DAP_V15_ATV660" Value="ATV660"/>
+					<Text TextId="T_ID_DAP_V15_ATV670" Value="ATV670"/>
+					<Text TextId="T_ID_DAP_V15_ATV680" Value="ATV680"/>
+					<Text TextId="T_ID_DAP_V15_ATV690" Value="ATV690"/>
+					<Text TextId="T_ID_DAP_V15_ATV6A0" Value="ATV6A0"/>
+					<Text TextId="T_ID_DAP_V15_ATV6B0" Value="ATV6B0"/>
+					<Text TextId="T_ID_DAP_V15_ATV6L0" Value="ATV6L0"/>
+					<Text TextId="T_ID_DAP_V2" Value="RT"/>
+					<Text TextId="T_ID_DAP_V2_ATV600" Value="ATV600"/>
+					<Text TextId="T_ID_DAP_V2_ATV610" Value="ATV610"/>
+					<Text TextId="T_ID_DAP_V2_ATV620" Value="ATV620"/>
+					<Text TextId="T_ID_DAP_V2_ATV630" Value="ATV630"/>
+					<Text TextId="T_ID_DAP_V2_ATV640" Value="ATV640"/>
+					<Text TextId="T_ID_DAP_V2_ATV650" Value="ATV650"/>
+					<Text TextId="T_ID_DAP_V2_ATV660" Value="ATV660"/>
+					<Text TextId="T_ID_DAP_V2_ATV670" Value="ATV670"/>
+					<Text TextId="T_ID_DAP_V2_ATV680" Value="ATV680"/>
+					<Text TextId="T_ID_DAP_V2_ATV690" Value="ATV690"/>
+					<Text TextId="T_ID_DAP_V2_ATV6A0" Value="ATV6A0"/>
+					<Text TextId="T_ID_DAP_V2_ATV6B0" Value="ATV6B0"/>
+					<Text TextId="T_ID_DAP_V2_ATV6L0" Value="ATV6L0"/>
+					<Text TextId="T_ID_SS_INTERFACE" Value="X1"/>
+					<Text TextId="T_ID_SS_PORT1" Value="P1"/>
+					<Text TextId="T_ID_SS_PORT2" Value="P2"/>
+					<Text TextId="T_ID_DAP_INTERFACE_MODULE" Value="Interface"/>
+					<Text TextId="T_ID_PORT" Value="Port 1"/>
+					<Text TextId="T_ID_PORT2" Value="Port 2"/>
+					<!--Initial input parameters, General-->
+					<Text TextId="T_ID_INPUT_PARAM1_INFO" Value="OMA1_TYPE"/>
+					<Text TextId="T_ID_INPUT_PARAM2_INFO" Value="OMA2_TYPE"/>
+					<Text TextId="T_ID_INPUT_PARAM3_INFO" Value="OMA3_TYPE"/>
+					<Text TextId="T_ID_INPUT_PARAM4_INFO" Value="OMA4_TYPE"/>
+					<Text TextId="T_ID_INPUT_PARAM5_INFO" Value="OMA5_TYPE"/>
+					<Text TextId="T_ID_INPUT_PARAM6_INFO" Value="OMA6_TYPE"/>
+					<Text TextId="T_ID_INPUT_PARAM7_INFO" Value="OMA7_TYPE"/>
+					<Text TextId="T_ID_INPUT_PARAM8_INFO" Value="OMA8_TYPE"/>
+					<Text TextId="T_ID_INPUT_PARAM9_INFO" Value="OMA9_TYPE"/>
+					<Text TextId="T_ID_INPUT_PARAM10_INFO" Value="OMA10_TYPE"/>
+					<Text TextId="T_ID_INPUT_PARAM11_INFO" Value="OMA11_TYPE"/>
+					<Text TextId="T_ID_INPUT_PARAM12_INFO" Value="OMA12_TYPE"/>
+					<Text TextId="T_ID_INPUT_PARAM13_INFO" Value="OMA13_TYPE"/>
+					<Text TextId="T_ID_INPUT_PARAM14_INFO" Value="OMA14_TYPE"/>
+					<Text TextId="T_ID_INPUT_PARAM15_INFO" Value="OMA15_TYPE"/>
+					<Text TextId="T_ID_INPUT_PARAM16_INFO" Value="OMA16_TYPE"/>
+					<!--Initial output parameters, General-->
+					<Text TextId="T_ID_OUTPUT_PARAM1_INFO" Value="OCA1_TYPE"/>
+					<Text TextId="T_ID_OUTPUT_PARAM2_INFO" Value="OCA2_TYPE"/>
+					<Text TextId="T_ID_OUTPUT_PARAM3_INFO" Value="OCA3_TYPE"/>
+					<Text TextId="T_ID_OUTPUT_PARAM4_INFO" Value="OCA4_TYPE"/>
+					<Text TextId="T_ID_OUTPUT_PARAM5_INFO" Value="OCA5_TYPE"/>
+					<Text TextId="T_ID_OUTPUT_PARAM6_INFO" Value="OCA6_TYPE"/>
+					<Text TextId="T_ID_OUTPUT_PARAM7_INFO" Value="OCA7_TYPE"/>
+					<Text TextId="T_ID_OUTPUT_PARAM8_INFO" Value="OCA8_TYPE"/>
+					<Text TextId="T_ID_OUTPUT_PARAM9_INFO" Value="OCA9_TYPE"/>
+					<Text TextId="T_ID_OUTPUT_PARAM10_INFO" Value="OCA10_TYPE"/>
+					<Text TextId="T_ID_OUTPUT_PARAM11_INFO" Value="OCA11_TYPE"/>
+					<Text TextId="T_ID_OUTPUT_PARAM12_INFO" Value="OCA12_TYPE"/>
+					<Text TextId="T_ID_OUTPUT_PARAM13_INFO" Value="OCA13_TYPE"/>
+					<Text TextId="T_ID_OUTPUT_PARAM14_INFO" Value="OCA14_TYPE"/>
+					<Text TextId="T_ID_OUTPUT_PARAM15_INFO" Value="OCA15_TYPE"/>
+					<Text TextId="T_ID_OUTPUT_PARAM16_INFO" Value="OCA16_TYPE"/>
+					<!--Initial parameters, DAP-->
+					<Text TextId="T_ID_DAP_PARAMETERS" Value="General configuration"/>
+					<Text TextId="T_ID_DAP_ALARM_DIAGNOSTICS" Value="Alarm Diagnostics"/>
+					<!--Initial parameters, Tgm100-->
+					<Text TextId="T_ID_TGM100_PARAMETERS" Value="General configuration"/>
+					<Text TextId="T_ID_TGM100_OUT1_NAME" Value="OCA1_ADDRESS"/>
+					<Text TextId="T_ID_TGM100_OUT2_NAME" Value="OCA2_ADDRESS"/>
+					<Text TextId="T_ID_TGM100_IN1_NAME" Value="OMA1_ADDRESS"/>
+					<Text TextId="T_ID_TGM100_IN2_NAME" Value="OMA2_ADDRESS"/>
+					<!--Initial parameters, Tgm101-->
+					<Text TextId="T_ID_TGM101_PARAMETERS" Value="General configuration"/>
+					<Text TextId="T_ID_TGM101_OUT1_NAME" Value="OCA1_ADDRESS"/>
+					<Text TextId="T_ID_TGM101_OUT2_NAME" Value="OCA2_ADDRESS"/>
+					<Text TextId="T_ID_TGM101_OUT3_NAME" Value="OCA3_ADDRESS"/>
+					<Text TextId="T_ID_TGM101_OUT4_NAME" Value="OCA4_ADDRESS"/>
+					<Text TextId="T_ID_TGM101_OUT5_NAME" Value="OCA5_ADDRESS"/>
+					<Text TextId="T_ID_TGM101_OUT6_NAME" Value="OCA6_ADDRESS"/>
+					<Text TextId="T_ID_TGM101_IN1_NAME" Value="OMA1_ADDRESS"/>
+					<Text TextId="T_ID_TGM101_IN2_NAME" Value="OMA2_ADDRESS"/>
+					<Text TextId="T_ID_TGM101_IN3_NAME" Value="OMA3_ADDRESS"/>
+					<Text TextId="T_ID_TGM101_IN4_NAME" Value="OMA4_ADDRESS"/>
+					<Text TextId="T_ID_TGM101_IN5_NAME" Value="OMA5_ADDRESS"/>
+					<Text TextId="T_ID_TGM101_IN6_NAME" Value="OMA6_ADDRESS"/>
+					<!--Initial parameters, Tgm102-->
+					<Text TextId="T_ID_TGM102_PARAMETERS" Value="General configuration"/>
+					<Text TextId="T_ID_TGM102_OUT1_NAME" Value="OCA1_ADDRESS"/>
+					<Text TextId="T_ID_TGM102_OUT2_NAME" Value="OCA2_ADDRESS"/>
+					<Text TextId="T_ID_TGM102_OUT3_NAME" Value="OCA3_ADDRESS"/>
+					<Text TextId="T_ID_TGM102_OUT4_NAME" Value="OCA4_ADDRESS"/>
+					<Text TextId="T_ID_TGM102_OUT5_NAME" Value="OCA5_ADDRESS"/>
+					<Text TextId="T_ID_TGM102_OUT6_NAME" Value="OCA6_ADDRESS"/>
+					<Text TextId="T_ID_TGM102_IN1_NAME" Value="OMA1_ADDRESS"/>
+					<Text TextId="T_ID_TGM102_IN2_NAME" Value="OMA2_ADDRESS"/>
+					<Text TextId="T_ID_TGM102_IN3_NAME" Value="OMA3_ADDRESS"/>
+					<Text TextId="T_ID_TGM102_IN4_NAME" Value="OMA4_ADDRESS"/>
+					<Text TextId="T_ID_TGM102_IN5_NAME" Value="OMA5_ADDRESS"/>
+					<Text TextId="T_ID_TGM102_IN6_NAME" Value="OMA6_ADDRESS"/>
+					<!--Initial parameters, Tgm106-->
+					<Text TextId="T_ID_TGM106_PARAMETERS" Value="General configuration"/>
+					<Text TextId="T_ID_TGM106_OUT1_NAME" Value="OCA1_ADDRESS"/>
+					<Text TextId="T_ID_TGM106_OUT2_NAME" Value="OCA2_ADDRESS"/>
+					<Text TextId="T_ID_TGM106_OUT3_NAME" Value="OCA3_ADDRESS"/>
+					<Text TextId="T_ID_TGM106_OUT4_NAME" Value="OCA4_ADDRESS"/>
+					<Text TextId="T_ID_TGM106_OUT5_NAME" Value="OCA5_ADDRESS"/>
+					<Text TextId="T_ID_TGM106_OUT6_NAME" Value="OCA6_ADDRESS"/>
+					<Text TextId="T_ID_TGM106_OUT7_NAME" Value="OCA7_ADDRESS"/>
+					<Text TextId="T_ID_TGM106_OUT8_NAME" Value="OCA8_ADDRESS"/>
+					<Text TextId="T_ID_TGM106_IN1_NAME" Value="OMA1_ADDRESS"/>
+					<Text TextId="T_ID_TGM106_IN2_NAME" Value="OMA2_ADDRESS"/>
+					<Text TextId="T_ID_TGM106_IN3_NAME" Value="OMA3_ADDRESS"/>
+					<Text TextId="T_ID_TGM106_IN4_NAME" Value="OMA4_ADDRESS"/>
+					<Text TextId="T_ID_TGM106_IN5_NAME" Value="OMA5_ADDRESS"/>
+					<Text TextId="T_ID_TGM106_IN6_NAME" Value="OMA6_ADDRESS"/>
+					<Text TextId="T_ID_TGM106_IN7_NAME" Value="OMA7_ADDRESS"/>
+					<Text TextId="T_ID_TGM106_IN8_NAME" Value="OMA8_ADDRESS"/>
+					<!--Initial parameters, Tgm107-->
+					<Text TextId="T_ID_TGM107_PARAMETERS" Value="General configuration"/>
+					<Text TextId="T_ID_TGM107_OUT1_NAME" Value="OCA1_ADDRESS"/>
+					<Text TextId="T_ID_TGM107_OUT2_NAME" Value="OCA2_ADDRESS"/>
+					<Text TextId="T_ID_TGM107_OUT3_NAME" Value="OCA3_ADDRESS"/>
+					<Text TextId="T_ID_TGM107_OUT4_NAME" Value="OCA4_ADDRESS"/>
+					<Text TextId="T_ID_TGM107_OUT5_NAME" Value="OCA5_ADDRESS"/>
+					<Text TextId="T_ID_TGM107_OUT6_NAME" Value="OCA6_ADDRESS"/>
+					<Text TextId="T_ID_TGM107_OUT7_NAME" Value="OCA7_ADDRESS"/>
+					<Text TextId="T_ID_TGM107_OUT8_NAME" Value="OCA8_ADDRESS"/>
+					<Text TextId="T_ID_TGM107_OUT9_NAME" Value="OCA9_ADDRESS"/>
+					<Text TextId="T_ID_TGM107_OUT10_NAME" Value="OCA10_ADDRESS"/>
+					<Text TextId="T_ID_TGM107_OUT11_NAME" Value="OCA11_ADDRESS"/>
+					<Text TextId="T_ID_TGM107_OUT12_NAME" Value="OCA12_ADDRESS"/>
+					<Text TextId="T_ID_TGM107_OUT13_NAME" Value="OCA13_ADDRESS"/>
+					<Text TextId="T_ID_TGM107_OUT14_NAME" Value="OCA14_ADDRESS"/>
+					<Text TextId="T_ID_TGM107_OUT15_NAME" Value="OCA15_ADDRESS"/>
+					<Text TextId="T_ID_TGM107_OUT16_NAME" Value="OCA16_ADDRESS"/>
+					<Text TextId="T_ID_TGM107_IN1_NAME" Value="OMA1_ADDRESS"/>
+					<Text TextId="T_ID_TGM107_IN2_NAME" Value="OMA2_ADDRESS"/>
+					<Text TextId="T_ID_TGM107_IN3_NAME" Value="OMA3_ADDRESS"/>
+					<Text TextId="T_ID_TGM107_IN4_NAME" Value="OMA4_ADDRESS"/>
+					<Text TextId="T_ID_TGM107_IN5_NAME" Value="OMA5_ADDRESS"/>
+					<Text TextId="T_ID_TGM107_IN6_NAME" Value="OMA6_ADDRESS"/>
+					<Text TextId="T_ID_TGM107_IN7_NAME" Value="OMA7_ADDRESS"/>
+					<Text TextId="T_ID_TGM107_IN8_NAME" Value="OMA8_ADDRESS"/>
+					<Text TextId="T_ID_TGM107_IN9_NAME" Value="OMA9_ADDRESS"/>
+					<Text TextId="T_ID_TGM107_IN10_NAME" Value="OMA10_ADDRESS"/>
+					<Text TextId="T_ID_TGM107_IN11_NAME" Value="OMA11_ADDRESS"/>
+					<Text TextId="T_ID_TGM107_IN12_NAME" Value="OMA12_ADDRESS"/>
+					<Text TextId="T_ID_TGM107_IN13_NAME" Value="OMA13_ADDRESS"/>
+					<Text TextId="T_ID_TGM107_IN14_NAME" Value="OMA14_ADDRESS"/>
+					<Text TextId="T_ID_TGM107_IN15_NAME" Value="OMA15_ADDRESS"/>
+					<Text TextId="T_ID_TGM107_IN16_NAME" Value="OMA16_ADDRESS"/>
+					<!--Module category-->
+					<Text TextId="T_ID_CAT_REF_MODULES" Value="Telegrams"/>
+					<Text TextId="T_ID_MIGRATION_DAP" Value="Migration"/>
+					<!-- General -->
+					<Text TextId="T_ID_INPUT" Value="Input"/>
+					<Text TextId="T_ID_OUTPUT" Value="Output"/>
+					<Text TextId="T_ID_ENABLE" Value="Enable"/>
+					<Text TextId="T_ID_DISABLE" Value="Disable"/>
+					<Text TextId="T_ID_YES" Value="Yes"/>
+					<Text TextId="T_ID_NO" Value="No"/>
+					<Text TextId="T_ID_NOT_USED" Value="Not Used"/>
+					<Text TextId="T_ID_OUTPUT_32BITS" Value="Output Double Data Word (32 Bits)"/>
+					<Text TextId="T_ID_OUTPUT_16BITS" Value="Output Data Word (16 Bits)"/>
+					<Text TextId="T_ID_INPUT_32BITS" Value="Input Double Data Word (32 Bits)"/>
+					<Text TextId="T_ID_INPUT_16BITS" Value="Input Data Word (16 Bits)"/>
+					<Text TextId="T_ID_HASPKW" Value="PKW"/>
+					<Text TextId="T_ID_TGMINFO" Value="TGM"/>
+					<!-- Std Tgm 1 -->
+					<Text TextId="T_ID_PROFILE_STD_TGM1_PARAMETERS" Value="General parameters"/>
+					<Text TextId="T_ID_PROFILE_STD_TGM1_FS_STW1" Value="Fail safe STW1"/>
+					<Text TextId="T_ID_PROFILE_STD_TGM1_FS_NSOLLA" Value="Fail safe NSOLL_A"/>
+					<Text TextId="T_ID_PROFILE_MAPPAP_NAME" Value="Module Access Point"/>
+					<Text TextId="T_ID_PROFILE_MAPPAP_INFO_TEXT" Value="Acyclic parameter access is possible through this module"/>
+					<Text TextId="T_ID_PROFILE_STD_TGM1_NAME" Value="Standard Telegram 1"/>
+					<Text TextId="T_ID_PROFILE_STD_TGM1_INFO_TEXT" Value="Control/Reference and Status/Actual values"/>
+					<Text TextId="T_ID_PROFILE_MODULE_MAP_STD_TGM_NAME" Value="Telegram 1 (PROFIdrive)"/>
+					<Text TextId="T_ID_PROFILE_MODULE_MAP_STD_TGM_INFO_TEXT" Value="Drive Object"/>
+					<!-- Tgm 100 -->
+					<Text TextId="T_ID_TGM100_NAME" Value="Telegram 100 (4PKW/2PZD)"/>
+					<Text TextId="T_ID_INFO_TGM100" Value="4 Words PKW and 2 words PZD"/>
+					<Text TextId="T_ID_SUBMOD_NAME_TGM100" Value="Telegram 100"/>
+					<Text TextId="T_ID_SUBMOD_INFO_TGM100" Value="4 Words PKW and 2 words PZD"/>
+					<!-- Tgm 101 -->
+					<Text TextId="T_ID_TGM101_NAME" Value="Telegram 101 (4PKW/6PZD)"/>
+					<Text TextId="T_ID_INFO_TGM101" Value="4 Words PKW and 6 words PZD"/>
+					<Text TextId="T_ID_SUBMOD_NAME_TGM101" Value="Telegram 101"/>
+					<Text TextId="T_ID_SUBMOD_INFO_TGM101" Value="4 Words PKW and 6 words PZD"/>
+					<!-- Tgm 102 -->
+					<Text TextId="T_ID_TGM102_NAME" Value="Telegram 102 (6PZD)"/>
+					<Text TextId="T_ID_INFO_TGM102" Value="6 words PZD"/>
+					<Text TextId="T_ID_SUBMOD_NAME_TGM102" Value="Telegram 102"/>
+					<Text TextId="T_ID_SUBMOD_INFO_TGM102" Value="6 words PZD"/>
+					<!-- Tgm 106 -->
+					<Text TextId="T_ID_TGM106_NAME" Value="Telegram 106 (4PKW/8PZD)"/>
+					<Text TextId="T_ID_INFO_TGM106" Value="4 Words PKW and 8 words PZD"/>
+					<Text TextId="T_ID_SUBMOD_NAME_TGM106" Value="Telegram 106"/>
+					<Text TextId="T_ID_SUBMOD_INFO_TGM106" Value="4 Words PKW and 8 words PZD"/>
+					<!-- Tgm 107 -->
+					<Text TextId="T_ID_TGM107_NAME" Value="Telegram 107 (4PKW/16PZD)"/>
+					<Text TextId="T_ID_INFO_TGM107" Value="4 Words PKW and 16 words PZD"/>
+					<Text TextId="T_ID_SUBMOD_NAME_TGM107" Value="Telegram 107"/>
+					<Text TextId="T_ID_SUBMOD_INFO_TGM107" Value="4 Words PKW and 16 words PZD"/>
+					<!-- Manufacturer specific diagnostic alarms information -->
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT" Value="ADL_LFT (LSB) : "/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_NOF" Value="NOF"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_INF" Value="INF"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_EEF1" Value="EEF1"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_CFF" Value="CFF"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_CFI" Value="CFI"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_SLF1" Value="SLF1"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_ILF" Value="ILF"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_CNF" Value="CNF"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_EPF1" Value="EPF1"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_OCF" Value="OCF"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_CRF" Value="CRF"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_SPF" Value="SPF"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_ANF" Value="ANF"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_LFF2" Value="LFF2"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_PTF1" Value="PTF1"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_OTF1" Value="OTF1"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_OHF" Value="OHF"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_OLF" Value="OLF"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_OBF" Value="OBF"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_OSF" Value="OSF"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_OPF1" Value="OPF1"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_PHF" Value="PHF"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_USF" Value="USF"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_SCF1" Value="SCF1"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_SOF" Value="SOF"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_TNF" Value="TNF"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_INF1" Value="INF1"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_INF2" Value="INF2"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_INF3" Value="INF3"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_INF4" Value="INF4"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_EEF2" Value="EEF2"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_SCF2" Value="SCF2"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_SCF3" Value="SCF3"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_OPF2" Value="OPF2"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_COF" Value="COF"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_BLF" Value="BLF"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_INF7" Value="INF7"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_EPF2" Value="EPF2"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_APF" Value="APF"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_INF8" Value="INF8"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_BRF" Value="BRF"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_SLF2" Value="SLF2"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_ECF" Value="ECF"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_SSF" Value="SSF"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_SLF3" Value="SLF3"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_PRF" Value="PRF"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_PTF2" Value="PTF2"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_OTF2" Value="OTF2"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_PTFL" Value="PTFL"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_OTFL" Value="OTFL"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_INF9" Value="INF9"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_INFA" Value="INFA"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_INFB" Value="INFB"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_TJF" Value="TJF"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_SCF4" Value="SCF4"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_SCF5" Value="SCF5"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_SRF" Value="SRF"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_FCF1" Value="FCF1"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_FCF2" Value="FCF2"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_INFC" Value="INFC"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_AI2F" Value="AI2F"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_ENF" Value="ENF"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_CRF2" Value="CRF2"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_LCF" Value="LCF"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_BUF" Value="BUF"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_DCF" Value="DCF"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_HDF" Value="HDF"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_INF6" Value="INF6"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_INFE" Value="INFE"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_BOF" Value="BOF"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_LFF3" Value="LFF3"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_LFF4" Value="LFF4"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_HCF" Value="HCF"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_DLF" Value="DLF"/>
+					<Text TextId="T_ID_MANSPEC_DIAG_LFT_CSF" Value="CSF"/>
+				</PrimaryLanguage>
+			</ExternalTextList>
+		</ApplicationProcess>
+	</ProfileBody>
+</ISO15745Profile>

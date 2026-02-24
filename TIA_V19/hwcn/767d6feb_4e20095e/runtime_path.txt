@@ -1,0 +1,119 @@
+C:\Program Files\Siemens\Automation\Portal V19
+fb21a4d8-ecba-463d-b86f-8b5b52648186
+Created on: 02/21/2026 13:36:30
+by: "Siemens.Automation.Portal" (PID: 33852, StartTime: 02/21/2026 13:36:12)
+Command line: "C:\Program Files\Siemens\Automation\Portal V19\Bin\Siemens.Automation.Portal.exe" -Name=HMICompiler(cert,smart) -CallAutoLoadDlcs=False -SyncSettingService=False -bootstrapper=Siemens.Automation.CommonServices:Siemens.Automation.CommonServices.ApplicationLifeCycle.Core.BackgroundProcessBootStrapper -serverGuid=47b31e30-6462-41d0-9baa-8e333b42a73b -processId=25888 -appDomainId=1 -ErrorReportingGuid=004c5155-1c39-4aec-ab28-b85f5b759aa9 -nosplashscreen -lang=en-US 
+TIAConfigurationFile: 
+Callstack: 
+   at System.Environment.GetStackTrace(Exception e, Boolean needFileInfo)
+   at System.Environment.get_StackTrace()
+   at Siemens.Simatic.HwConfiguration.Basics.Meta.Helper.RuntimeInfoHandler.CreateRuntimeInfoFile(Guid metaServiceGuid, IHwcnWriteableDirectory currentDir, String reloadReason)
+   at Siemens.Simatic.HwConfiguration.Basics.Meta.HwcnMetaService.SaveCacheReal(Boolean changedLanguageData, String reloadReason, String userHwcnMetaDirectory)
+   at Siemens.Simatic.HwConfiguration.Basics.Meta.HwcnMetaService.SaveCache(Boolean changedLanguageData, String reloadReason, String userHwcnMetaDirectory)
+   at Siemens.Simatic.HwConfiguration.Basics.Meta.HwcnMetaService.FullLoad(Boolean withBinary, Boolean reloadFromBinary, String reloadReason, Boolean allowReloadFromBackgroundProcess)
+   at Siemens.Simatic.HwConfiguration.Basics.Meta.HwcnMetaService.InitialLoad()
+   at Siemens.Simatic.HwConfiguration.Basics.Meta.HwcnMetaService.PostAttach()
+   at Siemens.Automation.Basics.DlcLifetimeManager.TryGetDlc(IWorkingContext workingContext, IDlcMetaInfo dlcMetaInfo, IDlc dlcForCloning, IDlc& dlc)
+   at Siemens.Automation.Basics.DlcManager.Siemens.Automation.Basics.Private.IDlcManagerPrivate.TryLocalLoad(IDlcMetaInfo dlcMetaInfo, IDlc& dlc)
+   at Siemens.Automation.Basics.DlcManager.TryLoad(IDlcMetaInfo dlcMetaInfo, IWorkingContext startWorkingContext, IDlc& dlc)
+   at Siemens.Automation.Basics.DlcManager.Load(String serviceId, DlcVersion dlcVersion, Boolean throwOnError, IEnumerable selectedObjects)
+   at Siemens.Automation.Basics.DlcManager.Siemens.Automation.Basics.IDlcManager.Load(String serviceId)
+   at Siemens.Simatic.HwConfiguration.Basics.Basics.LeanBL.LeanBLManager.ReadGenericData()
+   at Siemens.Simatic.HwConfiguration.Basics.Basics.LeanBL.LeanBLManager..ctor(IWorkingContext workingContext)
+   at Siemens.Simatic.HwConfiguration.Basics.Basics.ConfigContext..ctor(IHwcnBasicsFacade hwcnBasicsFacade)
+   at Siemens.Simatic.HwConfiguration.Basics.Basics.HwcnBasicsFacade.Attach(IWorkingContext workingContext)
+   at Siemens.Automation.Basics.DlcLifetimeManager.TryCloneOrCreateDlc(IDlcMetaInfo dlcMetaInfo, IWorkingContext workingContext, IDlc dlcForCloning, IDlc& clonedOrCreatedDlc)
+   at Siemens.Automation.Basics.DlcLifetimeManager.TryGetDlc(IWorkingContext workingContext, IDlcMetaInfo dlcMetaInfo, IDlc dlcForCloning, IDlc& dlc)
+   at Siemens.Automation.Basics.DlcManager.Siemens.Automation.Basics.Private.IDlcManagerPrivate.TryLocalLoad(IDlcMetaInfo dlcMetaInfo, IDlc& dlc)
+   at Siemens.Automation.Basics.DlcManager.TryLoad(IDlcMetaInfo dlcMetaInfo, IWorkingContext startWorkingContext, IDlc& dlc)
+   at Siemens.Automation.Basics.DlcManager.Load(String serviceId, DlcVersion dlcVersion, Boolean throwOnError, IEnumerable selectedObjects)
+   at Siemens.Automation.Basics.DlcManager.Siemens.Automation.Basics.IDlcManager.Load(String serviceId)
+   at Siemens.Simatic.HwConfiguration.Basics.Basics.HwcnBasicsFacade.Attach(IWorkingContext workingContext)
+   at Siemens.Automation.Basics.DlcLifetimeManager.TryCloneOrCreateDlc(IDlcMetaInfo dlcMetaInfo, IWorkingContext workingContext, IDlc dlcForCloning, IDlc& clonedOrCreatedDlc)
+   at Siemens.Automation.Basics.DlcLifetimeManager.TryGetDlc(IWorkingContext workingContext, IDlcMetaInfo dlcMetaInfo, IDlc dlcForCloning, IDlc& dlc)
+   at Siemens.Automation.Basics.DlcManager.Siemens.Automation.Basics.Private.IDlcManagerPrivate.TryLocalLoad(IDlcMetaInfo dlcMetaInfo, IDlc& dlc)
+   at Siemens.Automation.Basics.DlcManager.TryLoad(IDlcMetaInfo dlcMetaInfo, IWorkingContext startWorkingContext, IDlc& dlc)
+   at Siemens.Automation.Basics.DlcManager.Load(String serviceId, DlcVersion dlcVersion, Boolean throwOnError, IEnumerable selectedObjects)
+   at Siemens.Automation.Basics.DlcManager.Siemens.Automation.Basics.IDlcManager.Load(String serviceId)
+   at Siemens.Simatic.HwConfiguration.BusinessLogic.Utilities.Model.ObjectUtilitiesBase.get_HwcnBasicsFacade()
+   at Siemens.Simatic.HwConfiguration.BusinessLogic.Utilities.Model.RackUtilities.GetAllElementsPluggedIn(Boolean sortByPositonNumber)
+   at Siemens.Simatic.HwConfiguration.BusinessLogic.Utilities.Model.DeviceUtilities.get_CPs()
+   at Siemens.Simatic.HwConfiguration.BusinessLogic.Hmi.Base.PropertyNotification.PropertyAccess.PropertyAccessNavigator.GetCPs()
+   at Siemens.Simatic.HwConfiguration.BusinessLogic.Hmi.Base.PropertyNotification.PropertyAccess.PropertyAccessNavigator.GetCp(Int32 index)
+   at Siemens.Simatic.HwConfiguration.BusinessLogic.Hmi.Base.PropertyNotification.PropertyAccess.PropertyAccessNavigator.GetCpNode(Int32 cpobjIndex)
+   at Siemens.Simatic.HwConfiguration.BusinessLogic.Hmi.Base.PropertyNotification.PropertyAccess.PropertyAccessNavigator.InitPropertyMappings()
+   at Siemens.Simatic.HwConfiguration.BusinessLogic.Hmi.Base.PropertyNotification.Validation.AttributeValidationFactory.GetValidationObject(ICoreObject application, String attributeName)
+   at Siemens.Simatic.HwConfiguration.BusinessLogic.Hmi.Base.PropertyNotification.HmiHwcnPropertyManager.CreateHmiPropertyNotification[T](PropertyAccessInformation accessInformation)
+   at Siemens.Simatic.HwConfiguration.BusinessLogic.Hmi.Base.PropertyNotification.HmiHwcnPropertyManager.GetPropertyNotification[T](PropertyAccessInformation accessInformation)
+   at Siemens.Simatic.HwConfiguration.BusinessLogic.Hmi.Base.PropertyNotification.HmiHwcnPropertyManager.CreatePropertyNotification[T](PropertyAccessInformation propertyAccessInformation)
+   at Siemens.Simatic.HwConfiguration.BusinessLogic.Hmi.Base.PropertyNotification.HmiHwcnPropertyManager.CreateProperty(String propertyName, Boolean forWriteAccess)
+   at Siemens.Simatic.HwConfiguration.BusinessLogic.Hmi.Base.PropertyNotification.HmiHwcnPropertyManager.GetPropertyAdapterValue[T](String propertyName)
+   at lambda_method(Closure , Object )
+   at Siemens.Simatic.Hmi.Utah.Device.DeviceProxyBase.CacheAndGetValue(PropertyInfo propInfo, Boolean cloneReference, Object& propertyValue)
+   at Siemens.Simatic.Hmi.Utah.Device.DeviceProxyBase.TryGetPropertyValueFromDescriptor(String propertyName, Object& propertyValue)
+   at Siemens.Simatic.Hmi.Utah.Device.DeviceProxyBase.DoGetProperty(String propertyName, PropertyResults& propertyResult, Boolean cloneReference)
+   at Siemens.Simatic.Hmi.Utah.Device.DeviceProxyBase.Siemens.Simatic.Hmi.Utah.Common.Base.IPropertyAccessRaw.GetProperty(String propertyName, PropertyResults& propertyResult, Boolean cloneReference)
+   at Siemens.Simatic.Hmi.Utah.Device.DeviceProxyBase.Siemens.Simatic.Hmi.Utah.Common.Base.IPropertyAccessRaw.GetPropertyEx(String propertyName, PropertyResults& propertyResult, GetPropertyExFlags flags)
+   at Siemens.Simatic.Hmi.Es2rt.Frame.EsAccess.Es2rtPropertyAccessRaw.GetPropertyValue(String propertyName, PropertyResults& results)
+   at Siemens.Simatic.Hmi.Es2rt.Frame.EsAccess.Es2rtObjectAccess.CallPropertyAccess(IEs2rtDependencyPropertyInfo propertyInfo, IEs2rtEsObjectHandle handle, String propertyName, PropertyResults& results)
+   at Siemens.Simatic.Hmi.Es2rt.Frame.EsAccess.Es2rtObjectAccess.GetProperty(IEs2rtDependencyPropertyInfo propertyInfo, IEs2rtEsObjectHandle handle, Object propertyValue)
+   at Siemens.Simatic.Hmi.Es2rt.Frame.EsAccess.Es2rtEsPropertyTable.UpdateProperty(IEs2rtDependencyPropertyInfo propertyInfo)
+   at Siemens.Simatic.Hmi.Es2rt.Frame.EsAccess.Es2rtEsPropertyTable.UpdateProperties(IEs2rtDependencyTypeInfo typeInfo, IEnumerator`1 propertyEnumerator)
+   at Siemens.Simatic.Hmi.Es2rt.Frame.EsAccess.Es2rtEsPropertyTable.Update(Es2rtProjectWrapper project, IEs2rtDependencyTypeInfo typeInfo, IEnumerator`1 propertyEnumerator, Es2rtCoreTarget activeDevice, Es2rtHandle instanceScope)
+   at Siemens.Simatic.Hmi.Es2rt.Frame.EsAccess.Es2rtPropertyHandler.UpdatePropertyTable(Es2rtEsPropertyTable propertyTable, IEs2rtDependencyTypeInfo typeInfo, Es2rtCoreTarget activeDevice, Es2rtHandle instanceScope)
+   at Siemens.Simatic.Hmi.Es2rt.Frame.EsAccess.Es2rtPropertyHandler.GetPropertyTable(Es2rtHandle processHandle, IEs2rtDependencyTypeInfo typeInfo, Es2rtCoreTarget activeDevice, Es2rtHandle instanceScope)
+   at Siemens.Simatic.Hmi.Es2rt.Frame.EsAccess.Es2rtDependencyResolver.DoEvaluateDependencyInfo(Es2rtHandle processHandle, IEs2rtDependencyTypeInfo dependencyTypeInfo)
+   at Siemens.Simatic.Hmi.Es2rt.Frame.EsAccess.Es2rtDependencyResolver.EvaluateDependencyInfo(Es2rtHandle processHandle, IEs2rtDependencyTypeInfo dependencyTypeInfo)
+   at Siemens.Simatic.Hmi.Es2rt.Frame.EsAccess.Es2rtDependencyResolver.UpdateProcessList(Es2rtHandle processHandle)
+   at Siemens.Simatic.Hmi.Es2rt.Frame.EsAccess.Es2rtDependencyResolver.ResolveDependencies(Es2rtHandle[] processEntries, IEs2rtDeviceTarget activeDevice, Es2rtCoreTarget activeCoreTarget)
+   at Siemens.Simatic.Hmi.Es2rt.Frame.EsAccess.Es2rtEsAccess.ResolveDependencies(IMultiProcessList& processList, Es2rtHandle[] theProcessHandles)
+   at Siemens.Simatic.Hmi.Es2rt.Frame.EsAccess.Es2rtEsAccess.IterateNewProcessList(Boolean checkNewLists, IEs2rtProcessList& processList, ChangeListResultInfo& changeListResultInfo, RebuildListResultInfo& rebuildResultInfo)
+   at Siemens.Simatic.Hmi.Es2rt.Frame.EsAccess.Es2rtEsAccess.Siemens.Simatic.Hmi.Es2rt.Frame.IEs2rtEsAccess.IterateProcessList(Boolean checkNewLists, IEs2rtProcessList& processList, ChangeListResultInfo& changeListResultInfo, RebuildListResultInfo& rebuildResultInfo)
+   at Siemens.Simatic.Hmi.Es2rt.Frame.TargetHandling.Es2rtFrameProxy.TryIterateProcessList(IEs2rtDeviceTarget device, Es2rtProcessResult& result, Boolean& continueIteration, Es2rtProcessListContinuationMode& continuationMode)
+   at Siemens.Simatic.Hmi.Es2rt.Frame.TargetHandling.Es2rtFrameProxy.DoCompile(IEs2rtDeviceTarget device)
+   at Siemens.Simatic.Hmi.Es2rt.Frame.TargetHandling.Es2rtFrameProxy.InitializeRebuildAndDoCompile(IEs2rtDeviceTarget device, Es2rtRebuildReason reason, Es2rtProcessResult& result)
+   at Siemens.Simatic.Hmi.Es2rt.Frame.TargetHandling.Es2rtFrameProxy.ProcessRebuildAll(IEs2rtDeviceTarget device, Es2rtRebuildReason reason, Es2rtProcessResult& result)
+   at Siemens.Simatic.Hmi.Es2rt.Frame.TargetHandling.Es2rtFrameProxy.BackgroundCompile(IEs2rtDeviceTarget device, Boolean forceRebuild)
+   at Siemens.Simatic.Hmi.Es2rt.Frame.TargetHandling.Es2rtTargetHandler.Siemens.Simatic.Hmi.Es2rt.Frame.IEs2rtTargetHandler.BackgroundCompile(IEs2rtDeviceTarget device, Boolean forceRebuild)
+   at Siemens.Simatic.Hmi.Es2rt.Frame.ThreadHandling.Es2rtCompileThread.BackgroundCompile()
+   at Siemens.Simatic.Hmi.Es2rt.Frame.ThreadHandling.Es2rtCompileThread.TryBackgroundCompile()
+   at Siemens.Simatic.Hmi.Es2rt.Frame.ThreadHandling.Es2rtCompileThread.DoCommand()
+   at Siemens.Simatic.Hmi.Es2rt.Frame.ThreadHandling.Es2rtCompileThread.Run()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.ThreadHelper.ThreadStart()
+Reload reason: 
+Called "InitialLoad()"
+Called "LoadConfigObjectTypeInfos(...) with the result True"
+
+Found difference between present and cached meta files in (ConfigObjectTypes)
+Reason for reload: Number of files differs (cache {873} vs present {874})
+Only in cache: {
+	};
+Only in file system: {
+	Name = hwcn-xdd-cot-gsd_gsdml-v2.3-lenze-i550pn100-20160114.xml, ModificationDateTime = 1/27/2026 3:18:21 PM, Path = }
+
+
+Found difference between present and cached meta files in (Catalog)
+Reason for reload: Number of files differs (cache {769} vs present {770})
+Only in cache: {
+	};
+Only in file system: {
+	Name = hwcn-xdd-cat-gsd_gsdml-v2.3-lenze-i550pn100-20160114.xml, ModificationDateTime = 1/27/2026 3:18:21 PM, Path = }
+
+
+Found difference between present and cached meta files in (Languages)
+Reason for reload: Number of files differs (cache {352} vs present {354})
+Only in cache: {
+	};
+Only in file system: {
+	Name = hwcn-xdd-dct-gsd_gsdml-v2.3-lenze-i550pn100-20160114.xml, ModificationDateTime = 1/27/2026 3:18:21 PM, Path = de,
+	Name = hwcn-xdd-dct-gsd_gsdml-v2.3-lenze-i550pn100-20160114.xml, ModificationDateTime = 1/27/2026 3:18:21 PM, Path = en}
+
+Called "GetAndCheckAllFiles(...) with the result Error"
+
+Called "FullLoad(withBinary = False, reloadFromBinary = True, reloadReason = ..., allowReloadFromBackgroundProcess = False)"
+
+
+===

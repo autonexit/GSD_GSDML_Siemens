@@ -1,0 +1,136 @@
+C:\Program Files\Siemens\Automation\Portal V19
+a0dfd0b0-df26-47bf-93dc-a4ddc1fef426
+Created on: 01/28/2026 14:04:50
+by: "Siemens.Automation.Portal" (PID: 36948, StartTime: 01/28/2026 10:32:08)
+Command line: "C:\Program Files\Siemens\Automation\Portal V19\Bin\Siemens.Automation.Portal.exe" -Name=SearchReplaceBackgroundProcess -CallAutoLoadDlcs=True -SyncSettingService=False -bootstrapper=Siemens.Automation.CommonServices:Siemens.Automation.CommonServices.ApplicationLifeCycle.Core.BackgroundProcessBootStrapper -serverGuid=18039032-1bd5-4456-a64e-8a4f5827e86f -processId=13740 -appDomainId=1 -ErrorReportingGuid=83f250ed-71d0-4e0b-b03a-867faeb06f40 -nosplashscreen -lang=en-US 
+TIAConfigurationFile: 
+Callstack: 
+   at System.Environment.GetStackTrace(Exception e, Boolean needFileInfo)
+   at System.Environment.get_StackTrace()
+   at Siemens.Simatic.HwConfiguration.Basics.Meta.Helper.RuntimeInfoHandler.CreateRuntimeInfoFile(Guid metaServiceGuid, IHwcnWriteableDirectory currentDir, String reloadReason)
+   at Siemens.Simatic.HwConfiguration.Basics.Meta.HwcnMetaService.SaveCacheReal(Boolean changedLanguageData, String reloadReason, String userHwcnMetaDirectory)
+   at Siemens.Simatic.HwConfiguration.Basics.Meta.HwcnMetaService.SaveCache(Boolean changedLanguageData, String reloadReason, String userHwcnMetaDirectory)
+   at Siemens.Simatic.HwConfiguration.Basics.Meta.HwcnMetaService.FullLoad(Boolean withBinary, Boolean reloadFromBinary, String reloadReason, Boolean allowReloadFromBackgroundProcess)
+   at Siemens.Simatic.HwConfiguration.Basics.Meta.HwcnMetaService.InitialLoad()
+   at Siemens.Simatic.HwConfiguration.Basics.Meta.HwcnMetaService.PostAttach()
+   at Siemens.Automation.Basics.DlcLifetimeManager.TryGetDlc(IWorkingContext workingContext, IDlcMetaInfo dlcMetaInfo, IDlc dlcForCloning, IDlc& dlc)
+   at Siemens.Automation.Basics.DlcManager.Siemens.Automation.Basics.Private.IDlcManagerPrivate.TryLocalLoad(IDlcMetaInfo dlcMetaInfo, IDlc& dlc)
+   at Siemens.Automation.Basics.DlcManager.TryLoad(IDlcMetaInfo dlcMetaInfo, IWorkingContext startWorkingContext, IDlc& dlc)
+   at Siemens.Automation.Basics.DlcManager.Load(String serviceId, DlcVersion dlcVersion, Boolean throwOnError, IEnumerable selectedObjects)
+   at Siemens.Automation.Basics.DlcManager.Siemens.Automation.Basics.IDlcManager.Load(String serviceId)
+   at Siemens.Simatic.HwConfiguration.Basics.Basics.LeanBL.LeanBLManager.ReadGenericData()
+   at Siemens.Simatic.HwConfiguration.Basics.Basics.LeanBL.LeanBLManager..ctor(IWorkingContext workingContext)
+   at Siemens.Simatic.HwConfiguration.Basics.Basics.ConfigContext..ctor(IHwcnBasicsFacade hwcnBasicsFacade)
+   at Siemens.Simatic.HwConfiguration.Basics.Basics.HwcnBasicsFacade.Attach(IWorkingContext workingContext)
+   at Siemens.Automation.Basics.DlcLifetimeManager.TryCloneOrCreateDlc(IDlcMetaInfo dlcMetaInfo, IWorkingContext workingContext, IDlc dlcForCloning, IDlc& clonedOrCreatedDlc)
+   at Siemens.Automation.Basics.DlcLifetimeManager.TryGetDlc(IWorkingContext workingContext, IDlcMetaInfo dlcMetaInfo, IDlc dlcForCloning, IDlc& dlc)
+   at Siemens.Automation.Basics.DlcManager.Siemens.Automation.Basics.Private.IDlcManagerPrivate.TryLocalLoad(IDlcMetaInfo dlcMetaInfo, IDlc& dlc)
+   at Siemens.Automation.Basics.DlcManager.TryLoad(IDlcMetaInfo dlcMetaInfo, IWorkingContext startWorkingContext, IDlc& dlc)
+   at Siemens.Automation.Basics.DlcManager.Load(String serviceId, DlcVersion dlcVersion, Boolean throwOnError, IEnumerable selectedObjects)
+   at Siemens.Automation.Basics.DlcManager.Siemens.Automation.Basics.IDlcManager.Load(String serviceId)
+   at Siemens.Simatic.HwConfiguration.Basics.Basics.HwcnBasicsFacade.Attach(IWorkingContext workingContext)
+   at Siemens.Automation.Basics.DlcLifetimeManager.TryCloneOrCreateDlc(IDlcMetaInfo dlcMetaInfo, IWorkingContext workingContext, IDlc dlcForCloning, IDlc& clonedOrCreatedDlc)
+   at Siemens.Automation.Basics.DlcLifetimeManager.TryGetDlc(IWorkingContext workingContext, IDlcMetaInfo dlcMetaInfo, IDlc dlcForCloning, IDlc& dlc)
+   at Siemens.Automation.Basics.DlcManager.Siemens.Automation.Basics.Private.IDlcManagerPrivate.TryLocalLoad(IDlcMetaInfo dlcMetaInfo, IDlc& dlc)
+   at Siemens.Automation.Basics.DlcManager.TryLoad(IDlcMetaInfo dlcMetaInfo, IWorkingContext startWorkingContext, IDlc& dlc)
+   at Siemens.Automation.Basics.DlcManager.Load(String serviceId, DlcVersion dlcVersion, Boolean throwOnError, IEnumerable selectedObjects)
+   at Siemens.Automation.Basics.DlcManager.Siemens.Automation.Basics.IDlcManager.Load(String serviceId)
+   at Siemens.Simatic.Lang.Toolbox.ServiceContainer.GetService(Type serviceType)
+   at Siemens.Simatic.Lang.Toolbox.ServiceContainer.GetStandardService[TServiceType](IWorkingContext context)
+   at Siemens.Simatic.Lang.Toolbox.DlcLocater.GetCommonService[T]()
+   at Siemens.Simatic.PlcLanguages.BlockLogic.PlcVersionInfo.GetLibraryPlcFamily()
+   at Siemens.Simatic.PlcLanguages.BlockLogic.PlcVersionInfo.get_PlcLibraryFamily()
+   at Siemens.Simatic.PlcLanguages.BlockLogic.LCSDefines.GetLibraryPLCFamily(ICoreObject controllerTarget)
+   at Siemens.Simatic.PlcLanguages.BlockLogic.PLCLibraryService.GetTargetNode(IGenericInterfaceData genIf, ICoreObject controllerTarget)
+   at Siemens.Simatic.PlcLanguages.BlockLogic.PLCLibraryService.Siemens.Simatic.PlcLanguages.PLInternal.IPLCLibraryServiceInternal.GetIsEnoDeactivateableFromPLCArray(IGenericInterfaceData genIf, ICoreObject controllerTarget)
+   at Siemens.Simatic.Lang.FLGraphicEditor.UI.Logic.MetaData.ElementTypeInfoFactory.PolymorphicElementTypeInfoFactory.CreatePolymorphicBoxElementTypeInfo(IInstructionInternal instruction, IFLGLogicInternal flgLogic, EnEnoAvailibility enEnoAvailibility)
+   at Siemens.Simatic.Lang.FLGraphicEditor.UI.Logic.MetaData.ElementTypeInfoFactory.ElementTypeInfoFactory.CreatePolymorphicBoxElementTypeInfo(Int32 refId, EnEnoAvailibility enEnoAvailibility)
+   at Siemens.Simatic.Lang.FLGraphicEditor.UI.Logic.Xml.Generic.Provider.FromFLD.Impl.InstructionPartFromFLD.Done(IList`1 pendingPinNegationList, FactoryXmlDecorator logicFactory)
+   at Siemens.Simatic.Lang.FLGraphicEditor.UI.Logic.Xml.Generic.Provider.FromFLD.Impl.NetFromFLD.ReadParts(IList`1 pendingPinNegationList, FactoryXmlDecorator logicFactory)
+   at Siemens.Simatic.Lang.FLGraphicEditor.UI.Logic.Xml.Generic.Provider.FromFLD.Impl.NetFromFLD.ReadNetwork(FactoryXmlDecorator logicFactory, IList`1 pendingPinNegationList, IList`1 pendingPinNegationListBoxes)
+   at Siemens.Simatic.Lang.FLGraphicEditor.UI.Logic.Xml.Generic.Provider.FromFLD.Impl.NetFromFLD.Done()
+   at Siemens.Simatic.Lang.FLGraphicEditor.UI.Logic.Xml.Generic.Provider.FromFLD.FLDFromFLD.Done()
+   at Siemens.Simatic.Lang.FLGraphicEditor.UI.Logic.Xml.Generic.Provider.CatchFactoryException.FLDCatch.Done()
+   at Siemens.Simatic.Lang.FLDiagram.DOL.Serialization.FLG.ToFLG.FLDToFLG.Done()
+   at Siemens.Simatic.Lang.FLDiagram.DOL.Serialization.Decorator.Base.Current.FLDBaseCurrent.ForwardDone()
+   at Siemens.Simatic.Lang.FLDiagram.DOL.Serialization.Decorator.Base.Current.FLDBaseCurrent.Done()
+   at Siemens.Simatic.Lang.FLDiagram.DOL.Serialization.Decorator.Base.Current.FLDBaseCurrent.ForwardDone()
+   at Siemens.Simatic.Lang.FLDiagram.DOL.Serialization.Decorator.Base.Current.FLDBaseCurrent.Done()
+   at Siemens.Simatic.Lang.FLDiagram.DOL.Serialization.Decorator.Base.Current.FLDBaseCurrent.ForwardDone()
+   at Siemens.Simatic.Lang.FLDiagram.DOL.Serialization.Decorator.Base.Current.FLDBaseCurrent.Done()
+   at Siemens.Simatic.Lang.FLDiagram.DOL.Serialization.From.V14.FLDFromV14.Done()
+   at Siemens.Simatic.Lang.FLDiagram.DOL.Serialization.Decorator.Base.V14.FLDBaseV14.ForwardDone()
+   at Siemens.Simatic.Lang.FLDiagram.DOL.Serialization.Decorator.Base.V14.FLDBaseV14.Done()
+   at Siemens.Simatic.Lang.FLDiagram.DOL.Serialization.XmlReader.V14.FLDXmlReaderV14.Read()
+   at Siemens.Simatic.Lang.FLDiagram.DOL.Serialization.FLDNetSerialization.Impl.NetSerializerForExchangeInterface.ReadXMLV14(IErrorFeedback errorFeedback, XmlReader reader, Version readFlgNetVersion, FactoryMethodForNetWriter factoryMethodForNetWriter, Action`1 contentHasBeenChanged, SerializationSzenario szenario)
+   at Siemens.Simatic.Lang.FLDiagram.DOL.Serialization.FLDNetSerialization.Impl.NetSerializerForExchangeInterface.ReadXmlInternal(XmlReader xmlReader, FactoryMethodForNetWriter factoryMethodForNetWriter, Action`1 contentHasBeenChanged, SerializationSzenario szenario, IErrorFeedback errorFeedback, Version readFlgNetVersion)
+   at Siemens.Simatic.Lang.FLDiagram.DOL.Serialization.FLDNetSerialization.Impl.NetSerializerForExchangeInterface.ReadXml(XmlReader xmlReader, FactoryMethodForNetWriter factoryMethodForNetWriter, Action`1 contentHasBeenChanged, SerializationSzenario szenario)
+   at Siemens.Simatic.Lang.FLDiagram.DOL.Serialization.FLDNetSerialization.Impl.NetSerializer.TryReadXml(XmlReader xmlReader, FactoryMethodForNetWriter factoryMethodForNetWriter, Action`1 contentHasBeenChanged, SerializationSzenario szenario)
+   at Siemens.Simatic.Lang.FLDiagram.DOL.Serialization.FLG.DLC.FLGNetSerializer.TryReadXml(XmlReader xmlReader, FactoryMethodForNetWriterType factoryMethodForNetWriter)
+   at Siemens.Simatic.Lang.FLGraphicEditor.UI.Logic.Xml.Generic.Provider.XmlProviderFLD.Siemens.Simatic.Lang.FLGraphicEditor.UI.Logic.Xml.Provider.IXmlProviderStrategy.ReadNetwork(XmlReader reader, Boolean ignoreInvalidPins, Func`2 handleException, Action onDone)
+   at Siemens.Simatic.Lang.FLGraphicEditor.UI.Logic.Xml.FLGSerialization.Siemens.Simatic.Lang.FLGraphicEditor.UI.Logic.Xml.IFLGSerialization.InternalSetXml(XmlReader contentReader, SyntaxCheckReason reason, Boolean onlyUpdate)
+   at Siemens.Simatic.Lang.FLGraphicEditor.UI.Logic.Xml.FLGSerialization.Siemens.Simatic.Lang.FLGraphicEditor.UI.Logic.Xml.IFLGSerialization.SetXml(String content)
+   at Siemens.Simatic.PlcLanguages.FLGraphicEditor.Logic.LADSearchDataProviderDlc.LADSearchDataProviderCommand.Execute(ICommand command)
+   at Siemens.Simatic.PlcLanguages.Utilities.Toolbox.CommandDispatcher.Execute(ICommand command)
+   at Siemens.Automation.CommonServices.CommandProcessor.DoCommand(ICommandInternal command, CommandProcessingStrategy commandProcessingStrategy)
+   at Siemens.Automation.CommonServices.CommandProcessor.Execute(ICommandInternal command, CommandProcessingStrategy commandProcessingStrategy)
+   at Siemens.Automation.CommonServices.ProxyCommandProcessor.Siemens.Automation.CommonServices.ICommandProcessor.Execute(ICommand command)
+   at Siemens.Simatic.PlcLanguages.GlobalSearch.Builder.LADFBDNetworkDocumentBuilder.GetCodeContent(List`1 entries, Boolean registerIdentManager)
+   at Siemens.Simatic.PlcLanguages.GlobalSearch.Builder.LADFBDNetworkDocumentBuilder.AddCodeContent(BrowsableDocumentBuilder documentBuilder)
+   at Siemens.Simatic.PlcLanguages.GlobalSearch.Builder.NetworkBodyDocumentBuilder.BuildDocument(ICancellationToken cancellationToken)
+   at Siemens.Simatic.PlcLanguages.GlobalSearch.Builder.CodeBlockDocumentBuilder.BuildDocument(ICancellationToken cancellationToken)
+   at Siemens.Simatic.PlcLanguages.GlobalSearch.SPLSearchDataProvider.<Siemens-Automation-SearchReplace-BL-ISearchDataProvider-GetUpdatableDocuments>d__12.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Siemens.Automation.SearchReplace.Impl.BL.Indexing.DocumentHandling.UpdatableDocumentProvider.TryGetUpdatableDocumentForTheGivenBrowsable(IBrowsable changedBrowsable, ICancellationToken cancellationToken)
+   at Siemens.Automation.SearchReplace.Impl.BL.Indexing.DocumentHandling.UpdatableDocumentProvider.GetUpdatableDocumentForTheGivenBrowsable(IBrowsable changedBrowsable, ICancellationToken cancellationToken)
+   at Siemens.Automation.SearchReplace.Impl.BL.Indexing.DocumentHandling.UpdatableDocumentProvider.GetDocumentForTheGivenCommonObjectId(CommonObjectId commonObjectId, Boolean hideUnResolvableException, ICancellationToken cancellationToken)
+   at Siemens.Automation.SearchReplace.Impl.BL.Indexing.DocumentHandling.IndexingSupport.CreateDocumentContainerFromUpdatableDocumentInfoWithAggregatedDocuments(IEnumerable`1 referenceFieldUpdatableDocumentInfos, List`1 documentContainerToUpdate, UpdatableDocumentProvider updatableDocumentProvider, DocumentContainerBuilder documentContainerBuilder, ICancellationToken cancellationToken)
+   at Siemens.Automation.SearchReplace.Impl.BL.Indexing.DocumentHandling.ChangedAtomIndexingStrategy.TryGetUpdatableDocuments(AtomicSearchDataChange searchDataChange, IEnumerable`1& documentContainersToCreate, IEnumerable`1& deleteQueriesForDocumentsToBeDeleted)
+   at Siemens.Automation.SearchReplace.Impl.BL.Indexing.DocumentHandling.IndexingStrategyBase.Siemens.Automation.SearchReplace.Impl.BL.Indexing.DocumentHandling.IIndexingStrategy.UpdateIndex(AtomicSearchDataChange searchDataChange)
+   at Siemens.Automation.SearchReplace.Impl.BL.Indexing.DocumentHandling.DocumentIndexer.UpdateIndex(AtomicSearchDataChange searchDataChange)
+   at Siemens.Automation.SearchReplace.Impl.BL.Indexing.Background.Indexer.IndexAtomIndexerThreadAction.CreateIndex(IIndexAtom atom, IWorkingContext workingContext, IThreadControlRequests controlRequests)
+   at Siemens.Automation.SearchReplace.Impl.BL.Indexing.Background.Indexer.IndexAtomIndexerThreadActionBase.PerformIndexing(Object[] args)
+   at Siemens.Automation.SearchReplace.Lucene.Convenience.Exceptions.LuceneIndexAccessExceptionHandler.ExecuteAction[TResult](Func`2 funtion, Object[] args)
+   at Siemens.Automation.SearchReplace.Impl.BL.Indexing.Background.Indexer.IndexAtomIndexerThreadActionBase.DoAtomicAction()
+   at Siemens.Automation.SearchReplace.Impl.BL.Indexing.Background.Indexer.AtomicThreadActionBase.DoThreadLoop()
+   at Siemens.Automation.SearchReplace.Impl.BL.Indexing.Background.Indexer.AtomicThreadActionBase.ThreadActionRunner(IWorkingContext workingContext)
+   at Siemens.Automation.Basics.Threading.ThreadFactory.Run(Object para)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.ThreadHelper.ThreadStart(Object obj)
+Reload reason: 
+Called "InitialLoad()"
+Called "LoadConfigObjectTypeInfos(...) with the result True"
+
+Found difference between present and cached meta files in (ConfigObjectTypes)
+Reason for reload: Number of files differs (cache {873} vs present {874})
+Only in cache: {
+	};
+Only in file system: {
+	Name = hwcn-xdd-cot-gsd_gsdml-v2.3-lenze-i550pn100-20160114.xml, ModificationDateTime = 1/27/2026 3:18:21 PM, Path = }
+
+
+Found difference between present and cached meta files in (Catalog)
+Reason for reload: Number of files differs (cache {769} vs present {770})
+Only in cache: {
+	};
+Only in file system: {
+	Name = hwcn-xdd-cat-gsd_gsdml-v2.3-lenze-i550pn100-20160114.xml, ModificationDateTime = 1/27/2026 3:18:21 PM, Path = }
+
+
+Found difference between present and cached meta files in (Languages)
+Reason for reload: Number of files differs (cache {352} vs present {354})
+Only in cache: {
+	};
+Only in file system: {
+	Name = hwcn-xdd-dct-gsd_gsdml-v2.3-lenze-i550pn100-20160114.xml, ModificationDateTime = 1/27/2026 3:18:21 PM, Path = de,
+	Name = hwcn-xdd-dct-gsd_gsdml-v2.3-lenze-i550pn100-20160114.xml, ModificationDateTime = 1/27/2026 3:18:21 PM, Path = en}
+
+Called "GetAndCheckAllFiles(...) with the result Error"
+
+Called "FullLoad(withBinary = False, reloadFromBinary = True, reloadReason = ..., allowReloadFromBackgroundProcess = False)"
+
+
+===

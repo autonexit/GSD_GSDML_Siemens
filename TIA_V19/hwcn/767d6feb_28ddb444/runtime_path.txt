@@ -1,0 +1,75 @@
+C:\Program Files\Siemens\Automation\Portal V19
+895e6792-b65d-4114-9a01-89995b266a9f
+Created on: 03/26/2025 15:50:37
+by: "Siemens.Automation.Portal" (PID: 9452, StartTime: 03/26/2025 15:50:20)
+Command line: "C:\Program Files\Siemens\Automation\Portal V19\Bin\Siemens.Automation.Portal.exe" -Name=HMICompiler(hmiilrt) -CallAutoLoadDlcs=False -SyncSettingService=False -bootstrapper=Siemens.Automation.CommonServices:Siemens.Automation.CommonServices.ApplicationLifeCycle.Core.BackgroundProcessBootStrapper -serverGuid=b0c7a18c-8c6c-4cff-81eb-bdde975f2b7f -processId=30200 -appDomainId=1 -ErrorReportingGuid=4fd86480-d668-4b27-9c44-c48908c48690 -nosplashscreen -lang=en-US 
+TIAConfigurationFile: 
+Callstack: 
+   at System.Environment.GetStackTrace(Exception e, Boolean needFileInfo)
+   at System.Environment.get_StackTrace()
+   at Siemens.Simatic.HwConfiguration.Basics.Meta.Helper.RuntimeInfoHandler.CreateRuntimeInfoFile(Guid metaServiceGuid, IHwcnWriteableDirectory currentDir, String reloadReason)
+   at Siemens.Simatic.HwConfiguration.Basics.Meta.HwcnMetaService.SaveCacheReal(Boolean changedLanguageData, String reloadReason, String userHwcnMetaDirectory)
+   at Siemens.Simatic.HwConfiguration.Basics.Meta.HwcnMetaService.SaveCache(Boolean changedLanguageData, String reloadReason, String userHwcnMetaDirectory)
+   at Siemens.Simatic.HwConfiguration.Basics.Meta.HwcnMetaService.FullLoad(Boolean withBinary, Boolean reloadFromBinary, String reloadReason, Boolean allowReloadFromBackgroundProcess)
+   at Siemens.Simatic.HwConfiguration.Basics.Meta.HwcnMetaService.InitialLoad()
+   at Siemens.Simatic.HwConfiguration.Basics.Meta.HwcnMetaService.PostAttach()
+   at Siemens.Automation.Basics.DlcLifetimeManager.TryGetDlc(IWorkingContext workingContext, IDlcMetaInfo dlcMetaInfo, IDlc dlcForCloning, IDlc& dlc)
+   at Siemens.Automation.Basics.DlcLifetimeManager.Siemens.Automation.Basics.IDlcLifetimeManager.Load(IWorkingContext workingContext, IDlcMetaInfo dlcMetaInfo, IDlc dlcForCloning)
+   at Siemens.Automation.Basics.DlcManager.DoLoad(IDlcMetaInfo dlcMetaInfo, IWorkingContext startWorkingContext)
+   at Siemens.Automation.Basics.DlcManager.Load(String serviceId, DlcVersion dlcVersion, Boolean throwOnError, IEnumerable selectedObjects)
+   at Siemens.Automation.Basics.DlcManager.Siemens.Automation.Basics.IDlcManager.Load(String serviceId, Boolean throwOnError)
+   at Siemens.Simatic.HwConfiguration.BusinessLogic.Utilities.Linq.MetaServiceHelper.GetAttributeValueFromMetaservice[T](ICoreObject coreObject, String attributeName)
+   at Siemens.Simatic.HwConfiguration.BusinessLogic.Hmi.Base.Notification.PropertyNotificationAdapter`1.get_PropertyValue()
+   at Siemens.Simatic.HwConfiguration.BusinessLogic.Hmi.Base.PropertyNotification.HmiHwcnPropertyManager.FormatPropertyValue[T](IPropertyAdapter propertyAdapter)
+   at Siemens.Simatic.Hmi.Utah.Device.HmiDeviceBase.get_TransferName()
+   at Siemens.Simatic.Hmi.ILCompiler.ContextManagement.DeviceInfoHandler.SetHmiProjectIdPropertiesToDeviceInfo(IChromIdentity chromIdentity, DeviceInfo deviceInfo)
+   at Siemens.Simatic.Hmi.ILCompiler.ContextManagement.DeviceInfoHandler.CreateDeviceInfo(String configId, IChromIdentity chromIdentity)
+   at Siemens.Simatic.Hmi.ILCompiler.Plugins.CompileServicePluginBase.GetDeviceChromIdentity(IServiceHost serviceHost, IEs2rtSoaSerializableTarget soaTarget)
+   at Siemens.Simatic.Hmi.ILCompiler.ContextManagement.CompileContextHelpers.ServiceHost.<>c__DisplayClass18_0`1.<Register>b__0()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at Siemens.Simatic.Hmi.ILCompiler.ContextManagement.CompileContextHelpers.ServiceHost.GetInstance[T](String actualContext, String actualConfiguration)
+   at Siemens.Simatic.Hmi.ILCompiler.Plugins.CompileServicePluginBase.GetRtIdProvider(IServiceHost serviceHost, IEs2rtSoaSerializableTarget soaTarget)
+   at Siemens.Simatic.Hmi.ILCompiler.Plugins.CompileServicePluginBase.RegisterContextDependentServices(IServiceHost serviceHost, IEs2rtSoaSerializableTarget soaTarget, CompileScenario compileScenario, String contextKey)
+   at Siemens.Simatic.Hmi.ILCompiler.Plugins.CompileServicePluginV19.RegisterContextDependentServices(IServiceHost serviceHost, IEs2rtSoaSerializableTarget soaTarget, CompileScenario compileScenario, String contextKey)
+   at Siemens.Simatic.Hmi.ILCompiler.Engine.ServiceManager.RegisterContextSpecificServices(CompileScenario compileScenario, IEs2rtSoaSerializableTarget target, String contextKey)
+   at Siemens.Simatic.Hmi.ILCompiler.ContextManagement.CompileContext.InitializeServices(EsProjectAccessReturnValues projectOpenResult)
+   at Siemens.Simatic.Hmi.ILCompiler.ContextManagement.CompileContext.PreProcessOpenedProject(EsProjectAccessReturnValues projectOpenResult, String projectImHmiPath, ISnapShotHandler snapShotHandler)
+   at Siemens.Simatic.Hmi.ILCompiler.ContextManagement.CompileContext.Open(CompileScenario scenario, String projectImHmiPath, ISnapShotHandler snapShotHandler, IEs2rtSoaSerializableTarget soaTarget)
+   at Siemens.Simatic.Hmi.ILCompiler.ContextManagement.CompileContextManager.OpenContext(CompileScenario scenario, String projectImHmiPath, IEs2rtSoaSerializableTarget target, ISnapShotHandler snapShotHandler, ICompileConfiguration compileConfiguration)
+   at Siemens.Simatic.Hmi.ILCompiler.Engine.CompileBusinessLogicManager.OpenCompileContext(IEs2rtSoaSerializableTarget soaTarget, CompileScenario compileScenario, ISnapShotHandler snapShotHandler, ICompileConfiguration configuration)
+   at Siemens.Simatic.Hmi.ILCompiler.Engine.CompileBusinessLogicManager.Compile(IEs2rtSoaSerializableTarget soaTarget, ISnapShotHandler snapShotHandler, CompileScenario compileScenario, Boolean isBackground)
+   at Siemens.Simatic.Hmi.ILCompiler.Engine.CompileBusinessLogicManager.ManagedCompile(IEs2rtSoaSerializableTarget soaTarget, ISnapShotHandler snapshotHandler, CompileScenario compileScenario, UInt32 previousCompilationBuildNumber, Boolean isBackground)
+   at Siemens.Simatic.Hmi.ILCompiler.Engine.CompileBusinessLogicManager.BackgroundCompile(IEs2rtSoaSerializableTarget soaTarget, CompileScenario compileScenario)
+   at Siemens.Simatic.Hmi.ILCompiler.Engine.ILCompileEngine.<>c__DisplayClass17_0.<BackgroundCompileEventHandler>b__1()
+   at Siemens.Simatic.Hmi.ILCompiler.Engine.CompileThreadingManager.InvokeAction(Action action)
+   at Siemens.Simatic.Hmi.ILCompiler.Engine.CompileThreadingManager.MainLoop()
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Delegate.DynamicInvokeImpl(Object[] args)
+   at Siemens.Automation.Basics.Synchronizer.ThreadMethodEntry.ProcessCallback()
+   at Siemens.Automation.Basics.Synchronizer.ThreadSynchronizer.ProcessCallbackOrPlaceInBlockedQueue(ThreadMethodEntry methodEntry)
+   at Siemens.Automation.Basics.Synchronizer.SynchronizerWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+   at System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+   at System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   at Siemens.Automation.Basics.Synchronizer.ThreadSynchronizer.PrivateRunBase(Form mainForm)
+   at Siemens.Automation.Basics.Synchronizer.ThreadSynchronizer.Siemens.Automation.Basics.Synchronizer.ISynchronizer.Run()
+   at Siemens.Automation.CommonServices.ApplicationLifeCycle.Core.BackgroundProcessBootStrapperImpl.Run(CommandLineArguments commandLineArguments, InitializationCompletedCallback onInitializationCompleted)
+   at Siemens.Automation.Portal.ApplicationLoader.Run(String[] args)
+   at Siemens.Automation.Portal.Program.Main(String[] args)
+Reload reason: 
+Called "InitialLoad()"
+Called "LoadConfigObjectTypeInfos(...) with the result False"
+Encountered errors during "GetAndCheckAllFiles"
+===System.IO.DirectoryNotFoundException: HwcnFileProvider could not find the directory: 767d6feb_28ddb444\ConfigObjectTypes (DataHwcnAllUsers).===
+
+Called "GetAndCheckAllFiles(...) with the result DirectoryNotFound"
+
+Called "FullLoad(withBinary = False, reloadFromBinary = True, reloadReason = ..., allowReloadFromBackgroundProcess = True)"
+
+
+===
