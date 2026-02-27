@@ -1,0 +1,961 @@
+;==============================================================================
+;
+;    Manufacturer : Lenze GmbH
+;                   Postfach 10 13 52
+;                   31763 Hameln
+;                   Germany
+;
+;    Phone        : +49 5154 82-0
+;    FAX          : +49 5154 82-1920
+;    EMAIL        : support@Lenze.de
+;    WEB          : www.Lenze.de
+;    Hotline      : +49 5154 82-0
+;
+;    Version      : 1.71
+;    Author       : P. Fredehorst
+;    Date         : 21.08.2006 11:15:02
+;    File         : LE000A69.gse
+;
+;==============================================================================
+#Profibus_DP
+
+;==============================================================================
+;==== Prm-Text-Def-List =======================================================
+;==============================================================================
+
+;Text-Referenz 3
+PrmText=3
+Text(0)="Off"
+Text(1)="On"
+EndPrmText
+
+;Text-Referenz 6
+PrmText=6
+Text(0)="enable"
+Text(1)="disable"
+EndPrmText
+
+;Text-Referenz 20
+PrmText=20
+Text(1)="S5 Voltage +/-10V"
+Text(2)="S5 Voltage 1..5V"
+Text(3)="S5 Current +/-20mA"
+Text(4)="S5 Current 4..20mA"
+Text(5)="S5 Voltage 0..10V"
+Text(6)="S5 Current 0..20mA"
+Text(9)="S7 Voltage +/-10V"
+Text(10)="S7 Voltage 1..5V"
+Text(11)="S7 Current +/-20mA"
+Text(12)="S7 Current 4..20mA"
+Text(13)="S7 Voltage 0..10V"
+Text(14)="S7 Current 0..20mA"
+Text(255)="deactivated"
+EndPrmText
+
+;Text-Referenz 22
+PrmText=22
+Text(0)="Switch substitute value"
+Text(1)="keep last value"
+EndPrmText
+
+;Text-Referenz 23
+PrmText=23
+Text(40)="S7 Voltage +/-10V"
+Text(43)="S5 Voltage +/-10V"
+Text(44)="S7 Current +/-20mA"
+Text(45)="S7 Current 4..20mA"
+Text(46)="S5 Current 4..20mA"
+Text(47)="S5 Current +/-20mA"
+Text(58)="S5 Current +/-20mA, two's compl."
+Text(59)="S5 Voltage +/-10V, two's compl."
+Text(114)="S5 Voltage 1..5V"
+Text(117)="S5 Voltage 0..10V"
+Text(118)="S5 Current 0..20mA"
+Text(122)="S7 Voltage 1..5V"
+Text(125)="S7 Voltage 0..10V"
+Text(126)="S7 Current 0..20mA"
+Text(255)="deactivated"
+EndPrmText
+
+;Text-Referenz 24
+PrmText=24
+Text(0)="15 measurings/s"
+Text(1)="30 measurings/s"
+Text(2)="60 measurings/s"
+Text(3)="120 measurings/s"
+Text(4)="170 measurings/s"
+Text(5)="200 measurings/s"
+Text(6)="3.7 measurings/s"
+Text(7)="7.5 measurings/s"
+EndPrmText
+
+;Text-Referenz 25
+PrmText=25
+Text(1)="Pt100  2-wire -200°C..850°C"
+Text(2)="Pt1000 2-wire -200°C..500°C"
+Text(3)="Ni100  2-wire -50°C..250°C"
+Text(4)="Ni1000 2-wire -50°C..250°C"
+Text(5)="resistance 2-wire 60 Ohm"
+Text(6)="resistance 2-wire 600 Ohm"
+Text(7)="resistance 2-wire 3000 Ohm"
+Text(8)="resistance 2-wire 6000 Ohm"
+Text(9)="Pt100  4-wire -200°C..850°C"
+Text(10)="Pt1000 4-wire -200°C..500°C"
+Text(11)="Ni100  4-wire -50°C..250°C"
+Text(12)="Ni1000 4-wire -50°C..250°C"
+Text(13)="resistance 4-wire 60 Ohm"
+Text(14)="resistance 4-wire 600 Ohm"
+Text(15)="resistance 4-wire 3000 Ohm"
+Text(16)="thermocouple typ J ext. comp."
+Text(17)="thermocouple typ K ext. comp."
+Text(18)="thermocouple typ N ext. comp."
+Text(19)="thermocouple typ R ext. comp."
+Text(20)="thermocouple typ T ext. comp."
+Text(21)="thermocouple typ S ext. comp."
+Text(24)="thermocouple typ J int. comp."
+Text(25)="thermocouple typ K int. comp."
+Text(26)="thermocouple typ N int. comp."
+Text(27)="thermocouple typ R int. comp."
+Text(28)="thermocouple typ T int. comp."
+Text(29)="thermocouple typ S int. comp."
+Text(39)="S7 Voltage 0..50mV"
+Text(40)="S7 Voltage +/-10V"
+Text(41)="S7 Voltage +/-4V"
+Text(42)="S7 Voltage +/-400mV"
+Text(43)="S5 Voltage +/-10V"
+Text(44)="S7 Current +/-20mA"
+Text(45)="S7 Current 4..20mA"
+Text(46)="S5 Current 4..20mA"
+Text(47)="S5 Current +/-20mA"
+Text(50)="resistance 4-L 6000 Ohm"
+Text(51)="resistance 4-L 6000 Ohm (II)"
+Text(53)="resistance 2-L 60 Ohm (II)"
+Text(54)="resistance 2-L 600 Ohm (II)"
+Text(55)="resistance 2-L 3000 Ohm (II)"
+Text(56)="resistance 2-L 6000 Ohm (II)"
+Text(58)="S5 Current +/-20mA, two's compl."
+Text(59)="S5 Voltage +/-10V, two's compl."
+Text(61)="resistance 4-L 60 Ohm (II)"
+Text(62)="resistance 4-L 600 Ohm (II)"
+Text(63)="resistance 4-L 3000 Ohm (II)"
+Text(87)="Voltage 0..50mV (II)"
+Text(88)="Voltage +/-10V (II)"
+Text(89)="Voltage +/-4V (II)"
+Text(90)="Voltage +/-400mV (II)"
+Text(92)="Current +/-20mA (II)"
+Text(93)="Current 4..20mA (II)"
+Text(255)="deactivated"
+EndPrmText
+
+;Text-Referenz 26
+PrmText=26
+Text(0)="Off"
+Text(1)="average value 2 from 3"
+Text(2)="average value 4 from 6"
+EndPrmText
+
+;Text-Referenz 27
+PrmText=27
+Text(0)="Off"
+Text(1)="+/-8"
+Text(2)="+/-16"
+EndPrmText
+
+;Text-Referenz 54
+PrmText=54
+Text(0)="disable"
+Text(1)="enable"
+EndPrmText
+
+;Text-Referenz 93
+PrmText=93
+Text(255)="deactivated"
+Text(53)="resistance 2-L 60 Ohm (II)"
+Text(51)="resistance 4-L 6000 Ohm (II)"
+Text(50)="resistance 4-L 6000 Ohm"
+Text(47)="S5 Current +/-20mA"
+Text(46)="S5 Current 4..20mA"
+Text(45)="S7 Current 4..20mA"
+Text(56)="resistance 2-L 6000 Ohm (II)"
+Text(44)="S7 Current +/-20mA"
+Text(43)="S5 Voltage +/-10V"
+Text(42)="S7 Voltage +/-400mV"
+Text(41)="S7 Voltage +/-4V"
+Text(40)="S7 Voltage +/-10V"
+Text(93)="Current 4..20mA (II)"
+Text(55)="resistance 2-L 3000 Ohm (II)"
+Text(58)="S5 Current +/-20mA, two's compl."
+Text(59)="S5 Voltage +/-10V, two's compl."
+Text(61)="resistance 4-L 60 Ohm (II)"
+Text(62)="resistance 4-L 600 Ohm (II)"
+Text(63)="resistance 4-L 3000 Ohm (II)"
+Text(87)="Voltage +/-50mV (II)"
+Text(88)="Voltage +/-10V (II)"
+Text(89)="Voltage +/-4V (II)"
+Text(90)="Voltage +/-400mV (II)"
+Text(92)="Current +/-20mA (II)"
+Text(39)="S7 Voltage +/-50mV"
+Text(19)="thermocouple typ R ext. comp."
+Text(54)="resistance 2-L 600 Ohm (II)"
+Text(5)="resistance 2-wire 60 Ohm"
+Text(1)="Pt100  2-wire -200°C..850°C"
+Text(2)="Pt1000 2-wire -200°C..850°C"
+Text(21)="thermocouple typ S ext. comp."
+Text(4)="Ni1000 2-wire -60°C..250°C"
+Text(29)="thermocouple typ S int. comp."
+Text(6)="resistance 2-wire 600 Ohm"
+Text(7)="resistance 2-wire 3000 Ohm"
+Text(8)="resistance 2-wire 6000 Ohm"
+Text(9)="Pt100  4-wire -200°C..850°C"
+Text(10)="Pt1000 4-wire -200°C..850°C"
+Text(11)="Ni100  4-wire -60°C..250°C"
+Text(12)="Ni1000 4-wire -60°C..250°C"
+Text(14)="resistance 4-wire 600 Ohm"
+Text(15)="resistance 4-wire 3000 Ohm"
+Text(16)="thermocouple typ J ext. comp."
+Text(17)="thermocouple typ K ext. comp."
+Text(18)="thermocouple typ N ext. comp."
+Text(20)="thermocouple typ T ext. comp."
+Text(24)="thermocouple typ J int. comp."
+Text(25)="thermocouple typ K int. comp."
+Text(26)="thermocouple typ N int. comp."
+Text(27)="thermocouple typ R int. comp."
+Text(28)="thermocouple typ T int. comp."
+Text(13)="resistance 4-wire 60 Ohm"
+Text(3)="Ni100  2-wire -60°C..250°C"
+Text(22)="thermocouple typ E ext. comp."
+Text(30)="thermocouple typ E int. comp."
+Text(98)="CU 50 2-wire  -50°C..150°C"
+Text(106)="CU 50 4-wire  -50°C..150°C"
+EndPrmText
+
+;Text-Referenz 121
+PrmText=121
+Text(40)="S7 Voltage +/-10V"
+Text(43)="S5 Voltage +/-10V"
+Text(59)="S5 Voltage +/-10V, two's compl."
+Text(255)="deactivated"
+EndPrmText
+
+;Text-Referenz 122
+PrmText=122
+Text(44)="S7 Current +/-20mA"
+Text(45)="S7 Current 4..20mA"
+Text(46)="S5 Current 4..20mA"
+Text(47)="S5 Current +/-20mA"
+Text(57)="S5 Current 4..20mA, two's compl."
+Text(58)="S5 Current +/-20mA, two's compl."
+Text(255)="deactivated"
+EndPrmText
+
+;Text-Referenz 123
+PrmText=123
+Text(1)="S5 Voltage +/-10V, two's compl."
+Text(5)="S5 Voltage 0..10V, two's compl."
+Text(9)="S7 Voltage +/-10V"
+Text(13)="S7 Voltage 0..10V"
+Text(255)="deactivated"
+EndPrmText
+
+;Text-Referenz 124
+PrmText=124
+Text(4)="S5 Current 4..20mA, two's compl."
+Text(6)="S5 Current 0..20mA, two's compl."
+Text(12)="S7 Current 4..20mA"
+Text(14)="S7 Current 0..20mA"
+Text(255)="deactivated"
+EndPrmText
+
+
+
+;==============================================================================
+;==== Ext-User-Prm-Data-Def-List ==============================================
+;==============================================================================
+
+;Parameter-Referenz 1
+ExtUserPrmData=1 "[SlotNumber]"
+Unsigned8 0 0-7
+EndExtUserPrmData
+
+;Parameter-Referenz 44
+ExtUserPrmData=44 "channel 0: function"
+Unsigned8 9 1-255
+Prm_Text_Ref=20
+EndExtUserPrmData
+
+;Parameter-Referenz 45
+ExtUserPrmData=45 "channel 1: function"
+Unsigned8 9 1-255
+Prm_Text_Ref=20
+EndExtUserPrmData
+
+;Parameter-Referenz 46
+ExtUserPrmData=46 "channel 2: function"
+Unsigned8 9 1-255
+Prm_Text_Ref=20
+EndExtUserPrmData
+
+;Parameter-Referenz 47
+ExtUserPrmData=47 "channel 3: function"
+Unsigned8 9 1-255
+Prm_Text_Ref=20
+EndExtUserPrmData
+
+;Parameter-Referenz 52
+ExtUserPrmData=52 "Diagnostic Interrupt"
+Bit(6) 0 0-1
+Prm_Text_Ref=3
+EndExtUserPrmData
+
+;Parameter-Referenz 53
+ExtUserPrmData=53 "channel 0: wire break"
+Bit(0) 0 0-1
+Prm_Text_Ref=3
+EndExtUserPrmData
+
+;Parameter-Referenz 54
+ExtUserPrmData=54 "channel 1: wire break"
+Bit(1) 0 0-1
+Prm_Text_Ref=3
+EndExtUserPrmData
+
+;Parameter-Referenz 55
+ExtUserPrmData=55 "channel 2: behavior at PLC STOP"
+Bit(2) 0 0-1
+Prm_Text_Ref=22
+EndExtUserPrmData
+
+;Parameter-Referenz 56
+ExtUserPrmData=56 "channel 3: behavior at PLC STOP"
+Bit(3) 0 0-1
+Prm_Text_Ref=22
+EndExtUserPrmData
+
+;Parameter-Referenz 57
+ExtUserPrmData=57 "channel 0: function"
+Unsigned8 40 40-255
+Prm_Text_Ref=23
+EndExtUserPrmData
+
+;Parameter-Referenz 58
+ExtUserPrmData=58 "channel 1: function"
+Unsigned8 40 40-255
+Prm_Text_Ref=23
+EndExtUserPrmData
+
+;Parameter-Referenz 59
+ExtUserPrmData=59 "channel 2: function"
+Unsigned8 9 1-255
+Prm_Text_Ref=20
+EndExtUserPrmData
+
+;Parameter-Referenz 60
+ExtUserPrmData=60 "channel 3: function"
+Unsigned8 9 1-255
+Prm_Text_Ref=20
+EndExtUserPrmData
+
+;Parameter-Referenz 61
+ExtUserPrmData=61 "channel 0: meas. Cycle"
+BitArea(0-3) 0 0-7
+Prm_Text_Ref=24
+EndExtUserPrmData
+
+;Parameter-Referenz 62
+ExtUserPrmData=62 "channel 1: meas. Cycle"
+BitArea(0-3) 0 0-7
+Prm_Text_Ref=24
+EndExtUserPrmData
+
+;Parameter-Referenz 63
+ExtUserPrmData=63 "channel 2: substitute value"
+Signed16 0 -32768-32767
+EndExtUserPrmData
+
+;Parameter-Referenz 64
+ExtUserPrmData=64 "channel 3: substitute value"
+Signed16 0 -32768-32767
+EndExtUserPrmData
+
+;Parameter-Referenz 65
+ExtUserPrmData=65 "channel 0: function"
+Unsigned8 40 1-255
+Prm_Text_Ref=25
+EndExtUserPrmData
+
+;Parameter-Referenz 66
+ExtUserPrmData=66 "channel 1: function"
+Unsigned8 40 1-255
+Prm_Text_Ref=25
+EndExtUserPrmData
+
+;Parameter-Referenz 67
+ExtUserPrmData=67 "channel 2: function"
+Unsigned8 40 1-255
+Prm_Text_Ref=25
+EndExtUserPrmData
+
+;Parameter-Referenz 68
+ExtUserPrmData=68 "channel 3: function"
+Unsigned8 40 1-255
+Prm_Text_Ref=25
+EndExtUserPrmData
+
+;Parameter-Referenz 69
+ExtUserPrmData=69 "channel 2: meas. Cycle"
+BitArea(0-3) 0 0-7
+Prm_Text_Ref=24
+EndExtUserPrmData
+
+;Parameter-Referenz 70
+ExtUserPrmData=70 "channel 3: meas. Cycle"
+BitArea(0-3) 0 0-7
+Prm_Text_Ref=24
+EndExtUserPrmData
+
+;Parameter-Referenz 71
+ExtUserPrmData=71 "channel 0: average value"
+BitArea(4-5) 0 0-2
+Prm_Text_Ref=26
+EndExtUserPrmData
+
+;Parameter-Referenz 72
+ExtUserPrmData=72 "channel 1: average value"
+BitArea(4-5) 0 0-2
+Prm_Text_Ref=26
+EndExtUserPrmData
+
+;Parameter-Referenz 73
+ExtUserPrmData=73 "channel 2: average value"
+BitArea(4-5) 0 0-2
+Prm_Text_Ref=26
+EndExtUserPrmData
+
+;Parameter-Referenz 74
+ExtUserPrmData=74 "channel 3: average value"
+BitArea(4-5) 0 0-2
+Prm_Text_Ref=26
+EndExtUserPrmData
+
+;Parameter-Referenz 75
+ExtUserPrmData=75 "channel 0: envelope function"
+BitArea(6-7) 0 0-2
+Prm_Text_Ref=27
+EndExtUserPrmData
+
+;Parameter-Referenz 76
+ExtUserPrmData=76 "channel 1: envelope function"
+BitArea(6-7) 0 0-2
+Prm_Text_Ref=27
+EndExtUserPrmData
+
+;Parameter-Referenz 77
+ExtUserPrmData=77 "channel 2: envelope function"
+BitArea(6-7) 0 0-2
+Prm_Text_Ref=27
+EndExtUserPrmData
+
+;Parameter-Referenz 78
+ExtUserPrmData=78 "channel 3: envelope function"
+BitArea(6-7) 0 0-2
+Prm_Text_Ref=27
+EndExtUserPrmData
+
+;Parameter-Referenz 301
+ExtUserPrmData=301 "channel 0: function"
+Unsigned8 40 1-255
+Prm_Text_Ref=93
+EndExtUserPrmData
+
+;Parameter-Referenz 302
+ExtUserPrmData=302 "channel 1: function"
+Unsigned8 40 1-255
+Prm_Text_Ref=93
+EndExtUserPrmData
+
+;Parameter-Referenz 303
+ExtUserPrmData=303 "channel 2: function"
+Unsigned8 40 1-255
+Prm_Text_Ref=93
+EndExtUserPrmData
+
+;Parameter-Referenz 304
+ExtUserPrmData=304 "channel 3: function"
+Unsigned8 40 1-255
+Prm_Text_Ref=93
+EndExtUserPrmData
+
+;Parameter-Referenz 561
+ExtUserPrmData=561 "Channel-related diagnostics"
+Bit(2) 0 0-1
+Prm_Text_Ref=6
+EndExtUserPrmData
+
+;Parameter-Referenz 562
+ExtUserPrmData=562 "Identifier-related diagnostics"
+Bit(0) 0 0-1
+Prm_Text_Ref=6
+EndExtUserPrmData
+
+;Parameter-Referenz 563
+ExtUserPrmData=563 "Submodule status"
+Bit(1) 0 0-1
+Prm_Text_Ref=6
+EndExtUserPrmData
+
+;Parameter-Referenz 564
+ExtUserPrmData=564 "V0: Diagnostic Interrupt"
+Bit(5) 1 0-1
+Prm_Text_Ref=54
+EndExtUserPrmData
+
+;Parameter-Referenz 565
+ExtUserPrmData=565 "V0: Manuf. specific Interrupt"
+Bit(4) 1 0-1
+Prm_Text_Ref=54
+EndExtUserPrmData
+
+;Parameter-Referenz 566
+ExtUserPrmData=566 "V0: Process Interrupt"
+Bit(6) 1 0-1
+Prm_Text_Ref=54
+EndExtUserPrmData
+
+;Parameter-Referenz 699
+ExtUserPrmData=699 "channel 0: function"
+Unsigned8 40 40-255
+Prm_Text_Ref=121
+EndExtUserPrmData
+
+;Parameter-Referenz 700
+ExtUserPrmData=700 "channel 1: function"
+Unsigned8 40 40-255
+Prm_Text_Ref=121
+EndExtUserPrmData
+
+;Parameter-Referenz 701
+ExtUserPrmData=701 "channel 2: function"
+Unsigned8 40 40-255
+Prm_Text_Ref=121
+EndExtUserPrmData
+
+;Parameter-Referenz 702
+ExtUserPrmData=702 "channel 3: function"
+Unsigned8 40 40-255
+Prm_Text_Ref=121
+EndExtUserPrmData
+
+;Parameter-Referenz 703
+ExtUserPrmData=703 "channel 0: function"
+Unsigned8 44 44-255
+Prm_Text_Ref=122
+EndExtUserPrmData
+
+;Parameter-Referenz 704
+ExtUserPrmData=704 "channel 1: function"
+Unsigned8 44 44-255
+Prm_Text_Ref=122
+EndExtUserPrmData
+
+;Parameter-Referenz 705
+ExtUserPrmData=705 "channel 2: function"
+Unsigned8 44 44-255
+Prm_Text_Ref=122
+EndExtUserPrmData
+
+;Parameter-Referenz 706
+ExtUserPrmData=706 "channel 3: function"
+Unsigned8 44 44-255
+Prm_Text_Ref=122
+EndExtUserPrmData
+
+;Parameter-Referenz 707
+ExtUserPrmData=707 "channel 0: function"
+Unsigned8 1 1-255
+Prm_Text_Ref=123
+EndExtUserPrmData
+
+;Parameter-Referenz 708
+ExtUserPrmData=708 "channel 1: function"
+Unsigned8 1 1-255
+Prm_Text_Ref=123
+EndExtUserPrmData
+
+;Parameter-Referenz 709
+ExtUserPrmData=709 "channel 2: function"
+Unsigned8 1 1-255
+Prm_Text_Ref=123
+EndExtUserPrmData
+
+;Parameter-Referenz 710
+ExtUserPrmData=710 "channel 3: function"
+Unsigned8 1 1-255
+Prm_Text_Ref=123
+EndExtUserPrmData
+
+;Parameter-Referenz 711
+ExtUserPrmData=711 "channel 0: function"
+Unsigned8 12 4-255
+Prm_Text_Ref=124
+EndExtUserPrmData
+
+;Parameter-Referenz 712
+ExtUserPrmData=712 "channel 1: function"
+Unsigned8 12 4-255
+Prm_Text_Ref=124
+EndExtUserPrmData
+
+;Parameter-Referenz 713
+ExtUserPrmData=713 "channel 2: function"
+Unsigned8 12 4-255
+Prm_Text_Ref=124
+EndExtUserPrmData
+
+;Parameter-Referenz 714
+ExtUserPrmData=714 "channel 3: function"
+Unsigned8 12 4-255
+Prm_Text_Ref=124
+EndExtUserPrmData
+
+;Parameter-Referenz 716
+ExtUserPrmData=716 "diagnostic"
+Bit(3) 0 0-1
+Prm_Text_Ref=6
+EndExtUserPrmData
+
+
+
+;==============================================================================
+;==== General DP Keywords =====================================================
+;==============================================================================
+
+GSD_Revision=5
+Vendor_Name="Lenze"
+Model_Name="Lenze EPM-T121 GatewayECO (DPV0)"
+Revision="1.00"
+Ident_Number=0x0A69
+Protocol_Ident=0
+Station_Type=0
+FMS_supp=0
+Hardware_Release="1.00"
+Software_Release="1.71"
+
+
+;==============================================================================
+;==== Supported baudrates =====================================================
+;==============================================================================
+
+9.6_supp=1
+19.2_supp=1
+45.45_supp=1
+93.75_supp=1
+187.5_supp=1
+500_supp=1
+1.5M_supp=1
+3M_supp=1
+6M_supp=1
+12M_supp=1
+
+MaxTsdr_9.6=15
+MaxTsdr_19.2=15
+MaxTsdr_45.45=15
+MaxTsdr_93.75=15
+MaxTsdr_187.5=15
+MaxTsdr_500=15
+MaxTsdr_1.5M=20
+MaxTsdr_3M=35
+MaxTsdr_6M=50
+MaxTsdr_12M=95
+
+Redundancy=0
+Repeater_Ctrl_Sig=2
+24V_Pins=2
+Implementation_Type="VPC3+/C"
+Bitmap_Device="EPMT121_"
+
+
+;==============================================================================
+;==== Slave specific values ===================================================
+;==============================================================================
+
+OrderNumber="EPM-T121"
+Slave_Family=3@Lenze
+Info_Text="GSD version: 1.71, PROFIBUS DPV0 devices, Send and Receive capability for direct communication, single-tier configuration up to 32 modules"
+Freeze_Mode_supp=1
+Sync_Mode_supp=1
+Fail_Safe=1
+Auto_Baud_supp=1
+Set_Slave_Add_supp=0
+
+Min_Slave_Intervall=30
+
+Modular_Station=1
+Max_Module=8
+Modul_Offset=0
+Max_Input_Len=244
+Max_Output_Len=244
+Max_Data_Len=488
+Max_Diag_Data_Len=64
+
+
+;==============================================================================
+;==== User-Prm-Data ===========================================================
+;==============================================================================
+
+Max_User_Prm_Data_Len=237
+Ext_User_Prm_Data_Const(0)=0x00,0x00,0x08,0x0A,0x81,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(7)=716
+Ext_User_Prm_Data_Ref(7)=562
+Ext_User_Prm_Data_Ref(7)=563
+Ext_User_Prm_Data_Ref(7)=561
+Ext_User_Prm_Data_Ref(7)=565
+Ext_User_Prm_Data_Ref(7)=564
+Ext_User_Prm_Data_Ref(7)=566
+
+Publisher_supp = 1
+
+
+;==============================================================================
+;==== Modulstatus =============================================================
+;==============================================================================
+
+UnitDiagType=130
+X_Unit_Diag_Area = 24 - 25
+X_Value(1)= "Slot 1: Module error"
+X_Value(2)= "Slot 1: Wrong module"
+X_Value(3)= "Slot 1: No module"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 26 - 27
+X_Value(1)= "Slot 2: Module error"
+X_Value(2)= "Slot 2: Wrong module"
+X_Value(3)= "Slot 2: No module"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 28 - 29
+X_Value(1)= "Slot 3: Module error"
+X_Value(2)= "Slot 3: Wrong module"
+X_Value(3)= "Slot 3: No module"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 30 - 31
+X_Value(1)= "Slot 4: Module error"
+X_Value(2)= "Slot 4: Wrong module"
+X_Value(3)= "Slot 4: No module"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 32 - 33
+X_Value(1)= "Slot 5: Module error"
+X_Value(2)= "Slot 5: Wrong module"
+X_Value(3)= "Slot 5: No module"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 34 - 35
+X_Value(1)= "Slot 6: Module error"
+X_Value(2)= "Slot 6: Wrong module"
+X_Value(3)= "Slot 6: No module"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 36 - 37
+X_Value(1)= "Slot 7: Module error"
+X_Value(2)= "Slot 7: Wrong module"
+X_Value(3)= "Slot 7: No module"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 38 - 39
+X_Value(1)= "Slot 8: Module error"
+X_Value(2)= "Slot 8: Wrong module"
+X_Value(3)= "Slot 8: No module"
+X_Unit_Diag_Area_End
+EndUnitDiagType
+
+
+;==============================================================================
+;==== Channel-Diag ============================================================
+;==============================================================================
+
+Channel_Diag(16)= "Parameter assignment error"
+Channel_Diag(17)= "Sensor or load voltage missing"
+Channel_Diag(18)= "Fuse defect"
+Channel_Diag(19)= "Slot not addressable"
+Channel_Diag(20)= "Ground error"
+Channel_Diag(21)= "Reference channel error"
+Channel_Diag(22)= "Process interrupt lost"
+Channel_Diag(23)= "Actuator warning"
+Channel_Diag(24)= "Actuator shutoff"
+Channel_Diag(25)= "Fail-safe shutoff"
+Channel_Diag(26)= "external error"
+Channel_Diag(27)= "ambiguous error"
+
+
+;==============================================================================
+;==== Module-Definition-List ==================================================
+;==============================================================================
+
+Module="EPM-T210.1x DI 8xDC 24V" 0x44,0x00,0x00,0x00,0x9F,0xC1
+20
+EndModule
+
+Module="EPM-T211.1x DI 16xDC24V" 0x44,0x01,0x00,0x00,0x9F,0xC2
+24
+EndModule
+
+Module="EPM-T220.1x DO 8xDC24V 1A" 0x84,0x00,0x00,0x00,0xAF,0xC8
+35
+EndModule
+
+Module="EPM-T221.1x DO 8xDC24V 2A" 0x84,0x00,0x00,0x00,0xAF,0xC8
+36
+EndModule
+
+Module="EPM-T222.1x DO 4xRELAIS" 0x84,0x00,0x00,0x00,0xAF,0xC8
+38
+EndModule
+
+Module="EPM-T223.1x DO 16xDC24V 1A" 0x84,0x01,0x00,0x00,0xAF,0xD0
+44
+EndModule
+
+Module="EPM-T224.1x DO 8xDC24V 0.5A" 0x84,0x00,0x00,0x00,0xAF,0xC8
+125
+EndModule
+
+Module="EPM-T225.1x DO 16xDC24V 0.5A" 0x84,0x01,0x00,0x00,0xAF,0xD0
+128
+EndModule
+
+Module="EPM-T230.1x DIO 8xDC24V 1A" 0xC3,0x00,0x00,0x00,0xBF,0xC9
+48
+EndModule
+
+Module="EPM-T310.1x.10 AI4x16BIT" 0x44,0x43,0x00,0x00,0x15,0xC4
+50
+Ext_Module_Prm_Data_Len=12
+Ext_User_Prm_Data_Const(0)=0x0c,0x01,0x00,0x00,0x28,0x28,0x28,0x28,0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(1)=1
+Ext_User_Prm_Data_Ref(2)=52
+Ext_User_Prm_Data_Ref(4)=65
+Ext_User_Prm_Data_Ref(5)=66
+Ext_User_Prm_Data_Ref(6)=67
+Ext_User_Prm_Data_Ref(7)=68
+Ext_User_Prm_Data_Ref(8)=61
+Ext_User_Prm_Data_Ref(8)=71
+Ext_User_Prm_Data_Ref(8)=75
+Ext_User_Prm_Data_Ref(9)=62
+Ext_User_Prm_Data_Ref(9)=72
+Ext_User_Prm_Data_Ref(9)=76
+Ext_User_Prm_Data_Ref(10)=69
+Ext_User_Prm_Data_Ref(10)=73
+Ext_User_Prm_Data_Ref(10)=77
+Ext_User_Prm_Data_Ref(11)=70
+Ext_User_Prm_Data_Ref(11)=74
+Ext_User_Prm_Data_Ref(11)=78
+EndModule
+
+Module="EPM-T310.1x.11 AI4x16BIT" 0x44,0x43,0x00,0x00,0x15,0xC4
+131
+Ext_Module_Prm_Data_Len=12
+Ext_User_Prm_Data_Const(0)=0x0c,0x01,0x00,0x00,0x28,0x28,0x28,0x28,0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(1)=1
+Ext_User_Prm_Data_Ref(2)=52
+Ext_User_Prm_Data_Ref(4)=301
+Ext_User_Prm_Data_Ref(5)=302
+Ext_User_Prm_Data_Ref(6)=303
+Ext_User_Prm_Data_Ref(7)=304
+Ext_User_Prm_Data_Ref(8)=61
+Ext_User_Prm_Data_Ref(8)=71
+Ext_User_Prm_Data_Ref(8)=75
+Ext_User_Prm_Data_Ref(9)=62
+Ext_User_Prm_Data_Ref(9)=72
+Ext_User_Prm_Data_Ref(9)=76
+Ext_User_Prm_Data_Ref(10)=69
+Ext_User_Prm_Data_Ref(10)=73
+Ext_User_Prm_Data_Ref(10)=77
+Ext_User_Prm_Data_Ref(11)=70
+Ext_User_Prm_Data_Ref(11)=74
+Ext_User_Prm_Data_Ref(11)=78
+EndModule
+
+Module="EPM-T311.1x.10 AI4x12BIT,+/-10V" 0x44,0x43,0x00,0x00,0x15,0xC4
+170
+Ext_Module_Prm_Data_Len=12
+Ext_User_Prm_Data_Const(0)=0x0c,0x01,0x00,0x00,0x28,0x28,0x28,0x28,0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(1)=1
+Ext_User_Prm_Data_Ref(4)=699
+Ext_User_Prm_Data_Ref(5)=700
+Ext_User_Prm_Data_Ref(6)=701
+Ext_User_Prm_Data_Ref(7)=702
+EndModule
+
+Module="EPM-T312.1x.10 AI4x12BIT,+/-20mA" 0x44,0x43,0x00,0x00,0x15,0xC4
+169
+Ext_Module_Prm_Data_Len=12
+Ext_User_Prm_Data_Const(0)=0x0c,0x01,0x00,0x00,0x2C,0x2C,0x2C,0x2C,0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(1)=1
+Ext_User_Prm_Data_Ref(4)=703
+Ext_User_Prm_Data_Ref(5)=704
+Ext_User_Prm_Data_Ref(6)=705
+Ext_User_Prm_Data_Ref(7)=706
+EndModule
+
+Module="EPM-T320.1x.10 AO4x12BIT" 0x84,0x43,0x00,0x00,0xA5,0xE0
+55
+Ext_Module_Prm_Data_Len=8
+Ext_User_Prm_Data_Const(0)=0x08,0x01,0x00,0x00,0x09,0x09,0x09,0x09
+Ext_User_Prm_Data_Ref(1)=1
+Ext_User_Prm_Data_Ref(2)=52
+Ext_User_Prm_Data_Ref(4)=44
+Ext_User_Prm_Data_Ref(5)=45
+Ext_User_Prm_Data_Ref(6)=46
+Ext_User_Prm_Data_Ref(7)=47
+EndModule
+
+Module="EPM-T320.1x.11 AO4x12BIT" 0x84,0x43,0x00,0x00,0x25,0xE0
+133
+Ext_Module_Prm_Data_Len=8
+Ext_User_Prm_Data_Const(0)=0x08,0x01,0x00,0x00,0x09,0x09,0x09,0x09
+Ext_User_Prm_Data_Ref(1)=1
+Ext_User_Prm_Data_Ref(2)=52
+Ext_User_Prm_Data_Ref(4)=44
+Ext_User_Prm_Data_Ref(5)=45
+Ext_User_Prm_Data_Ref(6)=46
+Ext_User_Prm_Data_Ref(7)=47
+EndModule
+
+Module="EPM-T321.1x.10 AO4x12BIT,+/-10V" 0x84,0x43,0x00,0x00,0x25,0xE0
+168
+Ext_Module_Prm_Data_Len=8
+Ext_User_Prm_Data_Const(0)=0x08,0x01,0x00,0x00,0x09,0x09,0x09,0x09
+Ext_User_Prm_Data_Ref(1)=1
+Ext_User_Prm_Data_Ref(4)=707
+Ext_User_Prm_Data_Ref(5)=708
+Ext_User_Prm_Data_Ref(6)=709
+Ext_User_Prm_Data_Ref(7)=710
+EndModule
+
+Module="EPM-T322.1x.10 AO4x12BIT,0.20mA" 0x84,0x43,0x00,0x00,0x25,0xE0
+167
+Ext_Module_Prm_Data_Len=8
+Ext_User_Prm_Data_Const(0)=0x08,0x01,0x00,0x00,0x0C,0x0C,0x0C,0x0C
+Ext_User_Prm_Data_Ref(1)=1
+Ext_User_Prm_Data_Ref(4)=711
+Ext_User_Prm_Data_Ref(5)=712
+Ext_User_Prm_Data_Ref(6)=713
+Ext_User_Prm_Data_Ref(7)=714
+EndModule
+
+Module="EPM-T330.1x.10 2AI/2AOx12BIT" 0xC3,0x41,0x41,0x00,0x45,0xDB
+57
+Ext_Module_Prm_Data_Len=14
+Ext_User_Prm_Data_Const(0)=0x0E,0x01,0x03,0x00,0x28,0x28,0x09,0x09,0x00,0x00,0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(1)=1
+Ext_User_Prm_Data_Ref(2)=52
+Ext_User_Prm_Data_Ref(2)=53
+Ext_User_Prm_Data_Ref(2)=54
+Ext_User_Prm_Data_Ref(3)=55
+Ext_User_Prm_Data_Ref(3)=56
+Ext_User_Prm_Data_Ref(4)=57
+Ext_User_Prm_Data_Ref(5)=58
+Ext_User_Prm_Data_Ref(6)=59
+Ext_User_Prm_Data_Ref(7)=60
+Ext_User_Prm_Data_Ref(8)=61
+Ext_User_Prm_Data_Ref(9)=62
+Ext_User_Prm_Data_Ref(10)=63
+Ext_User_Prm_Data_Ref(12)=64
+EndModule
+
+
+;11:15:04

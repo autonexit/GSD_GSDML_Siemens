@@ -1,0 +1,1298 @@
+;; (c) Lenze GmbH & CoKG
+;;
+;; Installation LEMOC2 Version 3.4
+;;
+;; Installationsscript fÅr Verwendung mit INSTALIT/D
+;;
+;; Bearbeiter:       H.Sch‰fer
+;; Datum:            30.10.1997
+;;
+;; zugehîrige PVL:   lm2v340a.pvl    Programmfiles ohne PDB
+;;                   lm2v340b.pvl    PDB 
+
+DefineVariables
+Text [Product]         := LEMOC2  V 3.4
+Text [ProdVersion]     := 3.4
+
+Text [CompanyName]     := Lenze GmbH & CoKG
+Text [CompanyPostfach] := Postfach 10 13 52
+Text [CompanyOrt]      := 31763 Hameln
+Text [CompanyTelefon]  := (049) 05154 / 820
+Directory [DefaultInstallationDirectory] := C:\LEMOC2
+Directory [LEMOC2Directory]   :=
+Directory [LEMOC2exe]         := LM2.EXE
+Directory [LEMOC2ver]         := LEMOC2.VER
+Number    [DefaultCountryCode] := 49
+Number    [CurrentCountryCode] :=
+Number    [LM2StartLanguage]   := 49
+
+Logical [LM2GesamtFlag]     := NOCharacter
+Logical [LM2TeilFlag]       := NOCharacter
+Logical [LM2TextAnzFlag]    := NOCharacter
+Logical [PDBFuFlag]
+Logical [PDBSrFlag]
+logical [PDBServoFlag]
+Logical [PDBOptFlag]
+Logical [PDBBusFlag]
+Logical [AbortESCFlag]      := NoCharacter
+Logical [LM2GermanFlag]     := YesCharacter
+Logical [LM2EnglischFlag]   := NoCharacter
+logical [LM2FranzFlag]      := NoCharacter
+Logical [EndeInstallFlag]   := NOCharacter
+Logical [UpdateFlag]       := NOCharacter
+Logical [LM2OldVersExist]  := NoCharacter
+Logical [LM2IdentVersExist]  := NoCharacter
+Logical [LM2NewVersExist]  := NoCharacter
+Logical [LM2InvVersExist] :=NoCharacter
+Logical [BeginnInstallFlag] := NoCharacter
+Logical [LM2InstAbbruchFlag] := NoCharacter
+Logical [LM2InstallStatusOk] := NoCharacter
+Logical [NewDir] := NoCharacter
+Logical [DosShellFlag] := NoCharacter
+
+Text [TopLine] :=  "[CompanyName]                    [Product]                      (c) 1997"
+Text [BottomLine]  := "<F2> Systeminformationen                                  <F10> Programm Beenden"
+Text [BottomLine1] := "<Strg-Enter>=Installation   <Lerrtaste>=Setzen/Lîschen             <ESC> Abbruch"
+Text [BottomLine2] := "                                                          <F10> Programm Beenden"
+
+Text [BackgroundCharacter] := B0
+Text [ScreenColors]        := LightGrayOnBlack
+Text [ShadowColor]         := DarkGrayOnBlack
+Text [TopLineColor]        := BlackOnLightGray
+Text [MenuColor]           := LightGrayOnBlue
+Text [PopupColor]          := LightGrayOnBlue
+Text [BottomLineColor]     := BlackOnLightGray
+Text [DialogColor]         := LightGrayOnBlue
+Text [DialogColor1]        := WhiteOnBlue
+Text [DialogColor2]        := BlackOnLightGray
+
+Text [DisplayAdapterSummary] :=
+Text [CPUTypeSummary] :=
+Text [NetworkActive] :=
+Text [MathCoprocessorStatus] :=
+Text [InstallationDriveSummary] :=
+Text [OSVersionSummary] :=
+Text [SystemMemorySummary] :=
+Text [COMPortSummary] :=
+Text [LPTSummary] :=
+Text [FreierSpeicher] :=
+Logical [InsufficientSystem] := NoCharacter
+
+EndDefineVariables
+
+
+;; wenn Installation von Diskette, enthÑlt InstallFromDrive als letztes
+;; Zeichen einen Backslash. Erfolgt die Installation aus einem Festplatten-
+;; Verzeichnis so enthÑlt InstallFromDrive keinen Backslash. Im weiteren Ver-
+;; lauf der Installation fÅhrt dieser jedoch zu Pfadproblemen.
+;;If DriveIsRemoveable [InstallFromDrive]
+;;  [InstallFromDirectory] := [InstallFromDrive]:
+;;Endif
+
+
+SetBackgroundCharTo  [BackgroundCharacter]
+SetScreenAttrTo      [ScreenColors]
+SetShadowAttrTo      [ShadowColor]
+SetTopLineTo         [TopLine]
+SetTopLineAttrTo     [TopLineColor]
+SetPopupAttrTo       [PopupColor]
+SetBottomLineTo      [BottomLine]
+SetBottomLineAttrTo  [BottomLineColor]
+
+;;SetAllowExit off
+
+LetButton <F2>  Do SystemInfo
+LetButton <F10> Do EndeInstallationF10
+LetButton <CtrlX> Do NullProcedure
+
+Do PrepareSystemReport
+
+SetCompletionStatusTo finished
+
+:Anfang
+ClearScreen
+
+Do CheckInstallLanguage
+
+;; Setzen von Texten in AbhÑngigkeit von der Installationssprache
+If [CurrentCountryCode] = 44
+  [CompanyPostfach] := P.O. Box 10 13 52
+  [BottomLine]  := "<F2> System informationen                                   <F10> End of program"
+  [BottomLine1] := "<Strg-Enter>=Installation   <Space bar>=Set/Delete                   <ESC> Abort"
+  [BottomLine2] := "                                                            <F10> End of program"
+  SetBottomLineTo [BottomLine]
+Endif
+If [CurrentCountryCode] = 33
+  [CompanyName]     := Lenze SA
+  [CompanyPostfach] := ZA de Chanteloup - Rue Albert Einstein
+  [CompanyOrt]      := 93603 AULNAY SS BOIS
+  [CompanyTelefon]  := (0033) 1.48.79.62.00
+  [BottomLine]  := "<F2> Informations systäme                                  <F10> Quitter progamme"
+  [BottomLine1] := "<Strg-Enter>=Installation   <Lerrtaste>=Etablir/Effacer             <ESC> Abbruch"
+  [BottomLine2] := "                                                          <F10> Quitter progamme"
+  SetBottomLineTo [BottomLine]
+Endif
+
+Do FirstDialog
+
+:AnfangHauptmenu
+ClearScreen
+Do Hauptmenu
+
+If [LM2GesamtFlag] = YesCharacter
+  Do LEMOC2Installation
+Endif
+
+If [LM2TeilFlag] = YesCharacter
+ Do LEMOC2TeilInstallation
+Endif
+
+If [LM2TextAnzFlag] = YesCharacter
+  Do LEMOC2Readme
+Endif
+
+If [EndeInstallFlag] = YesCharacter
+  Do EndeInstallation
+Endif
+
+If [DosShellFlag] = YesCharacter
+;;  ExitToDos SwapOut
+Endif
+
+:HauptmenuDataReset
+[LM2GesamtFlag]      := NoCharacter
+[LM2TeilFlag]        := NoCharacter
+[LM2TextAnzFlag]     := NoCharacter
+[BeginnInstallFlag]  := NoCharacter
+[DosShellFlag]       := NoCharacter
+
+GoTo AnfangHauptmenu
+
+Procedure Hauptmenu
+  ;; HauptmenÅ der Installation
+
+If [CurrentCountryCode] = 49
+  GetMenuChoice [MenuColor] @xy(Center,8) UseHeader " HauptmenÅ "
+    Gesamtinstallation von LEMOC2 V3.4
+     ;LEMOC2 wird vollstÑndig installiert. Dazu werden etwa 5 MByte freier
+     ;Speicher auf Ihrer Festplatte benîtigt. Wenn eine Ñltere Version
+     ;vorhanden ist, erfolgt ein Update auf die neue Version.
+     ;LEMOC2 wird in den Sprachen Deutsch, Englisch und Franzîsisch installiert.
+    Anzeige zusÑtzlicher Informationen zu LEMOC2
+     ;Es wird die Datei LIESDAS.TXT von LEMOC2 angezeigt.
+    Beenden der Installation
+     ;Das Installationsprogramm wird beendet.
+  EndGetMenuChoice
+Endif
+
+If [CurrentCountryCode] = 44
+  GetMenuChoice [MenuColor] @xy(Center,8) UseHeader " Main menu "
+    Total installation of LEMOC2 V3.4
+     ;LEMOC2 is completely installed. About 5 Mbyte of free memory of your 
+     ;hard disk are required for this installation. When using an older version
+     ;it will be updated.
+     ;LEMOC2 is available in German, English and French.
+    Display of additional information about LEMOC2
+     ;The file README.TXT of LEMOC2 is displayed.
+    End of the installation
+     ;The installation program will be exited.
+  EndGetMenuChoice
+Endif
+
+If [CurrentCountryCode] = 33
+  GetMenuChoice [MenuColor] @xy(Center,8) UseHeader " menu principal "
+    Installation compläte de LEMOC2 V3.4
+     ;La version compläte de LEMOC2 va àtre installÇe. L'espace mÇmoire nÇcessaire  
+     ;sur votre disque dur est de 5 Mo. 
+     ;LEMOC2 sera installÇ en allemand, en anglais et en franáais.
+    Informations supplÇmentaires concernant LEMOC2
+     ;Le fichier LISEZMOI de LEMOC2 sera affichÇ.
+    Quittez l'installation
+     ;Le programme d'installation sera interrompu.
+  EndGetMenuChoice
+Endif
+
+ClearScreen
+  InCase Choice is
+    =1: [LM2GesamtFlag]   := YESCharacter
+    =2: [LM2TextAnzFlag]  := YESCharacter
+    =3: [EndeInstallFlag] := YESCharacter
+  EndInCase
+
+EndProcedure
+
+
+Procedure FirstDialog
+  ;; Infobildschirm vor dem Beginn der Installation
+  if [CurrentCountryCode] = 49
+    Dialog @xy(Center,2) [DialogColor] 76 UseHeader " [Product] "
+
+      LEMOC2 ist ein Programm zur Parametrierung von LENZE Antriebs-
+      reglern und Automatisierungsbaugruppen. Der Datenaustausch
+      zwischen PC und Antrieb erfolgt Åber eine serielle Schnittstelle.
+
+      Das Programm steht in den Sprachen Deutsch, Englisch und Franzîsisch
+      zur VerfÅgung.
+
+      Bei der Installation beachten Sie bitte die Hinweise zu den
+      jeweiligen Installationsschritten.
+
+      FÅr weitere Informationen stehen wir Ihnen gern zur VerfÅgung.
+
+      [CompanyName]
+      [CompanyPostfach]
+      [CompanyOrt]
+      [CompanyTelefon]
+
+    EndDialog
+  endif
+
+  if [CurrentCountryCode] = 44
+    Dialog @xy(Center,2) [DialogColor] 76 UseHeader " [Product] "
+
+      LEMOC2 is a program for the parameterization of LENZE drive
+      controller and automation modules. The data is exchanged between
+      PC and drive via a serial interface.
+
+      The program is available in German, English and French.
+
+      Please take note of the information on different installation steps.
+
+      Please do not hesitate to contact us for further information.
+
+      [CompanyName]
+      [CompanyPostfach]
+      [CompanyOrt]
+      [CompanyTelefon]
+
+    EndDialog
+  endif
+
+  if [CurrentCountryCode] = 33
+    Dialog @xy(Center,2) [DialogColor] 76 UseHeader " [Product] "
+
+      LEMOC2 est un programme permettant le paramÇtrage des variateurs
+      et modules d'automatisme LENZE. L'Çchange de donnÇes entre PC et
+      variateurs se fait via la liaison sÇrie.
+
+      Le programme peut àtre utilisÇ en allemand, en anglais ou en 
+      franáais.
+      
+      Lors de l'installation, veuillez prendre connaissance des 
+      diffÇrents messages apparaissant Ö chaque pas d'installation.
+      
+      Nous sommes Ö votre entiäre disposition, si vous souhaitez obtenir
+      des informations supplÇmentaires.
+
+      [CompanyName]
+      [CompanyPostfach]
+      [CompanyOrt]
+      [CompanyTelefon]
+
+    EndDialog
+  endif
+EndProcedure
+
+
+Procedure MakeLemoc2Pfad
+  ;; Bestimmen des Installationsverzeichnisses
+  If [LEMOC2Directory] = BlankString
+    [InstallationDirectory] := [DefaultInstallationDirectory]
+  Else
+    [InstallationDirectory] := [LEMOC2Directory]
+  Endif
+  DetermineInstallationDrive RequireFixed AllowNetwork
+  DetermineInstallationDirectory RequireFixed AllowNetwork
+  [LEMOC2Directory] := [InstallationDirectory]
+  ;; Voreinstellungen der Pfade fÅr die Installation der Filegruppen
+  [Dir1] := [InstallationDirectory]\bin
+  [Dir2] := [InstallationDirectory]\data
+  [Dir3] := [InstallationDirectory]\pdb\049
+  [Dir4] := [InstallationDirectory]\pdb\044
+  [Dir5] := [InstallationDirectory]\pdb\033
+EndProcedure
+
+Procedure LEMOC2Exist
+  ;; Test, ob Lemoc2 bereits vorhanden ist
+  [LM2InvVersExist] := NoCharacter
+  [LM2OldVersExist] := NoCharacter
+  [LM2IdentVersExist] := NoCharacter
+  [LM2NewVersExist] := NoCharacter
+  [NewDir] := NoCharacter
+
+  if (FileExists [Dir1]\[LEMOC2ver]) .or. (FileExists [Dir1]\[LEMOC2exe])
+    [String2] := BlankString
+    [String3] := BlankString
+    [String4] := BlankString
+    [String5] := BlankString
+    [String6] := BlankString
+    if FileExists [Dir1]\[LEMOC2ver]
+      ExamineTextFile [Dir1]\[LEMOC2ver]
+        [String2] := SettingFor Version
+        [String3] := SettingFor LM2ID
+        [String4] := SettingFor Status
+        [String5] := SettingFor InstallationDate
+        [String6] := SettingFor InstallationTime
+      ForgetTextFile
+      If [String4] <> Installation OK
+        [LM2InvVersExist] := YesCharacter
+      Endif
+      If [String2] < 3.3
+        [LM2OldVersExist] := YesCharacter
+      Endif
+      If [String2] = 3.3
+        [LM2IdentVersExist] := YesCharacter
+      Endif
+      If [String2] > 3.3
+        [LM2NewVersExist] := YesCharacter
+      Endif
+    Else
+      [LM2InvVersExist] := YesCharacter
+      [LM2OldVersExist] := YesCharacter
+    Endif
+
+    if [LM2InvVersExist]
+      Do DialogInvalidVersion
+      Goto EndeLM2Exist
+    Endif
+    if [LM2OldVersExist]
+      Do DialogOldVersion
+      Goto EndeLM2Exist
+    Endif
+    if [LM2NewVersExist]
+      Do DialogNewVersion
+      Goto EndeLM2Exist
+    Endif
+    if [LM2IdentVersExist]
+      Do DialogIdentVersion
+      Goto EndeLM2Exist
+    Endif
+  Endif
+:EndeLM2Exist
+EndProcedure
+
+Procedure DialogInvalidVersion
+  If [CurrentCountryCode] = 49
+    Dialog [NewDir] [DialogColor1] UseHeader " [Product] "
+      Es existiert bereits eine unvollstÑndige oder
+      nicht zu identifiziernede Version von LEMOC2 !
+
+      Version:             [String2]
+      LM2ID:               [String3]
+      Verzeichnis:         [InstallationDirectory]
+
+      Wenn Sie diese Version nicht Åberschreiben wollen,
+      wÑhlen Sie Bitte ein neues Verzeichnis.
+
+      Neues Installationsverzeichnis wÑhlen ?
+    EndDialog
+  Endif
+  If [CurrentCountryCode] = 44
+    Dialog [NewDir] [DialogColor1] UseHeader " [Product] "
+      There already exists an incomplete or unidentified version of LEMOC2 !
+
+      Version:           [String2]
+      LM2ID:             [String3]
+      Directory:         [InstallationDirectory]
+
+      If you do not want to overwrite this version, please select another
+      directory.
+
+      Do you want to select another installation directory ?
+    EndDialog
+  Endif
+  If [CurrentCountryCode] = 33
+    Dialog [NewDir] [DialogColor1] UseHeader " [Product] "
+      Il existe une version non compläte ou non 
+      identifiable de LEMOC2 !
+
+      Version:             [String2]
+      LM2ID:               [String3]
+      RÇpertoire:          [InstallationDirectory]
+
+      Si vous souhaitez ne pas Çcraser cette version, veuillez
+      indiquer un nouveau rÇpertoire.
+
+      SÇlectionner un nouveau rÇpertoire pour l'installation ?
+    EndDialog
+  Endif
+EndProcedure
+
+Procedure DialogOldVersion
+  If [CurrentCountryCode] = 49
+    Dialog [NewDir] [DialogColor1] UseHeader " [Product] "
+      Es existiert eine Ñltere Version von LEMOC2 !
+
+      Version:             [String2]
+      LM2ID:               [String3]
+      Installationsdatum:  [String5]  [String6]
+      Verzeichnis:         [InstallationDirectory]
+
+      Wenn Sie diese Version nicht Åberschreiben wollen,
+      wÑhlen Sie Bitte ein neues Verzeichnis.
+
+      Neues Installationsverzeichnis wÑhlen ?
+    EndDialog
+  Endif
+  If [CurrentCountryCode] = 44
+    Dialog [NewDir] [DialogColor1] UseHeader " [Product] "
+      There already exits an older version of LEMOC2 !
+
+      Version:             [String2]
+      LM2ID:               [String3]
+      Installation date :  [String5]  [String6]
+      Directory:           [InstallationDirectory]
+
+      If you do not want to overwrite this version, please select another
+      directory.
+
+      Do you want to select another installation directory ?
+    EndDialog
+  Endif
+  If [CurrentCountryCode] = 33
+    Dialog [NewDir] [DialogColor1] UseHeader " [Product] "
+      Il existe une version ultÇrieure de LEMOC2 !
+
+      Version:             [String2]
+      LM2ID:               [String3]
+      Date d'installation: [String5]  [String6]
+      RÇpertoire:          [InstallationDirectory]
+
+      Si vous souhaitez ne pas Çcraser cette version, veuillez
+      indiquer un nouveau rÇpertoire.
+
+      SÇlectionner un nouveau rÇpertoire pour l'installation ?
+    EndDialog
+  Endif
+EndProcedure
+
+Procedure DialogNewVersion
+  If [CurrentCountryCode] = 49
+    Dialog [NewDir] [DialogColor1] UseHeader " [Product] "
+      Es existiert eine neuere Version von LEMOC2
+      in dem angegebenen Verzeichnis !
+
+      Version:             [String2]
+      LM2ID:               [String3]
+      Installationsdatum:  [String5]  [String6]
+      Verzeichnis:         [InstallationDirectory]
+
+      Wenn Sie diese Version nicht Åberschreiben wollen,
+      wÑhlen Sie Bitte ein neues Verzeichnis.
+
+      Neues Installationsverzeichnis wÑhlen ?
+    EndDialog
+  Endif
+  If [CurrentCountryCode] = 44
+    Dialog [NewDir] [DialogColor1] UseHeader " [Product] "
+      There exists an updated version of LEMOC2
+      in the selected directory !
+
+      Version:             [String2]
+      LM2ID:               [String3]
+      Installation date:   [String5]  [String6]
+      Directory:           [InstallationDirectory]
+
+      If you do not want to overwrite this version,
+      please select another directory.
+
+      Do you want to select another installation directory ?
+    EndDialog
+  Endif
+  If [CurrentCountryCode] = 33
+    Dialog [NewDir] [DialogColor1] UseHeader " [Product] "
+      Il existe une version plus rÇcente de LEMOC2, 
+      dans le rÇpertoire indiquÇ !
+
+      Version:             [String2]
+      LM2ID:               [String3]
+      Date d'installation: [String5]  [String6]
+      RÇpertoire:          [InstallationDirectory]
+
+      Si vous souhaitez ne pas Çcraser cette version, veuillez
+      indiquer un nouveau rÇpertoire.
+
+      SÇlectionner un nouveau rÇpertoire pour l'installation ?
+    EndDialog
+  Endif
+EndProcedure
+
+Procedure DialogIdentVersion
+  If [CurrentCountryCode] = 49
+    Dialog [NewDir] [DialogColor1] UseHeader " [Product] "
+      Es existiert eine identische Version von LEMOC2
+      in dem angegebenen Verzeichnis !
+
+      Version:             [String2]
+      LM2ID:               [String3]
+      Installationsdatum:  [String5]  [String6]
+      Verzeichnis:         [InstallationDirectory]
+
+      Wenn Sie diese Version nicht Åberschreiben wollen,
+      wÑhlen Sie Bitte ein neues Verzeichnis.
+
+      Neues Installationsverzeichnis wÑhlen ?
+    EndDialog
+  Endif
+  If [CurrentCountryCode] = 44
+    Dialog [NewDir] [DialogColor1] UseHeader " [Product] "
+      There exists an identical version of LEMOC2
+      in the selected file !
+
+      Version:             [String2]
+      LM2ID:               [String3]
+      Installation date:   [String5]  [String6]
+      Directory:           [InstallationDirectory]
+
+      If you do not want to overwrite this version, please
+      select another directory.
+
+      Do you want to select another directory ?
+    EndDialog
+  Endif
+  If [CurrentCountryCode] = 33
+    Dialog [NewDir] [DialogColor1] UseHeader " [Product] "
+      Une version identique Ö celle que vous souhaitez
+      installer existe dans le rÇpertoire indiquÇ !
+
+      Version:             [String2]
+      LM2ID:               [String3]
+      Date d'installation: [String5]  [String6]
+      RÇpertoire:          [InstallationDirectory]
+
+      Si vous souhaitez ne pas Çcraser cette version, veuillez
+      indiquer un nouveau rÇpertoire.
+
+      SÇlectionner un nouveau rÇpertoire pour l'installation ?
+    EndDialog
+  Endif
+EndProcedure
+
+Procedure LEMOC2Installation
+  ;; LEMOC2 wird installiert, Gesamtinstallation, alle Sprachen und PDB
+  ;; Pfad fÅr Lemoc2 Installation
+  [PDBFuFlag]       := YesCharacter
+  [PDBSrFlag]       := YesCharacter
+  [PDBServoFlag]    := YesCharacter
+  [PDBOptFlag]      := YesCharacter
+  [PDBBusFlag]      := YesCharacter
+  [LM2GermanFlag]   := YesCharacter
+  [LM2EnglischFlag] := YesCharacter
+  [LM2FranzFlag]    := YesCharacter
+:BeginLM2Inst
+  Do MakeLemoc2Pfad
+  ;; Test, ob Lemoc2 bereits vorhanden ist
+  Do LEMOC2Exist              ;; Testen der Existenz und der Version
+  [String1]    := noinquiry
+  if [NewDir]
+    ;; Benutzer will neues Verzeichnis wÑhlen
+    GoTo BeginLM2Inst
+  endif
+  [LM2InstAbbruchFlag] := NoCharacter
+
+  Do LM2BinInstall
+  If [LM2InstAbbruchFlag] .or. ([BeginnInstallFlag] = NoCharacter)
+    Goto EndeLM2Installation
+  Endif
+  Do LM2InstallPDB
+  If [LM2InstAbbruchFlag]
+    Goto EndeLM2Installation
+  Endif
+  [LM2InstallStatusOK] := YesCharacter
+  Do WriteInstallStatus
+  Do LM2InstallOkDialog
+  SetCompletionStatusTo finished
+
+:EndeLM2Installation
+  If [LM2InstAbbruchFlag]
+    ;; Kennung, das Installation nicht OK wird in LEMOC2.VER eingetragen
+    [LM2InstallStatusOK] := NoCharacter
+    Do WriteInstallStatus
+  Endif
+EndProcedure
+
+Procedure LEMOC2TeilInstallation
+  ;; Installation von ausgewÑhlten Komponenten von LEMOC2
+  [PDBFuFlag]       := YesCharacter
+  [PDBSrFlag]       := NoCharacter
+  [PDBServoFlag]    := NoCharacter
+  [PDBOptFlag]      := NoCharacter
+  [PDBBusFlag]      := NoCharacter
+  [LM2GermanFlag]   := YesCharacter
+  [LM2EnglischFlag] := YesCharacter
+  [LM2FranzFlag]    := YesCharacter
+
+:BeginnLM2TeilInstallation
+  SetAllowEscape on
+  SetBottomLineTo [BottomLine1]
+  LetButton <F2>  Do nothing
+  LetButton <F10> Do nothing
+  LetButton <F2>  Do NullProcedure
+  LetButton <F10> Do NullProcedure
+
+  If [CurrentCountryCode] = 49
+    Dialog Multiple @xy(Center,Center) [DialogColor] UseHeader "Teilinstallation von LEMOC2"
+      WriteText "Bitte wÑhlen Sie die zu installierenden LEMOC2 " @xy(2,1)
+      WriteText "GerÑtebeschreibungen aus."                       @xy(2,2)
+
+      WriteText "Zu installierende GerÑtebeschreibungen:"      @xy(2,4)
+      WriteText "Frequenzumrichter 8100, 8200, 8600         "  @xy(2,6) [DialogColor2]
+      WriteText "Stromrichter 4900                          "  @xy(2,7) [DialogColor2]
+      WriteText "Servo-Antriebe 9200, 9300                  "  @xy(2,8) [DialogColor2]
+      WriteText "Automatisierungsbaugruppen 2211, 2212      "  @xy(2,9) [DialogColor2]
+      WriteText "Feldbusbaugruppen 2110, 2130               "  @xy(2,10) [DialogColor2]
+
+      CheckBox  [PDBFuFlag]       @xy(45,6)   [DialogColor2]
+      CheckBox  [PDBSrFlag]       @xy(45,7)   [DialogColor2]
+      CheckBox  [PDBServoFlag]    @xy(45,8)   [DialogColor2]
+      CheckBox  [PDBOptFlag]      @xy(45,9)   [DialogColor2]
+      CheckBox  [PDBBusFlag]      @xy(45,10)  [DialogColor2]
+
+
+
+
+
+
+
+
+      "                                                "
+    EndDialog
+  Endif
+
+  If [CurrentCountryCode] = 44
+    Dialog Multiple @xy(Center,Center) [DialogColor] UseHeader "Partial installation of LEMOC2"
+      WriteText "Please select the controller descriptions " @xy(2,1)
+      WriteText "of LEMOC2 to be installed."                 @xy(2,2)
+
+      WriteText "Controller descriptions to be installed:   "  @xy(2,4)
+      WriteText "8100, 8200, 8600 frequency inverter        "  @xy(2,6) [DialogColor2]
+      WriteText "4900 drive controller                      "  @xy(2,7) [DialogColor2]
+      WriteText "9200, 9300 servo drive                     "  @xy(2,8) [DialogColor2]
+      WriteText "Automation modules 2211, 2212              "  @xy(2,9) [DialogColor2]
+      WriteText "Field bus modules 2110, 2130               "  @xy(2,10) [DialogColor2]
+
+      CheckBox  [PDBFuFlag]       @xy(45,6)   [DialogColor2]
+      CheckBox  [PDBSrFlag]       @xy(45,7)   [DialogColor2]
+      CheckBox  [PDBServoFlag]    @xy(45,8)   [DialogColor2]
+      CheckBox  [PDBOptFlag]      @xy(45,9)   [DialogColor2]
+      CheckBox  [PDBBusFlag]      @xy(45,10)  [DialogColor2]
+
+
+
+
+
+
+
+
+      "                                                "
+    EndDialog
+  Endif
+
+  If [CurrentCountryCode] = 33
+    Dialog Multiple @xy(Center,Center) [DialogColor] UseHeader "Installation partielle de LEMOC2"
+      WriteText "Veuillez sÇlectionner les fichiers         " @xy(2,1)
+      WriteText "Type d'appareil Ö installer"                 @xy(2,2)
+
+      WriteText "Fichiers Type d'appareil Ö installer:"       @xy(2,4)
+      WriteText "Convert. de frÇquences 8100, 8200, 8600    "  @xy(2,6) [DialogColor2]
+      WriteText "Variateurs courant continu 4900            "  @xy(2,7) [DialogColor2]
+      WriteText "Servovariateurs 9200, 9300                 "  @xy(2,8) [DialogColor2]
+      WriteText "Modules d'automatisme 2211, 2212           "  @xy(2,9) [DialogColor2]
+      WriteText "Modules bus de terrain 2110, 2130          "  @xy(2,10) [DialogColor2]
+
+      CheckBox  [PDBFuFlag]       @xy(45,6)   [DialogColor2]
+      CheckBox  [PDBSrFlag]       @xy(45,7)   [DialogColor2]
+      CheckBox  [PDBServoFlag]    @xy(45,8)   [DialogColor2]
+      CheckBox  [PDBOptFlag]      @xy(45,9)   [DialogColor2]
+      CheckBox  [PDBBusFlag]      @xy(45,10)  [DialogColor2]
+
+
+
+
+
+
+
+
+      "                                                "
+    EndDialog
+  Endif
+
+  SetAllowEscape off
+  SetBottomLineTo [BottomLine]
+  LetButton <F2>  Do nothing
+  LetButton <F10> Do nothing
+  LetButton <F2>  Do SystemInfo
+  LetButton <F10> Do EndeInstallationF10
+
+  If Escaped
+    ;; Abbruch der Auswahl, zurÅck zum HauptmenÅ
+    Goto TeilInstallationEnde
+  Endif
+
+  ;; Test, ob wenigstens eine Gruppe von PDB ausgewÑhlt wurde
+  If [PDBFuFlag] .or. [PDBSrFlag] .or. [PDBServoFlag] .or. [PDBOptFlag] .or. [PDBBusFlag]
+    ;; Installation der GrundgerÑte PDB ist ausgefÅhrt
+  Else
+    ;; keine PDB ist ausgewÑhlt worden, Auswahl wird neu aufgerufen
+    Do DialogKeinePDBAuswahl
+    Goto BeginnLM2TeilInstallation
+  Endif
+
+  ;; Test, ob Lemoc2 in dem auszuwÑhlenden Verzeichnis bereits existiert
+:LM2TeilInstallBinPfad
+  Do MakeLemoc2Pfad
+  Do LEMOC2Exist                ;; Testen der Version
+  [String1]    := noinquiry
+  if [NewDir]
+    ;; Benutzer will neues Verzeichnis wÑhlen
+    GoTo LM2TeilInstallBinPfad
+  endif
+  ;; Installation von LM2 und PDB
+  [LM2InstAbbruchFlag] := NoCharacter
+  [BeginnInstallFlag] := YesCharacter
+  If [LM2IdentVersExist] .and. ([LM2InvVersExist] = NoCharacter)
+  Else
+    ;; Bin Teil wird nur ausgefÅhrt, wenn keine identische Version
+    ;; oder unvollstÑndige Installation
+    Do LM2BinInstall
+  Endif
+  If [LM2InstAbbruchFlag] .or. ([BeginnInstallFlag] = NoCharacter)
+    Goto TeilInstallationEnde
+  Endif
+  Do LM2InstallPDB
+  If [LM2InstAbbruchFlag]
+    Goto TeilInstallationEnde
+  Endif
+  [LM2InstallStatusOK] := YesCharacter
+  Do WriteInstallStatus
+  Do LM2InstallOkDialog
+  SetCompletionStatusTo finished
+
+:TeilInstallationEnde
+  If [LM2InstAbbruchFlag]
+    [LM2InstallStatusOK] := NoCharacter
+    Do WriteInstallStatus
+  Endif
+EndProcedure
+
+Procedure LM2InstallPDB
+  ;; Installation von PDB Dateien, Installation erfolgt in AbhÑngikeit
+  ;; von den PDB-Flags
+
+  InstallSeries lm2v340b.pvl
+
+  If [PDBSrFlag]
+    Do PDBAllInstall
+  Endif
+  GetQuedFiles OnePerLine
+  If QueSize > 0
+    [LM2InstAbbruchFlag] := YesCharacter
+    UnQueAllFiles
+  Endif
+
+EndProcedure
+
+Procedure PDBAllInstall
+  ;; Installation von PDB 
+  QueFileGroup 149 [Dir3] [String1]
+  If [LM2EnglischFlag]
+    QueFileGroup 144 [Dir4] [String1]
+  Endif
+EndProcedure
+
+Procedure LM2BinInstall
+  ;; Das Programm LEMOC2 wird installiert, ohne PDB
+  ;; Abfrage, ob Installation wirklich begonnen werden soll
+  Do BeginInstallationDialog
+  If [BeginnInstallFlag] = NoCharacter
+;;  [LM2InstAbbruchFlag] := YesCharacter
+    Goto EndeLM2BinInstall
+  Endif
+
+  InstallSeries lm2v340a.pvl
+
+  SetCompletionStatusTo unfinished
+  ;; Installation der einzelnen Files
+  QueFiles [Dir1] [String1]
+    lemoc2.ver
+    egavga.bgi
+    lm2.exe
+    lm2spr01.cnf
+    lm2*.049
+    netlist.*
+  EndQueFiles
+  If [LM2EnglischFlag]
+    QueFileGroup 944 [Dir1] [String1]
+  Endif
+  If [LM2FranzFlag]
+    QueFileGroup 933 [Dir1] [String1]
+  Endif
+  GetQuedFiles OnePerLine
+  If QueSize > 0
+    [LM2InstAbbruchFlag] := YesCharacter
+    UnQueAllFiles
+    Goto EndeLM2BinInstall
+  Endif
+
+  OpenCopyWindow [DialogColor]
+  CopyFiles from [InstallFromDirectory] to [InstallationDirectory]
+    liesdas.txt
+    readme.txt
+    lisezmoi.txt
+  EndCopyFiles
+  CloseCopyWindow
+
+  CreateDirectoryIfNecessary [Dir2]
+
+  ;; Startsprache ermitteln
+  Do LM2SelectStartLanguage
+  Do WriteSpracheToConfigDatei
+  SetCompletionStatusTo finished
+:EndeLM2BinInstall
+EndProcedure
+
+Procedure WriteSpracheToConfigDatei
+  ;; Standardkonfigurationsfile wird in lm2conf.cnf kopiert. In
+  ;; AbhÑngigkeit von der Startsprache wird die Sprachkennung modifiziert
+  CopyFiles from [InstallFromDirectory] to [Dir1] quietly
+    lm2conf.049 as lm2conf.cnf
+  EndCopyFiles
+  If [LM2StartLanguage] = 44
+    ModifyTextFile [Dir1]\lm2conf.cnf NoBackup
+      AddOrChangeLineWith (00104;,,) as "00104;044" At Beginning
+    EndModifyTextFile
+  Endif
+  If [LM2StartLanguage] = 33
+    ModifyTextFile [Dir1]\lm2conf.cnf NoBackup
+      AddOrChangeLineWith (00104;,,) as "00104;033" At Beginning
+    EndModifyTextFile
+  Endif
+EndProcedure
+
+Procedure WriteInstallStatus
+  ;; in der Datei Lemoc2.ver wird der Installationsstatus in
+  ;; AbhÑngigkeit von dem LM2InstallStatusOk auf Installation Ok
+  ;; oder Not Installt gesetzt
+  If [LM2InstallStatusOk]
+    [String2] := SystemDate
+    [String3] := SystemTime
+    [String4] := InstallationDate=[String2]
+    [String5] := InstallationTime=[String3]
+    ModifyTextFile [Dir1]\lemoc2.ver NoBackup
+      InSection [INSTALLATION]
+      AddOrChangeLineWith (Status,,) as "Status=Installation OK" at End
+      AddOrChangeLineWith (InstallationDate,,) as "[String4]" at End
+      AddOrChangeLineWith (InstallationTime,,) as "[String5]" at End
+    EndModifyTextFile
+  Else
+    ModifyTextFile [Dir1]\lemoc2.ver NoBackup
+      InSection [INSTALLATION]
+      AddOrChangeLineWith (Status,,) as "Status=Not Installed" at End
+    EndModifyTextFile
+  Endif
+EndProcedure
+
+Procedure AbbruchESC
+  ;; Kennung setzen, da· ESC benutzt wurde
+  [AbortESCFlag] := YesCharacter
+EndProcedure
+
+Procedure LM2InstallOkDialog
+  ;; Anzeige, da· Installation OK
+  If [CurrentCountryCode] = 49
+    Dialog PressAKey [DialogColor1]
+      LEMOC2 wurde erfolgreich installiert !
+
+      Nach dem Verlassen des Installationsprogramms kînnen Sie LEMOC2
+      durch folgenden Aufruf starten:
+
+      [Dir1]\lm2
+
+    EndDialog
+  Endif
+  If [CurrentCountryCode] = 44
+    Dialog PressAKey [DialogColor1]
+      LEMOC2 has been installed successfully!
+
+      After having exited the installation program, LEMOC2 can be started
+      by means of the following command line:
+
+      [Dir1]\lm2
+
+    EndDialog
+  Endif
+  If [CurrentCountryCode] = 33
+    Dialog PressAKey [DialogColor1]
+      LEMOC2 a ÇtÇ parfaitement installÇ !
+
+      Apräs avoir quittÇ le programme d'installation, vous pouvez lancer
+      LEMOC2 comme suit:
+
+      [Dir1]\lm2
+
+    EndDialog
+  Endif
+EndProcedure
+
+Procedure DialogKeinePDBAuswahl
+  ;; Dialog, da· keine PDB ausgewÑhlt wurde bei der Teilinstallation
+  If [CurrentCountryCode] = 49
+    Dialog PressAKey [DialogColor1]
+      Sie haben keine GerÑtebeschreibungen zur Installation
+      ausgewÑhlt. Sie mÅssen mindestens eine Gruppe von
+      GerÑtebeschreibungen auswÑhlen.
+    EndDialog
+  Endif
+  If [CurrentCountryCode] = 44
+    Dialog PressAKey [DialogColor1]
+      You have not selected a controller description for the installation
+      At least, you have to select a group of controller descriptions.
+    EndDialog
+  Endif
+  If [CurrentCountryCode] = 33
+    Dialog PressAKey [DialogColor1]
+      Vous n'avez demandÇ l'installation d'aucun fichier Type d'appareil.
+      Vous devez sÇlectionner au moins un fichier Type d'appareil.
+    EndDialog
+  Endif
+EndProcedure
+
+Procedure LEMOC2Readme
+  ;; Anzeigen des Readme.txt von LEMOC2
+  If [CurrentCountryCode] = 49
+    BrowseFile [InstallFromDirectory]\liesdas.txt
+  Endif
+  If [CurrentCountryCode] = 44
+    BrowseFile [InstallFromDirectory]\readme.txt
+  Endif
+  If [CurrentCountryCode] = 33
+    BrowseFile [InstallFromDirectory]\lisezmoi.txt
+  Endif
+EndProcedure
+
+Procedure EndeInstallation
+  ;; Beenden des Installationsprogramms
+  ClearScreen
+  SoLong
+EndProcedure
+
+Procedure EndeInstallationF10
+  ;; Beenden der Installation Åber Taste F10
+  If CompletionStatus = Finished
+    Goto HauptmenuDataReset
+  else
+    If [CurrentCountryCode] = 49
+      Dialog [YesOrNo1] [DialogColor1]
+        Die Installation ist nicht komplett.
+        Wollen Sie die Installation wirklich abbrechen ?
+      EndDialog
+    Endif
+    If [CurrentCountryCode] = 44
+      Dialog [YesOrNo1] [DialogColor1]
+        The program is not completely installed yet.
+        Do you really want to abort the installation ?
+      EndDialog
+    Endif
+    If [CurrentCountryCode] = 33
+      Dialog [YesOrNo1] [DialogColor1]
+        L'installation n'est pas compläte.
+        Souhaitez-vous rÇellement abandonner l'installation ?
+      EndDialog
+    Endif
+
+    if [YesOrNo1] = NoCharacter
+      UnQueAllFiles
+      GoTo HauptmenuDataReset
+    else
+      SetCompletionStatusTo finished
+      UnQueAllFiles
+      Do EndeInstallation
+    endif
+  endif
+EndProcedure
+
+Procedure CheckInstallLanguage
+  ;; Ermitteln der Installationssprache
+  [CurrentCountryCode] := CountryCode
+  ;; Test, ob fÅr den aktuellen ContryCode auch ein LRM File vorhanden ist
+  [Number1] := [CurrentCountryCode]
+  [YesOrNo1] := NoCharacter
+  InCase [Number1] is
+    =49: Speak [InstallFromDirectory]\german.lrm
+         [YesOrNo1] := YesCharacter
+    =44: Speak [InstallFromDirectory]\english.lrm
+         [YesOrNo1] := YesCharacter
+    =33: Speak [InstallFromDirectory]\french.lrm
+         [YesOrNo1] := YesCharacter
+  EndInCase
+  If [YesOrNo1] = NoCHaracter
+    ;; Wenn CountryCode nicht gefunden, wird Default benutzt
+    [CurrentCountryCode] := [DefaultCountryCode]
+    Speak [InstallFromDirectory]\german.lrm
+  Endif
+
+  GetMenuChoice [MenuColor] @xy(Center,8) UseHeader " Sprache/Language..... "
+    Deutsch
+      ; Bitte wÑhlen Sie eine Sprache fÅr das Installationsprogramm.
+    Englisch
+      ; Please select a language for the installation program.
+    Franzîsisch
+      ; Veuillez sÇlectionner la langue du programme d'installation.
+  EndGetMenuChoice
+
+  InCase Choice is
+    =1: [CurrentCountryCode]     := 49
+        Speak [InstallFromDirectory]\german.lrm
+    =2: [CurrentCountryCode]     := 44
+        Speak [InstallFromDirectory]\english.lrm
+    =3: [CurrentCountryCode]     := 33
+        Speak [InstallFromDirectory]\french.lrm
+  EndInCase
+EndProcedure
+
+Procedure LM2SelectStartLanguage
+  ;; Ermitteln der Sprache mit der Lemoc2 gestartet werden soll
+:BeginnSelectStartLanguage
+  GetMenuChoice [MenuColor] @xy(Center,8)
+    Deutsch
+      ; Bitte wÑhlen Sie die Sprache in der LEMOC2 gestartet werden soll.
+      ; Please select the language in which LEMOC2 is to be started
+      ; Veuillez sÇlectionner la langue dans laquelle sera dÇmarrÇ LEMOC2.
+    Englisch
+      ; Bitte wÑhlen Sie die Sprache in der LEMOC2 gestartet werden soll.
+      ; Please select the language in which LEMOC2 is to be started
+      ; Veuillez sÇlectionner la langue dans laquelle sera dÇmarrÇ LEMOC2.
+    Franzîsisch
+      ; Bitte wÑhlen Sie die Sprache in der LEMOC2 gestartet werden soll.
+      ; Please select the language in which LEMOC2 is to be started
+      ; Veuillez sÇlectionner la langue dans laquelle sera dÇmarrÇ LEMOC2.
+  EndGetMenuChoice
+
+  InCase Choice is
+    =1: [LM2StartLanguage] := 49
+    =2: [LM2StartLanguage] := 44
+        If [LM2EnglischFlag] = NoCharacter
+        ;; Englisch ist nicht installiert
+          Do NoStartLanguageDialog
+          [LM2StartLanguage] := 49
+          GoTo BeginnSelectStartLanguage
+        Endif
+    =3: [LM2StartLanguage] := 33
+        If [LM2FranzFlag] = NoCharacter
+        ;; Franzîsich ist nicht installiert
+          Do NoStartLanguageDialog
+          [LM2StartLanguage] := 49
+          GoTo BeginnSelectStartLanguage
+        Endif
+  EndInCase
+EndProcedure
+
+Procedure NoStartLanguageDialog
+  ;; Anzeige, da· ausgewÑhlte Startsprache nicht vorhanden
+  If [CurrentCountryCode] = 44
+    Dialog PressAKey [DialogColor1]
+      LEMOC2 is not installed in the selected language.
+      Please select another language to start LEMOC2
+      and then install LEMOC2 in the selected language
+    EndDialog
+  Endif
+  If [CurrentCountryCode] = 33
+    Dialog PressAKey [DialogColor1]
+      LEMOC2 n'a pas ÇtÇ installÇ dans la langue sÇlectionnÇe.
+      Veuillez sÇlectionner une autre langue pour le dÇmarrage
+      de LEMOC2 et veuillez installer ultÇrieurement LEMOC2 dans
+      la langue sÇlectionnÇe.
+    EndDialog
+  Endif
+EndProcedure
+
+
+Procedure BeginInstallationDialog
+  If [CurrentCountryCode] = 49
+    Dialog [BeginnInstallFlag] [DialogColor1]
+      Die Dateien werden im Verzeichnis
+
+      [InstallationDirectory]
+
+      installiert.
+      Wollen Sie die Installation beginnen ?
+    EndDialog
+  Endif
+  If [CurrentCountryCode] = 44
+    Dialog [BeginnInstallFlag] [DialogColor1]
+      The files will be installed in the directory
+
+      [InstallationDirectory]
+
+      Do you want to start the installation ?
+    EndDialog
+  Endif
+  If [CurrentCountryCode] = 33
+    Dialog [BeginnInstallFlag] [DialogColor1]
+      Les fichiers seront installÇs dans le rÇpertoire
+
+      [InstallationDirectory].
+
+      Souhaitez-vous dÇmarrer l'installation ?
+    EndDialog
+  Endif
+EndProcedure
+
+Procedure AbbruchESC
+  ;; Kennung setzen, da· ESC benutzt wurde
+  [AbortESCFlag] := YesCharacter
+EndProcedure
+
+Procedure NullProcedure
+  ;; Die Funktion tut nichts und wird benutzt zum Abfangen von F-Tasten
+  ;; Alt+X,  Ctrl+X
+EndProcedure
+
+
+Procedure SystemInfo
+  If [InstallationDirectory] <> BlankString
+    [InstallationDriveSummary] := InstallationDrive (FreeSpaceOnDrive InstallationDrive bytes frei)
+  else
+    [InstallationDriveSummary] := (nicht selektiert)
+  EndIf
+  If [CurrentCountryCode] = 49
+    Dialog PressAKey [DialogColor] UseHeader " System-Informationen "
+      Betriebssystem Version:   [OSVersionSummary]
+      CPU Typ:                  [CPUTypeSummary]
+      Display Adapter:          [DisplayAdapterSummary]
+      Math. Coprocessor:        [MathCoprocessorStatus]
+      Konvent. Speicher:        [SystemMemorySummary]
+      max. XMS Speicher:        ExtendedMemoryPresentK
+      verfÅgbarer XMS Speicher: XMSMemoryAvailableK
+      Netzwerk:                 [NetworkActive]
+      Serielle Schnittstellen:  [COMPortSummary]
+      Parallele Schnittstellen: [LPTSummary]
+
+
+      Installations Laufwerk:   [InstallationDriveSummary]
+      Freier Arbeitsspeicher:   FreeRunMemory byte
+    EndDialog
+  Endif
+  If [CurrentCountryCode] = 44
+    Dialog PressAKey [DialogColor] UseHeader " System-Informationen "
+      Operating system version: [OSVersionSummary]
+      CPU type:                 [CPUTypeSummary]
+      Display adapter:          [DisplayAdapterSummary]
+      Math. coprocessor:        [MathCoprocessorStatus]
+      Convent. memory:          [SystemMemorySummary]
+      max. XMS memory:          ExtendedMemoryPresentK
+      Available XMS memory:     XMSMemoryAvailableK
+      Network:                  [NetworkActive]
+      Serial interfaces:        [COMPortSummary]
+      Parallel interfaces:      [LPTSummary]
+
+
+      Installation drive:       [InstallationDriveSummary]
+      Free user memory:         FreeRunMemory byte
+    EndDialog
+  Endif
+  If [CurrentCountryCode] = 33
+    Dialog PressAKey [DialogColor] UseHeader " System-Informationen "
+      Betriebssystem Version:   [OSVersionSummary]
+      CPU Typ:                  [CPUTypeSummary]
+      Display Adapter:          [DisplayAdapterSummary]
+      Math. Coprocessor:        [MathCoprocessorStatus]
+      Konvent. Speicher:        [SystemMemorySummary]
+      max. XMS Speicher:        ExtendedMemoryPresentK
+      verfÅgbarer XMS Speicher: XMSMemoryAvailableK
+      Netzwerk:                 [NetworkActive]
+      Serielle Schnittstellen:  [COMPortSummary]
+      Parallele Schnittstellen: [LPTSummary]
+
+
+      Installations Laufwerk:   [InstallationDriveSummary]
+      Freier Arbeitsspeicher:   FreeRunMemory byte
+    EndDialog
+  Endif
+EndProcedure
+
+Procedure PrepareSystemReport
+  [InsufficientSystem] := NoCharacter
+  [OSVersionSummary] := OSVersion
+  [SystemMemorySummary] := MainMemoryK
+  If 808X .or. 8018X
+    [CPUTypeSummary] := 808x (nicht kompatibel mit LEMOC2)
+    [InsufficientSystem] := YesCharacter
+  EndIf
+  If 80286
+    [CPUTypeSummary] := 80286
+  EndIf
+  If 80386
+    [CPUTypeSummary] := 80386
+  EndIf
+  If 80486
+    [CPUTypeSummary] := 80486
+  EndIf
+  If [CPUTypeSummary] = BlankString
+    [CPUTypeSummary] := >80486
+  EndIf
+  If MicroChannel
+    [CPUTypeSummary] := [CPUTypeSummary] (MicroChannel Architektur)
+  else
+    [CPUTypeSummary] := [CPUTypeSummary] (ISA or EISA Architektur)
+  EndIf
+  If CGA
+    [DisplayAdapterSummary] := CGA (nicht kompatible mit LEMOC2)
+    [InsufficientSystem] := YesCharacter
+  EndIf
+  If MDA
+    [DisplayAdapterSummary] := MDA
+  EndIf
+  If EGA
+    [DisplayAdapterSummary] := EGA
+  EndIf
+  If VGA
+    [DisplayAdapterSummary] := VGA
+  EndIf
+  If HGC
+    [DisplayAdapterSummary] := HGC
+  EndIf
+  If HGCPlus
+    [DisplayAdapterSummary] := HGC Plus
+  EndIf
+  If Network
+    [NetworkActive] := Netzwerk vorhanden
+  else
+    [NetworkActive] := kein Netzwerk
+  EndIf
+  If NovellLoaded
+    [NetworkActive] := Novell [NetworkActive]
+  EndIf
+  If MathCoprocessorPresent
+    [MathCoprocessorStatus] := vorhanden
+  EndIf
+  [Number1] := 1
+  [Number2] := 0
+  While [Number1] < 5
+    if COMPortPresent [Number1]
+      IncrementNumber [Number2]
+    endif
+    IncrementNumber [Number1]
+  EndWhile
+  if [Number2] = 0
+    [COMPortSummary] := [Number2] (nicht kompatibel mit LEMOC2)
+    [InsufficientSystem] := YesCharacter
+  else
+    [COMPortSummary] := [Number2]
+  endif
+  [Number1] := 1
+  [Number2] := 0
+  While [Number1] < 4
+    if PrinterPortPresent [Number1]
+      IncrementNumber [Number2]
+    endif
+    IncrementNumber [Number1]
+  EndWhile
+  if [Number2] = 0
+    [LPTSummary] := [Number2] (nicht kompatibel mit LEMOC2)
+    [InsufficientSystem] := YesCharacter
+  else
+    [LPTSummary] := [Number2]
+  endif
+
+EndProcedure

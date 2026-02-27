@@ -1,0 +1,2355 @@
+; (c) Lenze
+;
+; Profibus-DP        Geraetestammdatei
+;
+; Autor:             Lenze
+; Erstellungsdatum:  14.04.2004
+; Aenderungen:                                       
+;                    24.11.2004 Aenderung fuer Zertifizierung
+;                    03.12.2004 Revision & Hardware Release geändert.
+;                    07.12.2004 Erweiterung der Auswahl auf alle 12 Worte PZD  
+;                               Erweiterung Profisafe Container auf 4 Worte
+;                    19.05.2005 Erweiterung DP-V1
+;                    20.10.2005 Erweiterung auf 32 Worte
+;                    02.11.2005 Erweiterung um Diagnosetexte
+;                    17.05.2006 Erweiterung Keyword für I&M Funktionalität
+;                    30.08.2006 Anpassung der sichtbaren Texte ACP
+;                    14.11.2006 Anpassung/Erweiterung SM300/SM301-Texte
+;                    14.12.2006 Anpassung Asic-Bezeichnung, Software/Hardwarestand
+;                    25.04.2007 Erweiterung SM300/SM301-Texte
+;                    08.05.2007 Anpassung der Bildgrösse; Hardwarestand
+;                    16.10.2007 Anpassung SW-Version V1.11
+;                    13.02.2008 Erweiterung, Keyword "F_IO_StructureDescCRC" eingefügt
+;                    19.11.2009 Erweiterung, Unterstützung nicht konsistenter Prozessdaten
+;                               Anpassung, DPV1_enable in Ext_User_Prm_Data_Const(0) gesetzt
+;                    12.03.2010 Anpassung erlaubte Ein-/Ausgangsdatenlängen auf 80 Bytes
+;		     14.06.2010 Anpassung F-Parameter, SW-Version V1.20
+;                    10.02.2015 Anpassung Beschreibungstexte einiger F-Parameter. Check mit GSD-Editor 5.1.1.0 erfolgreich.
+; Allgemeine Angaben:
+;
+#Profibus_DP
+;
+GSD_Revision = 5
+;
+; Herstellername
+Vendor_Name = "Lenze"
+;
+; Herstellerbezeichnung des DP-Geraetes
+Model_Name = "E94AYCPM"
+;
+; Ausgabestand des DP-Geraetes
+Revision = "1C01.20"
+;
+; Ident-Nummer
+Ident_Number = 0x07A8
+;
+; Protokollkennung des DP-Geraetes
+;       0: Profibus-DP
+;  16-255: Herstellerspezifisch
+Protocol_Ident = 0
+;
+; DP-Geraetetyp
+;       0: DP-Slave
+;       1: DP-Master Klasse 1
+Station_Type = 0
+;
+; kein FMS/DP-Mischgeraet
+FMS_supp = 0
+;
+; Hardware Ausgabestand des DP-Geraetes
+Hardware_Release = "1C"
+;
+; Software Ausgabestand des DP-Geraetes
+Software_Release = "01.20"
+;
+9.6_supp = 1
+19.2_supp = 1
+45.45_supp = 1
+93.75_supp = 1
+187.5_supp = 1
+500_supp = 1
+1.5M_supp = 1
+3M_supp = 1
+6M_supp = 1
+12M_supp = 1
+;
+MaxTsdr_9.6   =  15
+MaxTsdr_19.2  =  15
+MaxTsdr_45.45 =  15
+MaxTsdr_93.75 =  15
+MaxTsdr_187.5 =  15
+MaxTsdr_500   =  15
+MaxTsdr_1.5M  =  25
+MaxTsdr_3M    =  50
+MaxTsdr_6M   =  100
+MaxTsdr_12M  =  200
+;
+; keine redundante Uebertragungstechnik
+Redundancy = 0
+;
+; RTS-Signalpegel (CNTR-P) Pin 4 des 9pol. SUB-D
+;     0: nicht vorhanden
+;     1: RS 485
+;     2: TTL
+Repeater_Ctrl_Sig = 2
+;
+; Bedeutung der 24V Pins des 9pol. SUB-D (Pin 7  24V;  Pin 2 GND)
+;     0: nicht angeschlossen
+;     1: Input
+;     2: Output
+24V_Pins = 0
+;
+Implementation_Type = "MPI12x"
+;
+Bitmap_Device = "LENZ94_N"
+Bitmap_Diag   = "LENZ94_D"
+Bitmap_SF     = "LENZ94_S"
+;
+; Slave spezifische Werte
+;
+; Freeze-Mode wird nicht unterstuetzt
+Freeze_Mode_supp = 0
+;
+; Sync-Mode wird unterstuetzt
+Sync_Mode_supp = 1
+;
+; Automatische Baudratenerkennung wird unterstuetzt
+Auto_Baud_supp = 1
+;
+; Slave-Adresse kann vom Master gesetzt werden
+Set_Slave_Add_supp = 0
+;
+; Hoechstlaenge von User_Param_Data
+;User_Prm_Data_Len = 0
+;
+; Default-Wert fuer User_Param_Data
+;User_Param_Data = 0
+;
+; Mindestabstand zwischen 2 Slavelistenumlaeufen  fuer das DP-Geraet
+; (xx * 100us)
+Min_Slave_Intervall = 1
+;
+; Modulare Station
+Modular_Station = 1
+;
+; Hoechstanzahl der Module einer Modularen Station
+Max_Module = 2
+;
+; Hoechstlaenge der Eingangsdaten einer Modularen Station
+Max_Input_Len = 80
+;
+; Hoechstlaenge der Ausgangsdaten einer Modularen Station
+Max_Output_Len = 80
+;
+; Groesste Summe der Ein- und Ausgangsdaten einer Modularen Station in Bytes
+Max_Data_Len = 160
+;
+Max_Diag_Data_Len = 50
+;
+Slave_Family=1@Lenze
+;
+Fail_Safe=1
+;
+;--- GSD R3 slave extensions ---
+;Info_Text                = "DP-Slave für 9400 mit DP-V1-Schnittstelle(azyklische Kommunikation)"
+DPV1_Slave               = 1
+C1_Read_Write_supp       = 1
+C2_Read_Write_supp       = 1
+C1_Max_Data_Len          = 240
+C2_Max_Data_Len          = 240
+C1_Response_Timeout      = 100
+C2_Response_Timeout      = 100
+;C1_Read_Write_required  = 0
+;C2_Read_Write_required  = 0
+C2_Max_Count_Channels    = 1
+Max_Initiate_PDU_Length  = 64
+;DPV1_Data_Types         = 0
+;WD_Base_1ms_supp        = 1
+;Check_Cfg_Mode          = 0
+;Publisher_supp          = 1
+
+;--- GSD R4 slave extensions ---
+;Prm_Block_Structure_supp = 1
+;Prm_Block_Structure_req  = 0
+; isochron mode
+;Isochron_Mode_supp       = 1
+;Isochron_Mode_required   = 0
+;TBASE_DP                 = 1500  ; * 1/12 µs    =  125 µs
+;TDP_MIN	                  = 8     ; * TBASE_DP   = 1000 µs
+;TDP_MAX                  = 256   ; * TBASE_DP   =   32 ms
+;T_PLL_W_MAX              = 12    ; * 1/12 µs    =    1 µs
+;TBASE_IO                 = 1500  ; * 1/12 µs    =  125 µs
+;TI_MIN                   = 1     ; * TBASE_IO
+;TO_MIN                   = 1     ; * TBASE_IO
+; DXB
+;Subscriber_supp          = 0
+;DXB_Max_Link_Count       = 16
+;DXB_Max_Data_Length      = 244
+
+;--- DP-V1 Alarm ---
+;Diagnostic_Alarm_supp	= 1
+;Process_Alarm_supp	= 1
+;Pull_Plug_Alarm_supp	= 1
+;Status_Alarm_supp	= 1
+;Update_Alarm_supp	= 1
+;Manufacturer_Specific_Alarm_supp = 0
+;Alarm_Sequence_Mode_Count	= 3
+;Alarm_Type_Mode_supp		= 1
+;Diagnostic_Alarm_required 	 = 1
+;
+;--- I&M Funktionality ---
+Ident_Maintenance_supp=1
+
+;--- UsrPrmData Definitions ----------------------------------------
+Max_User_Prm_Data_Len      = 31
+Ext_User_Prm_Data_Const(0) = 0x80,0,0
+;
+;--- Safety --
+
+;**********************************************************
+;Text-Definition for User_Prm_Data
+;**********************************************************
+
+PrmText                 = 1
+Text(0)                 = "SIL1"
+Text(1)                 = "SIL2"
+Text(2)                 = "SIL3"
+Text(3)                 = "NoSIL"
+EndPrmText
+
+PrmText                 = 2
+Text(0)                 = "NoCheck"
+Text(1)                 = "Check"
+EndPrmText
+
+;Text-Definition fuer CRC-Length
+PrmText                 = 3
+Text(0)                 = "3-Byte-CRC"
+Text(1)                 = "2-Byte-CRC"
+EndPrmText
+
+;Text-Definition fuer Version
+PrmText                 = 4
+Text(0)                 = "V1-mode"
+Text(1)                 = "V2-mode"
+EndPrmText
+
+;**********************************************************
+; Ext-User-Prm-Data-Def-List
+;**********************************************************
+
+ExtUserPrmData = 1 "[SlotNumber]" ; Reference number 1
+Unsigned8 1 1-254       ; Default = 1, Max = 254
+EndExtUserPrmData
+
+ExtUserPrmData 		= 2 "F_Check_SeqNr"  	; Referenznummer 1   	
+Bit(0) 0 0-1                            	; Default = 0
+Prm_Text_Ref 		= 2                    	; Verweis auf Text-Definition 2
+EndExtUserPrmData
+
+ExtUserPrmData          = 3 "F_SIL"
+BitArea(2-3) 1 0-3
+Prm_Text_Ref            = 1
+EndExtUserPrmData
+
+ExtUserPrmData          = 4 "F_CRC_Length"
+BitArea(4-5) 1 0-1
+Prm_Text_Ref            = 3
+EndExtUserPrmData
+
+ExtUserPrmData          = 5 "F_Par_Version"
+BitArea(6-7) 0 0-1
+Prm_Text_Ref            = 4
+EndExtUserPrmData
+
+ExtUserPrmData          = 6 "F_Source_Add"
+Unsigned16 1 1-65534
+EndExtUserPrmData
+
+ExtUserPrmData          = 7 "F_Dest_Add"
+Unsigned16 1 1-65534
+EndExtUserPrmData
+
+ExtUserPrmData          = 8 "F_WD_Time"
+Unsigned16 110 1-65534
+EndExtUserPrmData
+
+ExtUserPrmData          = 9 "F_Par_CRC"
+Unsigned16 3430 0-65534
+EndExtUserPrmData
+
+
+;***********************************************************
+; Prm-Data
+;************************************************************
+
+;
+; Modulkennzeichnung
+;
+
+;* Daten Profisafe
+Module = "Safety (4 W)" 0xCA, 0x87, 0x87, 0x05, 0x05, 0x05, 0x05, 0x0A,0x05, 0x05, 0x05, 0x05, 0x0A
+01
+F_IO_StructureDescCRC=0xBB1B
+
+F_Ext_Module_Prm_Data_Len       = 14
+F_Ext_User_Prm_Data_Const(0) =0x0E,0x05,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+F_Ext_User_Prm_Data_Ref(2)      = 1           
+F_Ext_User_Prm_Data_Ref(4)      = 2             ;F-CHECK-SEQ. NO
+F_Ext_User_Prm_Data_Ref(4)      = 3             ;F-SIL
+F_Ext_User_Prm_Data_Ref(4)      = 4             ;F-CRC_LENGTH
+F_Ext_User_Prm_Data_Ref(5)      = 5             ;F-VERSION-ID
+F_Ext_User_Prm_Data_Ref(6)      = 6             ;F-Source-Adr
+F_Ext_User_Prm_Data_Ref(8)      = 7             ;F-Dest-Adr
+F_Ext_User_Prm_Data_Ref(10)     = 8             ;F-WD-Time
+F_Ext_User_Prm_Data_Ref(12)     = 9             ;F-CRC1
+;CRC über die Parameterbeschreibungsdaten
+F_ParamDescCRC=0x4883
+EndModule
+;
+; Modulkennzeichnung
+;
+;* konsistente Prozessdaten **************
+Module = "PZD (1W Kons)" 0xC6,0xC0,0xC0,0x01,0x00,0x00,0x00,0x00,0x00
+02
+EndModule
+Module = "PZD (2W Kons)" 0xC6,0xC1,0xC1,0x01,0x00,0x00,0x00,0x00,0x00
+03
+EndModule
+Module = "PZD (3W Kons)" 0xC6,0xC2,0xC2,0x01,0x00,0x00,0x00,0x00,0x00
+04
+EndModule
+Module = "PZD (4W Kons)" 0xC6,0xC3,0xC3,0x01,0x00,0x00,0x00,0x00,0x00
+05
+EndModule
+Module = "PZD (5W Kons)" 0xC6,0xC4,0xC4,0x01,0x00,0x00,0x00,0x00,0x00
+06
+EndModule
+Module = "PZD (6W Kons)" 0xC6,0xC5,0xC5,0x01,0x00,0x00,0x00,0x00,0x00
+07
+EndModule
+Module = "PZD (7W Kons)" 0xC6,0xC6,0xC6,0x01,0x00,0x00,0x00,0x00,0x00
+08
+EndModule
+Module = "PZD (8W Kons)" 0xC6,0xC7,0xC7,0x01,0x00,0x00,0x00,0x00,0x00
+09
+EndModule
+Module = "PZD (9W Kons)" 0xC6,0xC8,0xC8,0x01,0x00,0x00,0x00,0x00,0x00
+10
+EndModule
+Module = "PZD (10W Kons)" 0xC6,0xC9,0xC9,0x01,0x00,0x00,0x00,0x00,0x00
+11
+EndModule
+Module = "PZD (11W Kons)" 0xC6,0xCA,0xCA,0x01,0x00,0x00,0x00,0x00,0x00
+12
+EndModule
+Module = "PZD (12W Kons)" 0xC6,0xCB,0xCB,0x01,0x00,0x00,0x00,0x00,0x00
+13
+EndModule
+Module = "PZD (13W Kons) " 0xC6,0xCC,0xCC,0x01,0x00,0x00,0x00,0x00,0x00
+14
+EndModule
+Module = "PZD (14W Kons)" 0xC6,0xCD,0xCD,0x01,0x00,0x00,0x00,0x00,0x00
+15
+EndModule
+Module = "PZD (15W Kons)" 0xC6,0xCE,0xCE,0x01,0x00,0x00,0x00,0x00,0x00
+16
+EndModule
+Module = "PZD (16W Kons)" 0xC6,0xCF,0xCF,0x01,0x00,0x00,0x00,0x00,0x00
+17
+EndModule
+Module = "PZD (17W Kons)" 0xC6,0xD0,0xD0,0x01,0x00,0x00,0x00,0x00,0x00
+18
+EndModule
+Module = "PZD (18W Kons)" 0xC6,0xD1,0xD1,0x01,0x00,0x00,0x00,0x00,0x00
+19
+EndModule
+Module = "PZD (19W Kons)" 0xC6,0xD2,0xD2,0x01,0x00,0x00,0x00,0x00,0x00
+20
+EndModule
+Module = "PZD (20W Kons)" 0xC6,0xD3,0xD3,0x01,0x00,0x00,0x00,0x00,0x00
+21
+EndModule
+Module = "PZD (21W Kons)" 0xC6,0xD4,0xD4,0x01,0x00,0x00,0x00,0x00,0x00
+22
+EndModule
+Module = "PZD (22W Kons)" 0xC6,0xD5,0xD5,0x01,0x00,0x00,0x00,0x00,0x00
+23
+EndModule
+Module = "PZD (23W Kons)" 0xC6,0xD6,0xD6,0x01,0x00,0x00,0x00,0x00,0x00
+24
+EndModule
+Module = "PZD (24W Kons)" 0xC6,0xD7,0xD7,0x01,0x00,0x00,0x00,0x00,0x00
+25
+EndModule
+Module = "PZD (25W Kons)" 0xC6,0xD8,0xD8,0x01,0x00,0x00,0x00,0x00,0x00
+26
+EndModule
+Module = "PZD (26W Kons)" 0xC6,0xD9,0xD9,0x01,0x00,0x00,0x00,0x00,0x00
+27
+EndModule
+Module = "PZD (27W Kons)" 0xC6,0xDA,0xDA,0x01,0x00,0x00,0x00,0x00,0x00
+28
+EndModule
+Module = "PZD (28W Kons)" 0xC6,0xDB,0xDB,0x01,0x00,0x00,0x00,0x00,0x00
+29
+EndModule
+Module = "PZD (29W Kons)" 0xC6,0xDC,0xDC,0x01,0x00,0x00,0x00,0x00,0x00
+30
+EndModule
+Module = "PZD (30W Kons)" 0xC6,0xDD,0xDD,0x01,0x00,0x00,0x00,0x00,0x00
+31
+EndModule
+Module = "PZD (31W Kons)" 0xC6,0xDE,0xDE,0x01,0x00,0x00,0x00,0x00,0x00
+32
+EndModule
+Module = "PZD (32W Kons)" 0xC6,0xDF,0xDF,0x01,0x00,0x00,0x00,0x00,0x00
+33
+EndModule
+;
+;* konsistenter DRIVECOM Parameterkanal / konsistente Prozessdaten  *****
+Module = "Drivecom-PAR(Kons)+PZD(1W Kons)" 0xF3,0xC6,0xC0,0xC0,0x01,0x00,0x00,0x00,0x00,0x00
+34
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(2W Kons)" 0xF3,0xC6,0xC1,0xC1,0x01,0x00,0x00,0x00,0x00,0x00
+35
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(3W Kons)" 0xF3,0xC6,0xC2,0xC2,0x01,0x00,0x00,0x00,0x00,0x00
+36
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(4W Kons)" 0xF3,0xC6,0xC3,0xC3,0x01,0x00,0x00,0x00,0x00,0x00
+37
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(5W Kons)" 0xF3,0xC6,0xC4,0xC4,0x01,0x00,0x00,0x00,0x00,0x00
+38
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(6W Kons)" 0xF3,0xC6,0xC5,0xC5,0x01,0x00,0x00,0x00,0x00,0x00
+39
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(7W Kons)" 0xF3,0xC6,0xC6,0xC6,0x01,0x00,0x00,0x00,0x00,0x00
+40
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(8W Kons)" 0xF3,0xC6,0xC7,0xC7,0x01,0x00,0x00,0x00,0x00,0x00
+41
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(9W Kons)" 0xF3,0xC6,0xC8,0xC8,0x01,0x00,0x00,0x00,0x00,0x00
+42
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(10W Kons)" 0xF3,0xC6,0xC9,0xC9,0x01,0x00,0x00,0x00,0x00,0x00
+43
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(11W Kons)" 0xF3,0xC6,0xCA,0xCA,0x01,0x00,0x00,0x00,0x00,0x00
+44
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(12W Kons)" 0xF3,0xC6,0xCB,0xCB,0x01,0x00,0x00,0x00,0x00,0x00
+45
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(13W Kons)" 0xF3,0xC6,0xCC,0xCC,0x01,0x00,0x00,0x00,0x00,0x00
+46
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(14W Kons)" 0xF3,0xC6,0xCD,0xCD,0x01,0x00,0x00,0x00,0x00,0x00
+47
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(15W Kons)" 0xF3,0xC6,0xCE,0xCE,0x01,0x00,0x00,0x00,0x00,0x00
+48
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(16W Kons)" 0xF3,0xC6,0xCF,0xCF,0x01,0x00,0x00,0x00,0x00,0x00
+49
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(17W Kons)" 0xF3,0xC6,0xD0,0xD0,0x01,0x00,0x00,0x00,0x00,0x00
+50
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(18W Kons)" 0xF3,0xC6,0xD1,0xD1,0x01,0x00,0x00,0x00,0x00,0x00
+51
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(19W Kons)" 0xF3,0xC6,0xD2,0xD2,0x01,0x00,0x00,0x00,0x00,0x00
+52
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(20W Kons)" 0xF3,0xC6,0xD3,0xD3,0x01,0x00,0x00,0x00,0x00,0x00
+53
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(21W Kons)" 0xF3,0xC6,0xD4,0xD4,0x01,0x00,0x00,0x00,0x00,0x00
+54
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(22W Kons)" 0xF3,0xC6,0xD5,0xD5,0x01,0x00,0x00,0x00,0x00,0x00
+55
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(23W Kons)" 0xF3,0xC6,0xD6,0xD6,0x01,0x00,0x00,0x00,0x00,0x00
+56
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(24W Kons)" 0xF3,0xC6,0xD7,0xD7,0x01,0x00,0x00,0x00,0x00,0x00
+57
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(25W Kons)" 0xF3,0xC6,0xD8,0xD8,0x01,0x00,0x00,0x00,0x00,0x00
+58
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(26W Kons)" 0xF3,0xC6,0xD9,0xD9,0x01,0x00,0x00,0x00,0x00,0x00
+59
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(27W Kons)" 0xF3,0xC6,0xDA,0xDA,0x01,0x00,0x00,0x00,0x00,0x00
+60
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(28W Kons)" 0xF3,0xC6,0xDB,0xDB,0x01,0x00,0x00,0x00,0x00,0x00
+61
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(29W Kons)" 0xF3,0xC6,0xDC,0xDC,0x01,0x00,0x00,0x00,0x00,0x00
+62
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(30W Kons)" 0xF3,0xC6,0xDD,0xDD,0x01,0x00,0x00,0x00,0x00,0x00
+63
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(31W Kons)" 0xF3,0xC6,0xDE,0xDE,0x01,0x00,0x00,0x00,0x00,0x00
+64
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(32W Kons)" 0xF3,0xC6,0xDF,0xDF,0x01,0x00,0x00,0x00,0x00,0x00
+65
+EndModule
+;
+;* nichtkonsistente Prozessdaten **************
+Module = "PZD (1W)" 0xC6,0x40,0x40,0x01,0x00,0x00,0x00,0x00,0x00
+66
+EndModule
+Module = "PZD (2W)" 0xC6,0x41,0x41,0x01,0x00,0x00,0x00,0x00,0x00
+67
+EndModule
+Module = "PZD (3W)" 0xC6,0x42,0x42,0x01,0x00,0x00,0x00,0x00,0x00
+68
+EndModule
+Module = "PZD (4W)" 0xC6,0x43,0x43,0x01,0x00,0x00,0x00,0x00,0x00
+69
+EndModule
+Module = "PZD (5W)" 0xC6,0x44,0x44,0x01,0x00,0x00,0x00,0x00,0x00
+70
+EndModule
+Module = "PZD (6W)" 0xC6,0x45,0x45,0x01,0x00,0x00,0x00,0x00,0x00
+71
+EndModule
+Module = "PZD (7W)" 0xC6,0x46,0x46,0x01,0x00,0x00,0x00,0x00,0x00
+72
+EndModule
+Module = "PZD (8W)" 0xC6,0x47,0x47,0x01,0x00,0x00,0x00,0x00,0x00
+73
+EndModule
+Module = "PZD (9W)" 0xC6,0x48,0x48,0x01,0x00,0x00,0x00,0x00,0x00
+74
+EndModule
+Module = "PZD (10W)" 0xC6,0x49,0x49,0x01,0x00,0x00,0x00,0x00,0x00
+75
+EndModule
+Module = "PZD (11W)" 0xC6,0x4A,0x4A,0x01,0x00,0x00,0x00,0x00,0x00
+76
+EndModule
+Module = "PZD (12W)" 0xC6,0x4B,0x4B,0x01,0x00,0x00,0x00,0x00,0x00
+77
+EndModule
+Module = "PZD (13W)" 0xC6,0x4C,0x4C,0x01,0x00,0x00,0x00,0x00,0x00
+78
+EndModule
+Module = "PZD (14W)" 0xC6,0x4D,0x4D,0x01,0x00,0x00,0x00,0x00,0x00
+79
+EndModule
+Module = "PZD (15W)" 0xC6,0x4E,0x4E,0x01,0x00,0x00,0x00,0x00,0x00
+80
+EndModule
+Module = "PZD (16W)" 0xC6,0x4F,0x4F,0x01,0x00,0x00,0x00,0x00,0x00
+81
+EndModule
+Module = "PZD (17W)" 0xC6,0x50,0x50,0x01,0x00,0x00,0x00,0x00,0x00
+82
+EndModule
+Module = "PZD (18W)" 0xC6,0x51,0x51,0x01,0x00,0x00,0x00,0x00,0x00
+83
+EndModule
+Module = "PZD (19W)" 0xC6,0x52,0x52,0x01,0x00,0x00,0x00,0x00,0x00
+84
+EndModule
+Module = "PZD (20W)" 0xC6,0x53,0x53,0x01,0x00,0x00,0x00,0x00,0x00
+85
+EndModule
+Module = "PZD (21W)" 0xC6,0x54,0x54,0x01,0x00,0x00,0x00,0x00,0x00
+86
+EndModule
+Module = "PZD (22W)" 0xC6,0x55,0x55,0x01,0x00,0x00,0x00,0x00,0x00
+87
+EndModule
+Module = "PZD (23W)" 0xC6,0x56,0x56,0x01,0x00,0x00,0x00,0x00,0x00
+88
+EndModule
+Module = "PZD (24W)" 0xC6,0x57,0x57,0x01,0x00,0x00,0x00,0x00,0x00
+89
+EndModule
+Module = "PZD (25W)" 0xC6,0x58,0x58,0x01,0x00,0x00,0x00,0x00,0x00
+90
+EndModule
+Module = "PZD (26W)" 0xC6,0x59,0x59,0x01,0x00,0x00,0x00,0x00,0x00
+91
+EndModule
+Module = "PZD (27W)" 0xC6,0x5A,0x5A,0x01,0x00,0x00,0x00,0x00,0x00
+92
+EndModule
+Module = "PZD (28W)" 0xC6,0x5B,0x5B,0x01,0x00,0x00,0x00,0x00,0x00
+93
+EndModule
+Module = "PZD (29W)" 0xC6,0x5C,0x5C,0x01,0x00,0x00,0x00,0x00,0x00
+94
+EndModule
+Module = "PZD (30W)" 0xC6,0x5D,0x5D,0x01,0x00,0x00,0x00,0x00,0x00
+95
+EndModule
+Module = "PZD (31W)" 0xC6,0x5E,0x5E,0x01,0x00,0x00,0x00,0x00,0x00
+96
+EndModule
+Module = "PZD (32W)" 0xC6,0x5F,0x5F,0x01,0x00,0x00,0x00,0x00,0x00
+97
+EndModule
+;
+;* konsistenter DRIVECOM Parameterkanal / nicht konsistente Prozessdaten  *****
+Module = "Drivecom-PAR(Kons)+PZD(1W)" 0xF3,0xC6,0x40,0x40,0x01,0x00,0x00,0x00,0x00,0x00
+98
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(2W)" 0xF3,0xC6,0x41,0x41,0x01,0x00,0x00,0x00,0x00,0x00
+99
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(3W)" 0xF3,0xC6,0x42,0x42,0x01,0x00,0x00,0x00,0x00,0x00
+100
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(4W)" 0xF3,0xC6,0x43,0x43,0x01,0x00,0x00,0x00,0x00,0x00
+101
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(5W)" 0xF3,0xC6,0x44,0x44,0x01,0x00,0x00,0x00,0x00,0x00
+102
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(6W)" 0xF3,0xC6,0x45,0x45,0x01,0x00,0x00,0x00,0x00,0x00
+103
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(7W)" 0xF3,0xC6,0x46,0x46,0x01,0x00,0x00,0x00,0x00,0x00
+104
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(8W)" 0xF3,0xC6,0x47,0x47,0x01,0x00,0x00,0x00,0x00,0x00
+105
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(9W)" 0xF3,0xC6,0x48,0x48,0x01,0x00,0x00,0x00,0x00,0x00
+106
+EndModule
+Module = "Drivecom-PAR(Kons)PZD(10W)" 0xF3,0xC6,0x49,0x49,0x01,0x00,0x00,0x00,0x00,0x00
+107
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(11W)" 0xF3,0xC6,0x4A,0x4A,0x01,0x00,0x00,0x00,0x00,0x00
+108
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(12W)" 0xF3,0xC6,0x4B,0x4B,0x01,0x00,0x00,0x00,0x00,0x00
+109
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(13W)" 0xF3,0xC6,0x4C,0x4C,0x01,0x00,0x00,0x00,0x00,0x00
+110
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(14W)" 0xF3,0xC6,0x4D,0x4D,0x01,0x00,0x00,0x00,0x00,0x00
+111
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(15W)" 0xF3,0xC6,0x4E,0x4E,0x01,0x00,0x00,0x00,0x00,0x00
+112
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(16W)" 0xF3,0xC6,0x4F,0x4F,0x01,0x00,0x00,0x00,0x00,0x00
+113
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(17W)" 0xF3,0xC6,0x50,0x50,0x01,0x00,0x00,0x00,0x00,0x00
+114
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(18W)" 0xF3,0xC6,0x51,0x51,0x01,0x00,0x00,0x00,0x00,0x00
+115
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(19W)" 0xF3,0xC6,0x52,0x52,0x01,0x00,0x00,0x00,0x00,0x00
+116
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(20W)" 0xF3,0xC6,0x53,0x53,0x01,0x00,0x00,0x00,0x00,0x00
+117
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(21W)" 0xF3,0xC6,0x54,0x54,0x01,0x00,0x00,0x00,0x00,0x00
+118
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(22W)" 0xF3,0xC6,0x55,0x55,0x01,0x00,0x00,0x00,0x00,0x00
+119
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(23W)" 0xF3,0xC6,0x56,0x56,0x01,0x00,0x00,0x00,0x00,0x00
+120
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(24W)" 0xF3,0xC6,0x57,0x57,0x01,0x00,0x00,0x00,0x00,0x00
+121
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(25W)" 0xF3,0xC6,0x58,0x58,0x01,0x00,0x00,0x00,0x00,0x00
+122
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(26W)" 0xF3,0xC6,0x59,0x59,0x01,0x00,0x00,0x00,0x00,0x00
+123
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(27W)" 0xF3,0xC6,0x5A,0x5A,0x01,0x00,0x00,0x00,0x00,0x00
+124
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(28W)" 0xF3,0xC6,0x5B,0x5B,0x01,0x00,0x00,0x00,0x00,0x00
+125
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(29W)" 0xF3,0xC6,0x5C,0x5C,0x01,0x00,0x00,0x00,0x00,0x00
+126
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(30W)" 0xF3,0xC6,0x5D,0x5D,0x01,0x00,0x00,0x00,0x00,0x00
+127
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(31W)" 0xF3,0xC6,0x5E,0x5E,0x01,0x00,0x00,0x00,0x00,0x00
+128
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(32W)" 0xF3,0xC6,0x5F,0x5F,0x01,0x00,0x00,0x00,0x00,0x00
+129
+EndModule
+;
+;***********************************************************
+;			Device - specific diagnostics 
+;************************************************************
+;PROFIsafe
+Unit_Diag_Area=24-39
+Value(  1)="Interner Fehler, STO ausgeloest"
+Value(  2)="Interner Fehler, SS1 ausgeloest"
+Value(  3)="Interner Fehler, SS2 ausgeloest"
+Value( 16)="Kommunikationsfehler Grundgeraet"
+Value( 33)="Safety-Adresse ungueltig"
+Value( 34)="PROFIsafe Kommunikationsfehler"
+Value( 35)="F_WD_Time ueberschritten"
+Value( 36)="PROFIsafe passiviert"
+Value( 37)="PROFIsafe DataExchange verlassen"
+Value( 38)="PROFIsafe ungueltige Daten"
+Value( 39)="Fehler F-Parameter"
+Value( 40)="Komm.-Fehler in Parameterphase"
+Value( 49)="Fehler Diskr.-/Fkt.-Test SD-In1"
+Value( 50)="Fehler Diskr.-/Fkt.-Test SD-In2"
+Value( 51)="Fehler Diskr.-/Fkt.-Test SD-In3"
+Value( 52)="Fehler Diskr.-/Fkt.-Test SD-In4"
+Value( 53)="Interner Fehler AIS"
+Value( 54)="Interner Fehler AIE"
+Value( 55)="Interner Fehler Modultaster"
+Value( 57)="Deaktivierter SD-In1 = high"
+Value( 58)="Deaktivierter SD-In2 = high"
+Value( 59)="Deaktivierter SD-In3 = high"
+Value( 60)="Deaktivierter SD-In4 = high"
+Value( 64)="F_Dest_Add ungleich F-Adresse"
+Value( 65)="F_Dest_Add = 0 oder FFFFhex"
+Value( 66)="F_Source_Add = 0 oder FFFFhex"
+Value( 67)="F_WD_Time ist 0msec"
+Value( 68)="F_SIL uebersteigt techn. SIL"
+Value( 69)="F_CRC_Length Fehler"
+Value( 70)="F-Parameter-Version inkorrekt"
+Value( 71)="PROFIsafe CRC1-Fehler"
+Value( 72)="Reserviert (PROFIsafe-Standard)"
+Value( 73)="Reserviert (PROFIsafe-Standard)"
+Value( 74)="Reserviert (PROFIsafe-Standard)"
+Value( 81)="Fehler SD-Inx / CLx"
+Value( 82)="Fehler SD-Inx / CLx"
+Value( 89)="Kurz-/Querschluss SD-Out"
+Value( 93)="Fehler interner Abschaltpfad"
+Value( 94)="Testpulsfehler int. Abschaltpfad"
+Value( 97)="SS1/SS2: Stoppzeit ueberschr."
+Value( 98)="SLS1: Nlim1 ueberschritten"
+Value( 99)="SLS2: Nlim2 ueberschritten"
+Value(100)="SLS3: Nlim3 ueberschritten"
+Value(101)="SLS4: Nlim4 ueberschritten"
+Value(102)="SLS/SMS: F-Stopp nicht ausgef."
+Value(103)="SDIpos: Falsche Richtung"
+Value(104)="SDIneg: Falsche Richtung"
+Value(105)="SMS: Nmax ueberschritten"
+Value(106)="SOS: Toleranzgrenze ueberschr."
+Value(107)="Kein Gebersystem parametriert"
+Value(108)="CAS: Umlaufzeit ueberschritten"
+Value(109)="CAS: HW- oder Diskrepanzfehler"
+Value(128)="Stuck at High SD-Out1, Kanal A"
+Value(129)="Stuck at Low SD-Out1, Kanal A"
+Value(130)="Stuck at High SD-Out1, Kanal B"
+Value(131)="Stuck at Low SD-Out1, Kanal B"
+Value(144)="Stuck at High an SD-In1, Kanal A"
+Value(145)="Stuck at High an SD-In1, Kanal B"
+Value(146)="Stuck at High an SD-In2, Kanal A"
+Value(147)="Stuck at High an SD-In2, Kanal B"
+Value(148)="Stuck at High an SD-In3, Kanal A"
+Value(149)="Stuck at High an SD-In3, Kanal B"
+Value(150)="Stuck at High an SD-In4, Kanal A"
+Value(151)="Stuck at High an SD-In5, Kanal B"
+Value(154)="Querschluss CLA/CLB"
+Value(160)="Neuer Parametersatz geloescht"
+Value(161)="Neuer Parametersatz geladen"
+Value(162)="Speichermodul Zugriffsfehler"
+Value(163)="Verschiedene Parmetersaetze"
+Value(164)="Kein sicherer Parametersatz SM"
+Value(165)="Defekter Parametersatz SM"
+Value(166)="Parametersatz MM Formatfehler"
+Value(167)="Par.-Satz Plausibilitaetsfehler"
+Value(168)="Par.-Satz Kommunikationsfehler"
+Value(169)="Mod-ID ungleich eff. Safety-Adr."
+Value(192)="Referenzspannungsfehler"
+Value(193)="6V Spannungsfehler"
+Value(194)="5V Spannungsfehler"
+Value(195)="2.6V Spannungsfehler"
+Value(208)="Sichere Drehzahl ungueltig"
+Unit_Diag_Area_end
+
+
+Unit_Diag_Area=48-55
+value(0)="Fehlernr. High Byte 0x00 - 0"
+value(1)="Fehlernr. High Byte 0x01 - 1"
+value(2)="Fehlernr. High Byte 0x02 - 2"
+value(3)="Fehlernr. High Byte 0x03 - 3"
+value(4)="Fehlernr. High Byte 0x04 - 4"
+value(5)="Fehlernr. High Byte 0x05 - 5"
+value(6)="Fehlernr. High Byte 0x06 - 6"
+value(7)="Fehlernr. High Byte 0x07 - 7"
+value(8)="Fehlernr. High Byte 0x08 - 8"
+value(9)="Fehlernr. High Byte 0x09 - 9"
+value(10)="Fehlernr. High Byte 0x0a - 10"
+value(11)="Fehlernr. High Byte 0x0b - 11"
+value(12)="Fehlernr. High Byte 0x0c - 12"
+value(13)="Fehlernr. High Byte 0x0d - 13"
+value(14)="Fehlernr. High Byte 0x0e - 14"
+value(15)="Fehlernr. High Byte 0x0f - 15"
+value(16)="Fehlernr. High Byte 0x10 - 16"
+value(17)="Fehlernr. High Byte 0x11 - 17"
+value(18)="Fehlernr. High Byte 0x12 - 18"
+value(19)="Fehlernr. High Byte 0x13 - 19"
+value(20)="Fehlernr. High Byte 0x14 - 20"
+value(21)="Fehlernr. High Byte 0x15 - 21"
+value(22)="Fehlernr. High Byte 0x16 - 22"
+value(23)="Fehlernr. High Byte 0x17 - 23"
+value(24)="Fehlernr. High Byte 0x18 - 24"
+value(25)="Fehlernr. High Byte 0x19 - 25"
+value(26)="Fehlernr. High Byte 0x1a - 26"
+value(27)="Fehlernr. High Byte 0x1b - 27"
+value(28)="Fehlernr. High Byte 0x1c - 28"
+value(29)="Fehlernr. High Byte 0x1d - 29"
+value(30)="Fehlernr. High Byte 0x1e - 30"
+value(31)="Fehlernr. High Byte 0x1f - 31"
+value(32)="Fehlernr. High Byte 0x20 - 32"
+value(33)="Fehlernr. High Byte 0x21 - 33"
+value(34)="Fehlernr. High Byte 0x22 - 34"
+value(35)="Fehlernr. High Byte 0x23 - 35"
+value(36)="Fehlernr. High Byte 0x24 - 36"
+value(37)="Fehlernr. High Byte 0x25 - 37"
+value(38)="Fehlernr. High Byte 0x26 - 38"
+value(39)="Fehlernr. High Byte 0x27 - 39"
+value(40)="Fehlernr. High Byte 0x28 - 40"
+value(41)="Fehlernr. High Byte 0x29 - 41"
+value(42)="Fehlernr. High Byte 0x2a - 42"
+value(43)="Fehlernr. High Byte 0x2b - 43"
+value(44)="Fehlernr. High Byte 0x2c - 44"
+value(45)="Fehlernr. High Byte 0x2d - 45"
+value(46)="Fehlernr. High Byte 0x2e - 46"
+value(47)="Fehlernr. High Byte 0x2f - 47"
+value(48)="Fehlernr. High Byte 0x30 - 48"
+value(49)="Fehlernr. High Byte 0x31 - 49"
+value(50)="Fehlernr. High Byte 0x32 - 50"
+value(51)="Fehlernr. High Byte 0x33 - 51"
+value(52)="Fehlernr. High Byte 0x34 - 52"
+value(53)="Fehlernr. High Byte 0x35 - 53"
+value(54)="Fehlernr. High Byte 0x36 - 54"
+value(55)="Fehlernr. High Byte 0x37 - 55"
+value(56)="Fehlernr. High Byte 0x38 - 56"
+value(57)="Fehlernr. High Byte 0x39 - 57"
+value(58)="Fehlernr. High Byte 0x3a - 58"
+value(59)="Fehlernr. High Byte 0x3b - 59"
+value(60)="Fehlernr. High Byte 0x3c - 60"
+value(61)="Fehlernr. High Byte 0x3d - 61"
+value(62)="Fehlernr. High Byte 0x3e - 62"
+value(63)="Fehlernr. High Byte 0x3f - 63"
+value(64)="Fehlernr. High Byte 0x40 - 64"
+value(65)="Fehlernr. High Byte 0x41 - 65"
+value(66)="Fehlernr. High Byte 0x42 - 66"
+value(67)="Fehlernr. High Byte 0x43 - 67"
+value(68)="Fehlernr. High Byte 0x44 - 68"
+value(69)="Fehlernr. High Byte 0x45 - 69"
+value(70)="Fehlernr. High Byte 0x46 - 70"
+value(71)="Fehlernr. High Byte 0x47 - 71"
+value(72)="Fehlernr. High Byte 0x48 - 72"
+value(73)="Fehlernr. High Byte 0x49 - 73"
+value(74)="Fehlernr. High Byte 0x4a - 74"
+value(75)="Fehlernr. High Byte 0x4b - 75"
+value(76)="Fehlernr. High Byte 0x4c - 76"
+value(77)="Fehlernr. High Byte 0x4d - 77"
+value(78)="Fehlernr. High Byte 0x4e - 78"
+value(79)="Fehlernr. High Byte 0x4f - 79"
+value(80)="Fehlernr. High Byte 0x50 - 80"
+value(81)="Fehlernr. High Byte 0x51 - 81"
+value(82)="Fehlernr. High Byte 0x52 - 82"
+value(83)="Fehlernr. High Byte 0x53 - 83"
+value(84)="Fehlernr. High Byte 0x54 - 84"
+value(85)="Fehlernr. High Byte 0x55 - 85"
+value(86)="Fehlernr. High Byte 0x56 - 86"
+value(87)="Fehlernr. High Byte 0x57 - 87"
+value(88)="Fehlernr. High Byte 0x58 - 88"
+value(89)="Fehlernr. High Byte 0x59 - 89"
+value(90)="Fehlernr. High Byte 0x5a - 90"
+value(91)="Fehlernr. High Byte 0x5b - 91"
+value(92)="Fehlernr. High Byte 0x5c - 92"
+value(93)="Fehlernr. High Byte 0x5d - 93"
+value(94)="Fehlernr. High Byte 0x5e - 94"
+value(95)="Fehlernr. High Byte 0x5f - 95"
+value(96)="Fehlernr. High Byte 0x60 - 96"
+value(97)="Fehlernr. High Byte 0x61 - 97"
+value(98)="Fehlernr. High Byte 0x62 - 98"
+value(99)="Fehlernr. High Byte 0x63 - 99"
+value(100)="Fehlernr. High Byte 0x64 - 100"
+value(101)="Fehlernr. High Byte 0x65 - 101"
+value(102)="Fehlernr. High Byte 0x66 - 102"
+value(103)="Fehlernr. High Byte 0x67 - 103"
+value(104)="Fehlernr. High Byte 0x68 - 104"
+value(105)="Fehlernr. High Byte 0x69 - 105"
+value(106)="Fehlernr. High Byte 0x6a - 106"
+value(107)="Fehlernr. High Byte 0x6b - 107"
+value(108)="Fehlernr. High Byte 0x6c - 108"
+value(109)="Fehlernr. High Byte 0x6d - 109"
+value(110)="Fehlernr. High Byte 0x6e - 110"
+value(111)="Fehlernr. High Byte 0x6f - 111"
+value(112)="Fehlernr. High Byte 0x70 - 112"
+value(113)="Fehlernr. High Byte 0x71 - 113"
+value(114)="Fehlernr. High Byte 0x72 - 114"
+value(115)="Fehlernr. High Byte 0x73 - 115"
+value(116)="Fehlernr. High Byte 0x74 - 116"
+value(117)="Fehlernr. High Byte 0x75 - 117"
+value(118)="Fehlernr. High Byte 0x76 - 118"
+value(119)="Fehlernr. High Byte 0x77 - 119"
+value(120)="Fehlernr. High Byte 0x78 - 120"
+value(121)="Fehlernr. High Byte 0x79 - 121"
+value(122)="Fehlernr. High Byte 0x7a - 122"
+value(123)="Fehlernr. High Byte 0x7b - 123"
+value(124)="Fehlernr. High Byte 0x7c - 124"
+value(125)="Fehlernr. High Byte 0x7d - 125"
+value(126)="Fehlernr. High Byte 0x7e - 126"
+value(127)="Fehlernr. High Byte 0x7f - 127"
+value(128)="Fehlernr. High Byte 0x80 - 128"
+value(129)="Fehlernr. High Byte 0x81 - 129"
+value(130)="Fehlernr. High Byte 0x82 - 130"
+value(131)="Fehlernr. High Byte 0x83 - 131"
+value(132)="Fehlernr. High Byte 0x84 - 132"
+value(133)="Fehlernr. High Byte 0x85 - 133"
+value(134)="Fehlernr. High Byte 0x86 - 134"
+value(135)="Fehlernr. High Byte 0x87 - 135"
+value(136)="Fehlernr. High Byte 0x88 - 136"
+value(137)="Fehlernr. High Byte 0x89 - 137"
+value(138)="Fehlernr. High Byte 0x8a - 138"
+value(139)="Fehlernr. High Byte 0x8b - 139"
+value(140)="Fehlernr. High Byte 0x8c - 140"
+value(141)="Fehlernr. High Byte 0x8d - 141"
+value(142)="Fehlernr. High Byte 0x8e - 142"
+value(143)="Fehlernr. High Byte 0x8f - 143"
+value(144)="Fehlernr. High Byte 0x90 - 144"
+value(145)="Fehlernr. High Byte 0x91 - 145"
+value(146)="Fehlernr. High Byte 0x92 - 146"
+value(147)="Fehlernr. High Byte 0x93 - 147"
+value(148)="Fehlernr. High Byte 0x94 - 148"
+value(149)="Fehlernr. High Byte 0x95 - 149"
+value(150)="Fehlernr. High Byte 0x96 - 150"
+value(151)="Fehlernr. High Byte 0x97 - 151"
+value(152)="Fehlernr. High Byte 0x98 - 152"
+value(153)="Fehlernr. High Byte 0x99 - 153"
+value(154)="Fehlernr. High Byte 0x9a - 154"
+value(155)="Fehlernr. High Byte 0x9b - 155"
+value(156)="Fehlernr. High Byte 0x9c - 156"
+value(157)="Fehlernr. High Byte 0x9d - 157"
+value(158)="Fehlernr. High Byte 0x9e - 158"
+value(159)="Fehlernr. High Byte 0x9f - 159"
+value(160)="Fehlernr. High Byte 0xa0 - 160"
+value(161)="Fehlernr. High Byte 0xa1 - 161"
+value(162)="Fehlernr. High Byte 0xa2 - 162"
+value(163)="Fehlernr. High Byte 0xa3 - 163"
+value(164)="Fehlernr. High Byte 0xa4 - 164"
+value(165)="Fehlernr. High Byte 0xa5 - 165"
+value(166)="Fehlernr. High Byte 0xa6 - 166"
+value(167)="Fehlernr. High Byte 0xa7 - 167"
+value(168)="Fehlernr. High Byte 0xa8 - 168"
+value(169)="Fehlernr. High Byte 0xa9 - 169"
+value(170)="Fehlernr. High Byte 0xaa - 170"
+value(171)="Fehlernr. High Byte 0xab - 171"
+value(172)="Fehlernr. High Byte 0xac - 172"
+value(173)="Fehlernr. High Byte 0xad - 173"
+value(174)="Fehlernr. High Byte 0xae - 174"
+value(175)="Fehlernr. High Byte 0xaf - 175"
+value(176)="Fehlernr. High Byte 0xb0 - 176"
+value(177)="Fehlernr. High Byte 0xb1 - 177"
+value(178)="Fehlernr. High Byte 0xb2 - 178"
+value(179)="Fehlernr. High Byte 0xb3 - 179"
+value(180)="Fehlernr. High Byte 0xb4 - 180"
+value(181)="Fehlernr. High Byte 0xb5 - 181"
+value(182)="Fehlernr. High Byte 0xb6 - 182"
+value(183)="Fehlernr. High Byte 0xb7 - 183"
+value(184)="Fehlernr. High Byte 0xb8 - 184"
+value(185)="Fehlernr. High Byte 0xb9 - 185"
+value(186)="Fehlernr. High Byte 0xba - 186"
+value(187)="Fehlernr. High Byte 0xbb - 187"
+value(188)="Fehlernr. High Byte 0xbc - 188"
+value(189)="Fehlernr. High Byte 0xbd - 189"
+value(190)="Fehlernr. High Byte 0xbe - 190"
+value(191)="Fehlernr. High Byte 0xbf - 191"
+value(192)="Fehlernr. High Byte 0xc0 - 192"
+value(193)="Fehlernr. High Byte 0xc1 - 193"
+value(194)="Fehlernr. High Byte 0xc2 - 194"
+value(195)="Fehlernr. High Byte 0xc3 - 195"
+value(196)="Fehlernr. High Byte 0xc4 - 196"
+value(197)="Fehlernr. High Byte 0xc5 - 197"
+value(198)="Fehlernr. High Byte 0xc6 - 198"
+value(199)="Fehlernr. High Byte 0xc7 - 199"
+value(200)="Fehlernr. High Byte 0xc8 - 200"
+value(201)="Fehlernr. High Byte 0xc9 - 201"
+value(202)="Fehlernr. High Byte 0xca - 202"
+value(203)="Fehlernr. High Byte 0xcb - 203"
+value(204)="Fehlernr. High Byte 0xcc - 204"
+value(205)="Fehlernr. High Byte 0xcd - 205"
+value(206)="Fehlernr. High Byte 0xce - 206"
+value(207)="Fehlernr. High Byte 0xcf - 207"
+value(208)="Fehlernr. High Byte 0xd0 - 208"
+value(209)="Fehlernr. High Byte 0xd1 - 209"
+value(210)="Fehlernr. High Byte 0xd2 - 210"
+value(211)="Fehlernr. High Byte 0xd3 - 211"
+value(212)="Fehlernr. High Byte 0xd4 - 212"
+value(213)="Fehlernr. High Byte 0xd5 - 213"
+value(214)="Fehlernr. High Byte 0xd6 - 214"
+value(215)="Fehlernr. High Byte 0xd7 - 215"
+value(216)="Fehlernr. High Byte 0xd8 - 216"
+value(217)="Fehlernr. High Byte 0xd9 - 217"
+value(218)="Fehlernr. High Byte 0xda - 218"
+value(219)="Fehlernr. High Byte 0xdb - 219"
+value(220)="Fehlernr. High Byte 0xdc - 220"
+value(221)="Fehlernr. High Byte 0xdd - 221"
+value(222)="Fehlernr. High Byte 0xde - 222"
+value(223)="Fehlernr. High Byte 0xdf - 223"
+value(224)="Fehlernr. High Byte 0xe0 - 224"
+value(225)="Fehlernr. High Byte 0xe1 - 225"
+value(226)="Fehlernr. High Byte 0xe2 - 226"
+value(227)="Fehlernr. High Byte 0xe3 - 227"
+value(228)="Fehlernr. High Byte 0xe4 - 228"
+value(229)="Fehlernr. High Byte 0xe5 - 229"
+value(230)="Fehlernr. High Byte 0xe6 - 230"
+value(231)="Fehlernr. High Byte 0xe7 - 231"
+value(232)="Fehlernr. High Byte 0xe8 - 232"
+value(233)="Fehlernr. High Byte 0xe9 - 233"
+value(234)="Fehlernr. High Byte 0xea - 234"
+value(235)="Fehlernr. High Byte 0xeb - 235"
+value(236)="Fehlernr. High Byte 0xec - 236"
+value(237)="Fehlernr. High Byte 0xed - 237"
+value(238)="Fehlernr. High Byte 0xee - 238"
+value(239)="Fehlernr. High Byte 0xef - 239"
+value(240)="Fehlernr. High Byte 0xf0 - 240"
+value(241)="Fehlernr. High Byte 0xf1 - 241"
+value(242)="Fehlernr. High Byte 0xf2 - 242"
+value(243)="Fehlernr. High Byte 0xf3 - 243"
+value(244)="Fehlernr. High Byte 0xf4 - 244"
+value(245)="Fehlernr. High Byte 0xf5 - 245"
+value(246)="Fehlernr. High Byte 0xf6 - 246"
+value(247)="Fehlernr. High Byte 0xf7 - 247"
+value(248)="Fehlernr. High Byte 0xf8 - 248"
+value(249)="Fehlernr. High Byte 0xf9 - 249"
+value(250)="Fehlernr. High Byte 0xfa - 250"
+value(251)="Fehlernr. High Byte 0xfb - 251"
+value(252)="Fehlernr. High Byte 0xfc - 252"
+value(253)="Fehlernr. High Byte 0xfd - 253"
+value(254)="Fehlernr. High Byte 0xfe - 254"
+value(255)="Fehlernr. High Byte 0xff - 255"
+Unit_Diag_Area_end
+
+Unit_Diag_Area=40-47
+value(0)="Fehlernr. Low Byte 0x00 - 0"
+value(1)="Fehlernr. Low Byte 0x01 - 1"
+value(2)="Fehlernr. Low Byte 0x02 - 2"
+value(3)="Fehlernr. Low Byte 0x03 - 3"
+value(4)="Fehlernr. Low Byte 0x04 - 4"
+value(5)="Fehlernr. Low Byte 0x05 - 5"
+value(6)="Fehlernr. Low Byte 0x06 - 6"
+value(7)="Fehlernr. Low Byte 0x07 - 7"
+value(8)="Fehlernr. Low Byte 0x08 - 8"
+value(9)="Fehlernr. Low Byte 0x09 - 9"
+value(10)="Fehlernr. Low Byte 0x0a - 10"
+value(11)="Fehlernr. Low Byte 0x0b - 11"
+value(12)="Fehlernr. Low Byte 0x0c - 12"
+value(13)="Fehlernr. Low Byte 0x0d - 13"
+value(14)="Fehlernr. Low Byte 0x0e - 14"
+value(15)="Fehlernr. Low Byte 0x0f - 15"
+value(16)="Fehlernr. Low Byte 0x10 - 16"
+value(17)="Fehlernr. Low Byte 0x11 - 17"
+value(18)="Fehlernr. Low Byte 0x12 - 18"
+value(19)="Fehlernr. Low Byte 0x13 - 19"
+value(20)="Fehlernr. Low Byte 0x14 - 20"
+value(21)="Fehlernr. Low Byte 0x15 - 21"
+value(22)="Fehlernr. Low Byte 0x16 - 22"
+value(23)="Fehlernr. Low Byte 0x17 - 23"
+value(24)="Fehlernr. Low Byte 0x18 - 24"
+value(25)="Fehlernr. Low Byte 0x19 - 25"
+value(26)="Fehlernr. Low Byte 0x1a - 26"
+value(27)="Fehlernr. Low Byte 0x1b - 27"
+value(28)="Fehlernr. Low Byte 0x1c - 28"
+value(29)="Fehlernr. Low Byte 0x1d - 29"
+value(30)="Fehlernr. Low Byte 0x1e - 30"
+value(31)="Fehlernr. Low Byte 0x1f - 31"
+value(32)="Fehlernr. Low Byte 0x20 - 32"
+value(33)="Fehlernr. Low Byte 0x21 - 33"
+value(34)="Fehlernr. Low Byte 0x22 - 34"
+value(35)="Fehlernr. Low Byte 0x23 - 35"
+value(36)="Fehlernr. Low Byte 0x24 - 36"
+value(37)="Fehlernr. Low Byte 0x25 - 37"
+value(38)="Fehlernr. Low Byte 0x26 - 38"
+value(39)="Fehlernr. Low Byte 0x27 - 39"
+value(40)="Fehlernr. Low Byte 0x28 - 40"
+value(41)="Fehlernr. Low Byte 0x29 - 41"
+value(42)="Fehlernr. Low Byte 0x2a - 42"
+value(43)="Fehlernr. Low Byte 0x2b - 43"
+value(44)="Fehlernr. Low Byte 0x2c - 44"
+value(45)="Fehlernr. Low Byte 0x2d - 45"
+value(46)="Fehlernr. Low Byte 0x2e - 46"
+value(47)="Fehlernr. Low Byte 0x2f - 47"
+value(48)="Fehlernr. Low Byte 0x30 - 48"
+value(49)="Fehlernr. Low Byte 0x31 - 49"
+value(50)="Fehlernr. Low Byte 0x32 - 50"
+value(51)="Fehlernr. Low Byte 0x33 - 51"
+value(52)="Fehlernr. Low Byte 0x34 - 52"
+value(53)="Fehlernr. Low Byte 0x35 - 53"
+value(54)="Fehlernr. Low Byte 0x36 - 54"
+value(55)="Fehlernr. Low Byte 0x37 - 55"
+value(56)="Fehlernr. Low Byte 0x38 - 56"
+value(57)="Fehlernr. Low Byte 0x39 - 57"
+value(58)="Fehlernr. Low Byte 0x3a - 58"
+value(59)="Fehlernr. Low Byte 0x3b - 59"
+value(60)="Fehlernr. Low Byte 0x3c - 60"
+value(61)="Fehlernr. Low Byte 0x3d - 61"
+value(62)="Fehlernr. Low Byte 0x3e - 62"
+value(63)="Fehlernr. Low Byte 0x3f - 63"
+value(64)="Fehlernr. Low Byte 0x40 - 64"
+value(65)="Fehlernr. Low Byte 0x41 - 65"
+value(66)="Fehlernr. Low Byte 0x42 - 66"
+value(67)="Fehlernr. Low Byte 0x43 - 67"
+value(68)="Fehlernr. Low Byte 0x44 - 68"
+value(69)="Fehlernr. Low Byte 0x45 - 69"
+value(70)="Fehlernr. Low Byte 0x46 - 70"
+value(71)="Fehlernr. Low Byte 0x47 - 71"
+value(72)="Fehlernr. Low Byte 0x48 - 72"
+value(73)="Fehlernr. Low Byte 0x49 - 73"
+value(74)="Fehlernr. Low Byte 0x4a - 74"
+value(75)="Fehlernr. Low Byte 0x4b - 75"
+value(76)="Fehlernr. Low Byte 0x4c - 76"
+value(77)="Fehlernr. Low Byte 0x4d - 77"
+value(78)="Fehlernr. Low Byte 0x4e - 78"
+value(79)="Fehlernr. Low Byte 0x4f - 79"
+value(80)="Fehlernr. Low Byte 0x50 - 80"
+value(81)="Fehlernr. Low Byte 0x51 - 81"
+value(82)="Fehlernr. Low Byte 0x52 - 82"
+value(83)="Fehlernr. Low Byte 0x53 - 83"
+value(84)="Fehlernr. Low Byte 0x54 - 84"
+value(85)="Fehlernr. Low Byte 0x55 - 85"
+value(86)="Fehlernr. Low Byte 0x56 - 86"
+value(87)="Fehlernr. Low Byte 0x57 - 87"
+value(88)="Fehlernr. Low Byte 0x58 - 88"
+value(89)="Fehlernr. Low Byte 0x59 - 89"
+value(90)="Fehlernr. Low Byte 0x5a - 90"
+value(91)="Fehlernr. Low Byte 0x5b - 91"
+value(92)="Fehlernr. Low Byte 0x5c - 92"
+value(93)="Fehlernr. Low Byte 0x5d - 93"
+value(94)="Fehlernr. Low Byte 0x5e - 94"
+value(95)="Fehlernr. Low Byte 0x5f - 95"
+value(96)="Fehlernr. Low Byte 0x60 - 96"
+value(97)="Fehlernr. Low Byte 0x61 - 97"
+value(98)="Fehlernr. Low Byte 0x62 - 98"
+value(99)="Fehlernr. Low Byte 0x63 - 99"
+value(100)="Fehlernr. Low Byte 0x64 - 100"
+value(101)="Fehlernr. Low Byte 0x65 - 101"
+value(102)="Fehlernr. Low Byte 0x66 - 102"
+value(103)="Fehlernr. Low Byte 0x67 - 103"
+value(104)="Fehlernr. Low Byte 0x68 - 104"
+value(105)="Fehlernr. Low Byte 0x69 - 105"
+value(106)="Fehlernr. Low Byte 0x6a - 106"
+value(107)="Fehlernr. Low Byte 0x6b - 107"
+value(108)="Fehlernr. Low Byte 0x6c - 108"
+value(109)="Fehlernr. Low Byte 0x6d - 109"
+value(110)="Fehlernr. Low Byte 0x6e - 110"
+value(111)="Fehlernr. Low Byte 0x6f - 111"
+value(112)="Fehlernr. Low Byte 0x70 - 112"
+value(113)="Fehlernr. Low Byte 0x71 - 113"
+value(114)="Fehlernr. Low Byte 0x72 - 114"
+value(115)="Fehlernr. Low Byte 0x73 - 115"
+value(116)="Fehlernr. Low Byte 0x74 - 116"
+value(117)="Fehlernr. Low Byte 0x75 - 117"
+value(118)="Fehlernr. Low Byte 0x76 - 118"
+value(119)="Fehlernr. Low Byte 0x77 - 119"
+value(120)="Fehlernr. Low Byte 0x78 - 120"
+value(121)="Fehlernr. Low Byte 0x79 - 121"
+value(122)="Fehlernr. Low Byte 0x7a - 122"
+value(123)="Fehlernr. Low Byte 0x7b - 123"
+value(124)="Fehlernr. Low Byte 0x7c - 124"
+value(125)="Fehlernr. Low Byte 0x7d - 125"
+value(126)="Fehlernr. Low Byte 0x7e - 126"
+value(127)="Fehlernr. Low Byte 0x7f - 127"
+value(128)="Fehlernr. Low Byte 0x80 - 128"
+value(129)="Fehlernr. Low Byte 0x81 - 129"
+value(130)="Fehlernr. Low Byte 0x82 - 130"
+value(131)="Fehlernr. Low Byte 0x83 - 131"
+value(132)="Fehlernr. Low Byte 0x84 - 132"
+value(133)="Fehlernr. Low Byte 0x85 - 133"
+value(134)="Fehlernr. Low Byte 0x86 - 134"
+value(135)="Fehlernr. Low Byte 0x87 - 135"
+value(136)="Fehlernr. Low Byte 0x88 - 136"
+value(137)="Fehlernr. Low Byte 0x89 - 137"
+value(138)="Fehlernr. Low Byte 0x8a - 138"
+value(139)="Fehlernr. Low Byte 0x8b - 139"
+value(140)="Fehlernr. Low Byte 0x8c - 140"
+value(141)="Fehlernr. Low Byte 0x8d - 141"
+value(142)="Fehlernr. Low Byte 0x8e - 142"
+value(143)="Fehlernr. Low Byte 0x8f - 143"
+value(144)="Fehlernr. Low Byte 0x90 - 144"
+value(145)="Fehlernr. Low Byte 0x91 - 145"
+value(146)="Fehlernr. Low Byte 0x92 - 146"
+value(147)="Fehlernr. Low Byte 0x93 - 147"
+value(148)="Fehlernr. Low Byte 0x94 - 148"
+value(149)="Fehlernr. Low Byte 0x95 - 149"
+value(150)="Fehlernr. Low Byte 0x96 - 150"
+value(151)="Fehlernr. Low Byte 0x97 - 151"
+value(152)="Fehlernr. Low Byte 0x98 - 152"
+value(153)="Fehlernr. Low Byte 0x99 - 153"
+value(154)="Fehlernr. Low Byte 0x9a - 154"
+value(155)="Fehlernr. Low Byte 0x9b - 155"
+value(156)="Fehlernr. Low Byte 0x9c - 156"
+value(157)="Fehlernr. Low Byte 0x9d - 157"
+value(158)="Fehlernr. Low Byte 0x9e - 158"
+value(159)="Fehlernr. Low Byte 0x9f - 159"
+value(160)="Fehlernr. Low Byte 0xa0 - 160"
+value(161)="Fehlernr. Low Byte 0xa1 - 161"
+value(162)="Fehlernr. Low Byte 0xa2 - 162"
+value(163)="Fehlernr. Low Byte 0xa3 - 163"
+value(164)="Fehlernr. Low Byte 0xa4 - 164"
+value(165)="Fehlernr. Low Byte 0xa5 - 165"
+value(166)="Fehlernr. Low Byte 0xa6 - 166"
+value(167)="Fehlernr. Low Byte 0xa7 - 167"
+value(168)="Fehlernr. Low Byte 0xa8 - 168"
+value(169)="Fehlernr. Low Byte 0xa9 - 169"
+value(170)="Fehlernr. Low Byte 0xaa - 170"
+value(171)="Fehlernr. Low Byte 0xab - 171"
+value(172)="Fehlernr. Low Byte 0xac - 172"
+value(173)="Fehlernr. Low Byte 0xad - 173"
+value(174)="Fehlernr. Low Byte 0xae - 174"
+value(175)="Fehlernr. Low Byte 0xaf - 175"
+value(176)="Fehlernr. Low Byte 0xb0 - 176"
+value(177)="Fehlernr. Low Byte 0xb1 - 177"
+value(178)="Fehlernr. Low Byte 0xb2 - 178"
+value(179)="Fehlernr. Low Byte 0xb3 - 179"
+value(180)="Fehlernr. Low Byte 0xb4 - 180"
+value(181)="Fehlernr. Low Byte 0xb5 - 181"
+value(182)="Fehlernr. Low Byte 0xb6 - 182"
+value(183)="Fehlernr. Low Byte 0xb7 - 183"
+value(184)="Fehlernr. Low Byte 0xb8 - 184"
+value(185)="Fehlernr. Low Byte 0xb9 - 185"
+value(186)="Fehlernr. Low Byte 0xba - 186"
+value(187)="Fehlernr. Low Byte 0xbb - 187"
+value(188)="Fehlernr. Low Byte 0xbc - 188"
+value(189)="Fehlernr. Low Byte 0xbd - 189"
+value(190)="Fehlernr. Low Byte 0xbe - 190"
+value(191)="Fehlernr. Low Byte 0xbf - 191"
+value(192)="Fehlernr. Low Byte 0xc0 - 192"
+value(193)="Fehlernr. Low Byte 0xc1 - 193"
+value(194)="Fehlernr. Low Byte 0xc2 - 194"
+value(195)="Fehlernr. Low Byte 0xc3 - 195"
+value(196)="Fehlernr. Low Byte 0xc4 - 196"
+value(197)="Fehlernr. Low Byte 0xc5 - 197"
+value(198)="Fehlernr. Low Byte 0xc6 - 198"
+value(199)="Fehlernr. Low Byte 0xc7 - 199"
+value(200)="Fehlernr. Low Byte 0xc8 - 200"
+value(201)="Fehlernr. Low Byte 0xc9 - 201"
+value(202)="Fehlernr. Low Byte 0xca - 202"
+value(203)="Fehlernr. Low Byte 0xcb - 203"
+value(204)="Fehlernr. Low Byte 0xcc - 204"
+value(205)="Fehlernr. Low Byte 0xcd - 205"
+value(206)="Fehlernr. Low Byte 0xce - 206"
+value(207)="Fehlernr. Low Byte 0xcf - 207"
+value(208)="Fehlernr. Low Byte 0xd0 - 208"
+value(209)="Fehlernr. Low Byte 0xd1 - 209"
+value(210)="Fehlernr. Low Byte 0xd2 - 210"
+value(211)="Fehlernr. Low Byte 0xd3 - 211"
+value(212)="Fehlernr. Low Byte 0xd4 - 212"
+value(213)="Fehlernr. Low Byte 0xd5 - 213"
+value(214)="Fehlernr. Low Byte 0xd6 - 214"
+value(215)="Fehlernr. Low Byte 0xd7 - 215"
+value(216)="Fehlernr. Low Byte 0xd8 - 216"
+value(217)="Fehlernr. Low Byte 0xd9 - 217"
+value(218)="Fehlernr. Low Byte 0xda - 218"
+value(219)="Fehlernr. Low Byte 0xdb - 219"
+value(220)="Fehlernr. Low Byte 0xdc - 220"
+value(221)="Fehlernr. Low Byte 0xdd - 221"
+value(222)="Fehlernr. Low Byte 0xde - 222"
+value(223)="Fehlernr. Low Byte 0xdf - 223"
+value(224)="Fehlernr. Low Byte 0xe0 - 224"
+value(225)="Fehlernr. Low Byte 0xe1 - 225"
+value(226)="Fehlernr. Low Byte 0xe2 - 226"
+value(227)="Fehlernr. Low Byte 0xe3 - 227"
+value(228)="Fehlernr. Low Byte 0xe4 - 228"
+value(229)="Fehlernr. Low Byte 0xe5 - 229"
+value(230)="Fehlernr. Low Byte 0xe6 - 230"
+value(231)="Fehlernr. Low Byte 0xe7 - 231"
+value(232)="Fehlernr. Low Byte 0xe8 - 232"
+value(233)="Fehlernr. Low Byte 0xe9 - 233"
+value(234)="Fehlernr. Low Byte 0xea - 234"
+value(235)="Fehlernr. Low Byte 0xeb - 235"
+value(236)="Fehlernr. Low Byte 0xec - 236"
+value(237)="Fehlernr. Low Byte 0xed - 237"
+value(238)="Fehlernr. Low Byte 0xee - 238"
+value(239)="Fehlernr. Low Byte 0xef - 239"
+value(240)="Fehlernr. Low Byte 0xf0 - 240"
+value(241)="Fehlernr. Low Byte 0xf1 - 241"
+value(242)="Fehlernr. Low Byte 0xf2 - 242"
+value(243)="Fehlernr. Low Byte 0xf3 - 243"
+value(244)="Fehlernr. Low Byte 0xf4 - 244"
+value(245)="Fehlernr. Low Byte 0xf5 - 245"
+value(246)="Fehlernr. Low Byte 0xf6 - 246"
+value(247)="Fehlernr. Low Byte 0xf7 - 247"
+value(248)="Fehlernr. Low Byte 0xf8 - 248"
+value(249)="Fehlernr. Low Byte 0xf9 - 249"
+value(250)="Fehlernr. Low Byte 0xfa - 250"
+value(251)="Fehlernr. Low Byte 0xfb - 251"
+value(252)="Fehlernr. Low Byte 0xfc - 252"
+value(253)="Fehlernr. Low Byte 0xfd - 253"
+value(254)="Fehlernr. Low Byte 0xfe - 254"
+value(255)="Fehlernr. Low Byte 0xff - 255"
+Unit_Diag_Area_end
+
+Unit_Diag_Area=56-65
+value(0)="Modulnr. 0x0000 - 0"
+value(1)="Modulnr. 0x0001 - 1"
+value(2)="Modulnr. 0x0002 - 2"
+value(3)="Modulnr. 0x0003 - 3"
+value(4)="Modulnr. 0x0004 - 4"
+value(5)="Modulnr. 0x0005 - 5"
+value(6)="Modulnr. 0x0006 - 6"
+value(7)="Modulnr. 0x0007 - 7"
+value(8)="Modulnr. 0x0008 - 8"
+value(9)="Modulnr. 0x0009 - 9"
+value(10)="Modulnr. 0x000a - 10"
+value(11)="Modulnr. 0x000b - 11"
+value(12)="Modulnr. 0x000c - 12"
+value(13)="Modulnr. 0x000d - 13"
+value(14)="Modulnr. 0x000e - 14"
+value(15)="Modulnr. 0x000f - 15"
+value(16)="Modulnr. 0x0010 - 16"
+value(17)="Modulnr. 0x0011 - 17"
+value(18)="Modulnr. 0x0012 - 18"
+value(19)="Modulnr. 0x0013 - 19"
+value(20)="Modulnr. 0x0014 - 20"
+value(21)="Modulnr. 0x0015 - 21"
+value(22)="Modulnr. 0x0016 - 22"
+value(23)="Modulnr. 0x0017 - 23"
+value(24)="Modulnr. 0x0018 - 24"
+value(25)="Modulnr. 0x0019 - 25"
+value(26)="Modulnr. 0x001a - 26"
+value(27)="Modulnr. 0x001b - 27"
+value(28)="Modulnr. 0x001c - 28"
+value(29)="Modulnr. 0x001d - 29"
+value(30)="Modulnr. 0x001e - 30"
+value(31)="Modulnr. 0x001f - 31"
+value(32)="Modulnr. 0x0020 - 32"
+value(33)="Modulnr. 0x0021 - 33"
+value(34)="Modulnr. 0x0022 - 34"
+value(35)="Modulnr. 0x0023 - 35"
+value(36)="Modulnr. 0x0024 - 36"
+value(37)="Modulnr. 0x0025 - 37"
+value(38)="Modulnr. 0x0026 - 38"
+value(39)="Modulnr. 0x0027 - 39"
+value(40)="Modulnr. 0x0028 - 40"
+value(41)="Modulnr. 0x0029 - 41"
+value(42)="Modulnr. 0x002a - 42"
+value(43)="Modulnr. 0x002b - 43"
+value(44)="Modulnr. 0x002c - 44"
+value(45)="Modulnr. 0x002d - 45"
+value(46)="Modulnr. 0x002e - 46"
+value(47)="Modulnr. 0x002f - 47"
+value(48)="Modulnr. 0x0030 - 48"
+value(49)="Modulnr. 0x0031 - 49"
+value(50)="Modulnr. 0x0032 - 50"
+value(51)="Modulnr. 0x0033 - 51"
+value(52)="Modulnr. 0x0034 - 52"
+value(53)="Modulnr. 0x0035 - 53"
+value(54)="Modulnr. 0x0036 - 54"
+value(55)="Modulnr. 0x0037 - 55"
+value(56)="Modulnr. 0x0038 - 56"
+value(57)="Modulnr. 0x0039 - 57"
+value(58)="Modulnr. 0x003a - 58"
+value(59)="Modulnr. 0x003b - 59"
+value(60)="Modulnr. 0x003c - 60"
+value(61)="Modulnr. 0x003d - 61"
+value(62)="Modulnr. 0x003e - 62"
+value(63)="Modulnr. 0x003f - 63"
+value(64)="Modulnr. 0x0040 - 64"
+value(65)="Modulnr. 0x0041 - 65"
+value(66)="Modulnr. 0x0042 - 66"
+value(67)="Modulnr. 0x0043 - 67"
+value(68)="Modulnr. 0x0044 - 68"
+value(69)="Modulnr. 0x0045 - 69"
+value(70)="Modulnr. 0x0046 - 70"
+value(71)="Modulnr. 0x0047 - 71"
+value(72)="Modulnr. 0x0048 - 72"
+value(73)="Modulnr. 0x0049 - 73"
+value(74)="Modulnr. 0x004a - 74"
+value(75)="Modulnr. 0x004b - 75"
+value(76)="Modulnr. 0x004c - 76"
+value(77)="Modulnr. 0x004d - 77"
+value(78)="Modulnr. 0x004e - 78"
+value(79)="Modulnr. 0x004f - 79"
+value(80)="Modulnr. 0x0050 - 80"
+value(81)="Modulnr. 0x0051 - 81"
+value(82)="Modulnr. 0x0052 - 82"
+value(83)="Modulnr. 0x0053 - 83"
+value(84)="Modulnr. 0x0054 - 84"
+value(85)="Modulnr. 0x0055 - 85"
+value(86)="Modulnr. 0x0056 - 86"
+value(87)="Modulnr. 0x0057 - 87"
+value(88)="Modulnr. 0x0058 - 88"
+value(89)="Modulnr. 0x0059 - 89"
+value(90)="Modulnr. 0x005a - 90"
+value(91)="Modulnr. 0x005b - 91"
+value(92)="Modulnr. 0x005c - 92"
+value(93)="Modulnr. 0x005d - 93"
+value(94)="Modulnr. 0x005e - 94"
+value(95)="Modulnr. 0x005f - 95"
+value(96)="Modulnr. 0x0060 - 96"
+value(97)="Modulnr. 0x0061 - 97"
+value(98)="Modulnr. 0x0062 - 98"
+value(99)="Modulnr. 0x0063 - 99"
+value(100)="Modulnr. 0x0064 - 100"
+value(101)="Modulnr. 0x0065 - 101"
+value(102)="Modulnr. 0x0066 - 102"
+value(103)="Modulnr. 0x0067 - 103"
+value(104)="Modulnr. 0x0068 - 104"
+value(105)="Modulnr. 0x0069 - 105"
+value(106)="Modulnr. 0x006a - 106"
+value(107)="Modulnr. 0x006b - 107"
+value(108)="Modulnr. 0x006c - 108"
+value(109)="Modulnr. 0x006d - 109"
+value(110)="Modulnr. 0x006e - 110"
+value(111)="Modulnr. 0x006f - 111"
+value(112)="Modulnr. 0x0070 - 112"
+value(113)="Modulnr. 0x0071 - 113"
+value(114)="Modulnr. 0x0072 - 114"
+value(115)="Modulnr. 0x0073 - 115"
+value(116)="Modulnr. 0x0074 - 116"
+value(117)="Modulnr. 0x0075 - 117"
+value(118)="Modulnr. 0x0076 - 118"
+value(119)="Modulnr. 0x0077 - 119"
+value(120)="Modulnr. 0x0078 - 120"
+value(121)="Modulnr. 0x0079 - 121"
+value(122)="Modulnr. 0x007a - 122"
+value(123)="Modulnr. 0x007b - 123"
+value(124)="Modulnr. 0x007c - 124"
+value(125)="Modulnr. 0x007d - 125"
+value(126)="Modulnr. 0x007e - 126"
+value(127)="Modulnr. 0x007f - 127"
+value(128)="Modulnr. 0x0080 - 128"
+value(129)="Modulnr. 0x0081 - 129"
+value(130)="Modulnr. 0x0082 - 130"
+value(131)="Modulnr. 0x0083 - 131"
+value(132)="Modulnr. 0x0084 - 132"
+value(133)="Modulnr. 0x0085 - 133"
+value(134)="Modulnr. 0x0086 - 134"
+value(135)="Modulnr. 0x0087 - 135"
+value(136)="Modulnr. 0x0088 - 136"
+value(137)="Modulnr. 0x0089 - 137"
+value(138)="Modulnr. 0x008a - 138"
+value(139)="Modulnr. 0x008b - 139"
+value(140)="Modulnr. 0x008c - 140"
+value(141)="Modulnr. 0x008d - 141"
+value(142)="Modulnr. 0x008e - 142"
+value(143)="Modulnr. 0x008f - 143"
+value(144)="Modulnr. 0x0090 - 144"
+value(145)="Modulnr. 0x0091 - 145"
+value(146)="Modulnr. 0x0092 - 146"
+value(147)="Modulnr. 0x0093 - 147"
+value(148)="Modulnr. 0x0094 - 148"
+value(149)="Modulnr. 0x0095 - 149"
+value(150)="Modulnr. 0x0096 - 150"
+value(151)="Modulnr. 0x0097 - 151"
+value(152)="Modulnr. 0x0098 - 152"
+value(153)="Modulnr. 0x0099 - 153"
+value(154)="Modulnr. 0x009a - 154"
+value(155)="Modulnr. 0x009b - 155"
+value(156)="Modulnr. 0x009c - 156"
+value(157)="Modulnr. 0x009d - 157"
+value(158)="Modulnr. 0x009e - 158"
+value(159)="Modulnr. 0x009f - 159"
+value(160)="Modulnr. 0x00a0 - 160"
+value(161)="Modulnr. 0x00a1 - 161"
+value(162)="Modulnr. 0x00a2 - 162"
+value(163)="Modulnr. 0x00a3 - 163"
+value(164)="Modulnr. 0x00a4 - 164"
+value(165)="Modulnr. 0x00a5 - 165"
+value(166)="Modulnr. 0x00a6 - 166"
+value(167)="Modulnr. 0x00a7 - 167"
+value(168)="Modulnr. 0x00a8 - 168"
+value(169)="Modulnr. 0x00a9 - 169"
+value(170)="Modulnr. 0x00aa - 170"
+value(171)="Modulnr. 0x00ab - 171"
+value(172)="Modulnr. 0x00ac - 172"
+value(173)="Modulnr. 0x00ad - 173"
+value(174)="Modulnr. 0x00ae - 174"
+value(175)="Modulnr. 0x00af - 175"
+value(176)="Modulnr. 0x00b0 - 176"
+value(177)="Modulnr. 0x00b1 - 177"
+value(178)="Modulnr. 0x00b2 - 178"
+value(179)="Modulnr. 0x00b3 - 179"
+value(180)="Modulnr. 0x00b4 - 180"
+value(181)="Modulnr. 0x00b5 - 181"
+value(182)="Modulnr. 0x00b6 - 182"
+value(183)="Modulnr. 0x00b7 - 183"
+value(184)="Modulnr. 0x00b8 - 184"
+value(185)="Modulnr. 0x00b9 - 185"
+value(186)="Modulnr. 0x00ba - 186"
+value(187)="Modulnr. 0x00bb - 187"
+value(188)="Modulnr. 0x00bc - 188"
+value(189)="Modulnr. 0x00bd - 189"
+value(190)="Modulnr. 0x00be - 190"
+value(191)="Modulnr. 0x00bf - 191"
+value(192)="Modulnr. 0x00c0 - 192"
+value(193)="Modulnr. 0x00c1 - 193"
+value(194)="Modulnr. 0x00c2 - 194"
+value(195)="Modulnr. 0x00c3 - 195"
+value(196)="Modulnr. 0x00c4 - 196"
+value(197)="Modulnr. 0x00c5 - 197"
+value(198)="Modulnr. 0x00c6 - 198"
+value(199)="Modulnr. 0x00c7 - 199"
+value(200)="Modulnr. 0x00c8 - 200"
+value(201)="Modulnr. 0x00c9 - 201"
+value(202)="Modulnr. 0x00ca - 202"
+value(203)="Modulnr. 0x00cb - 203"
+value(204)="Modulnr. 0x00cc - 204"
+value(205)="Modulnr. 0x00cd - 205"
+value(206)="Modulnr. 0x00ce - 206"
+value(207)="Modulnr. 0x00cf - 207"
+value(208)="Modulnr. 0x00d0 - 208"
+value(209)="Modulnr. 0x00d1 - 209"
+value(210)="Modulnr. 0x00d2 - 210"
+value(211)="Modulnr. 0x00d3 - 211"
+value(212)="Modulnr. 0x00d4 - 212"
+value(213)="Modulnr. 0x00d5 - 213"
+value(214)="Modulnr. 0x00d6 - 214"
+value(215)="Modulnr. 0x00d7 - 215"
+value(216)="Modulnr. 0x00d8 - 216"
+value(217)="Modulnr. 0x00d9 - 217"
+value(218)="Modulnr. 0x00da - 218"
+value(219)="Modulnr. 0x00db - 219"
+value(220)="Modulnr. 0x00dc - 220"
+value(221)="Modulnr. 0x00dd - 221"
+value(222)="Modulnr. 0x00de - 222"
+value(223)="Modulnr. 0x00df - 223"
+value(224)="Modulnr. 0x00e0 - 224"
+value(225)="Modulnr. 0x00e1 - 225"
+value(226)="Modulnr. 0x00e2 - 226"
+value(227)="Modulnr. 0x00e3 - 227"
+value(228)="Modulnr. 0x00e4 - 228"
+value(229)="Modulnr. 0x00e5 - 229"
+value(230)="Modulnr. 0x00e6 - 230"
+value(231)="Modulnr. 0x00e7 - 231"
+value(232)="Modulnr. 0x00e8 - 232"
+value(233)="Modulnr. 0x00e9 - 233"
+value(234)="Modulnr. 0x00ea - 234"
+value(235)="Modulnr. 0x00eb - 235"
+value(236)="Modulnr. 0x00ec - 236"
+value(237)="Modulnr. 0x00ed - 237"
+value(238)="Modulnr. 0x00ee - 238"
+value(239)="Modulnr. 0x00ef - 239"
+value(240)="Modulnr. 0x00f0 - 240"
+value(241)="Modulnr. 0x00f1 - 241"
+value(242)="Modulnr. 0x00f2 - 242"
+value(243)="Modulnr. 0x00f3 - 243"
+value(244)="Modulnr. 0x00f4 - 244"
+value(245)="Modulnr. 0x00f5 - 245"
+value(246)="Modulnr. 0x00f6 - 246"
+value(247)="Modulnr. 0x00f7 - 247"
+value(248)="Modulnr. 0x00f8 - 248"
+value(249)="Modulnr. 0x00f9 - 249"
+value(250)="Modulnr. 0x00fa - 250"
+value(251)="Modulnr. 0x00fb - 251"
+value(252)="Modulnr. 0x00fc - 252"
+value(253)="Modulnr. 0x00fd - 253"
+value(254)="Modulnr. 0x00fe - 254"
+value(255)="Modulnr. 0x00ff - 255"
+value(256)="Modulnr. 0x0100 - 256"
+value(257)="Modulnr. 0x0101 - 257"
+value(258)="Modulnr. 0x0102 - 258"
+value(259)="Modulnr. 0x0103 - 259"
+value(260)="Modulnr. 0x0104 - 260"
+value(261)="Modulnr. 0x0105 - 261"
+value(262)="Modulnr. 0x0106 - 262"
+value(263)="Modulnr. 0x0107 - 263"
+value(264)="Modulnr. 0x0108 - 264"
+value(265)="Modulnr. 0x0109 - 265"
+value(266)="Modulnr. 0x010a - 266"
+value(267)="Modulnr. 0x010b - 267"
+value(268)="Modulnr. 0x010c - 268"
+value(269)="Modulnr. 0x010d - 269"
+value(270)="Modulnr. 0x010e - 270"
+value(271)="Modulnr. 0x010f - 271"
+value(272)="Modulnr. 0x0110 - 272"
+value(273)="Modulnr. 0x0111 - 273"
+value(274)="Modulnr. 0x0112 - 274"
+value(275)="Modulnr. 0x0113 - 275"
+value(276)="Modulnr. 0x0114 - 276"
+value(277)="Modulnr. 0x0115 - 277"
+value(278)="Modulnr. 0x0116 - 278"
+value(279)="Modulnr. 0x0117 - 279"
+value(280)="Modulnr. 0x0118 - 280"
+value(281)="Modulnr. 0x0119 - 281"
+value(282)="Modulnr. 0x011a - 282"
+value(283)="Modulnr. 0x011b - 283"
+value(284)="Modulnr. 0x011c - 284"
+value(285)="Modulnr. 0x011d - 285"
+value(286)="Modulnr. 0x011e - 286"
+value(287)="Modulnr. 0x011f - 287"
+value(288)="Modulnr. 0x0120 - 288"
+value(289)="Modulnr. 0x0121 - 289"
+value(290)="Modulnr. 0x0122 - 290"
+value(291)="Modulnr. 0x0123 - 291"
+value(292)="Modulnr. 0x0124 - 292"
+value(293)="Modulnr. 0x0125 - 293"
+value(294)="Modulnr. 0x0126 - 294"
+value(295)="Modulnr. 0x0127 - 295"
+value(296)="Modulnr. 0x0128 - 296"
+value(297)="Modulnr. 0x0129 - 297"
+value(298)="Modulnr. 0x012a - 298"
+value(299)="Modulnr. 0x012b - 299"
+value(300)="Modulnr. 0x012c - 300"
+value(301)="Modulnr. 0x012d - 301"
+value(302)="Modulnr. 0x012e - 302"
+value(303)="Modulnr. 0x012f - 303"
+value(304)="Modulnr. 0x0130 - 304"
+value(305)="Modulnr. 0x0131 - 305"
+value(306)="Modulnr. 0x0132 - 306"
+value(307)="Modulnr. 0x0133 - 307"
+value(308)="Modulnr. 0x0134 - 308"
+value(309)="Modulnr. 0x0135 - 309"
+value(310)="Modulnr. 0x0136 - 310"
+value(311)="Modulnr. 0x0137 - 311"
+value(312)="Modulnr. 0x0138 - 312"
+value(313)="Modulnr. 0x0139 - 313"
+value(314)="Modulnr. 0x013a - 314"
+value(315)="Modulnr. 0x013b - 315"
+value(316)="Modulnr. 0x013c - 316"
+value(317)="Modulnr. 0x013d - 317"
+value(318)="Modulnr. 0x013e - 318"
+value(319)="Modulnr. 0x013f - 319"
+value(320)="Modulnr. 0x0140 - 320"
+value(321)="Modulnr. 0x0141 - 321"
+value(322)="Modulnr. 0x0142 - 322"
+value(323)="Modulnr. 0x0143 - 323"
+value(324)="Modulnr. 0x0144 - 324"
+value(325)="Modulnr. 0x0145 - 325"
+value(326)="Modulnr. 0x0146 - 326"
+value(327)="Modulnr. 0x0147 - 327"
+value(328)="Modulnr. 0x0148 - 328"
+value(329)="Modulnr. 0x0149 - 329"
+value(330)="Modulnr. 0x014a - 330"
+value(331)="Modulnr. 0x014b - 331"
+value(332)="Modulnr. 0x014c - 332"
+value(333)="Modulnr. 0x014d - 333"
+value(334)="Modulnr. 0x014e - 334"
+value(335)="Modulnr. 0x014f - 335"
+value(336)="Modulnr. 0x0150 - 336"
+value(337)="Modulnr. 0x0151 - 337"
+value(338)="Modulnr. 0x0152 - 338"
+value(339)="Modulnr. 0x0153 - 339"
+value(340)="Modulnr. 0x0154 - 340"
+value(341)="Modulnr. 0x0155 - 341"
+value(342)="Modulnr. 0x0156 - 342"
+value(343)="Modulnr. 0x0157 - 343"
+value(344)="Modulnr. 0x0158 - 344"
+value(345)="Modulnr. 0x0159 - 345"
+value(346)="Modulnr. 0x015a - 346"
+value(347)="Modulnr. 0x015b - 347"
+value(348)="Modulnr. 0x015c - 348"
+value(349)="Modulnr. 0x015d - 349"
+value(350)="Modulnr. 0x015e - 350"
+value(351)="Modulnr. 0x015f - 351"
+value(352)="Modulnr. 0x0160 - 352"
+value(353)="Modulnr. 0x0161 - 353"
+value(354)="Modulnr. 0x0162 - 354"
+value(355)="Modulnr. 0x0163 - 355"
+value(356)="Modulnr. 0x0164 - 356"
+value(357)="Modulnr. 0x0165 - 357"
+value(358)="Modulnr. 0x0166 - 358"
+value(359)="Modulnr. 0x0167 - 359"
+value(360)="Modulnr. 0x0168 - 360"
+value(361)="Modulnr. 0x0169 - 361"
+value(362)="Modulnr. 0x016a - 362"
+value(363)="Modulnr. 0x016b - 363"
+value(364)="Modulnr. 0x016c - 364"
+value(365)="Modulnr. 0x016d - 365"
+value(366)="Modulnr. 0x016e - 366"
+value(367)="Modulnr. 0x016f - 367"
+value(368)="Modulnr. 0x0170 - 368"
+value(369)="Modulnr. 0x0171 - 369"
+value(370)="Modulnr. 0x0172 - 370"
+value(371)="Modulnr. 0x0173 - 371"
+value(372)="Modulnr. 0x0174 - 372"
+value(373)="Modulnr. 0x0175 - 373"
+value(374)="Modulnr. 0x0176 - 374"
+value(375)="Modulnr. 0x0177 - 375"
+value(376)="Modulnr. 0x0178 - 376"
+value(377)="Modulnr. 0x0179 - 377"
+value(378)="Modulnr. 0x017a - 378"
+value(379)="Modulnr. 0x017b - 379"
+value(380)="Modulnr. 0x017c - 380"
+value(381)="Modulnr. 0x017d - 381"
+value(382)="Modulnr. 0x017e - 382"
+value(383)="Modulnr. 0x017f - 383"
+value(384)="Modulnr. 0x0180 - 384"
+value(385)="Modulnr. 0x0181 - 385"
+value(386)="Modulnr. 0x0182 - 386"
+value(387)="Modulnr. 0x0183 - 387"
+value(388)="Modulnr. 0x0184 - 388"
+value(389)="Modulnr. 0x0185 - 389"
+value(390)="Modulnr. 0x0186 - 390"
+value(391)="Modulnr. 0x0187 - 391"
+value(392)="Modulnr. 0x0188 - 392"
+value(393)="Modulnr. 0x0189 - 393"
+value(394)="Modulnr. 0x018a - 394"
+value(395)="Modulnr. 0x018b - 395"
+value(396)="Modulnr. 0x018c - 396"
+value(397)="Modulnr. 0x018d - 397"
+value(398)="Modulnr. 0x018e - 398"
+value(399)="Modulnr. 0x018f - 399"
+value(400)="Modulnr. 0x0190 - 400"
+value(401)="Modulnr. 0x0191 - 401"
+value(402)="Modulnr. 0x0192 - 402"
+value(403)="Modulnr. 0x0193 - 403"
+value(404)="Modulnr. 0x0194 - 404"
+value(405)="Modulnr. 0x0195 - 405"
+value(406)="Modulnr. 0x0196 - 406"
+value(407)="Modulnr. 0x0197 - 407"
+value(408)="Modulnr. 0x0198 - 408"
+value(409)="Modulnr. 0x0199 - 409"
+value(410)="Modulnr. 0x019a - 410"
+value(411)="Modulnr. 0x019b - 411"
+value(412)="Modulnr. 0x019c - 412"
+value(413)="Modulnr. 0x019d - 413"
+value(414)="Modulnr. 0x019e - 414"
+value(415)="Modulnr. 0x019f - 415"
+value(416)="Modulnr. 0x01a0 - 416"
+value(417)="Modulnr. 0x01a1 - 417"
+value(418)="Modulnr. 0x01a2 - 418"
+value(419)="Modulnr. 0x01a3 - 419"
+value(420)="Modulnr. 0x01a4 - 420"
+value(421)="Modulnr. 0x01a5 - 421"
+value(422)="Modulnr. 0x01a6 - 422"
+value(423)="Modulnr. 0x01a7 - 423"
+value(424)="Modulnr. 0x01a8 - 424"
+value(425)="Modulnr. 0x01a9 - 425"
+value(426)="Modulnr. 0x01aa - 426"
+value(427)="Modulnr. 0x01ab - 427"
+value(428)="Modulnr. 0x01ac - 428"
+value(429)="Modulnr. 0x01ad - 429"
+value(430)="Modulnr. 0x01ae - 430"
+value(431)="Modulnr. 0x01af - 431"
+value(432)="Modulnr. 0x01b0 - 432"
+value(433)="Modulnr. 0x01b1 - 433"
+value(434)="Modulnr. 0x01b2 - 434"
+value(435)="Modulnr. 0x01b3 - 435"
+value(436)="Modulnr. 0x01b4 - 436"
+value(437)="Modulnr. 0x01b5 - 437"
+value(438)="Modulnr. 0x01b6 - 438"
+value(439)="Modulnr. 0x01b7 - 439"
+value(440)="Modulnr. 0x01b8 - 440"
+value(441)="Modulnr. 0x01b9 - 441"
+value(442)="Modulnr. 0x01ba - 442"
+value(443)="Modulnr. 0x01bb - 443"
+value(444)="Modulnr. 0x01bc - 444"
+value(445)="Modulnr. 0x01bd - 445"
+value(446)="Modulnr. 0x01be - 446"
+value(447)="Modulnr. 0x01bf - 447"
+value(448)="Modulnr. 0x01c0 - 448"
+value(449)="Modulnr. 0x01c1 - 449"
+value(450)="Modulnr. 0x01c2 - 450"
+value(451)="Modulnr. 0x01c3 - 451"
+value(452)="Modulnr. 0x01c4 - 452"
+value(453)="Modulnr. 0x01c5 - 453"
+value(454)="Modulnr. 0x01c6 - 454"
+value(455)="Modulnr. 0x01c7 - 455"
+value(456)="Modulnr. 0x01c8 - 456"
+value(457)="Modulnr. 0x01c9 - 457"
+value(458)="Modulnr. 0x01ca - 458"
+value(459)="Modulnr. 0x01cb - 459"
+value(460)="Modulnr. 0x01cc - 460"
+value(461)="Modulnr. 0x01cd - 461"
+value(462)="Modulnr. 0x01ce - 462"
+value(463)="Modulnr. 0x01cf - 463"
+value(464)="Modulnr. 0x01d0 - 464"
+value(465)="Modulnr. 0x01d1 - 465"
+value(466)="Modulnr. 0x01d2 - 466"
+value(467)="Modulnr. 0x01d3 - 467"
+value(468)="Modulnr. 0x01d4 - 468"
+value(469)="Modulnr. 0x01d5 - 469"
+value(470)="Modulnr. 0x01d6 - 470"
+value(471)="Modulnr. 0x01d7 - 471"
+value(472)="Modulnr. 0x01d8 - 472"
+value(473)="Modulnr. 0x01d9 - 473"
+value(474)="Modulnr. 0x01da - 474"
+value(475)="Modulnr. 0x01db - 475"
+value(476)="Modulnr. 0x01dc - 476"
+value(477)="Modulnr. 0x01dd - 477"
+value(478)="Modulnr. 0x01de - 478"
+value(479)="Modulnr. 0x01df - 479"
+value(480)="Modulnr. 0x01e0 - 480"
+value(481)="Modulnr. 0x01e1 - 481"
+value(482)="Modulnr. 0x01e2 - 482"
+value(483)="Modulnr. 0x01e3 - 483"
+value(484)="Modulnr. 0x01e4 - 484"
+value(485)="Modulnr. 0x01e5 - 485"
+value(486)="Modulnr. 0x01e6 - 486"
+value(487)="Modulnr. 0x01e7 - 487"
+value(488)="Modulnr. 0x01e8 - 488"
+value(489)="Modulnr. 0x01e9 - 489"
+value(490)="Modulnr. 0x01ea - 490"
+value(491)="Modulnr. 0x01eb - 491"
+value(492)="Modulnr. 0x01ec - 492"
+value(493)="Modulnr. 0x01ed - 493"
+value(494)="Modulnr. 0x01ee - 494"
+value(495)="Modulnr. 0x01ef - 495"
+value(496)="Modulnr. 0x01f0 - 496"
+value(497)="Modulnr. 0x01f1 - 497"
+value(498)="Modulnr. 0x01f2 - 498"
+value(499)="Modulnr. 0x01f3 - 499"
+value(500)="Modulnr. 0x01f4 - 500"
+value(501)="Modulnr. 0x01f5 - 501"
+value(502)="Modulnr. 0x01f6 - 502"
+value(503)="Modulnr. 0x01f7 - 503"
+value(504)="Modulnr. 0x01f8 - 504"
+value(505)="Modulnr. 0x01f9 - 505"
+value(506)="Modulnr. 0x01fa - 506"
+value(507)="Modulnr. 0x01fb - 507"
+value(508)="Modulnr. 0x01fc - 508"
+value(509)="Modulnr. 0x01fd - 509"
+value(510)="Modulnr. 0x01fe - 510"
+value(511)="Modulnr. 0x01ff - 511"
+value(512)="Modulnr. 0x0200 - 512"
+value(513)="Modulnr. 0x0201 - 513"
+value(514)="Modulnr. 0x0202 - 514"
+value(515)="Modulnr. 0x0203 - 515"
+value(516)="Modulnr. 0x0204 - 516"
+value(517)="Modulnr. 0x0205 - 517"
+value(518)="Modulnr. 0x0206 - 518"
+value(519)="Modulnr. 0x0207 - 519"
+value(520)="Modulnr. 0x0208 - 520"
+value(521)="Modulnr. 0x0209 - 521"
+value(522)="Modulnr. 0x020a - 522"
+value(523)="Modulnr. 0x020b - 523"
+value(524)="Modulnr. 0x020c - 524"
+value(525)="Modulnr. 0x020d - 525"
+value(526)="Modulnr. 0x020e - 526"
+value(527)="Modulnr. 0x020f - 527"
+value(528)="Modulnr. 0x0210 - 528"
+value(529)="Modulnr. 0x0211 - 529"
+value(530)="Modulnr. 0x0212 - 530"
+value(531)="Modulnr. 0x0213 - 531"
+value(532)="Modulnr. 0x0214 - 532"
+value(533)="Modulnr. 0x0215 - 533"
+value(534)="Modulnr. 0x0216 - 534"
+value(535)="Modulnr. 0x0217 - 535"
+value(536)="Modulnr. 0x0218 - 536"
+value(537)="Modulnr. 0x0219 - 537"
+value(538)="Modulnr. 0x021a - 538"
+value(539)="Modulnr. 0x021b - 539"
+value(540)="Modulnr. 0x021c - 540"
+value(541)="Modulnr. 0x021d - 541"
+value(542)="Modulnr. 0x021e - 542"
+value(543)="Modulnr. 0x021f - 543"
+value(544)="Modulnr. 0x0220 - 544"
+value(545)="Modulnr. 0x0221 - 545"
+value(546)="Modulnr. 0x0222 - 546"
+value(547)="Modulnr. 0x0223 - 547"
+value(548)="Modulnr. 0x0224 - 548"
+value(549)="Modulnr. 0x0225 - 549"
+value(550)="Modulnr. 0x0226 - 550"
+value(551)="Modulnr. 0x0227 - 551"
+value(552)="Modulnr. 0x0228 - 552"
+value(553)="Modulnr. 0x0229 - 553"
+value(554)="Modulnr. 0x022a - 554"
+value(555)="Modulnr. 0x022b - 555"
+value(556)="Modulnr. 0x022c - 556"
+value(557)="Modulnr. 0x022d - 557"
+value(558)="Modulnr. 0x022e - 558"
+value(559)="Modulnr. 0x022f - 559"
+value(560)="Modulnr. 0x0230 - 560"
+value(561)="Modulnr. 0x0231 - 561"
+value(562)="Modulnr. 0x0232 - 562"
+value(563)="Modulnr. 0x0233 - 563"
+value(564)="Modulnr. 0x0234 - 564"
+value(565)="Modulnr. 0x0235 - 565"
+value(566)="Modulnr. 0x0236 - 566"
+value(567)="Modulnr. 0x0237 - 567"
+value(568)="Modulnr. 0x0238 - 568"
+value(569)="Modulnr. 0x0239 - 569"
+value(570)="Modulnr. 0x023a - 570"
+value(571)="Modulnr. 0x023b - 571"
+value(572)="Modulnr. 0x023c - 572"
+value(573)="Modulnr. 0x023d - 573"
+value(574)="Modulnr. 0x023e - 574"
+value(575)="Modulnr. 0x023f - 575"
+value(576)="Modulnr. 0x0240 - 576"
+value(577)="Modulnr. 0x0241 - 577"
+value(578)="Modulnr. 0x0242 - 578"
+value(579)="Modulnr. 0x0243 - 579"
+value(580)="Modulnr. 0x0244 - 580"
+value(581)="Modulnr. 0x0245 - 581"
+value(582)="Modulnr. 0x0246 - 582"
+value(583)="Modulnr. 0x0247 - 583"
+value(584)="Modulnr. 0x0248 - 584"
+value(585)="Modulnr. 0x0249 - 585"
+value(586)="Modulnr. 0x024a - 586"
+value(587)="Modulnr. 0x024b - 587"
+value(588)="Modulnr. 0x024c - 588"
+value(589)="Modulnr. 0x024d - 589"
+value(590)="Modulnr. 0x024e - 590"
+value(591)="Modulnr. 0x024f - 591"
+value(592)="Modulnr. 0x0250 - 592"
+value(593)="Modulnr. 0x0251 - 593"
+value(594)="Modulnr. 0x0252 - 594"
+value(595)="Modulnr. 0x0253 - 595"
+value(596)="Modulnr. 0x0254 - 596"
+value(597)="Modulnr. 0x0255 - 597"
+value(598)="Modulnr. 0x0256 - 598"
+value(599)="Modulnr. 0x0257 - 599"
+value(600)="Modulnr. 0x0258 - 600"
+value(601)="Modulnr. 0x0259 - 601"
+value(602)="Modulnr. 0x025a - 602"
+value(603)="Modulnr. 0x025b - 603"
+value(604)="Modulnr. 0x025c - 604"
+value(605)="Modulnr. 0x025d - 605"
+value(606)="Modulnr. 0x025e - 606"
+value(607)="Modulnr. 0x025f - 607"
+value(608)="Modulnr. 0x0260 - 608"
+value(609)="Modulnr. 0x0261 - 609"
+value(610)="Modulnr. 0x0262 - 610"
+value(611)="Modulnr. 0x0263 - 611"
+value(612)="Modulnr. 0x0264 - 612"
+value(613)="Modulnr. 0x0265 - 613"
+value(614)="Modulnr. 0x0266 - 614"
+value(615)="Modulnr. 0x0267 - 615"
+value(616)="Modulnr. 0x0268 - 616"
+value(617)="Modulnr. 0x0269 - 617"
+value(618)="Modulnr. 0x026a - 618"
+value(619)="Modulnr. 0x026b - 619"
+value(620)="Modulnr. 0x026c - 620"
+value(621)="Modulnr. 0x026d - 621"
+value(622)="Modulnr. 0x026e - 622"
+value(623)="Modulnr. 0x026f - 623"
+value(624)="Modulnr. 0x0270 - 624"
+value(625)="Modulnr. 0x0271 - 625"
+value(626)="Modulnr. 0x0272 - 626"
+value(627)="Modulnr. 0x0273 - 627"
+value(628)="Modulnr. 0x0274 - 628"
+value(629)="Modulnr. 0x0275 - 629"
+value(630)="Modulnr. 0x0276 - 630"
+value(631)="Modulnr. 0x0277 - 631"
+value(632)="Modulnr. 0x0278 - 632"
+value(633)="Modulnr. 0x0279 - 633"
+value(634)="Modulnr. 0x027a - 634"
+value(635)="Modulnr. 0x027b - 635"
+value(636)="Modulnr. 0x027c - 636"
+value(637)="Modulnr. 0x027d - 637"
+value(638)="Modulnr. 0x027e - 638"
+value(639)="Modulnr. 0x027f - 639"
+value(640)="Modulnr. 0x0280 - 640"
+value(641)="Modulnr. 0x0281 - 641"
+value(642)="Modulnr. 0x0282 - 642"
+value(643)="Modulnr. 0x0283 - 643"
+value(644)="Modulnr. 0x0284 - 644"
+value(645)="Modulnr. 0x0285 - 645"
+value(646)="Modulnr. 0x0286 - 646"
+value(647)="Modulnr. 0x0287 - 647"
+value(648)="Modulnr. 0x0288 - 648"
+value(649)="Modulnr. 0x0289 - 649"
+value(650)="Modulnr. 0x028a - 650"
+value(651)="Modulnr. 0x028b - 651"
+value(652)="Modulnr. 0x028c - 652"
+value(653)="Modulnr. 0x028d - 653"
+value(654)="Modulnr. 0x028e - 654"
+value(655)="Modulnr. 0x028f - 655"
+value(656)="Modulnr. 0x0290 - 656"
+value(657)="Modulnr. 0x0291 - 657"
+value(658)="Modulnr. 0x0292 - 658"
+value(659)="Modulnr. 0x0293 - 659"
+value(660)="Modulnr. 0x0294 - 660"
+value(661)="Modulnr. 0x0295 - 661"
+value(662)="Modulnr. 0x0296 - 662"
+value(663)="Modulnr. 0x0297 - 663"
+value(664)="Modulnr. 0x0298 - 664"
+value(665)="Modulnr. 0x0299 - 665"
+value(666)="Modulnr. 0x029a - 666"
+value(667)="Modulnr. 0x029b - 667"
+value(668)="Modulnr. 0x029c - 668"
+value(669)="Modulnr. 0x029d - 669"
+value(670)="Modulnr. 0x029e - 670"
+value(671)="Modulnr. 0x029f - 671"
+value(672)="Modulnr. 0x02a0 - 672"
+value(673)="Modulnr. 0x02a1 - 673"
+value(674)="Modulnr. 0x02a2 - 674"
+value(675)="Modulnr. 0x02a3 - 675"
+value(676)="Modulnr. 0x02a4 - 676"
+value(677)="Modulnr. 0x02a5 - 677"
+value(678)="Modulnr. 0x02a6 - 678"
+value(679)="Modulnr. 0x02a7 - 679"
+value(680)="Modulnr. 0x02a8 - 680"
+value(681)="Modulnr. 0x02a9 - 681"
+value(682)="Modulnr. 0x02aa - 682"
+value(683)="Modulnr. 0x02ab - 683"
+value(684)="Modulnr. 0x02ac - 684"
+value(685)="Modulnr. 0x02ad - 685"
+value(686)="Modulnr. 0x02ae - 686"
+value(687)="Modulnr. 0x02af - 687"
+value(688)="Modulnr. 0x02b0 - 688"
+value(689)="Modulnr. 0x02b1 - 689"
+value(690)="Modulnr. 0x02b2 - 690"
+value(691)="Modulnr. 0x02b3 - 691"
+value(692)="Modulnr. 0x02b4 - 692"
+value(693)="Modulnr. 0x02b5 - 693"
+value(694)="Modulnr. 0x02b6 - 694"
+value(695)="Modulnr. 0x02b7 - 695"
+value(696)="Modulnr. 0x02b8 - 696"
+value(697)="Modulnr. 0x02b9 - 697"
+value(698)="Modulnr. 0x02ba - 698"
+value(699)="Modulnr. 0x02bb - 699"
+value(700)="Modulnr. 0x02bc - 700"
+value(701)="Modulnr. 0x02bd - 701"
+value(702)="Modulnr. 0x02be - 702"
+value(703)="Modulnr. 0x02bf - 703"
+value(704)="Modulnr. 0x02c0 - 704"
+value(705)="Modulnr. 0x02c1 - 705"
+value(706)="Modulnr. 0x02c2 - 706"
+value(707)="Modulnr. 0x02c3 - 707"
+value(708)="Modulnr. 0x02c4 - 708"
+value(709)="Modulnr. 0x02c5 - 709"
+value(710)="Modulnr. 0x02c6 - 710"
+value(711)="Modulnr. 0x02c7 - 711"
+value(712)="Modulnr. 0x02c8 - 712"
+value(713)="Modulnr. 0x02c9 - 713"
+value(714)="Modulnr. 0x02ca - 714"
+value(715)="Modulnr. 0x02cb - 715"
+value(716)="Modulnr. 0x02cc - 716"
+value(717)="Modulnr. 0x02cd - 717"
+value(718)="Modulnr. 0x02ce - 718"
+value(719)="Modulnr. 0x02cf - 719"
+value(720)="Modulnr. 0x02d0 - 720"
+value(721)="Modulnr. 0x02d1 - 721"
+value(722)="Modulnr. 0x02d2 - 722"
+value(723)="Modulnr. 0x02d3 - 723"
+value(724)="Modulnr. 0x02d4 - 724"
+value(725)="Modulnr. 0x02d5 - 725"
+value(726)="Modulnr. 0x02d6 - 726"
+value(727)="Modulnr. 0x02d7 - 727"
+value(728)="Modulnr. 0x02d8 - 728"
+value(729)="Modulnr. 0x02d9 - 729"
+value(730)="Modulnr. 0x02da - 730"
+value(731)="Modulnr. 0x02db - 731"
+value(732)="Modulnr. 0x02dc - 732"
+value(733)="Modulnr. 0x02dd - 733"
+value(734)="Modulnr. 0x02de - 734"
+value(735)="Modulnr. 0x02df - 735"
+value(736)="Modulnr. 0x02e0 - 736"
+value(737)="Modulnr. 0x02e1 - 737"
+value(738)="Modulnr. 0x02e2 - 738"
+value(739)="Modulnr. 0x02e3 - 739"
+value(740)="Modulnr. 0x02e4 - 740"
+value(741)="Modulnr. 0x02e5 - 741"
+value(742)="Modulnr. 0x02e6 - 742"
+value(743)="Modulnr. 0x02e7 - 743"
+value(744)="Modulnr. 0x02e8 - 744"
+value(745)="Modulnr. 0x02e9 - 745"
+value(746)="Modulnr. 0x02ea - 746"
+value(747)="Modulnr. 0x02eb - 747"
+value(748)="Modulnr. 0x02ec - 748"
+value(749)="Modulnr. 0x02ed - 749"
+value(750)="Modulnr. 0x02ee - 750"
+value(751)="Modulnr. 0x02ef - 751"
+value(752)="Modulnr. 0x02f0 - 752"
+value(753)="Modulnr. 0x02f1 - 753"
+value(754)="Modulnr. 0x02f2 - 754"
+value(755)="Modulnr. 0x02f3 - 755"
+value(756)="Modulnr. 0x02f4 - 756"
+value(757)="Modulnr. 0x02f5 - 757"
+value(758)="Modulnr. 0x02f6 - 758"
+value(759)="Modulnr. 0x02f7 - 759"
+value(760)="Modulnr. 0x02f8 - 760"
+value(761)="Modulnr. 0x02f9 - 761"
+value(762)="Modulnr. 0x02fa - 762"
+value(763)="Modulnr. 0x02fb - 763"
+value(764)="Modulnr. 0x02fc - 764"
+value(765)="Modulnr. 0x02fd - 765"
+value(766)="Modulnr. 0x02fe - 766"
+value(767)="Modulnr. 0x02ff - 767"
+value(768)="Modulnr. 0x0300 - 768"
+value(769)="Modulnr. 0x0301 - 769"
+value(770)="Modulnr. 0x0302 - 770"
+value(771)="Modulnr. 0x0303 - 771"
+value(772)="Modulnr. 0x0304 - 772"
+value(773)="Modulnr. 0x0305 - 773"
+value(774)="Modulnr. 0x0306 - 774"
+value(775)="Modulnr. 0x0307 - 775"
+value(776)="Modulnr. 0x0308 - 776"
+value(777)="Modulnr. 0x0309 - 777"
+value(778)="Modulnr. 0x030a - 778"
+value(779)="Modulnr. 0x030b - 779"
+value(780)="Modulnr. 0x030c - 780"
+value(781)="Modulnr. 0x030d - 781"
+value(782)="Modulnr. 0x030e - 782"
+value(783)="Modulnr. 0x030f - 783"
+value(784)="Modulnr. 0x0310 - 784"
+value(785)="Modulnr. 0x0311 - 785"
+value(786)="Modulnr. 0x0312 - 786"
+value(787)="Modulnr. 0x0313 - 787"
+value(788)="Modulnr. 0x0314 - 788"
+value(789)="Modulnr. 0x0315 - 789"
+value(790)="Modulnr. 0x0316 - 790"
+value(791)="Modulnr. 0x0317 - 791"
+value(792)="Modulnr. 0x0318 - 792"
+value(793)="Modulnr. 0x0319 - 793"
+value(794)="Modulnr. 0x031a - 794"
+value(795)="Modulnr. 0x031b - 795"
+value(796)="Modulnr. 0x031c - 796"
+value(797)="Modulnr. 0x031d - 797"
+value(798)="Modulnr. 0x031e - 798"
+value(799)="Modulnr. 0x031f - 799"
+value(800)="Modulnr. 0x0320 - 800"
+value(801)="Modulnr. 0x0321 - 801"
+value(802)="Modulnr. 0x0322 - 802"
+value(803)="Modulnr. 0x0323 - 803"
+value(804)="Modulnr. 0x0324 - 804"
+value(805)="Modulnr. 0x0325 - 805"
+value(806)="Modulnr. 0x0326 - 806"
+value(807)="Modulnr. 0x0327 - 807"
+value(808)="Modulnr. 0x0328 - 808"
+value(809)="Modulnr. 0x0329 - 809"
+value(810)="Modulnr. 0x032a - 810"
+value(811)="Modulnr. 0x032b - 811"
+value(812)="Modulnr. 0x032c - 812"
+value(813)="Modulnr. 0x032d - 813"
+value(814)="Modulnr. 0x032e - 814"
+value(815)="Modulnr. 0x032f - 815"
+value(816)="Modulnr. 0x0330 - 816"
+value(817)="Modulnr. 0x0331 - 817"
+value(818)="Modulnr. 0x0332 - 818"
+value(819)="Modulnr. 0x0333 - 819"
+value(820)="Modulnr. 0x0334 - 820"
+value(821)="Modulnr. 0x0335 - 821"
+value(822)="Modulnr. 0x0336 - 822"
+value(823)="Modulnr. 0x0337 - 823"
+value(824)="Modulnr. 0x0338 - 824"
+value(825)="Modulnr. 0x0339 - 825"
+value(826)="Modulnr. 0x033a - 826"
+value(827)="Modulnr. 0x033b - 827"
+value(828)="Modulnr. 0x033c - 828"
+value(829)="Modulnr. 0x033d - 829"
+value(830)="Modulnr. 0x033e - 830"
+value(831)="Modulnr. 0x033f - 831"
+value(832)="Modulnr. 0x0340 - 832"
+value(833)="Modulnr. 0x0341 - 833"
+value(834)="Modulnr. 0x0342 - 834"
+value(835)="Modulnr. 0x0343 - 835"
+value(836)="Modulnr. 0x0344 - 836"
+value(837)="Modulnr. 0x0345 - 837"
+value(838)="Modulnr. 0x0346 - 838"
+value(839)="Modulnr. 0x0347 - 839"
+value(840)="Modulnr. 0x0348 - 840"
+value(841)="Modulnr. 0x0349 - 841"
+value(842)="Modulnr. 0x034a - 842"
+value(843)="Modulnr. 0x034b - 843"
+value(844)="Modulnr. 0x034c - 844"
+value(845)="Modulnr. 0x034d - 845"
+value(846)="Modulnr. 0x034e - 846"
+value(847)="Modulnr. 0x034f - 847"
+value(848)="Modulnr. 0x0350 - 848"
+value(849)="Modulnr. 0x0351 - 849"
+value(850)="Modulnr. 0x0352 - 850"
+value(851)="Modulnr. 0x0353 - 851"
+value(852)="Modulnr. 0x0354 - 852"
+value(853)="Modulnr. 0x0355 - 853"
+value(854)="Modulnr. 0x0356 - 854"
+value(855)="Modulnr. 0x0357 - 855"
+value(856)="Modulnr. 0x0358 - 856"
+value(857)="Modulnr. 0x0359 - 857"
+value(858)="Modulnr. 0x035a - 858"
+value(859)="Modulnr. 0x035b - 859"
+value(860)="Modulnr. 0x035c - 860"
+value(861)="Modulnr. 0x035d - 861"
+value(862)="Modulnr. 0x035e - 862"
+value(863)="Modulnr. 0x035f - 863"
+value(864)="Modulnr. 0x0360 - 864"
+value(865)="Modulnr. 0x0361 - 865"
+value(866)="Modulnr. 0x0362 - 866"
+value(867)="Modulnr. 0x0363 - 867"
+value(868)="Modulnr. 0x0364 - 868"
+value(869)="Modulnr. 0x0365 - 869"
+value(870)="Modulnr. 0x0366 - 870"
+value(871)="Modulnr. 0x0367 - 871"
+value(872)="Modulnr. 0x0368 - 872"
+value(873)="Modulnr. 0x0369 - 873"
+value(874)="Modulnr. 0x036a - 874"
+value(875)="Modulnr. 0x036b - 875"
+value(876)="Modulnr. 0x036c - 876"
+value(877)="Modulnr. 0x036d - 877"
+value(878)="Modulnr. 0x036e - 878"
+value(879)="Modulnr. 0x036f - 879"
+value(880)="Modulnr. 0x0370 - 880"
+value(881)="Modulnr. 0x0371 - 881"
+value(882)="Modulnr. 0x0372 - 882"
+value(883)="Modulnr. 0x0373 - 883"
+value(884)="Modulnr. 0x0374 - 884"
+value(885)="Modulnr. 0x0375 - 885"
+value(886)="Modulnr. 0x0376 - 886"
+value(887)="Modulnr. 0x0377 - 887"
+value(888)="Modulnr. 0x0378 - 888"
+value(889)="Modulnr. 0x0379 - 889"
+value(890)="Modulnr. 0x037a - 890"
+value(891)="Modulnr. 0x037b - 891"
+value(892)="Modulnr. 0x037c - 892"
+value(893)="Modulnr. 0x037d - 893"
+value(894)="Modulnr. 0x037e - 894"
+value(895)="Modulnr. 0x037f - 895"
+value(896)="Modulnr. 0x0380 - 896"
+value(897)="Modulnr. 0x0381 - 897"
+value(898)="Modulnr. 0x0382 - 898"
+value(899)="Modulnr. 0x0383 - 899"
+value(900)="Modulnr. 0x0384 - 900"
+value(901)="Modulnr. 0x0385 - 901"
+value(902)="Modulnr. 0x0386 - 902"
+value(903)="Modulnr. 0x0387 - 903"
+value(904)="Modulnr. 0x0388 - 904"
+value(905)="Modulnr. 0x0389 - 905"
+value(906)="Modulnr. 0x038a - 906"
+value(907)="Modulnr. 0x038b - 907"
+value(908)="Modulnr. 0x038c - 908"
+value(909)="Modulnr. 0x038d - 909"
+value(910)="Modulnr. 0x038e - 910"
+value(911)="Modulnr. 0x038f - 911"
+value(912)="Modulnr. 0x0390 - 912"
+value(913)="Modulnr. 0x0391 - 913"
+value(914)="Modulnr. 0x0392 - 914"
+value(915)="Modulnr. 0x0393 - 915"
+value(916)="Modulnr. 0x0394 - 916"
+value(917)="Modulnr. 0x0395 - 917"
+value(918)="Modulnr. 0x0396 - 918"
+value(919)="Modulnr. 0x0397 - 919"
+value(920)="Modulnr. 0x0398 - 920"
+value(921)="Modulnr. 0x0399 - 921"
+value(922)="Modulnr. 0x039a - 922"
+value(923)="Modulnr. 0x039b - 923"
+value(924)="Modulnr. 0x039c - 924"
+value(925)="Modulnr. 0x039d - 925"
+value(926)="Modulnr. 0x039e - 926"
+value(927)="Modulnr. 0x039f - 927"
+value(928)="Modulnr. 0x03a0 - 928"
+value(929)="Modulnr. 0x03a1 - 929"
+value(930)="Modulnr. 0x03a2 - 930"
+value(931)="Modulnr. 0x03a3 - 931"
+value(932)="Modulnr. 0x03a4 - 932"
+value(933)="Modulnr. 0x03a5 - 933"
+value(934)="Modulnr. 0x03a6 - 934"
+value(935)="Modulnr. 0x03a7 - 935"
+value(936)="Modulnr. 0x03a8 - 936"
+value(937)="Modulnr. 0x03a9 - 937"
+value(938)="Modulnr. 0x03aa - 938"
+value(939)="Modulnr. 0x03ab - 939"
+value(940)="Modulnr. 0x03ac - 940"
+value(941)="Modulnr. 0x03ad - 941"
+value(942)="Modulnr. 0x03ae - 942"
+value(943)="Modulnr. 0x03af - 943"
+value(944)="Modulnr. 0x03b0 - 944"
+value(945)="Modulnr. 0x03b1 - 945"
+value(946)="Modulnr. 0x03b2 - 946"
+value(947)="Modulnr. 0x03b3 - 947"
+value(948)="Modulnr. 0x03b4 - 948"
+value(949)="Modulnr. 0x03b5 - 949"
+value(950)="Modulnr. 0x03b6 - 950"
+value(951)="Modulnr. 0x03b7 - 951"
+value(952)="Modulnr. 0x03b8 - 952"
+value(953)="Modulnr. 0x03b9 - 953"
+value(954)="Modulnr. 0x03ba - 954"
+value(955)="Modulnr. 0x03bb - 955"
+value(956)="Modulnr. 0x03bc - 956"
+value(957)="Modulnr. 0x03bd - 957"
+value(958)="Modulnr. 0x03be - 958"
+value(959)="Modulnr. 0x03bf - 959"
+value(960)="Modulnr. 0x03c0 - 960"
+value(961)="Modulnr. 0x03c1 - 961"
+value(962)="Modulnr. 0x03c2 - 962"
+value(963)="Modulnr. 0x03c3 - 963"
+value(964)="Modulnr. 0x03c4 - 964"
+value(965)="Modulnr. 0x03c5 - 965"
+value(966)="Modulnr. 0x03c6 - 966"
+value(967)="Modulnr. 0x03c7 - 967"
+value(968)="Modulnr. 0x03c8 - 968"
+value(969)="Modulnr. 0x03c9 - 969"
+value(970)="Modulnr. 0x03ca - 970"
+value(971)="Modulnr. 0x03cb - 971"
+value(972)="Modulnr. 0x03cc - 972"
+value(973)="Modulnr. 0x03cd - 973"
+value(974)="Modulnr. 0x03ce - 974"
+value(975)="Modulnr. 0x03cf - 975"
+value(976)="Modulnr. 0x03d0 - 976"
+value(977)="Modulnr. 0x03d1 - 977"
+value(978)="Modulnr. 0x03d2 - 978"
+value(979)="Modulnr. 0x03d3 - 979"
+value(980)="Modulnr. 0x03d4 - 980"
+value(981)="Modulnr. 0x03d5 - 981"
+value(982)="Modulnr. 0x03d6 - 982"
+value(983)="Modulnr. 0x03d7 - 983"
+value(984)="Modulnr. 0x03d8 - 984"
+value(985)="Modulnr. 0x03d9 - 985"
+value(986)="Modulnr. 0x03da - 986"
+value(987)="Modulnr. 0x03db - 987"
+value(988)="Modulnr. 0x03dc - 988"
+value(989)="Modulnr. 0x03dd - 989"
+value(990)="Modulnr. 0x03de - 990"
+value(991)="Modulnr. 0x03df - 991"
+value(992)="Modulnr. 0x03e0 - 992"
+value(993)="Modulnr. 0x03e1 - 993"
+value(994)="Modulnr. 0x03e2 - 994"
+value(995)="Modulnr. 0x03e3 - 995"
+value(996)="Modulnr. 0x03e4 - 996"
+value(997)="Modulnr. 0x03e5 - 997"
+value(998)="Modulnr. 0x03e6 - 998"
+value(999)="Modulnr. 0x03e7 - 999"
+value(1000)="Modulnr. 0x03e8 - 1000"
+value(1001)="Modulnr. 0x03e9 - 1001"
+value(1002)="Modulnr. 0x03ea - 1002"
+value(1003)="Modulnr. 0x03eb - 1003"
+value(1004)="Modulnr. 0x03ec - 1004"
+value(1005)="Modulnr. 0x03ed - 1005"
+value(1006)="Modulnr. 0x03ee - 1006"
+value(1007)="Modulnr. 0x03ef - 1007"
+value(1008)="Modulnr. 0x03f0 - 1008"
+value(1009)="Modulnr. 0x03f1 - 1009"
+value(1010)="Modulnr. 0x03f2 - 1010"
+value(1011)="Modulnr. 0x03f3 - 1011"
+value(1012)="Modulnr. 0x03f4 - 1012"
+value(1013)="Modulnr. 0x03f5 - 1013"
+value(1014)="Modulnr. 0x03f6 - 1014"
+value(1015)="Modulnr. 0x03f7 - 1015"
+value(1016)="Modulnr. 0x03f8 - 1016"
+value(1017)="Modulnr. 0x03f9 - 1017"
+value(1018)="Modulnr. 0x03fa - 1018"
+value(1019)="Modulnr. 0x03fb - 1019"
+value(1020)="Modulnr. 0x03fc - 1020"
+value(1021)="Modulnr. 0x03fd - 1021"
+value(1022)="Modulnr. 0x03fe - 1022"
+value(1023)="Modulnr. 0x03ff - 1023"
+Unit_Diag_Area_end
+
+Unit_Diag_Area=66-68
+Value(0)="Instanznr. 0"
+Value(1)="Instanznr. 1"
+Value(2)="Instanznr. 2"
+Value(3)="Instanznr. 3"
+Value(4)="Instanznr. 4"
+Value(5)="Instanznr. 5"
+Value(6)="Instanznr. 6"
+Value(7)="Instanznr. 7"
+Unit_Diag_Area_end
+
+
+Unit_Diag_Area=69-71
+Value(1)="Fehlerreak.: Fehler"
+Value(2)="Fehlerreak.: Stoerung"
+Value(3)="Fehlerreak.: QSP durch Stoerung"
+Value(4)="Fehlerreak.: arretierte Warnung"
+Value(5)="Fehlerreak.: Warnung"
+Unit_Diag_Area_end

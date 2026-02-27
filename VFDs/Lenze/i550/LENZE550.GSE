@@ -1,0 +1,1162 @@
+; (c) Lenze
+;
+; Profibus-DP     Device description file
+;
+; Author:         Lenze
+; Creation date:  28.02.2024
+; Changes:        Content reduced to Standard/IO
+;                 Added Check_Cfg_Mode
+;                 Valid starting with V02.01: Changed NETWordIN/OUT1 default Configuration
+;                 Update of names and diagnostic information
+;
+; Common details
+;
+#Profibus_DP
+;
+GSD_Revision = 5
+;
+; Herstellername
+Vendor_Name = "Lenze"
+;
+; Herstellerbezeichnung des DP-Geraetes
+Model_Name = "i550"
+;
+; Ausgabestand des DP-Geraetes
+Revision = "VA02.01"
+;
+; Ident-Nummer
+Ident_Number = 0xE550
+;
+; Protokollkennung des DP-Geraetes
+;       0: Profibus-DP
+;  16-255: Herstellerspezifisch
+Protocol_Ident = 0
+;
+; DP-Geraetetyp
+;       0: DP-Slave
+;       1: DP-Master Klasse 1
+Station_Type = 0
+;
+; kein FMS/DP-Mischgeraet
+FMS_supp = 0
+;
+; Hardware Ausgabestand des DP-Geraetes
+Hardware_Release="VA"
+;
+; Software Ausgabestand des DP-Geraetes
+Software_Release = "02.01"
+;
+9.6_supp = 1
+19.2_supp = 1
+45.45_supp = 1
+93.75_supp = 1
+187.5_supp = 1
+500_supp = 1
+1.5M_supp = 1
+3M_supp = 1
+6M_supp = 1
+12M_supp = 1
+;
+MaxTsdr_9.6   =  15
+MaxTsdr_19.2  =  15
+MaxTsdr_45.45 =  15
+MaxTsdr_93.75 =  15
+MaxTsdr_187.5 =  15
+MaxTsdr_500   =  15
+MaxTsdr_1.5M  =  20
+MaxTsdr_3M    =  35
+MaxTsdr_6M   =   50
+MaxTsdr_12M  =   95
+;
+; keine redundante Uebertragungstechnik
+Redundancy = 0
+;
+; RTS-Signalpegel (CNTR-P) Pin 4 des 9pol. SUB-D
+;     0: nicht vorhanden
+;     1: RS 485
+;     2: TTL
+Repeater_Ctrl_Sig = 2
+;
+; Bedeutung der 24V Pins des 9pol. SUB-D (Pin 7  24V;  Pin 2 GND)
+;     0: nicht angeschlossen
+;     1: Input
+;     2: Output
+24V_Pins = 0
+;
+Implementation_Type = "VPC3+"
+;
+Bitmap_Device = "LENZ550N"
+Bitmap_Diag   = "LENZ550D"
+Bitmap_SF     = "LENZ550S"
+;
+; Slave spezifische Werte
+;
+; Freeze-Mode wird nicht unterstuetzt
+Freeze_Mode_supp = 1
+;
+; Sync-Mode wird unterstuetzt
+Sync_Mode_supp = 1
+;
+; Automatische Baudratenerkennung wird unterstuetzt
+Auto_Baud_supp = 1
+;
+; Slave-Adresse kann vom Master gesetzt werden
+Set_Slave_Add_supp = 0
+;
+; Mindestabstand zwischen 2 Slavelistenumlaeufen  fuer das DP-Geraet
+; (xx * 100us)
+Min_Slave_Intervall = 1
+;
+; Modulare Station
+Modular_Station = 1
+;
+; Hoechstanzahl der Module einer Modularen Station
+Max_Module = 33
+;
+; Hoechstlaenge der Eingangsdaten einer Modularen Station
+Max_Input_Len = 40
+;
+; Hoechstlaenge der Ausgangsdaten einer Modularen Station
+Max_Output_Len = 40
+;
+; Groesste Summe der Ein- und Ausgangsdaten einer Modularen Station in Bytes
+Max_Data_Len = 80
+Max_Diag_Data_Len = 50
+;
+Slave_Family=1@Lenze
+;
+Fail_Safe=1
+;
+;--- GSD R3 slave extensions ---
+Info_Text = "Profibus i550, DP-Slave mit DP-V1"
+
+;--- DPV1 Information
+DPV1_Slave               = 1
+C1_Read_Write_supp       = 1
+C2_Read_Write_supp       = 1
+C1_Max_Data_Len          = 240
+C2_Max_Data_Len          = 240
+C1_Response_Timeout      = 100
+C2_Response_Timeout      = 100
+C2_Max_Count_Channels    = 1
+Max_Initiate_PDU_Length  = 64
+
+;--- State support Check CFG ---
+Check_Cfg_Mode = 1
+
+;--- I&M Funktionality ---
+Ident_Maintenance_supp   = 1
+
+;--- UsrPrmData Definitions ----------------------------------------
+Max_User_Prm_Data_Len      = 100  ;3 DPV1 Databytes + maximum of 97Byte for open module parameters
+Ext_User_Prm_Data_Const(0) = 0,0,0
+;
+
+;#################################################################
+; Prm-Data Selection texts
+;#################################################################
+
+PrmText = 1
+Text(0) = "Not active"
+Text(1) = "Inverter-Disable"
+Text(2) = "Stopping"
+Text(3) = "Quick stop"
+Text(4) = "Reset error"
+Text(5) = "DC braking"
+Text(8) = "Run forward"
+Text(9) = "Run reverse"
+Text(13) = "Reverse rot.dir."
+Text(14) = "Setp: AI1"
+Text(15) = "Setp: AI2"
+Text(17) = "Setp: Network"
+Text(18) = "Setp: Preset b0"
+Text(19) = "Setp: Preset b1"
+Text(20) = "Setp: Preset b2"
+Text(21) = "Setp: Preset b3"
+Text(26) = "Setp: Segment 1"
+Text(27) = "Setp: Segment 2"
+Text(28) = "Setp: Segment 3"
+Text(29) = "Setp: Segment 4"
+Text(30) = "Seq: Run/abort"
+Text(32) = "Seq: Next step"
+Text(33) = "Seq: Pause"
+Text(34) = "Seq: Suspense"
+Text(35) = "Seq: Stop"
+Text(36) = "Seq: Abort"
+Text(39) = "Activ. ramp 2"
+Text(40) = "Load param.set"
+Text(41) = "Sel. paramset b0"
+Text(42) = "Sel. paramset b1"
+Text(43) = "Fault 1"
+Text(44) = "Fault 2"
+Text(45) = "PID off"
+Text(46) = "PID output=0"
+Text(47) = "PID-I inhibited"
+Text(48) = "PID-Inf ramp on"
+Text(49) = "Release brake"
+Text(50) = "Seq: Select. b0"
+Text(51) = "Seq: Select. b1"
+Text(52) = "Seq: Select. b2"
+Text(53) = "Seq: Select. b3"
+Text(54) = "Pos. count reset"
+Text(55) = "Activ. UPS oper."
+Text(127) = "Not modified"
+EndPrmText
+
+PrmText = 2
+Text(0)  = "Not connected"
+Text(34) = "NetWordIN2.00"
+Text(35) = "NetWordIN2.01"
+Text(36) = "NetWordIN2.02"
+Text(37) = "NetWordIN2.03"
+Text(38) = "NetWordIN2.04"
+Text(39) = "NetWordIN2.05"
+Text(40) = "NetWordIN2.06"
+Text(41) = "NetWordIN2.07"
+Text(42) = "NetWordIN2.08"
+Text(43) = "NetWordIN2.09"
+Text(44) = "NetWordIN2.10"
+Text(45) = "NetWordIN2.11"
+Text(46) = "NetWordIN2.12"
+Text(47) = "NetWordIN2.13"
+Text(48) = "NetWordIN2.14"
+Text(49) = "NetWordIN2.15"
+Text(127) = "Not modified"
+EndPrmText
+
+PrmText = 3
+Text(0) = "Not modified"
+Text(1) = "Analog output 1"
+;Text(2) = "Analog output 2"
+EndPrmText
+
+PrmText = 4
+Text(0) = "Not connected"
+Text(1) = "TRUE"
+Text(11) = "Digital input 1"
+Text(12) = "Digital input 2"
+Text(13) = "Digital input 3"
+Text(14) = "Digital input 4"
+Text(15) = "Digital input 5"
+Text(30) = "NetWordIN1.12"
+Text(31) = "NetWordIN1.13"
+Text(32) = "NetWordIN1.14"
+Text(33) = "NetWordIN1.15"
+Text(34) = "NetWordIN2.00"
+Text(35) = "NetWordIN2.01"
+Text(36) = "NetWordIN2.02"
+Text(37) = "NetWordIN2.03"
+Text(38) = "NetWordIN2.04"
+Text(39) = "NetWordIN2.05"
+Text(40) = "NetWordIN2.06"
+Text(41) = "NetWordIN2.07"
+Text(42) = "NetWordIN2.08"
+Text(43) = "NetWordIN2.09"
+Text(44) = "NetWordIN2.10"
+Text(45) = "NetWordIN2.11"
+Text(46) = "NetWordIN2.12"
+Text(47) = "NetWordIN2.13"
+Text(48) = "NetWordIN2.14"
+Text(49) = "NetWordIN2.15"
+Text(50) = "Running"
+Text(51) = "Rdy for operat."
+Text(52) = "Operat. enabled"
+Text(53) = "Stop active"
+Text(54) = "Quick stop"
+Text(55) = "Inv.dis.safety"
+Text(56) = "Fault"
+Text(57) = "Error interlock"
+Text(58) = "Device warning"
+Text(59) = "Device trouble"
+Text(60) = "Heats.warning"
+Text(65) = "PTC error"
+Text(66) = "Flying res. act."
+Text(67) = "DC brake active"
+Text(68) = "Stop cmd active"
+Text(69) = "Rot.dir.reversed"
+Text(70) = "Above F thrshold"
+Text(71) = "Actual speed=0"
+Text(72) = "Speed - setp=act"
+Text(73) = "PID to setpoint"
+Text(74) = "Sleep mode on"
+Text(75) = "MIN alarm"
+Text(76) = "MAX alarm"
+Text(77) = "MIN/MAX alarm"
+Text(78) = "At current limit"
+Text(79) = "At torque limit"
+Text(81) = "AIN 1 error"
+Text(82) = "AIN 2 error"
+Text(83) = "Load loss"
+Text(84) = "Heavy load monit"
+Text(100) = "Sequencr contrld"
+Text(101) = "Seq. active"
+Text(102) = "Seq. suspended"
+Text(103) = "Seq. done"
+Text(104) = "Loc control act."
+Text(105) = "Rem control act."
+Text(106) = "Man setp. active"
+Text(107) = "Aut setp.active"
+Text(108) = "Par.set 1 active"
+Text(109) = "Par.set 2 active"
+Text(110) = "Par.set 3 active"
+Text(111) = "Par.set 4 active"
+Text(112) = "Param load OK"
+Text(113) = "Param load fail"
+Text(115) = "Release brake"
+Text(117) = "Mot.PhaseFailure"
+Text(118) = "UPS oper. active"
+Text(155) = "STO active"
+Text(160) = "Assist pump 1"
+Text(161) = "Assist pump 2"
+Text(201) = "Internal value"
+Text(202) = "Internal value"
+Text(203) = "Internal value"
+Text(204) = "Internal value"
+Text(205) = "Internal value"
+Text(206) = "Internal value"
+Text(127) = "Not modified"
+EndPrmText
+
+PrmText = 5
+Text(0) = "Not inverted"
+Text(1) = "Inverted"
+EndPrmText
+
+PrmText = 6
+Text(0) = "Inhibited"
+Text(1) = "0 ... 10 VDC"
+Text(2) = "0 ... 5 VDC"
+Text(3) = "2 ... 10 VDC"
+Text(4) = "4 ... 20 mA"
+Text(5) = "0 ... 20 mA"
+Text(11) = "0 ... 10 VDC (m)"
+Text(12) = "0 ... 5 VDC (m)"
+Text(13) = "2 ... 10 VDC (m)"
+Text(14) = "4 ... 20 mA (m)"
+Text(15) = "0 ... 20 mA (m)"
+EndPrmText
+
+; ###################################################################
+; PrmData texts
+; ###################################################################
+
+ExtUserPrmData = 1 "NetWordIN1.00"
+Unsigned8 127 0-127
+Prm_text_ref = 1
+EndExtUserPrmData
+ExtUserPrmData = 2 "NetWordIN1.01"
+Unsigned8 127 0-127
+Prm_text_ref = 1
+EndExtUserPrmData
+ExtUserPrmData = 3 "NetWordIN1.02"
+Unsigned8 3 0-127
+Prm_text_ref = 1
+EndExtUserPrmData
+ExtUserPrmData = 4 "NetWordIN1.03"
+Unsigned8 127 0-127
+Prm_text_ref = 1
+EndExtUserPrmData
+ExtUserPrmData = 5 "NetWordIN1.04"
+Unsigned8 8 0-127
+Prm_text_ref = 1
+EndExtUserPrmData
+ExtUserPrmData = 6 "NetWordIN1.05"
+Unsigned8 18 0-127
+Prm_text_ref = 1
+EndExtUserPrmData
+ExtUserPrmData = 7 "NetWordIN1.06"
+Unsigned8 19 0-127
+Prm_text_ref = 1
+EndExtUserPrmData
+ExtUserPrmData = 8 "NetWordIN1.07"
+Unsigned8 4 0-127
+Prm_text_ref = 1
+EndExtUserPrmData
+ExtUserPrmData = 9 "NetWordIN1.08"
+Unsigned8 127 0-127
+Prm_text_ref = 1
+EndExtUserPrmData
+ExtUserPrmData = 10 "NetWordIN1.09"
+Unsigned8 5 0-127
+Prm_text_ref = 1
+EndExtUserPrmData
+ExtUserPrmData = 11 "NetWordIN1.10"
+Unsigned8 127 0-127
+Prm_text_ref = 1
+EndExtUserPrmData
+ExtUserPrmData = 12 "NetWordIN1.11"
+Unsigned8 127 0-127
+Prm_text_ref = 1
+EndExtUserPrmData
+ExtUserPrmData = 13 "NetWordIN1.12"
+Unsigned8 13 0-127
+Prm_text_ref = 1
+EndExtUserPrmData
+ExtUserPrmData = 14 "NetWordIN1.13"
+Unsigned8 127 0-127
+Prm_text_ref = 1
+EndExtUserPrmData
+ExtUserPrmData = 15 "NetWordIN1.14"
+Unsigned8 127 0-127
+Prm_text_ref = 1
+EndExtUserPrmData
+ExtUserPrmData = 16 "NetWordIN1.15"
+Unsigned8 127 0-127
+Prm_text_ref = 1
+EndExtUserPrmData
+
+ExtUserPrmData = 17 "Relay function"
+Unsigned8 127 0-127
+Prm_text_ref = 2
+EndExtUserPrmData
+ExtUserPrmData = 18 "DO1 function"
+Unsigned8 127 0-127
+Prm_text_ref = 2
+EndExtUserPrmData
+ExtUserPrmData = 19 "DO2 function"
+Unsigned8 127 0-127
+Prm_text_ref = 2
+EndExtUserPrmData
+
+ExtUserPrmData = 20 "NetWordOUT1.00"
+BitArea(0-6) 51 0-127
+Prm_text_ref = 4
+EndExtUserPrmData
+ExtUserPrmData = 21 "NetWordOUT1.01"
+BitArea(0-6) 127 0-127
+Prm_text_ref = 4
+EndExtUserPrmData
+ExtUserPrmData = 22 "NetWordOUT1.02"
+BitArea(0-6) 52 0-127
+Prm_text_ref = 4
+EndExtUserPrmData
+ExtUserPrmData = 23 "NetWordOUT1.03"
+BitArea(0-6) 56 0-127
+Prm_text_ref = 4
+EndExtUserPrmData
+ExtUserPrmData = 24 "NetWordOUT1.04"
+BitArea(0-6) 127 0-127
+Prm_text_ref = 4
+EndExtUserPrmData
+ExtUserPrmData = 25 "NetWordOUT1.05"
+BitArea(0-6) 54 0-127
+Prm_text_ref = 4
+EndExtUserPrmData
+ExtUserPrmData = 26 "NetWordOUT1.06"
+BitArea(0-6) 50 0-127
+Prm_text_ref = 4
+EndExtUserPrmData
+ExtUserPrmData = 27 "NetWordOUT1.07"
+BitArea(0-6) 58 0-127
+Prm_text_ref = 4
+EndExtUserPrmData
+ExtUserPrmData = 28 "NetWordOUT1.08"
+BitArea(0-6) 127 0-127
+Prm_text_ref = 4
+EndExtUserPrmData
+ExtUserPrmData = 29 "NetWordOUT1.09"
+BitArea(0-6) 127 0-127
+Prm_text_ref = 4
+EndExtUserPrmData
+ExtUserPrmData = 30 "NetWordOUT1.10"
+BitArea(0-6) 72 0-127
+Prm_text_ref = 4
+EndExtUserPrmData
+ExtUserPrmData = 31 "NetWordOUT1.11"
+BitArea(0-6) 78 0-127
+Prm_text_ref = 4
+EndExtUserPrmData
+ExtUserPrmData = 32 "NetWordOUT1.12"
+BitArea(0-6) 71 0-127
+Prm_text_ref = 4
+EndExtUserPrmData
+ExtUserPrmData = 33 "NetWordOUT1.13"
+BitArea(0-6) 69 0-127
+Prm_text_ref = 4
+EndExtUserPrmData
+ExtUserPrmData = 34 "NetWordOUT1.14"
+BitArea(0-6) 115 0-127
+Prm_text_ref = 4
+EndExtUserPrmData
+ExtUserPrmData = 35 "NetWordOUT1.15"
+BitArea(0-6) 55 0-127
+Prm_text_ref = 4
+EndExtUserPrmData
+ExtUserPrmData = 36 "Bit Inversion"
+Bit (7) 0 0-1
+Prm_Text_Ref = 5
+EndExtUserPrmData
+
+ExtUserPrmData = 37 "NetWordIN3"
+;Unsigned8 0 0-2
+Unsigned8 0 0-1
+Prm_Text_Ref = 3
+EndExtUserPrmData
+ExtUserPrmData = 38 "NetWordIN4"
+;Unsigned8 0 0-2
+Unsigned8 0 0-1
+Prm_Text_Ref = 3
+EndExtUserPrmData
+ExtUserPrmData = 39 "Analog output configuration"
+Unsigned8 0 0-5
+Prm_Text_Ref = 6
+EndExtUserPrmData
+
+ExtUserPrmData = 40 "Subindex"
+Unsigned8 0 0-255
+EndExtUserPrmData
+ExtUserPrmData = 41 "Index"
+Unsigned16 0x6060 0x2000-0x6fff
+EndExtUserPrmData
+ExtUserPrmData = 42 "Index"
+Unsigned16 0x2601 0x2000-0x6fff
+EndExtUserPrmData
+ExtUserPrmData = 43 "Index"
+Unsigned16 0x6080 0x2000-0x6fff
+EndExtUserPrmData
+ExtUserPrmData = 44 "Index"
+Unsigned16 0x6061 0x2000-0x6fff
+EndExtUserPrmData
+ExtUserPrmData = 45 "Index"
+Unsigned16 0x6044 0x2000-0x6fff
+EndExtUserPrmData
+ExtUserPrmData = 46 "Index"
+Unsigned16 0x6079 0x2000-0x6fff
+EndExtUserPrmData
+ExtUserPrmData = 47 "Subindex"
+Unsigned8 2 0-255
+EndExtUserPrmData
+
+;############################################################
+; Modulkennzeichnung
+;############################################################
+
+Module = "Motor current 0x2D88:00" 0x43,0x40,0x2D,0x88,0x00
+1
+Info_Text="Motor current"
+EndModule
+
+Module = "L-Controlword 0x4008:01 " 0x84,0x40,0x40,0x08,0x01,0x14
+2
+Info_Text="Default control bit configuration, further bits to be defined"
+Ext_Module_Prm_Data_Len = 20
+Ext_User_Prm_Data_Const(0) = 0x01,0x40,0x0E,0x01,0x7F,0x7F,0x03,0x7F,0x08,0x12,0x13,0x04,0x7F,0x05,0x7F,0x7F,0x0D,0x7F,0x7F,0x7F
+Ext_User_Prm_Data_Ref(4) = 1
+Ext_User_Prm_Data_Ref(5) = 2
+Ext_User_Prm_Data_Ref(6) = 3
+Ext_User_Prm_Data_Ref(7) = 4
+Ext_User_Prm_Data_Ref(8) = 5
+Ext_User_Prm_Data_Ref(9) = 6
+Ext_User_Prm_Data_Ref(10) = 7
+Ext_User_Prm_Data_Ref(11) = 8
+Ext_User_Prm_Data_Ref(12) = 9
+Ext_User_Prm_Data_Ref(13) = 10
+Ext_User_Prm_Data_Ref(14) = 11
+Ext_User_Prm_Data_Ref(15) = 12
+Ext_User_Prm_Data_Ref(16) = 13
+Ext_User_Prm_Data_Ref(17) = 14
+Ext_User_Prm_Data_Ref(18) = 15
+Ext_User_Prm_Data_Ref(19) = 16
+EndModule
+
+Module = "NetWordIN2 0x4008:02" 0x84,0x40,0x40,0x08,0x02,0x07
+3
+Info_Text="NetWordIN2"
+Ext_Module_Prm_Data_Len = 7
+Ext_User_Prm_Data_Const(0) = 0x01,0x26,0x34,0x01,0x7F,0x7F,0x7F
+Ext_User_Prm_Data_Ref(4) = 17
+Ext_User_Prm_Data_Ref(5) = 18
+;Ext_User_Prm_Data_Ref(6) = 19
+EndModule
+
+Module = "NetWordIN3 0x4008:03" 0x84,0x40,0x40,0x08,0x03,0x06
+4
+Info_Text="NetWordIN3"
+Ext_Module_Prm_Data_Len = 6
+Ext_User_Prm_Data_Const(0) = 0x03,0x26,0x39,0x00,0x00,0x14
+Ext_User_Prm_Data_Ref(3) = 37
+Ext_User_Prm_Data_Ref(4) = 39
+EndModule
+
+Module = "NetWordIN4 0x4008:04" 0x84,0x40,0x40,0x08,0x04,0x06
+5
+Info_Text="NetWordIN4"
+Ext_Module_Prm_Data_Len = 6
+Ext_User_Prm_Data_Const(0) = 0x03,0x26,0x39,0x00,0x00,0x15
+Ext_User_Prm_Data_Ref(3) = 38
+Ext_User_Prm_Data_Ref(4) = 39
+EndModule
+
+Module = "L-Statusword 0x400A:01" 0x44,0x40,0x40,0x0A,0x01,0x14
+6
+Info_Text="Default status bit configuration, further bits to be defined"
+Ext_Module_Prm_Data_Len = 20
+Ext_User_Prm_Data_Const(0) = 0x02,0x26,0x34,0x0A,0x33,0x7F,0x34,0x38,0x7F,0x36,0x32,0x3A,0x7F,0x7F,0x48,0x4E,0x47,0x45,0x73,0x37
+Ext_User_Prm_Data_Ref(4) = 20
+Ext_User_Prm_Data_Ref(4) = 36
+Ext_User_Prm_Data_Ref(5) = 21
+Ext_User_Prm_Data_Ref(5) = 36
+Ext_User_Prm_Data_Ref(6) = 22
+Ext_User_Prm_Data_Ref(6) = 36
+Ext_User_Prm_Data_Ref(7) = 23
+Ext_User_Prm_Data_Ref(7) = 36
+Ext_User_Prm_Data_Ref(8) = 24
+Ext_User_Prm_Data_Ref(8) = 36
+Ext_User_Prm_Data_Ref(9) = 25
+Ext_User_Prm_Data_Ref(9) = 36
+Ext_User_Prm_Data_Ref(10) = 26
+Ext_User_Prm_Data_Ref(10) = 36
+Ext_User_Prm_Data_Ref(11) = 27
+Ext_User_Prm_Data_Ref(11) = 36
+Ext_User_Prm_Data_Ref(12) = 28
+Ext_User_Prm_Data_Ref(12) = 36
+Ext_User_Prm_Data_Ref(13) = 29
+Ext_User_Prm_Data_Ref(13) = 36
+Ext_User_Prm_Data_Ref(14) = 30
+Ext_User_Prm_Data_Ref(14) = 36
+Ext_User_Prm_Data_Ref(15) = 31
+Ext_User_Prm_Data_Ref(15) = 36
+Ext_User_Prm_Data_Ref(16) = 32
+Ext_User_Prm_Data_Ref(16) = 36
+Ext_User_Prm_Data_Ref(17) = 33
+Ext_User_Prm_Data_Ref(17) = 36
+Ext_User_Prm_Data_Ref(18) = 34
+Ext_User_Prm_Data_Ref(18) = 36
+Ext_User_Prm_Data_Ref(19) = 35
+Ext_User_Prm_Data_Ref(19) = 36
+EndModule
+
+Module = "NetWordOUT2 0x400A:02" 0x43,0x40,0x40,0x0A,0x02
+7
+Info_Text="NetWordOUT2"
+EndModule
+
+Module = "Net.freq. 0.01 0x400B:05" 0x83,0x40,0x40,0x0B,0x05
+8
+Info_Text="Network setpoint frequency (0.01)"
+EndModule
+
+Module = "Accelerat.time 1 0x2917:00" 0x83,0x40,0x29,0x17,0x00
+9
+Info_Text="Acceleration time 1"
+EndModule
+
+Module = "Decelerat.time 1 0x2918:00" 0x83,0x40,0x29,0x18,0x00
+10
+Info_Text="Deceleration time 1"
+EndModule
+
+Module = "Frequency 0.01 0x400C:06" 0x43,0x40,0x40,0x0C,0x06
+11
+Info_Text="Frequency (0.01)"
+EndModule
+
+Module = "Error code 0x603F:00" 0x43,0x40,0x60,0x3F,0x00
+12
+Info_Text="Error code"
+EndModule
+
+Module = "Positive torque  0x60E0:00" 0x83,0x40,0x60,0xE0,0x00
+13
+Info_Text="Negative torque limit"
+EndModule
+
+Module = "Neg. torque lim. 0x60E1:00" 0x83,0x40,0x60,0xE1,0x00
+14
+Info_Text="Negative torque limit"
+EndModule
+
+Module = "8Bit selectable OUT-Data" 0x81,0x00,0x04
+15
+Info_Text = "Selectable OUT object of 8Bit data length"
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x00,0x60,0x60,0x00
+Ext_User_Prm_Data_Ref(1) = 41
+Ext_User_Prm_Data_Ref(3) = 40
+EndModule
+
+Module = "16Bit selectable OUT-Data" 0x81,0x40,0x04
+16
+Info_Text = "Selectable OUT object of 16Bit data length"
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x00,0x26,0x01,0x02
+Ext_User_Prm_Data_Ref(1) = 42
+Ext_User_Prm_Data_Ref(3) = 47
+EndModule
+
+Module = "32Bit selectable OUT-Data" 0x81,0xC1,0x04
+17
+Info_Text = "Selectable OUT object of 32Bit data length"
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x00,0x60,0x80,0x00
+Ext_User_Prm_Data_Ref(1) = 43
+Ext_User_Prm_Data_Ref(3) = 40
+EndModule
+
+Module = "8Bit selectable IN-Data" 0x41,0x00,0x04
+18
+Info_Text = "Selectable IN object of 8Bit data length"
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x00,0x60,0x61,0x00
+Ext_User_Prm_Data_Ref(1) = 44
+Ext_User_Prm_Data_Ref(3) = 40
+EndModule
+
+Module = "16Bit selectable IN-Data" 0x41,0x40,0x04
+19
+Info_Text = "Selectable IN object of 16Bit data length"
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x00,0x60,0x44,0x00
+Ext_User_Prm_Data_Ref(1) = 45
+Ext_User_Prm_Data_Ref(3) = 40
+EndModule
+
+Module = "32Bit selectable IN-Data" 0x41,0xC1,0x04
+20
+Info_Text = "Selectable IN object of 32Bit data length"
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x00,0x60,0x79,0x00
+Ext_User_Prm_Data_Ref(1) = 46
+Ext_User_Prm_Data_Ref(3) = 40
+EndModule
+
+SlotDefinition
+Slot(1) = " " 2 1-20
+Slot(2) = " " 8 1-20
+Slot(3) = " " 16 1-20
+Slot(4) = " " 6 1-20
+Slot(5) = " " 11 1-20
+Slot(6) = " " 1 1-20
+EndSlotDefinition
+
+;#############################################################################################
+; Device - specific diagnostics
+;#############################################################################################
+
+UnitDiagType = 130
+X_Unit_Diag_Area = 24-25
+X_Value(1) = "Slot 1: module error"
+X_Value_Help(1) = "The module indicates a diagnostic message error."
+X_Value(2) = "Slot 1: wrong module"
+X_Value_Help(2) = "The module selected is wrong"
+X_Value(3) = "Slot 1: module absent"
+X_Value_Help(3) = "The module is currently not plugged in."
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 26-27
+X_Value(1) = "Slot 2: module error"
+X_Value_Help(1) = "The module indicates a diagnostic message error."
+X_Value(2) = "Slot 2: wrong module"
+X_Value_Help(2) = "The module selected is wrong"
+X_Value(3) = "Slot 2: module absent"
+X_Value_Help(3) = "The module is currently not plugged in."
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 28-29
+X_Value(1) = "Slot 3: module error"
+X_Value_Help(1) = "The module indicates a diagnostic message error."
+X_Value(2) = "Slot 3: wrong module"
+X_Value_Help(2) = "The module selected is wrong"
+X_Value(3) = "Slot 3: module absent"
+X_Value_Help(3) = "The module is currently not plugged in."
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 30-31
+X_Value(1) = "Slot 4: module error"
+X_Value_Help(1) = "The module indicates a diagnostic message error."
+X_Value(2) = "Slot 4: wrong module"
+X_Value_Help(2) = "The module selected is wrong"
+X_Value(3) = "Slot 4: module absent"
+X_Value_Help(3) = "The module is currently not plugged in."
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 32-33
+X_Value(1) = "Slot 5: module error"
+X_Value_Help(1) = "The module indicates a diagnostic message error."
+X_Value(2) = "Slot 5: wrong module"
+X_Value_Help(2) = "The module selected is wrong"
+X_Value(3) = "Slot 5: module absent"
+X_Value_Help(3) = "The module is currently not plugged in."
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 34-35
+X_Value(1) = "Slot 6: module error"
+X_Value_Help(1) = "The module indicates a diagnostic message error."
+X_Value(2) = "Slot 6: wrong module"
+X_Value_Help(2) = "The module selected is wrong"
+X_Value(3) = "Slot 6: module absent"
+X_Value_Help(3) = "The module is currently not plugged in."
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 36-37
+X_Value(1) = "Slot 7: module error"
+X_Value_Help(1) = "The module indicates a diagnostic message error."
+X_Value(2) = "Slot 7: wrong module"
+X_Value_Help(2) = "The module selected is wrong"
+X_Value(3) = "Slot 7: module absent"
+X_Value_Help(3) = "The module is currently not plugged in."
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 38-39
+X_Value(1) = "Slot 8: module error"
+X_Value_Help(1) = "The module indicates a diagnostic message error."
+X_Value(2) = "Slot 8: wrong module"
+X_Value_Help(2) = "The module selected is wrong"
+X_Value(3) = "Slot 8: module absent"
+X_Value_Help(3) = "The module is currently not plugged in."
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 40-41
+X_Value(1) = "Slot 9: module error"
+X_Value_Help(1) = "The module indicates a diagnostic message error."
+X_Value(2) = "Slot 9: wrong module"
+X_Value_Help(2) = "The module selected is wrong"
+X_Value(3) = "Slot 9: module absent"
+X_Value_Help(3) = "The module is currently not plugged in."
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 42-43
+X_Value(1) = "Slot 10: module error"
+X_Value_Help(1) = "The module indicates a diagnostic message error."
+X_Value(2) = "Slot 10: wrong module"
+X_Value_Help(2) = "The module selected is wrong"
+X_Value(3) = "Slot 10: module absent"
+X_Value_Help(3) = "The module is currently not plugged in."
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 44-45
+X_Value(1) = "Slot 11: module error"
+X_Value_Help(1) = "The module indicates a diagnostic message error."
+X_Value(2) = "Slot 11: wrong module"
+X_Value_Help(2) = "The module selected is wrong"
+X_Value(3) = "Slot 11: module absent"
+X_Value_Help(3) = "The module is currently not plugged in."
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 46-47
+X_Value(1) = "Slot 12: module error"
+X_Value_Help(1) = "The module indicates a diagnostic message error."
+X_Value(2) = "Slot 12: wrong module"
+X_Value_Help(2) = "The module selected is wrong"
+X_Value(3) = "Slot 12: module absent"
+X_Value_Help(3) = "The module is currently not plugged in."
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 48-49
+X_Value(1) = "Slot 13: module error"
+X_Value_Help(1) = "The module indicates a diagnostic message error."
+X_Value(2) = "Slot 13: wrong module"
+X_Value_Help(2) = "The module selected is wrong"
+X_Value(3) = "Slot 13: module absent"
+X_Value_Help(3) = "The module is currently not plugged in."
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 50-51
+X_Value(1) = "Slot 14: module error"
+X_Value_Help(1) = "The module indicates a diagnostic message error."
+X_Value(2) = "Slot 14: wrong module"
+X_Value_Help(2) = "The module selected is wrong"
+X_Value(3) = "Slot 14: module absent"
+X_Value_Help(3) = "The module is currently not plugged in."
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 52-53
+X_Value(1) = "Slot 15: module error"
+X_Value_Help(1) = "The module indicates a diagnostic message error."
+X_Value(2) = "Slot 15: wrong module"
+X_Value_Help(2) = "The module selected is wrong"
+X_Value(3) = "Slot 15: module absent"
+X_Value_Help(3) = "The module is currently not plugged in."
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 54-55
+X_Value(1) = "Slot 16: module error"
+X_Value_Help(1) = "The module indicates a diagnostic message error."
+X_Value(2) = "Slot 16: wrong module"
+X_Value_Help(2) = "The module selected is wrong"
+X_Value(3) = "Slot 16: module absent"
+X_Value_Help(3) = "The module is currently not plugged in."
+X_Unit_Diag_Area_End
+EndUnitDiagType
+
+; Device specific diagnosis information
+UnitDiagType = 129
+X_Unit_Diag_Area = 40-55
+X_Value(0x0000) ="0x0000 No error"
+X_Value_Help(0x0000)= "No error"
+X_Value(0x5022) ="0x2250 PU over current"
+X_Value_Help(0x5022)= "CiA: Continuous over current (internal)"
+X_Value(0x2023) ="0x2320 Earth leak"
+X_Value_Help(0x2023)= "Short circuit or earth leakage at the motor end"
+X_Value(0x4023) ="0x2340 Motor shorted"
+X_Value_Help(0x4023)= "Short circuit at the motor end"
+X_Value(0x5023) ="0x2350 i2t motor"
+X_Value_Help(0x5023)= "CiA: i²xt overload (thermal state)"
+X_Value(0x8223) ="0x2382 Ixt error"
+X_Value_Help(0x8223)= "Fault - Device utilization (ixt) too high"
+X_Value(0x8323) ="0x2383 Ixt warning"
+X_Value_Help(0x8323)= "Warning - Device utilization (ixt) too high"
+X_Value(0x8723) ="0x2387 Clamp timeout"
+X_Value_Help(0x8723)= "Clamp responded too often"
+X_Value(0x8823) ="0x2388 SL-PSM stall det"
+X_Value_Help(0x8823)= "SL-PSM stall detection active"
+X_Value(0x8A23) ="0x238A Imax reached"
+X_Value_Help(0x8A23)= "Maximum current reached"
+X_Value(0x2031) ="0x3120 Mains Phase fail"
+X_Value_Help(0x2031)= "Mains phase fault"
+X_Value(0x8031) ="0x3180 UPS oper. active"
+X_Value_Help(0x8031)= "UPS operation active"
+X_Value(0x1032) ="0x3210 DC Bus OV"
+X_Value_Help(0x1032)= "Fault - DC bus overvoltage"
+X_Value(0x1132) ="0x3211 Warn.DC Bus OV"
+X_Value_Help(0x1132)= "DC bus overvoltage warning"
+X_Value(0x2032) ="0x3220 DC Bus UV"
+X_Value_Help(0x2032)= "Fault - DC bus undervoltage"
+X_Value(0x2132) ="0x3221 Warn.DC Bus UV"
+X_Value_Help(0x2132)= "DC bus undervoltage warning"
+X_Value(0x2232) ="0x3222 DC-bus on-UV"
+X_Value_Help(0x2232)= "DC-bus voltage to low for power up"
+X_Value(0x1042) ="0x4210 PU Overtemp."
+X_Value_Help(0x1042)= "Fault - Power unit overtemperature"
+X_Value(0x8042) ="0x4280 Heatsink sensor"
+X_Value_Help(0x8042)= "Fault - Heat sink temperature sensor"
+X_Value(0x8142) ="0x4281 Heatsink fan"
+X_Value_Help(0x8142)= "Heat sink fan warning"
+X_Value(0x8542) ="0x4285 Warn.PU Overtemp"
+X_Value_Help(0x8542)= "PU overtemperature warning"
+X_Value(0x1043) ="0x4310 Overtemp. motor"
+X_Value_Help(0x1043)= "Motor overtemperature"
+X_Value(0x1251) ="0x5112 Ext. supply low"
+X_Value_Help(0x1251)= "External supply voltage critical"
+X_Value(0x8051) ="0x5180 Overload 24V"
+X_Value_Help(0x8051)= "Overload 24 V supply"
+X_Value(0x8053) ="0x5380 Incomp. OEM HW"
+X_Value_Help(0x8053)= "OEM hardware incompatible"
+X_Value(0x1060) ="0x6010 Internal error"
+X_Value_Help(0x1060)= "Internal error"
+X_Value(0x8161) ="0x6181 Internal error"
+X_Value_Help(0x8161)= "Internal error"
+X_Value(0x8261) ="0x6182 Internal error"
+X_Value_Help(0x8261)= "Internal error"
+X_Value(0x8361) ="0x6183 Internal error"
+X_Value_Help(0x8361)= "Internal error"
+X_Value(0x8461) ="0x6184 Internal error"
+X_Value_Help(0x8461)= "Internal error"
+X_Value(0x8861) ="0x6188 Internal error"
+X_Value_Help(0x8861)= "Internal error"
+X_Value(0x8961) ="0x6189 Internal error"
+X_Value_Help(0x8961)= "Internal error"
+X_Value(0x8A61) ="0x618A Internal fan"
+X_Value_Help(0x8A61)= "Warning - Internal fan"
+X_Value(0x9061) ="0x6190 Internal error"
+X_Value_Help(0x9061)= "Internal error"
+X_Value(0x9161) ="0x6191 Internal error"
+X_Value_Help(0x9161)= "Internal error"
+X_Value(0x9261) ="0x6192 Internal error"
+X_Value_Help(0x9261)= "Internal error"
+X_Value(0x9361) ="0x6193 Internal error"
+X_Value_Help(0x9361)= "Internal error"
+X_Value(0x9461) ="0x6194 Internal error"
+X_Value_Help(0x9461)= "Internal error"
+X_Value(0x9561) ="0x6195 Internal error"
+X_Value_Help(0x9561)= "Internal error"
+X_Value(0x9661) ="0x6196 Internal error"
+X_Value_Help(0x9661)= "Internal error"
+X_Value(0x9761) ="0x6197 Internal error"
+X_Value_Help(0x9761)= "Internal error"
+X_Value(0xB061) ="0x61B0 Internal error"
+X_Value_Help(0xB061)= "Internal error"
+X_Value(0xB161) ="0x61B1 Internal error"
+X_Value_Help(0xB161)= "Internal error"
+X_Value(0x8062) ="0x6280 P400 config err"
+X_Value_Help(0x8062)= "Trigger/functions connected incorrectly"
+X_Value(0x8162) ="0x6281 User fault 1"
+X_Value_Help(0x8162)= "User-defined fault 1"
+X_Value(0x8262) ="0x6282 User fault 2"
+X_Value_Help(0x8262)= "User-defined fault 2"
+X_Value(0x9062) ="0x6290 Invert rotation"
+X_Value_Help(0x9062)= "Warning invert rotation"
+X_Value(0x9162) ="0x6291 Trouble overflow"
+X_Value_Help(0x9162)= "Maximuml allowed troubles exceeded"
+X_Value(0xA062) ="0x62A0 UserFault(LECOM)"
+X_Value_Help(0xA062)= "User-defined fault (LECOM)"
+X_Value(0xA162) ="0x62A1 Netw.UserFault 1"
+X_Value_Help(0xA162)= "Network: user fault 1"
+X_Value(0xA262) ="0x62A2 Netw.UserFault 2"
+X_Value_Help(0xA262)= "Network: user fault 2"
+X_Value(0xB162) ="0x62B1 NetWordIN1 error"
+X_Value_Help(0xB162)= "NetWordIN1 configuration incorrect"
+X_Value(0xB262) ="0x62B2 Dev-ID changed"
+X_Value_Help(0xB262)= "Changed device ID not yet active"
+X_Value(0xB362) ="0x62B3 Settings error"
+X_Value_Help(0xB362)= "Default settings not yet active"
+X_Value(0xA063) ="0x63A0 Internal error"
+X_Value_Help(0xA063)= "Internal error"
+X_Value(0xA163) ="0x63A1 CU ID tag error"
+X_Value_Help(0xA163)= "CU: load error ID tag"
+X_Value(0xA263) ="0x63A2 PU ID tag error"
+X_Value_Help(0xA263)= "PU: load error ID tag"
+X_Value(0xA363) ="0x63A3 PU unknown"
+X_Value_Help(0xA363)= "Power unit unknown"
+X_Value(0xA463) ="0x63A4 Internal error"
+X_Value_Help(0xA463)= "Internal error"
+X_Value(0x8070) ="0x7080 Assertionlevel"
+X_Value_Help(0x8070)= "Assertion level monitoring (Low/High)"
+X_Value(0x8170) ="0x7081 AI1 fault"
+X_Value_Help(0x8170)= "Fault - Analog input 1"
+X_Value(0x8270) ="0x7082 AI2 fault"
+X_Value_Help(0x8270)= "Analog input 2 fault"
+X_Value(0x8370) ="0x7083 HTL input fault"
+X_Value_Help(0x8370)= "HTL input fault"
+X_Value(0xA170) ="0x70A1 AO1 fault"
+X_Value_Help(0xA170)= "Analog output 1 fault"
+X_Value(0xA270) ="0x70A2 AO2 fault"
+X_Value_Help(0xA270)= "Analog output 2 fault"
+X_Value(0x2171) ="0x7121 Pole pos. error"
+X_Value_Help(0x2171)= "Fault - Pole position identification"
+X_Value(0x8071) ="0x7180 Mot max current"
+X_Value_Help(0x8071)= "Motor overcurrent"
+X_Value(0x0573) ="0x7305 Encoder error"
+X_Value_Help(0x0573)= "Encoder open circuit"
+X_Value(0x8573) ="0x7385 F.fdb spd limit"
+X_Value_Help(0x8573)= "Feedback system: speed limit"
+X_Value(0x8076) ="0x7680 EPM full"
+X_Value_Help(0x8076)= "Memory module is full"
+X_Value(0x8176) ="0x7681 EPM not present"
+X_Value_Help(0x8176)= "Memory module not present"
+X_Value(0x8276) ="0x7682 EPM invalid data"
+X_Value_Help(0x8276)= "Invalid user data"
+X_Value(0x8476) ="0x7684 Save incomplete"
+X_Value_Help(0x8476)= "Data not compl. saved before powerdown"
+X_Value(0x8776) ="0x7687 Internal error"
+X_Value_Help(0x8776)= "Internal error"
+X_Value(0x8976) ="0x7689 OEM data invalid"
+X_Value_Help(0x8976)= "Memory module: invalid OEM data"
+X_Value(0x8A76) ="0x768A Wrong EPM"
+X_Value_Help(0x8A76)= "Memory module: wrong type"
+X_Value(0x9076) ="0x7690 EPM-FW incomp."
+X_Value_Help(0x9076)= "EPM firmware version incompatible"
+X_Value(0x9176) ="0x7691 EPM: FW incomp."
+X_Value_Help(0x9176)= "EPM data: firmware type incompatible"
+X_Value(0x9276) ="0x7692 UserCU not match"
+X_Value_Help(0x9276)= "EPM data: new firmware type detected"
+X_Value(0x9376) ="0x7693 EPM PU size inco"
+X_Value_Help(0x9376)= "EPM data: PU size incompatible"
+X_Value(0x9476) ="0x7694 EPM new PU size"
+X_Value_Help(0x9476)= "EPM data: new PU size detected"
+X_Value(0x9576) ="0x7695 InvalidChgovrCfg"
+X_Value_Help(0x9576)= "Invalid parameter changeover configuration"
+X_Value(0x9676) ="0x7696 Unkn. Par in EPM"
+X_Value_Help(0x9676)= "EPM data: unknown parameter found"
+X_Value(0x9776) ="0x7697 Parameter loss"
+X_Value_Help(0x9776)= "Parameter changes lost"
+X_Value(0x1281) ="0x8112 TO expl. msg"
+X_Value_Help(0x1281)= "Network - Time-out explicit message"
+X_Value(0x1481) ="0x8114 TO overall comm"
+X_Value_Help(0x1481)= "Network - Overall communication time-out"
+X_Value(0x1581) ="0x8115 Time-out (PAM)"
+X_Value_Help(0x1581)= "Time-out (PAM)"
+X_Value(0x1681) ="0x8116 MBTCP mast t-out"
+X_Value_Help(0x1681)= "Modbus TCP master time-out"
+X_Value(0x1781) ="0x8117 MB.Keep Alive TO"
+X_Value_Help(0x1781)= "Modbus TCP Keep Alive time-out"
+X_Value(0x8281) ="0x8182 CAN: bus off"
+X_Value_Help(0x8281)= "CAN: bus off"
+X_Value(0x8381) ="0x8183 CAN bus warning"
+X_Value_Help(0x8381)= "CAN: warning"
+X_Value(0x8481) ="0x8184 CAN heartb. C1"
+X_Value_Help(0x8481)= "CAN: heartbeat time-out consumer 1"
+X_Value(0x8581) ="0x8185 CAN heartb. C2"
+X_Value_Help(0x8581)= "CAN: heartbeat time-out consumer 2"
+X_Value(0x8681) ="0x8186 CAN heartb. C3"
+X_Value_Help(0x8681)= "CAN: heartbeat time-out consumer 3"
+X_Value(0x8781) ="0x8187 CAN heartb. C4"
+X_Value_Help(0x8781)= "CAN: heartbeat time-out consumer 4"
+X_Value(0x9081) ="0x8190 Watchdog timeout"
+X_Value_Help(0x9081)= "Network - Watchdog time-out"
+X_Value(0x9181) ="0x8191 Cycl data error"
+X_Value_Help(0x9181)= "Network - Disruption of cyclic data exchange"
+X_Value(0x9281) ="0x8192 Net. Init. error"
+X_Value_Help(0x9281)= "Network - Initialization error"
+X_Value(0x9381) ="0x8193 Inv. cyclic data"
+X_Value_Help(0x9381)= "Network - Invalid cyclic process data"
+X_Value(0xA081) ="0x81A0 Internal error"
+X_Value_Help(0xA081)= "Internal error"
+X_Value(0xA181) ="0x81A1 Modbus time-out "
+X_Value_Help(0xA181)= "Modbus: network time-out"
+X_Value(0xA281) ="0x81A2 Modbus request"
+X_Value_Help(0xA281)= "Modbus: incorrect request by master"
+X_Value(0xB081) ="0x81B0 Comm. faulty"
+X_Value_Help(0xB081)= "Network communication faulty"
+X_Value(0x6582) ="0x8265 POWERLINK SoC"
+X_Value_Help(0x6582)= "POWERLINK: Loss of SoC"
+X_Value(0x6682) ="0x8266 POWERLINK CRC"
+X_Value_Help(0x6682)= "POWERLINK: CRC error"
+X_Value(0x8682) ="0x8286 PDO map error"
+X_Value_Help(0x8682)= "Network - PDO mapping error"
+X_Value(0x9182) ="0x8291 Timeout RPDO1"
+X_Value_Help(0x9182)= "CAN: RPDO1 time-out"
+X_Value(0x9282) ="0x8292 Timeout RPDO2"
+X_Value_Help(0x9282)= "CAN: RPDO2 time-out"
+X_Value(0x9382) ="0x8293 Timeout RPDO3"
+X_Value_Help(0x9382)= "CAN: RPDO3 time-out"
+X_Value(0x1183) ="0x8311 Torque limit"
+X_Value_Help(0x1183)= "Torque limit reached"
+X_Value(0x8083) ="0x8380 Func. n. allowed"
+X_Value_Help(0x8083)= "Function not allowed in selected operating mode"
+X_Value(0x8090) ="0x9080 Keypad removed"
+X_Value_Help(0x8090)= "Keypad removed"
+X_Value(0x02FF) ="0xFF02 BrkResistor OL.F"
+X_Value_Help(0x02FF)= "Fault - Brake resistor overload"
+X_Value(0x06FF) ="0xFF06 Motor overspeed"
+X_Value_Help(0x06FF)= "Motor overspeed"
+X_Value(0x09FF) ="0xFF09 Mot.Phase miss."
+X_Value_Help(0x09FF)= "Motor phase missing"
+X_Value(0x0AFF) ="0xFF0A Phase U failure"
+X_Value_Help(0x0AFF)= "Motor phase failure phase U"
+X_Value(0x0BFF) ="0xFF0B Phase V failure"
+X_Value_Help(0x0BFF)= "Motor phase failure phase V"
+X_Value(0x0CFF) ="0xFF0C Phase W failure"
+X_Value_Help(0x0CFF)= "Motor phase failure phase W"
+X_Value(0x19FF) ="0xFF19 Motor ID fault"
+X_Value_Help(0x19FF)= "Motor parameter identification fault"
+X_Value(0x1FFF) ="0xFF1F FMF Error"
+X_Value_Help(0x1FFF)= "FMF Error"
+X_Value(0x25FF) ="0xFF25 Cascad. overload"
+X_Value_Help(0x25FF)= "Cascading overload"
+X_Value(0x30FF) ="0xFF30 Internal error"
+X_Value_Help(0x30FF)= "Internal error"
+X_Value(0x31FF) ="0xFF31 Internal error"
+X_Value_Help(0x31FF)= "Internal error"
+X_Value(0x32FF) ="0xFF32 Internal error"
+X_Value_Help(0x32FF)= "Internal error"
+X_Value(0x33FF) ="0xFF33 Internal error"
+X_Value_Help(0x33FF)= "Internal error"
+X_Value(0x34FF) ="0xFF34 Internal error"
+X_Value_Help(0x34FF)= "Internal error"
+X_Value(0x35FF) ="0xFF35 Internal error"
+X_Value_Help(0x35FF)= "Internal error"
+X_Value(0x36FF) ="0xFF36 BrkResistor OL.W"
+X_Value_Help(0x36FF)= "Warning - Brake resistor overload"
+X_Value(0x37FF) ="0xFF37 Auto start disab"
+X_Value_Help(0x37FF)= "Automatic start disabled"
+X_Value(0x38FF) ="0xFF38 Load loss"
+X_Value_Help(0x38FF)= "Load loss detected"
+X_Value(0x39FF) ="0xFF39 Motor overload"
+X_Value_Help(0x39FF)= "Motor overload"
+X_Value(0x56FF) ="0xFF56 Max. motor freq."
+X_Value_Help(0x56FF)= "Maximum motor frequency reached"
+X_Value(0x5AFF) ="0xFF5A Man. mode disabl"
+X_Value_Help(0x5AFF)= "Manual mode disabled"
+X_Value(0x5BFF) ="0xFF5B Man. mode act."
+X_Value_Help(0x5BFF)= "Manual mode activated"
+X_Value(0x5CFF) ="0xFF5C ManMode time-out"
+X_Value_Help(0x5CFF)= "Manual mode time-out"
+X_Value(0x5DFF) ="0xFF5D Safety int.Error"
+X_Value_Help(0x5DFF)= "Safety option - Internal error"
+X_Value(0x71FF) ="0xFF71 Wrong password"
+X_Value_Help(0x71FF)= "Wrong password"
+X_Value(0x72FF) ="0xFF72 Warning"
+X_Value_Help(0x72FF)= "Warning"
+X_Value(0x73FF) ="0xFF73 Fatal Error"
+X_Value_Help(0x73FF)= "Fatal Error"
+X_Value(0x74FF) ="0xFF74 PU fatal error"
+X_Value_Help(0x74FF)= "Power unit fatal error"
+X_Value(0x75FF) ="0xFF75 Wrong ID tag"
+X_Value_Help(0x75FF)= "Wrong ID tag"
+X_Value(0x85FF) ="0xFF85 Keypad full ctrl"
+X_Value_Help(0x85FF)= "Keypad full control active"
+X_Unit_Diag_Area_End
+
+X_Unit_Diag_Area = 32-39
+X_Value(0)="Error reaction: No reaction"
+X_Value(1)="Error reaction: Warning"
+X_Value(2)="Error reaction: Trouble"
+X_Value(3)="Error reaction: Fault"
+X_Unit_Diag_Area_end
+EndUnitDiagType

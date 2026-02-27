@@ -1,0 +1,80 @@
+Version GSD_GSE_V3.15 (date 12.2025)
+- FIRST GSD /GSE  File for the servo Inverter i950 Firmware 1.14 LENZE950.GSD
+
+Version GSD_GSE_V3.14 (date 09.2025)
+- new GSD /GSE  File for the new frequency Inverter i550 Firmware 6.6
+
+Version GSD_GSE_V3.13 (date 05.2024)
+- new GSD /GSE  File for the new frequency Inverter i550 Firmware 6.5
+
+Version GSD_GSE_V3.12 (date 05.2022) should be delete from AKB 
+- new GSD /GSE  File for the new frequency Inverter i550 Firmware 6.4
+
+Version GSD_GSE_V3.11 (date 12.2020)
+- new GSD /GSE  File for the new frequency Inverter i550 Firmware 6.2
+
+Version GSD_GSE_V3.10 (07.2020)
+- new GSD /GSE  File for the new frequency Inverter i550 Firmware 5.6
+
+Version GSD_GSE_V3.9 (09.2019)
+- new GSD /GSE  File for the new frequency Inverter i550 Firmware 5.4
+
+Version GSD_GSE_V3.8 (12.2018)
+- new GSD /GSE  File for the new frequency Inverter i550 Firmware 5.3
+
+Version GSD_GSE_V3.7 (date 05.2018)
+- new GSD /GSE  File for the new frequency Inverter i550 Firmware 5.2
+
+Version GSD_GSE_V3.6 (date 01.2018)
+- new GSD /GSE  File for the new frequency Inverter i550 Firmware 5.1
+
+Version GSD_GSE_V3.5 (date 07.2017))
+- new GSD /GSE  File for the new frequency Inverter i550 Firmware 5.0
+
+Version GSD_GSE_V3.4
+- new GSD /GSE  File for the new frequency Inverter i550 Firmware 4.1
+
+Version GSD_GSE_V3.3
+- new GSD /GSE  File for the new frequency Inverter i550 Firmware 4.0
+
+Version GSD_GSE_V3.2
+- new GSD /GSE  File for the new frequency Inverter i550 Firmware 3.0
+
+Version GSD_GSE_V3.1
+- new GSD /GSE  File for the new frequency Inverter i550 Firmware 2.1
+
+Version GSD_GSE_V3.0
+- new GSD /GSE  File for the new frequency Inverter i550
+- new Folder xx_Previous Products
+
+Version GSD_GSE_V2.9
+- new GSD /GSE  File for the 94xx and the decentralise Frequency Inverter 8400protec
+  changes at ProfiSAFE text inside the file (changes inside profiSAFE pecification)  Siemens TIA Portal
+
+Version GSD_GSE_V2.8
+- new GSD /GSE  File for the decentralise Frequency Inverter 8400motec (Rev.2)
+
+Version GSD_GSE_V2.7
+- GSE / GSD file for IO-1000 Profibus interface (included the module S406, S408 und S650)
+
+Version GSD_GSE_V2.6
+- GSD file for Lenze Controller c300 with Profibus Slave board
+
+Version GSD_GSE_V2.5
+- GSE file for IO-1000 Profibus interface (included the RS232 module)
+
+Version GSD_GSE_V2.4
+- GSD file for IO-1000 Profibus interface (included the RS232 module)
+
+Version GSD_GSE_V2.3
+- new structure from the zif file with folders for servo and inverter drives
+- new GSD /GSE  File for the decentralise Frequency Inverter 8400protec
+
+Version GSD_GSE_V2_2
+- new GSD /GSE  File for the decentralise Frequency Inverter 8400motec
+
+Version GSD_GSE_10_2010
+- new GSD /GSE for 94xx, PNO certification Profisafe Parameter
+
+Version GSD_GSE_11_2009
+- new GSD /GSE for 94xx with and witout consistent process data communication

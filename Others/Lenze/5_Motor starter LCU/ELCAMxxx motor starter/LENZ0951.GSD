@@ -1,0 +1,545 @@
+; (c) Lenze
+;
+; Profibus-DP        Geraetestammdatei
+;
+; Autor:             Lenze
+; Erstellungsdatum:  18.04.2005
+; Aenderungen:       04.05.2005 MaxTsdr gemaess SPC3 verringert
+;                    04.11.2005 F-WD-Time abgepasst und Texte hinzugefügt
+;                    02.06.2008 Erweiterung, Keyword "F_IO_StructureDescCRC" eingefügt
+; Allgemeine Angaben:
+;
+#Profibus_DP
+;
+GSD_Revision = 5
+;
+; Herstellername
+Vendor_Name = "Lenze"
+;
+; Herstellerbezeichnung des DP-Geraetes
+Model_Name = "LCU-12xPS"
+;
+; Ausgabestand des DP-Geraetes
+Revision = "V1.0"
+;
+; Ident-Nummer
+Ident_Number = 0x0951
+;
+; Protokollkennung des DP-Geraetes
+;       0: Profibus-DP
+;  16-255: Herstellerspezifisch
+Protocol_Ident = 0
+;
+; DP-Geraetetyp
+;       0: DP-Slave
+;       1: DP-Master Klasse 1
+Station_Type = 0
+;
+; kein FMS/DP-Mischgeraet
+FMS_supp = 0
+;
+; Hardware Ausgabestand des DP-Geraetes
+Hardware_Release = "1A"
+;
+; Software Ausgabestand des DP-Geraetes
+Software_Release = "1.0"
+;
+9.6_supp = 1
+19.2_supp = 1
+45.45_supp = 1
+93.75_supp = 1
+187.5_supp = 1
+500_supp = 1
+1.5M_supp = 1
+3M_supp = 1
+6M_supp = 1
+12M_supp = 1
+;
+MaxTsdr_9.6   =  15
+MaxTsdr_19.2  =  15
+MaxTsdr_45.45 =  15
+MaxTsdr_93.75 =  15
+MaxTsdr_187.5 =  15
+MaxTsdr_500   =  15
+MaxTsdr_1.5M  =  25
+MaxTsdr_3M    =  50
+MaxTsdr_6M   =  100
+MaxTsdr_12M  =  200
+;
+; keine redundante Uebertragungstechnik
+Redundancy = 0
+;
+; RTS-Signalpegel (CNTR-P) Pin 4 des 9pol. SUB-D
+;     0: nicht vorhanden
+;     1: RS 485
+;     2: TTL
+Repeater_Ctrl_Sig = 2
+;
+; Bedeutung der 24V Pins des 9pol. SUB-D (Pin 7  24V;  Pin 2 GND)
+;     0: nicht angeschlossen
+;     1: Input
+;     2: Output
+24V_Pins = 0
+;
+Implementation_Type = "Asic solution"
+;
+Bitmap_Device = "LENZLCUN"
+Bitmap_Diag   = "LENZLCUD"
+Bitmap_SF     = "LENZLCUS"
+;
+; Slave spezifische Werte
+;
+; Freeze-Mode wird nicht unterstuetzt
+Freeze_Mode_supp = 0
+;
+; Sync-Mode wird unterstuetzt
+Sync_Mode_supp = 1
+;
+; Automatische Baudratenerkennung wird unterstuetzt
+Auto_Baud_supp = 1
+;
+; Slave-Adresse kann vom Master gesetzt werden
+Set_Slave_Add_supp = 0
+;
+; Hoechstlaenge von User_Param_Data
+;User_Prm_Data_Len = 0
+;
+; Default-Wert fuer User_Param_Data
+;User_Param_Data = 0
+;
+; Mindestabstand zwischen 2 Slavelistenumlaeufen  fuer das DP-Geraet
+; (xx * 100us)
+Min_Slave_Intervall = 1
+;
+; Modulare Station
+Modular_Station = 1
+;
+; Hoechstanzahl der Module einer Modularen Station
+Max_Module = 2
+;
+; Hoechstlaenge der Eingangsdaten einer Modularen Station
+Max_Input_Len = 78
+;
+; Hoechstlaenge der Ausgangsdaten einer Modularen Station
+Max_Output_Len = 78
+;
+; Groesste Summe der Ein- und Ausgangsdaten einer Modularen Station in Bytes
+Max_Data_Len = 156
+;
+Max_Diag_Data_Len = 50
+;
+Slave_Family=1@Lenze
+;
+Fail_Safe=1
+;
+;--- GSD R3 slave extensions ---
+;Info_Text               = "DP-Slave FIOF mit DP-V1-Schnittstelle(azyklische Kommunikation)"
+DPV1_Slave               = 1
+C1_Read_Write_supp       = 1
+C2_Read_Write_supp       = 1
+C1_Max_Data_Len          = 240
+C2_Max_Data_Len          = 240
+C1_Response_Timeout      = 100
+C2_Response_Timeout      = 100
+;C1_Read_Write_required  = 0
+;C2_Read_Write_required  = 0
+C2_Max_Count_Channels    = 1
+Max_Initiate_PDU_Length  = 64
+;DPV1_Data_Types         = 0
+;WD_Base_1ms_supp        = 1
+;Check_Cfg_Mode          = 0
+;Publisher_supp          = 1
+
+;--- GSD R4 slave extensions ---
+;Prm_Block_Structure_supp = 1
+;Prm_Block_Structure_req  = 0
+; isochron mode
+;Isochron_Mode_supp       = 1
+;Isochron_Mode_required   = 0
+;TBASE_DP                 = 1500  ; * 1/12 µs    =  125 µs
+;TDP_MIN	                  = 8     ; * TBASE_DP   = 1000 µs
+;TDP_MAX                  = 256   ; * TBASE_DP   =   32 ms
+;T_PLL_W_MAX              = 12    ; * 1/12 µs    =    1 µs
+;TBASE_IO                 = 1500  ; * 1/12 µs    =  125 µs
+;TI_MIN                   = 1     ; * TBASE_IO
+;TO_MIN                   = 1     ; * TBASE_IO
+; DXB
+;Subscriber_supp          = 0
+;DXB_Max_Link_Count       = 16
+;DXB_Max_Data_Length      = 244
+
+;--- DP-V1 Alarm ---
+;Diagnostic_Alarm_supp	= 1
+;Process_Alarm_supp	= 1
+;Pull_Plug_Alarm_supp	= 1
+;Status_Alarm_supp	= 1
+;Update_Alarm_supp	= 1
+;Manufacturer_Specific_Alarm_supp = 0
+;Alarm_Sequence_Mode_Count	= 3
+;Alarm_Type_Mode_supp		= 1
+;Diagnostic_Alarm_required 	 = 1
+;
+;--- UsrPrmData Definitions ----------------------------------------
+Max_User_Prm_Data_Len      = 31
+Ext_User_Prm_Data_Const(0) = 0,0,0
+;
+;--- Safety --
+
+;**********************************************************
+;Text-Definition for User_Prm_Data
+;**********************************************************
+
+PrmText                 = 1
+Text(0)                 = "SIL 1"
+Text(1)                 = "SIL 2"
+Text(2)                 = "SIL 3"
+Text(3)                 = "NoSIL"
+EndPrmText
+
+PrmText                 = 2
+Text(0)                 = "No Check"
+Text(1)                 = "Check"
+EndPrmText
+
+;Text-Definition fuer CRC-Length
+PrmText                 = 3
+Text(1)                 = "2 Byte CRC"
+Text(2)                 = "4 Byte CRC"
+EndPrmText
+
+;**********************************************************
+; Ext-User-Prm-Data-Def-List
+;**********************************************************
+
+ExtUserPrmData = 1 "[SlotNumber]" ; Reference number 1
+Unsigned8 1 1-254       ; Default = 1, Max = 254
+EndExtUserPrmData
+
+ExtUserPrmData 		= 2 "F_Check_SeqNr"  	; Referenznummer 1   	
+Bit(0) 0 0-1                            	; Default = 0
+Prm_Text_Ref 		= 2                    	; Verweis auf Text-Definition 2
+EndExtUserPrmData
+
+ExtUserPrmData          = 3 "F_SIL"
+BitArea(2-3) 1 0-3
+Prm_Text_Ref            = 1
+EndExtUserPrmData
+
+ExtUserPrmData          = 4 "F_CRC_Length"
+BitArea(4-5) 1 1-2
+Prm_Text_Ref            = 3
+EndExtUserPrmData
+
+ExtUserPrmData          = 5 "F_Par_Version"
+BitArea(6-7) 0 0-0
+EndExtUserPrmData
+
+ExtUserPrmData          = 6 "F_Source_Add"
+Unsigned16 1 1-65534
+EndExtUserPrmData
+
+ExtUserPrmData          = 7 "F_Dest_Add"
+Unsigned16 1 1-65534
+EndExtUserPrmData
+
+ExtUserPrmData          = 8 "F_WD_Time"
+Unsigned16 110 1-65534
+EndExtUserPrmData
+
+ExtUserPrmData          = 9 "F_Par_CRC"
+Unsigned16 3430 0-65534
+EndExtUserPrmData
+
+
+;***********************************************************
+; Prm-Data
+;************************************************************
+
+;
+; Modulkennzeichnung
+;
+
+;* Daten Profisafe
+Module = "Safety (4 W)" 0xCA, 0x87, 0x87, 0x05, 0x05, 0x05, 0x05, 0x0A,0x05, 0x05, 0x05, 0x05, 0x0A
+01
+F_IO_StructureDescCRC=0xBB1B
+
+F_Ext_Module_Prm_Data_Len       = 14
+F_Ext_User_Prm_Data_Const(0) =0x0E,0x05,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+F_Ext_User_Prm_Data_Ref(2)      = 1           
+F_Ext_User_Prm_Data_Ref(4)      = 2             ;F-CHECK-SEQ. NO
+F_Ext_User_Prm_Data_Ref(4)      = 3             ;F-SIL
+F_Ext_User_Prm_Data_Ref(4)      = 4             ;F-CRC_LENGTH
+F_Ext_User_Prm_Data_Ref(5)      = 5             ;F-VERSION-ID
+F_Ext_User_Prm_Data_Ref(6)      = 6             ;F-Source-Adr
+F_Ext_User_Prm_Data_Ref(8)      = 7             ;F-Dest-Adr
+F_Ext_User_Prm_Data_Ref(10)     = 8             ;F-WD-Time
+F_Ext_User_Prm_Data_Ref(12)     = 9             ;F-CRC1
+;CRC über die Parameterbeschreibungsdaten
+F_ParamDescCRC=0xF02D
+EndModule
+;
+; Modulkennzeichnung
+;
+;************* mit konsistentem Drivecom Parameterkanal ***************
+Module = "Drivecom-PAR(Kons)+PZD(1W)" 0xF3,0x70
+02
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(2W)" 0xF3,0x71
+03
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(3W)" 0xF3,0x72
+04
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(4W)" 0xF3,0x73
+05
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(5W)" 0xF3,0x74
+06
+EndModule
+Module = "Drivecom-PAR(Kons.)+PZD(6W)" 0xF3,0x75
+07
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(7W)" 0xF3,0x76
+08
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(8W)" 0xF3,0x77
+09
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(9W)" 0xF3,0x78
+10
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(10W)" 0xF3,0x79
+11
+EndModule
+;
+;****** mit konsistentem Drivecom Parameterkanal und konsisten PZD *****
+Module = "Drivecom-PAR(Kons)+PZD(1W Kons)" 0xF3,0xF0
+12
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(2W Kons)" 0xF3,0xF1
+13
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(3W Kons)" 0xF3,0xF2
+14
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(4W Kons)" 0xF3,0xF3
+15
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(5W Kons)" 0xF3,0xF4
+16
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(6W Kons)" 0xF3,0xF5
+17
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(7W Kons)" 0xF3,0xF6
+18
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(8W Kons)" 0xF3,0xF7
+19
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(9W Kons)" 0xF3,0xF8
+20
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(10W Kons)" 0xF3,0xF9
+21
+EndModule
+;
+;********* mit konsistentem Profidrive Parameterkanal ***************
+Module = "PKW(Kons)+PZD(1W)" 0x00,0xF3,0x70
+22
+EndModule
+Module = "PKW(Kons)+PZD(2W)" 0x00,0xF3,0x71
+23
+EndModule
+Module = "PKW(Kons)+PZD(3W)" 0x00,0xF3,0x72
+24
+EndModule
+Module = "PKW(Kons)+PZD(4W)" 0x00,0xF3,0x73
+25
+EndModule
+Module = "PKW(Kons)+PZD(5W)" 0x00,0xF3,0x74
+26
+EndModule
+Module = "PKW(Kons)+PZD(6W)" 0x00,0xF3,0x75
+27
+EndModule
+Module = "PKW(Kons)+PZD(7W)" 0x00,0xF3,0x76
+28
+EndModule
+Module = "PKW(Kons)+PZD(8W)" 0x00,0xF3,0x77
+29
+EndModule
+Module = "PKW(Kons)+PZD(9W)" 0x00,0xF3,0x78
+30
+EndModule
+Module = "PKW(Kons)+PZD(10W)" 0x00,0xF3,0x79
+31
+EndModule
+;
+;*** mit konsistentem Profidrive Parameterkanal und konsisten PZD ****
+Module = "PKW(Kons)+PZD(1W Kons)" 0x00,0xF3,0xF0
+32
+EndModule
+Module = "PKW(Kons)+PZD(2W Kons)" 0x00,0xF3,0xF1
+33
+EndModule
+Module = "PKW(Kons)+PZD(3W Kons)" 0x00,0xF3,0xF2
+34
+EndModule
+Module = "PKW(Kons)+PZD(4W Kons)" 0x00,0xF3,0xF3
+35
+EndModule
+Module = "PKW(Kons)+PZD(5W Kons)" 0x00,0xF3,0xF4
+36
+EndModule
+Module = "PKW(Kons)+PZD(6W Kons)" 0x00,0xF3,0xF5
+37
+EndModule
+Module = "PKW(Kons)+PZD(7W Kons)" 0x00,0xF3,0xF6
+38
+EndModule
+Module = "PKW(Kons)+PZD(8W Kons)" 0x00,0xF3,0xF7
+39
+EndModule
+Module = "PKW(Kons)+PZD(9W Kons)" 0x00,0xF3,0xF8
+40
+EndModule
+Module = "PKW(Kons)+PZD(10W Kons)" 0x00,0xF3,0xF9
+41
+EndModule
+;
+;************* Prozessdaten *************************
+Module = "PZD(1W)" 0x70
+42
+EndModule
+Module = "PZD(2W)" 0x71
+43
+EndModule
+Module = "PZD(3W)" 0x72
+44
+EndModule
+Module = "PZD(4W)" 0x73
+45
+EndModule
+Module = "PZD(5W)" 0x74
+46
+EndModule
+Module = "PZD(6W)" 0x75
+47
+EndModule
+Module = "PZD(7W)" 0x76
+48
+EndModule
+Module = "PZD(8W)" 0x77
+49
+EndModule
+Module = "PZD(9W)" 0x78
+50
+EndModule
+Module = "PZD(10W)" 0x79
+51
+EndModule
+;
+;************* Prozessdaten mit Konsistenz **********
+Module = "PZD(1W Kons)" 0xF0
+52
+EndModule
+Module = "PZD(2W Kons)" 0xF1
+53
+EndModule
+Module = "PZD(3W Kons)" 0xF2
+54
+EndModule
+Module = "PZD(4W Kons)" 0xF3
+55
+EndModule
+Module = "PZD(5W Kons)" 0xF4
+56
+EndModule
+Module = "PZD(6W Kons)" 0xF5
+57
+EndModule
+Module = "PZD(7W Kons)" 0xF6
+58
+EndModule
+Module = "PZD(8W Kons.)" 0xF7
+59
+EndModule
+Module = "PZD(9W Kons)" 0xF8
+60
+EndModule
+Module = "PZD(10W Kons)" 0xF9
+61
+EndModule
+;
+
+Unit_Diag_Area=24-39
+Value( 1)="Internal error, STO set"
+Value( 2)="Internal error, SS1 set"
+Value( 3)="Internal error, SS2 set"
+Value(33)="Invalid F address"
+Value(34)="PROFIsafe communication fault"
+Value(35)="F_WD_Time exceeded"
+Value(36)="PROFIsafe passivated"
+Value(37)="PROFIsafe left DataExchange"
+Value(38)="Invalid PS user data, passivated"
+Value(39)="F parameter(s) differ"
+Value(49)="Discrepancy fault input SD-In1"
+Value(50)="Discrepancy fault input SD-In2"
+Value(51)="Discrepancy fault input SD-In3"
+Value(52)="Discrepancy fault input SD-In4"
+Value(54)="Discrepancy fault input AIE"
+Value(64)="F address differ to F_Dest_Add"
+Value(65)="F_Dest_Add is 0x0000 or 0xFFFF"
+Value(66)="F_Source_Add is 0x0000 or 0xFFFF"
+Value(67)="F_WD_Time value is 0msec"
+Value(68)="F_SIL exceeds technology-SIL"
+Value(69)="F_CRC_Length does not match"
+Value(70)="Version of F-Parameter incorrect"
+Value(71)="PROFIsafe CRC1-Fault"
+Value(81)="Short- / cross-circuit on input"
+Value(82)="Short- / cross-circuit on clock"
+Value(89)="Short- / cross-circuit on output"
+Value(93)="Error in safe power off unit"
+Value(97)="SS1: n<>0 after stop time"
+Unit_Diag_Area_end
+
+;Fehlerreaktion
+Unit_Diag_Area=69-71
+Value(1)="Error reaction: Fault"
+Value(5)="Error reaction: Warning"
+Unit_Diag_Area_end
+
+;Fehler ID
+Unit_Diag_Area=40-55
+Value(00)="kein Fehler"
+Value(11)="OC1 - Kurzschluss"
+Value(12)="OC2 - Erdschluss"
+Value(16)="OC6 - I2xt Ueberlast Motor 1"
+Value(17)="OC7 - I2xt Ueberlast Motor 2"
+Value(19)="OC9 - Fehler im Leistungsteil"
+Value(50)="OH - Uebertemperatur Gehaeuse"
+Value(53)="OH3 - Motortemparatur M1"
+Value(54)="OH4 - Motortemparatur M2"
+Value(66)="CE5 - Time Out int. Kommunikat."
+Value(71)="CCr - Systemstoerung"
+Value(72)="Pr1 - Par1 falsch uebertragen"
+Value(73)="Pr2 - Par2 falsch uebertragen"
+Value(76)="rST - Fehler Auto-Trip-Reset"
+Value(77)="Pr3 - Par3 falsch uebertragen"
+Value(78)="Pr4 - Par4 falsch uebertragen"
+Value(81)="PT5 - Time Out Parametertransfer"
+Value(91)="EEr - externe Stoerung"
+Value(203)="OH51 - Motortemparatur M1 "
+Value(204)="OH52 - Motortemparatur M2"
+Value(240)="Er240 - Stoerung Komm.-modul"
+Value(248)="Er248 - I2xt Ueberlast Motor 1"
+Value(250)="Er250 - I2xt Ueberlast Motor 2"
+Value(252)="Er252 - Fehler Netzphase"
+Value(253)="Er253 - Fehler Netzphase"
+Value(254)="Er254 - Kurzschluss Motorphase"
+Value(255)="Er255 - Fehler im Leistungsteil"
+Unit_Diag_Area_end
+
+

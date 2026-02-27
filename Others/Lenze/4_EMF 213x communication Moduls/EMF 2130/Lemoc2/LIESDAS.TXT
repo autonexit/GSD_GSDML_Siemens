@@ -1,0 +1,207 @@
+(c) Lenze GmbH & Co KG Aerzen,  1997
+    Postfach  101352
+    D-31763 Hameln
+    Tel.  (05154) 82-0
+    Fax.  (05154) 4040
+
+
+LEMOC2   Antriebsparametrierung  auf PC
+Version: 3.4
+
+In Verbindung mit dieser Software k”nnen LENZE-Antriebsregler und
+Automatisierungsbaugruppen parametriert und bedient werden.
+
+Weiter ist ein Netzlistengererator fr den Servo-Umrichter 9300
+vorhanden. Mit dieser Software kann die Konfiguration eines 
+Antriebs gelesen und dargestellt werden.
+Dieses Programm befindet sich im Verzeichnis 'Lemoc2\bin' und kann
+durch Eingabe von 'netlist' gestartet werden.
+
+--------------------------------------------------------------------------
+ACHTUNG:
+
+Die Software wird dem Benutzer in der vorliegenden Form zur Verfgung
+gestellt. Alle Risiken hinsichtlich der Qualit„t und der durch ihren
+Einsatz ermittelten Ergebnisse verbleiben beim Benutzer. Entsprechende
+Sicherheitsvorkehrungen gegen eventuelle Fehlbedienungen sind vom
+Benutzer vorzusehen.
+
+Wir bernehmen keine Verantwortung fr direkt oder indirekt entstandene
+Sch„den, z.B. Gewinnverluste, Auftragsverluste oder gesch„ftliche Beein-
+tr„chtigungen jeglicher Art.
+--------------------------------------------------------------------------
+
+SYSTEMANFORDERUNGEN:
+
+  Hardware:   IBM-AT oder kompatiler PC  ( CPU: 80286 oder h”her )
+              mindestens 560 kByte frei verfgbares RAM
+              Festplatte mit etwa 5 MByte freier Kapazit„t
+              Diskettenlaufwerk 3,5"
+
+  Software:   MS-DOS ab Version 3.3
+
+--------------------------------------------------------------------------
+
+PROGRAMM-AUFRUF:
+
+   Nach der Installation und dem Eintragen des Verzeichnisses von LEMOC2
+   in PFAD-Eintrag der AUTOEXEC.BAT kann LEMOC2 in folgender Weise gestartet
+   werden:
+
+        lm2 [optionen]
+
+   Wenn Sie das Verzeichnis von LEMOC2 nicht in Ihrem Pfad eintragen, mssen
+   Sie das Programm in folgender Weise starten:
+
+        c:\lemoc2\bin\lm2 [optionen]
+
+   Ohne die Angabe von Optionen wird LEMOC2 im hochaufl”senden Grafik-Modus
+   gestartet. Wird beim Programmstart die Datei EGAVGA.BGI nicht gefunden,
+   so wird eine niedrigere Grafik-Aufl”sung gew„hlt.
+
+   Optionen beim Programmaufruf:
+
+   Die Optionen k”nnen in jeder Reihenfolge und Kombination benutzt werden.
+   Die Trennung erfolgt durch ein Leerzeichen.
+
+   /?     Es werden die m”glichen Optionen von LEMOC2 angezeigt.
+   /t     Programm wird im Text-Modus gestartet.
+          In der Regel erkennt LEMOC2 selbst„ndig den m”glichen Bildschirm-
+          Modus. Ist das nicht der Fall, kann LEMOC2 durch diese Option direkt
+          in dem Text-Modus umgeschaltet werden.
+   /m     Programm wird im monochromen Modus gestartet
+   /ega   Programm wird im EGA-Modus gestartet.
+          Bei der Verwendung eines PC mit einer EGA-Grafik-Karte
+          k”nnen Schwierigkeiten in der H”he der dargestellten Fenster
+          auftreten. Durch diese Optionen werden die Bildschirmdarstellungen
+          angepaát.
+   /vga   Programm wird im VGA-Modus gestartet. Das ist der voreingestellte
+          Modus. Wenn das Programm den Treiber egavga.bgi findet wird automa-
+          tisch die h”chstm”gliche Grafikaufl”sung eingestellt.
+   /lcd   Programm wird an LCD-Displays angepaát
+   /max   Besonders groáe Ger„tebeschreibungen (z.B. Baugruppe 2210)
+          erfordern eine Erweiterung der Speicherstrukturen im Programm.
+          Dazu muá LEMOC2 mit der Erweiterung /max einmal gestartet werden.
+          Bei jedem weiteren Start wird dann die maximale Speicherkonfigura-
+          tion aus der Konfigurationsdatei lm2conf.cnf gelesen. Wenn Sie die
+          Option /max w„hlen, ben”tigen Sie mindestens 560 kByte freien
+          Speicher im konventionellen Bereich.
+   /min   Mit dieser Option k”nnen Sie die Einstellungen von /max rckg„ngig
+          machen. Rufen Sie dazu LEMOC2 einmal mit dieser Option auf. Bei
+          jedem weiteren Programmstart benutzt LEMOC2 eine Standardeinstellung
+          fr die Gr”áe des Arbeitsspeichers. LEMOC2 ben”tigt im Standardfall
+          mindestens 520 kByte freien Speicher im konventionellen Bereich. Sie
+          k”nnen mit der Standardkonfiguration alle Ger„tebeschreibungen fr
+          Ger„te ohne Automatisierungsbaugruppe benutzen.
+   /pdb=  Die angegebene Ger„tebeschreibung wird automatisch beim Start
+          von LEMOC2 geladen. Es mssen Verzeichnis und Dateiname der
+          Ger„tebeschreibung angegeben werden.
+   /var=  Die angegebene Parametersatzdatei wird automatisch beim Start
+          von LEMOC2 geladen. Es mssen Verzeichnis und Dateiname der
+          Parametersatzdatei angegeben werden.
+
+     Es k”nnen mehrere Optionen benutzt werden. Zwischen den einzelnen
+     Optionen muá ein Leerzeichen zur Trennung stehen.
+     Die Programmoptionen werden im Konfigurationsfile LM2CONF.CNF abgelegt.
+     Bei weiteren Programmstarts werden die Optionen nicht mehr ben”tigt.
+
+--------------------------------------------------------------------------
+
+VERZEICHNIS-STRUKTUR von LEMOC2:
+
+   Die einzelnen Teile von LEMOC2 sind in verschiedenen Verzeichnissen
+   abgelegt. Diese Verzeichnisstruktur darf nicht ge„ndert werden.
+
+   \lemoc2  ----+--- \bin
+                |
+                +--- \pdb  --+-- 049
+                |            +-- 033
+                |            +-- 044
+                |            |
+                |
+                +--- \data
+
+    Inhalte der Verzeichnisse:
+
+    \bin         ausfhrbare Programmdatei lm2.exe
+                 Konfigurationsdateien fr LEMOC2
+
+    \pdb\....    Verzeichnis fr die Ablage der von LEMOC2 ben”tigten
+                 Ger„tebeschreibungen. Die Dateierweiterung fr diese
+                 Dateien ist immer *.pdb .
+                 Die Ger„tebeschreibungen sind in mehreren Sprachen
+                 verfgbar. Deshalb werden die Dateien nach Sprachen
+                 geordnet in einzelnen Unterverzeichnissen abgelegt.
+                 Die Kennung fr die einzelnen Sprachen ist identisch
+                 mit der Sprachenkennung wie sie in MS-DOS verwendet
+                 wird.
+
+                 Beispiel:    049   deutsch
+                              033   fr„nz”sisch
+                              044   englisch
+
+    \data        In diesem Verzeichnis werden die Dateien mit den vom
+                 Anwender gespeicherten Parameters„tzen abgelegt. Diese
+                 Dateien haben immer die Erweiterung *.var .
+
+--------------------------------------------------------------------------
+
+SERIELLE VERBINDUNG zwischen PC und Antrieb:
+
+   Die Verbindung zwischen PC und Antrieb erfolgt ber ein Kabel mit
+   folgender Konfiguration:
+
+     Lenze Antrieb                                    PC
+     9pol. SubD-Stecker                       25pol. SubD-Buchse
+
+           PIN                                         PIN
+            2  oÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄo  2
+            3  oÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄo  3
+            5  oÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄo  7
+            6  oÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄo  6
+
+
+     Lenze Antrieb                                    PC
+     9pol. SubD-Stecker                        9pol. SubD-Buchse
+
+           PIN                                         PIN
+            2  oÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄo  3
+            3  oÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄo  2
+            5  oÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄo  5
+
+
+  Alle nicht dargestellten Anschlsse sind nicht belegt. Weitere
+  Informationen entnehmen Sie bitte der Technischen Beschreibung
+  LECOM-A/B.
+
+--------------------------------------------------------------------------
+
+FEHLER BEIM LADEN EINER GERTEBESCHREIBUNG
+
+  Bei besonders groáen Ger„tebeschreibungen reicht der standardm„áig
+  von LEMOC2 reservierte Speicherbereich nicht aus. Sie erhalten beim
+  Laden einer solchen Ger„tebeschreibung eine Fehlermeldung, daá ein
+  Teil der Ger„tebeschreibung nicht geladen werden kann, weil der Speicher
+  nicht ausreicht. Dieser Fall tritt nur auf bei Ger„tebeschreibungen
+  die gleichzeitig die Parameter eines Grundger„tes und einer Automatisie-
+  rungsbaugruppe beinhalten.
+
+  Der von LEMOC2 reservierte Speicher l„át sich vergr”áern, wenn das Programm
+  einmal mit der Option /max gestartet wird. Bei jedem weiteren Programmstart
+  wird dann die maximale Speicherkonfiguration aus der Konfigurationsdatei
+  lm2conf.cnf gelesen.
+
+--------------------------------------------------------------------------
+
+SERVICE:
+
+  Bei technischen Problemen beim Einsatz von LEMOC2 wenden Sie sich bitte
+  an Ihre zust„ndige Lenze-Vertretung oder an :
+
+  Lenze GmbH & CoKG Aerzen
+  Postfach  101352
+  D - 31763 Hameln
+  Tel. (05154) 82-0
+  Fax. (05154) 4040
+
+--------------------------------------------------------------------------

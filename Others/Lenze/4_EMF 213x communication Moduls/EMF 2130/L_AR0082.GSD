@@ -1,0 +1,125 @@
+; (c) Lenze
+;
+; Profibus-DP     Geraetestammdatei
+;
+; Autor:             Thomas Barklage
+; Erstellungsdatum:  03.11.1994
+; Aenderungen:       31.07.1996 Anpassung an V1.0                                
+;                    21.07.1997 Schluesselwort #Profibus_DP eingefuegt
+;                    05.01.1998 Strings gekuerzt und 
+;                               Slave_Family=1
+;                               hinzugefuegt
+;                    10.05.2000 GSD_Revision=1,Max_Diag_Data_Len = 9 hinzugefügt
+;                               Min_Slave_Intervall von 30 auf 60 geändert
+;                    21.11.2002 Umfirmierung
+;
+; Allgemeine Angaben:
+;
+#Profibus_DP
+;
+GSD_Revision = 1
+;
+; Herstellername
+Vendor_Name = "Lenze"
+;
+; Herstellerbezeichnung des DP-Geraetes
+Model_Name = "2130(4900/8600/9200)"
+;
+; Ausgabestand des DP-Geraetes
+Revision = "1.0"
+;
+; Protokollkennung des DP-Geraetes
+;    0: Profibus-DP
+;    16-255 Herstellerspezifisch 
+Protocol_Ident = 0
+;
+;  DP-Geraetetyp
+;    0: DP-Slave
+;    1: DP-Master Klasse 1
+Station_Type = 0
+;
+;  kein FMS/DP-Mischgeraet
+FMS_supp = 0
+;
+;  Hardware Ausgabestand des DP-Geraetes
+Hardware_Release = " "
+;
+;  Software Ausgabestand des DP-Geraetes
+Software_Release = " "
+;
+;  9,6 kBaud wird nicht unterstuetzt
+9.6_supp = 0
+;
+;  19.2 kBaud wird nicht unterstuetzt
+19.2_supp = 0
+;
+;  93.75 kBaud wird unterstuetzt
+93.75_supp = 1
+;
+;  187.5 kBaud wird unterstuetzt
+187.5_supp = 1
+;
+;  500 kBaud wird unterstuetzt
+500_supp = 1
+;
+;  1,5 MBaud wird unterstuetzt
+1.5M_supp = 1
+;
+;MaxTsdr_9.6   = 60
+;MaxTsdr_19.2  = 60
+MaxTsdr_93.75 = 60
+MaxTsdr_187.5 = 60
+MaxTsdr_500   = 100
+MaxTsdr_1.5M  = 150
+;
+;  Ident-Nummer 
+Ident_Number = 0x0082
+;
+;  Der Freeze-Mode wird nicht unterstuetzt
+Freeze_Mode_supp = 0
+;
+;  Der Sync-Mode wird unterstuetzt
+Sync_Mode_supp = 1
+;
+;  Die Automatische Baudratenerkennung wird unterstuetzt
+Auto_Baud_supp = 1
+;
+;  Die Slave-Adresse kann vom Master gesetzt werden
+Set_Slave_Add_supp = 1
+;
+;  Minimaler Abstand zwischen 2 DDLM_Data_Exchange-Aufrufen
+Min_Slave_Intervall = 60 ;*100us
+;
+Slave_Family=1@Lenze
+;
+Max_Diag_Data_Len = 9
+;
+; Modulare Station
+Modular_Station = 1
+;
+; Hoechstanzahl der Module einer Modularen Station
+Max_Module = 1
+;
+; Hoechstlaenge der Eingangsdaten einer Modularen Station
+Max_Input_Len = 12
+;
+; Hoechstlaenge der Ausgangsdaten einer Modularen Station
+Max_Output_Len = 12
+;
+; Groesste Summe der Ein- und Ausgangsdaten einer Modularen Station in Bytes
+Max_Data_Len = 24
+;
+; Modulkennzeichnung
+Module = "PAR(4 Worte)+PZD(2 Worte)" 0x73,0x71
+EndModule
+Module = "PZD(2 Worte)" 0x71
+EndModule
+Module = "PAR(8 Byte )+PZD(2 Worte)" 0x37,0x71
+EndModule
+Module = "PAR(8Byte Kons)+PZD(4ByteKons)" 0xb7,0xa3,0x93
+EndModule
+Module = "PZD(4Byte Kons)" 0xa3,0x93
+EndModule
+
+
+

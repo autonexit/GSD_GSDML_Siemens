@@ -1,0 +1,39 @@
+;LEMOC2-Configurationsfile
+;
+00100;0
+00101;1
+00102;9600
+00104;049
+00105;1
+00106;1
+00107;0
+00120;2
+00121;60
+00122;05
+00123;00000
+00124;03999
+00138;00000
+00125;03f8;04;02f8;03;03e8;04;02e8;03
+00126;01
+00127;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxx
+00128;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxx
+
+
+;Gr”áe der Parametertabellen:
+00129;00001      ;0 = default memory, 1 = max memory
+00130;00650      ;max_code_count
+00131;01400      ;max_wertn_count
+00133;01600      ;max_text_count
+00135;00180      ;max_menu_count
+00136;02400      ;max_token_count
+
+;** LM2INFO
+;COD_CODE_COUNT  = 0    
+;COD_WERTN_COUNT = 0    
+;COD_TEXT_COUNT  = 0    
+;COD_MENU_COUNT  = 0    
+;COD_TOKEN_COUNT = 0    
+;MEMORY_AVAIL    = 0
+;PDB_FILE:       nicht geladen   

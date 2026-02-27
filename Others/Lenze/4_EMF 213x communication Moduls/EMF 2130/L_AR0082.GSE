@@ -1,0 +1,75 @@
+; (c) Lenze
+;
+; Profibus-DP        electronic data sheet 
+;
+; Autor:             Thomas Barklage
+; Creationdate:      29.01.1998 from L_AR00AA.GSD 
+; Changes:                                       
+;                    10.05.2000 GSD_Revision=1,Max_Diag_Data_Len = 9 hinzugefügt
+;                               Min_Slave_Intervall von 30 auf 60 geändert
+;                    21.11.2002 Umfirmierung
+;
+#Profibus_DP
+;
+GSD_Revision = 1
+;
+;
+Vendor_Name = "Lenze"
+;
+Model_Name = "2130(4900/8600/9200)"
+;
+Revision = "1.0"
+;
+Protocol_Ident = 0
+;
+Station_Type = 0
+;
+FMS_supp = 0
+;
+Hardware_Release = " "
+;
+Software_Release = " "
+;
+9.6_supp = 0
+19.2_supp = 0
+93.75_supp = 1
+187.5_supp = 1
+500_supp = 1
+1.5M_supp = 1
+;
+MaxTsdr_93.75 = 60
+MaxTsdr_187.5 = 60
+MaxTsdr_500   = 100
+MaxTsdr_1.5M  = 150
+;
+Ident_Number = 0x0082
+;
+Freeze_Mode_supp = 0
+Sync_Mode_supp = 1
+Auto_Baud_supp = 1
+Set_Slave_Add_supp = 1
+Min_Slave_Intervall = 60 ;*100us
+Slave_Family=1@Lenze
+;
+Modular_Station = 1
+Max_Module = 1
+Max_Input_Len = 12
+Max_Output_Len = 12
+Max_Data_Len = 24
+Max_Diag_Data_Len = 9
+;
+;
+; Modulkennzeichnung
+Module = "PAR(4 Words)+PZD(2 Words)" 0x73,0x71
+EndModule
+Module = "PZD(2 Words)" 0x71
+EndModule
+Module = "PAR(8 Byte )+PZD(2 Words)" 0x37,0x71
+EndModule
+Module = "PAR(8B. Cons)+PZD(4B. Cons)" 0xb7,0xa3,0x93
+EndModule
+Module = "PZD(4Byte Cons)" 0xa3,0x93
+EndModule
+
+
+

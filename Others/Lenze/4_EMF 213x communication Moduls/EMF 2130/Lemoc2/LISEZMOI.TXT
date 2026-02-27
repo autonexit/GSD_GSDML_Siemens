@@ -1,0 +1,209 @@
+(c) Lenze S.A.
+    ZA de Chanteloup
+    Rue Albert Einstein
+    Tel.  (1) 48.79.62.00
+    Fax.  (1) 48.69.40.99
+
+
+LEMOC2   Param‚trer des variateurs … l'aide d'un PC
+Version: 3.4
+
+Les variateurs, convertisseurs de fr‚quences, servovariateurs et
+modules d'automatisme peuvent ˆtre param‚tr‚s … l'aide de ce logiciel.
+
+--------------------------------------------------------------------------
+ATTENTION
+
+ La soci‚t‚ Lenze met ce logiciel … disposition de l'utilisateur dans
+ l'‚tat d‚crit ci-dessus. Tout risque au niveau de la qualit‚ ou des
+ r‚sultats en d‚coulant, sont … la charge de l'utilisateur de LEMOC2.
+ L'utilisateur doit prendre des dispositions contre toute ‚ventuelle
+ mauvaise utilisation.
+ Nous ne prenons aucune responsabilit‚ quant … l'apparition de dommages
+ directs ou indirects, comme par exemple, les pertes de gain, les pertes
+ de profit ou un pr‚judice commercial sous quelle forme qu'il soit.
+--------------------------------------------------------------------------
+
+CARACTERISTIQUES DU SYSTEME:
+
+  Hardware:   IBM-AT ou compatible PC  ( UC: 80286 ou plus ‚l‚v‚e )
+              Au moins 560 ko de RAM disponible
+              5 Mo d'espace m‚moire disponible sur le disque dur
+              Lecteur de disquettes 3,5"
+
+  Software:   MS-DOS … partir de la version 3.3
+
+--------------------------------------------------------------------------
+
+PROGRAMM-AUFRUF:
+
+   AprŠs installation de LEMOC2, vous pouvez reporter le nom du r‚pertoire
+   contenant lm2.exe dans le fichier AUTOEXEC.BAT.
+   ex.: "PATH C:\LEMOC2" 
+   Vous pouvez alors lancer LEMOC2 comme suit :
+
+        lm2 [options]
+
+   Si ce report n'a pas ‚t‚ effectu‚, vous devez lancer le programme de la
+   fa‡on suivante :
+
+        c:\lemoc2\bin\lm2 [options]
+
+   Si aucune option n'a ‚t‚ choisie, LEMOC2 sera d‚marr‚ en mode graphique 
+   haute r‚solution. Si,au cours du lancement, le fichier EGAVGA.BGI n'a 
+   pas ‚t‚ trouv‚, le programme sera d‚marr‚ avec une r‚solution graphique 
+   plus faible.
+
+  Options de la ligne de commande:
+
+  Les options peuvent ˆtre indiqu‚es dans un ordre quelconque et toute
+  combinaison est possible entre les options.
+  Chaque option doit ˆtre s‚par‚e de la suivante par un espace.
+
+   /?     Affichage des diff‚rentes options possibles. 
+          Cette commande n'entraŒne pas le d‚marrage du programme.
+   /t     Le programme est d‚marr‚ en mode TEXTE. 
+          Normalement, LEMOC2 reconnait automatiquement les modes 
+          d'‚cran possibles. Si cel… n'est pas le cas, cette commande
+          permet de d‚marrer automatiquement LEMOC2 en mode texte.
+   /m     Le programme est d‚marr‚ en mode MONOCHROME, cel… signifie que
+          toutes les repr‚sentations seront en noir et blanc.
+   /ega   Le programme est d‚marr‚ en mode EGA.
+          Certains problŠmes peuvent survenir dans la taille des fenˆtres 
+          repr‚sent‚es, en cas d'utilisation d'un PC ‚quip‚ d'une carte 
+          vid‚o EGA. Cette option permet de s‚lectionner aussit“t la
+          bonne repr‚sentation graphique.
+   /vga   Le programme est d‚marr‚ en mode VGA. C'est le mode standard
+          pr‚programm‚. Si lors du d‚marrage, le programme trouve le 
+          driver egavga.bgi, la r‚solution maximale sera aussit“t 
+          s‚lectionn‚e.
+   /lcd   Le programme est compatible avec un afficheur num‚rique.
+   /max   Le t‚l‚chargement de certains fichiers de paramŠtres importants
+          n‚cessite une extension de la m‚moire de travail (association 
+          Servo 9200 + Carte 2110 ). Pour permettre le t‚l‚chargement
+          de ce type de fichier, LEMOC2 doit ˆtre d‚marr‚ une fois avec 
+          /max. Dans ce cas, … chaque nouveau d‚marrage de LEMOC2, la  
+          configuration m‚moire maximale (issue du fichier configuration
+          lm2conf.cnf) sera adopt‚e.
+          Si vous choisissez l'option /max, la m‚moire RAM de votre PC 
+          n‚cessaire au d‚marrage de LEMOC2 sera au moins ‚gale … 560 kByte.
+   /min   Vous pouvez annuler l'action /max si vous lancez LEMOC2 une fois 
+          avec l'option /min. Les lancements ult‚rieurs de LEMOC2 seront alors
+          en mode standard. Dans ce cas, LEMOC2 n‚cessite au moins 520 ko de
+          m‚moire RAM. 
+          En configuration standard, vous pouvez t‚l‚charger tout fichier
+          type d'appareil" standard sans module d'automatisme.
+   /pdb=  R‚pertoire et Nom du type d'appareil: ce fichier est t‚l‚charg‚ 
+          automatiquement au d‚marrage du programme. Dans ce cas, il n'est 
+          pas n‚cessaire d'appeler la commande "Charger Type d'appareil" 
+          dans le menu "Fichier" aprŠs appel de LEMOC2.
+   /var=  R‚pertoire et Nom du fichier de paramŠtres.
+          Cette option n'est active, qu'… partir du moment, o— l'option 
+          /pdb= a ‚galement ‚t‚ appel‚e.
+
+     Plusieurs options peuvent ˆtre indiqu‚es lors du lancement du programme.
+     Chaque option doit ˆtre s‚par‚e de la suivante par un espace.
+     Les options du programme se trouvent dans le fichier LM2CONF.CNF.
+     Il n'est pas n‚cessaire d'indiquer une nouvelle fois les options lors
+     d'un nouvel appel du programme.
+
+--------------------------------------------------------------------------
+
+STRUCTURE DES REPERTOIRES DE LEMOC2 :
+
+   Les diff‚rentes parties du programme LEMOC2 sont r‚parties dans 
+   diff‚rents r‚pertoires. La structure ne doit pas ˆtre modifi‚e.
+   
+   \lemoc2  ----+--- \bin
+                |
+                +--- \pdb  --+-- 049
+                |            +-- 033
+                |            +-- 044
+                |            |
+                |
+                +--- \data
+
+    Contenu des r‚pertoires:
+
+    \bin         Programme ex‚cutable lm2.exe
+                 Fichiers de configuration LEMOC2
+
+    \pdb\....    R‚pertoire contenant tous les fichiers "Type d'appareil".
+                 L'extension des fichiers est toujours *.pdb .
+                 Les fichiers " Type d'appareil " sont disponibles en
+                 plusieurs langues. C'est pourquoi, les fichiers sont
+                 r‚partis dans des sous-r‚pertoires correspondant … chaque 
+                 langue.
+                 La reconnaissance de chaque langue est identique … celle 
+                 utilis‚e dans MS-DOS.
+
+                 Exemple:     049   allemand
+                              033   fran‡ais
+                              044   anglais
+
+    \data        Dans ce r‚pertoire , sont stock‚s les diff‚rents fichiers
+                 de paramŠtres cr‚‚s par l'utilisateur. Ces fichiers ont 
+                 toujours l'extension *.var .
+
+--------------------------------------------------------------------------
+
+LIAISON SERIE entre PC et variateur:
+
+   La liaison entre le PC et le variateur se fait via un cƒble dont
+   la configuration est la suivante:
+
+ RS232 : Cƒble de liaison  Appareil Lenze - PC
+
+     Appareil Lenze                        PC
+     SubD. 9 broches mƒle                  SubD 25 broches femelle
+
+           PIN                                         PIN
+            2  oÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄo  2
+            3  oÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄo  3
+            5  oÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄo  7
+            6  oÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄo  6
+
+
+     Appareil Lenze                        PC
+     SubD. 9 broches mƒle                  SubD 9 broches femelle
+
+           PIN                                         PIN
+            2  oÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄo  3
+            3  oÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄo  2
+            5  oÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄo  5
+
+
+  Les broches non repr‚sent‚es ne sont pas connect‚es. Pour d'avantages
+  d'informations, veuillez consulter la documentation technique LECOM-A/B.
+
+--------------------------------------------------------------------------
+
+ERREUR LORS DU CHARGEMENT D'UN FICHIER TYPE D'APPAREIL
+
+  L'espace m‚moire r‚serv‚ … LEMOC2 n'est parfois pas suffisant pour le
+  chargement de fichiers "Type d'appareil" importants.
+  Lors du chargement de ce genre de fichier, apparaŒt un message d'erreur,
+  indiquant … l'utilisateur, que seule une partie du fichier sera t‚l‚charg‚.
+  Ce cas ne se pr‚sente que lors du chargement de fichiers "Type d'appareil"
+  contenant … la fois les paramŠtres du variateur et ceux du module de 
+  positionnement.
+
+  L'espace m‚moire r‚serv‚ … LEMOC2 peut ˆtre ‚tendu, si le programme a ‚t‚ 
+  lanc‚ une fois avec l'option /max. 
+  Dans ce cas, … chaque nouveau d‚marrage de LEMOC2, la configuration m‚moire 
+  maximale (issue du fichier configuration lm2conf.cnf) sera adopt‚e.
+
+--------------------------------------------------------------------------
+
+SERVICE:
+
+  Si des problŠmes techniques surviennent lors de l'installation de LEMOC2,
+  adressez-vous … :
+
+  Lenze S.A
+  42, chemin des PIVOLLES
+  69150 DECINES CHARPIEU
+  T‚l. 72.15.40.20
+  Fax. 78.26.88.36
+
+--------------------------------------------------------------------------

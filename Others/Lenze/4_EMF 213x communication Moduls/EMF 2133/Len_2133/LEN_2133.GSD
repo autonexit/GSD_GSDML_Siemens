@@ -1,0 +1,653 @@
+; (c) Lenze
+;
+; Profibus-DP        Geraetestammdatei
+;
+; Autor:             Lenze
+; Erstellungsdatum:  22.04.2008
+; Aenderungen:                                       
+;                    21.11.2002 Umfirmierung
+;                    05.11.2007 Erweiterung DP-V1
+;
+; Allgemeine Angaben:
+;
+#Profibus_DP
+;
+GSD_Revision = 5
+;
+; Herstellername
+Vendor_Name = "Lenze"
+;
+; Herstellerbezeichnung des DP-Geraetes
+Model_Name = "EMF2133IB DPV1"
+;
+; Ausgabestand des DP-Geraetes
+Revision = "2.0"
+;
+; Ident-Nummer
+Ident_Number = 0x2133
+;
+; Protokollkennung des DP-Geraetes
+;       0: Profibus-DP
+;  16-255: Herstellerspezifisch
+Protocol_Ident = 0
+;
+; DP-Geraetetyp
+;       0: DP-Slave
+;       1: DP-Master Klasse 1
+Station_Type = 0
+;
+; kein FMS/DP-Mischgeraet
+FMS_supp = 0
+;
+; Hardware Ausgabestand des DP-Geraetes
+Hardware_Release = "1F"
+;
+; Software Ausgabestand des DP-Geraetes
+Software_Release = "2.0"
+;
+9.6_supp = 1
+19.2_supp = 1
+45.45_supp = 1
+93.75_supp = 1
+187.5_supp = 1
+500_supp = 1
+1.5M_supp = 1
+3M_supp = 1
+6M_supp = 1
+12M_supp = 1
+;
+MaxTsdr_9.6   =  15
+MaxTsdr_19.2  =  15
+MaxTsdr_45.45 =  15
+MaxTsdr_93.75 =  15
+MaxTsdr_187.5 =  15
+MaxTsdr_500   =  15
+MaxTsdr_1.5M  =  25
+MaxTsdr_3M    =  50
+MaxTsdr_6M   =  100
+MaxTsdr_12M  =  200
+;
+; keine redundante Uebertragungstechnik
+Redundancy = 0
+;
+; RTS-Signalpegel (CNTR-P) Pin 4 des 9pol. SUB-D
+;     0: nicht vorhanden
+;     1: RS 485
+;     2: TTL
+Repeater_Ctrl_Sig = 2
+;
+; Bedeutung der 24V Pins des 9pol. SUB-D (Pin 7  24V;  Pin 2 GND)
+;     0: nicht angeschlossen
+;     1: Input
+;     2: Output
+24V_Pins = 0
+;
+Implementation_Type = "SPC3"
+;
+Bitmap_Device = "GD_DEV_N"
+Bitmap_Diag   = "GD_DEV_D"
+Bitmap_SF     = "GD_DEV_S"
+;
+; Slave spezifische Werte
+;
+; Freeze-Mode wird nicht unterstuetzt
+Freeze_Mode_supp = 0
+;
+; Sync-Mode wird unterstuetzt
+Sync_Mode_supp = 1
+;
+; Automatische Baudratenerkennung wird unterstuetzt
+Auto_Baud_supp = 1
+;
+; Slave-Adresse kann vom Master gesetzt werden
+Set_Slave_Add_supp = 1
+;
+; Hoechstlaenge von User_Param_Data
+;User_Prm_Data_Len = 0
+;
+; Default-Wert fuer User_Param_Data
+;User_Param_Data = 0
+;
+; Mindestabstand zwischen 2 Slavelistenumlaeufen  fuer das DP-Geraet
+; (xx * 100us)
+Min_Slave_Intervall = 1
+;
+; Modulare Station
+Modular_Station = 1
+;
+; Hoechstanzahl der Module einer Modularen Station
+Max_Module = 1
+;
+; Hoechstlaenge der Eingangsdaten einer Modularen Station
+Max_Input_Len = 80
+;
+; Hoechstlaenge der Ausgangsdaten einer Modularen Station
+Max_Output_Len = 80
+;
+; Groesste Summe der Ein- und Ausgangsdaten einer Modularen Station in Bytes
+Max_Data_Len = 80
+;
+Max_Diag_Data_Len = 6
+;
+Slave_Family=1@Lenze
+;
+Fail_Safe = 1
+;
+;--- GSD R3 slave extensions ---
+;Info_Text  = "DP-Slave für AIF-Schnittstelle mit DP-V1-Schnittstelle(azyklische Kommunikation)"
+DPV1_Slave               = 1
+C1_Read_Write_supp       = 1
+C2_Read_Write_supp       = 1
+C1_Max_Data_Len          = 240
+C2_Max_Data_Len          = 240
+C1_Response_Timeout      = 100
+C2_Response_Timeout      = 100
+;C1_Read_Write_required  = 0
+;C2_Read_Write_required  = 0
+C2_Max_Count_Channels    = 1
+Max_Initiate_PDU_Length  = 64
+;DPV1_Data_Types         = 0
+;WD_Base_1ms_supp        = 0
+Check_Cfg_Mode           = 1
+;Publisher_supp          = 1
+;
+;--- I&M Funktionality ---
+Ident_Maintenance_supp   = 1
+
+;--- UsrPrmData Definitions ----------------------------------------
+Max_User_Prm_Data_Len  = 3
+Ext_User_Prm_Data_Const(0) = 0x80,0,0
+;
+; Modulkennzeichnung
+;
+;* Prozessdaten / Drivecom Steuerung ***********
+Module = "PZD( 1W)" 0x70
+01
+EndModule
+Module = "PZD( 2W)" 0x71
+02
+EndModule
+Module = "PZD( 3W)" 0x72
+03
+EndModule
+Module = "PZD( 4W)" 0x73
+04
+EndModule
+Module = "PZD( 5W)" 0x74
+05
+EndModule
+Module = "PZD( 6W)" 0x75
+06
+EndModule
+Module = "PZD( 7W)" 0x76
+07
+EndModule
+Module = "PZD( 8W)" 0x77
+08
+EndModule
+Module = "PZD( 9W)" 0x78
+09
+EndModule
+Module = "PZD(10W)" 0x79
+10
+EndModule
+Module = "PZD(11W)" 0x7A
+11
+EndModule
+Module = "PZD(12W)" 0x7B
+12
+EndModule
+;
+;* konsistentem Drivecom Parameterkanal  / Drivecom Steuerung *
+Module = "PAR(Kons.) + PZD( 1W)" 0xF3,0x70
+13
+EndModule
+Module = "PAR(Kons.) + PZD( 2W)" 0xF3,0x71
+14
+EndModule
+Module = "PAR(Kons.) + PZD( 3W)" 0xF3,0x72
+15
+EndModule
+Module = "PAR(Kons.) + PZD( 4W)" 0xF3,0x73
+16
+EndModule
+Module = "PAR(Kons.) + PZD( 5W)" 0xF3,0x74
+17
+EndModule
+Module = "PAR(Kons.) + PZD( 6W)" 0xF3,0x75
+18
+EndModule
+Module = "PAR(Kons.) + PZD( 7W)" 0xF3,0x76
+19
+EndModule
+Module = "PAR(Kons.) + PZD( 8W)" 0xF3,0x77
+20
+EndModule
+Module = "PAR(Kons.) + PZD( 9W)" 0xF3,0x78
+21
+EndModule
+Module = "PAR(Kons.) + PZD(10W)" 0xF3,0x79
+22
+EndModule
+Module = "PAR(Kons.) + PZD(11W)" 0xF3,0x7A
+23
+EndModule
+Module = "PAR(Kons.) + PZD(12W)" 0xF3,0x7B
+24
+EndModule
+;
+;* konsistentem Drivecom Parameterkanal  / Drivecom Steuerung *
+Module = "PAR(Kons.) + PZD( 1W Kons.)" 0xF3,0xF0
+25
+EndModule
+Module = "PAR(Kons.) + PZD( 2W Kons.)" 0xF3,0xF1
+26
+EndModule
+Module = "PAR(Kons.) + PZD( 3W Kons.)" 0xF3,0xF2
+27
+EndModule
+Module = "PAR(Kons.) + PZD( 4W Kons.)" 0xF3,0xF3
+28
+EndModule
+Module = "PAR(Kons.) + PZD( 5W Kons.)" 0xF3,0xF4
+29
+EndModule
+Module = "PAR(Kons.) + PZD( 6W Kons.)" 0xF3,0xF5
+30
+EndModule
+Module = "PAR(Kons.) + PZD( 7W Kons.)" 0xF3,0xF6
+31
+EndModule
+Module = "PAR(Kons.) + PZD( 8W Kons.)" 0xF3,0xF7
+32
+EndModule
+Module = "PAR(Kons.) + PZD( 9W Kons.)" 0xF3,0xF8
+33
+EndModule
+Module = "PAR(Kons.) + PZD(10W Kons.)" 0xF3,0xF9
+34
+EndModule
+Module = "PAR(Kons.) + PZD(11W Kons.)" 0xF3,0xFA
+35
+EndModule
+Module = "PAR(Kons.) + PZD(12W Kons.)" 0xF3,0xFB
+36
+EndModule
+;
+;* Drivecom Parameterkanal / Drivecom Steuerung *
+Module = "PAR       + PZD( 1W)" 0x73,0x70
+37
+EndModule
+Module = "PAR       + PZD( 2W)" 0x73,0x71
+38
+EndModule
+Module = "PAR       + PZD( 3W)" 0x73,0x72
+39
+EndModule
+Module = "PAR       + PZD( 4W)" 0x73,0x73
+40
+EndModule
+Module = "PAR       + PZD( 5W)" 0x73,0x74
+41
+EndModule
+Module = "PAR       + PZD( 6W)" 0x73,0x75
+42
+EndModule
+Module = "PAR       + PZD( 7W)" 0x73,0x76
+43
+EndModule
+Module = "PAR       + PZD( 8W)" 0x73,0x77
+44
+EndModule
+Module = "PAR       + PZD( 9W)" 0x73,0x78
+45
+EndModule
+Module = "PAR       + PZD(10W)" 0x73,0x79
+46
+EndModule
+Module = "PAR       + PZD(11W)" 0x73,0x7A
+47
+EndModule
+Module = "PAR       + PZD(12W)" 0x73,0x7B
+48
+EndModule
+;
+;* Drivecom Parameterkanal / Drivecom Steuerung *
+Module = "PAR       + PZD( 1W Kons.) " 0x73,0xF0
+49
+EndModule
+Module = "PAR       + PZD( 2W Kons.) " 0x73,0xF1
+50
+EndModule
+Module = "PAR       + PZD( 3W Kons.) " 0x73,0xF2
+51
+EndModule
+Module = "PAR       + PZD( 4W Kons.) " 0x73,0xF3
+52
+EndModule
+Module = "PAR       + PZD( 5W Kons.) " 0x73,0xF4
+53
+EndModule
+Module = "PAR       + PZD( 6W Kons.) " 0x73,0xF5
+54
+EndModule
+Module = "PAR       + PZD( 7W Kons.) " 0x73,0xF6
+55
+EndModule
+Module = "PAR       + PZD( 8W Kons.) " 0x73,0xF7
+56
+EndModule
+Module = "PAR       + PZD( 9W Kons.) " 0x73,0xF8
+57
+EndModule
+Module = "PAR       + PZD(10W Kons.) " 0x73,0xF9
+58
+EndModule
+Module = "PAR       + PZD(11W Kons.) " 0x73,0xFA
+59
+EndModule
+Module = "PAR       + PZD(12W Kons.) " 0x73,0xFB
+60
+EndModule
+;
+;* Prozessdaten / Drivecom Steuerung ***********
+Module = "PZD( 1W Kons.)             " 0xF0
+61
+EndModule
+Module = "PZD( 2W Kons.)             " 0xF1
+62
+EndModule
+Module = "PZD( 3W Kons.)             " 0xF2
+63
+EndModule
+Module = "PZD( 4W Kons.)             " 0xF3
+64
+EndModule
+Module = "PZD( 5W Kons.)             " 0xF4
+65
+EndModule
+Module = "PZD( 6W Kons.)             " 0xF5
+66
+EndModule
+Module = "PZD( 7W Kons.)             " 0xF6
+67
+EndModule
+Module = "PZD( 8W Kons.)             " 0xF7
+68
+EndModule
+Module = "PZD( 9W Kons.)             " 0xF8
+69
+EndModule
+Module = "PZD(10W Kons.)             " 0xF9
+70
+EndModule
+Module = "PZD(11W Kons.)             " 0xFA
+71
+EndModule
+Module = "PZD(12W Kons.)             " 0xFB
+72
+EndModule
+;
+;* Prozessdaten / Geraete-Steuerung ***********
+Module = "PZD( 1W) AR" 0x00,0x00,0x00,0x70
+73
+EndModule
+Module = "PZD( 2W) AR" 0x00,0x00,0x00,0x71
+74
+EndModule
+Module = "PZD( 3W) AR" 0x00,0x00,0x00,0x72
+75
+EndModule
+Module = "PZD( 4W) AR" 0x00,0x00,0x00,0x73
+76
+EndModule
+Module = "PZD( 5W) AR" 0x00,0x00,0x00,0x74
+77
+EndModule
+Module = "PZD( 6W) AR" 0x00,0x00,0x00,0x75
+78
+EndModule
+Module = "PZD( 7W) AR" 0x00,0x00,0x00,0x76
+79
+EndModule
+Module = "PZD( 8W) AR" 0x00,0x00,0x00,0x77
+80
+EndModule
+Module = "PZD( 9W) AR" 0x00,0x00,0x00,0x78
+81
+EndModule
+Module = "PZD(10W) AR" 0x00,0x00,0x00,0x79
+82
+EndModule
+Module = "PZD(11W) AR" 0x00,0x00,0x00,0x7A
+83
+EndModule
+Module = "PZD(12W) AR" 0x00,0x00,0x00,0x7B
+84
+EndModule
+;
+;* konsistentem Drivecom Parameterkanal  / Geraet Steuerung *
+Module = "PAR(Kons.) + PZD( 1W) AR" 0x00,0x00,0x00,0xF3,0x70
+85
+EndModule
+Module = "PAR(Kons.) + PZD( 2W) AR" 0x00,0x00,0x00,0xF3,0x71
+86
+EndModule
+Module = "PAR(Kons.) + PZD( 3W) AR" 0x00,0x00,0x00,0xF3,0x72
+87
+EndModule
+Module = "PAR(Kons.) + PZD( 4W) AR" 0x00,0x00,0x00,0xF3,0x73
+88
+EndModule
+Module = "PAR(Kons.) + PZD( 5W) AR" 0x00,0x00,0x00,0xF3,0x74
+89
+EndModule
+Module = "PAR(Kons.) + PZD( 6W) AR" 0x00,0x00,0x00,0xF3,0x75
+90
+EndModule
+Module = "PAR(Kons.) + PZD( 7W) AR" 0x00,0x00,0x00,0xF3,0x76
+91
+EndModule
+Module = "PAR(Kons.) + PZD( 8W) AR" 0x00,0x00,0x00,0xF3,0x77
+92
+EndModule
+Module = "PAR(Kons.) + PZD( 9W) AR" 0x00,0x00,0x00,0xF3,0x78
+93
+EndModule
+Module = "PAR(Kons.) + PZD(10W) AR" 0x00,0x00,0x00,0xF3,0x79
+94
+EndModule
+Module = "PAR(Kons.) + PZD(11W) AR" 0x00,0x00,0x00,0xF3,0x7A
+95
+EndModule
+Module = "PAR(Kons.) + PZD(12W) AR" 0x00,0x00,0x00,0xF3,0x7B
+96
+EndModule
+;
+;* konsistentem Drivecom Parameterkanal  / Geraet Steuerung *
+Module = "PAR(Kons.) + PZD( 1W Kon) AR" 0x00,0x00,0x00,0xF3,0xF0
+97
+EndModule
+Module = "PAR(Kons.) + PZD( 2W Kon) AR" 0x00,0x00,0x00,0xF3,0xF1
+98
+EndModule
+Module = "PAR(Kons.) + PZD( 3W Kon) AR" 0x00,0x00,0x00,0xF3,0xF2
+99
+EndModule
+Module = "PAR(Kons.) + PZD( 4W Kon) AR" 0x00,0x00,0x00,0xF3,0xF3
+100
+EndModule
+Module = "PAR(Kons.) + PZD( 5W Kon) AR" 0x00,0x00,0x00,0xF3,0xF4
+101
+EndModule
+Module = "PAR(Kons.) + PZD( 6W Kon) AR" 0x00,0x00,0x00,0xF3,0xF5
+102
+EndModule
+Module = "PAR(Kons.) + PZD( 7W Kon) AR" 0x00,0x00,0x00,0xF3,0xF6
+103
+EndModule
+Module = "PAR(Kons.) + PZD( 8W Kon) AR" 0x00,0x00,0x00,0xF3,0xF7
+104
+EndModule
+Module = "PAR(Kons.) + PZD( 9W Kon) AR" 0x00,0x00,0x00,0xF3,0xF8
+105
+EndModule
+Module = "PAR(Kons.) + PZD(10W Kon) AR" 0x00,0x00,0x00,0xF3,0xF9
+106
+EndModule
+Module = "PAR(Kons.) + PZD(11W Kon) AR" 0x00,0x00,0x00,0xF3,0xFA
+107
+EndModule
+Module = "PAR(Kons.) + PZD(12W Kon) AR" 0x00,0x00,0x00,0xF3,0xFB
+108
+EndModule
+;
+;* Drivecom Parameterkanal / Geraete-Steuerung *
+Module = "PAR       + PZD( 1W) AR" 0x00,0x00,0x00,0x73,0x70
+109
+EndModule
+Module = "PAR       + PZD( 2W) AR" 0x00,0x00,0x00,0x73,0x71
+110
+EndModule
+Module = "PAR       + PZD( 3W) AR" 0x00,0x00,0x00,0x73,0x72
+111
+EndModule
+Module = "PAR       + PZD( 4W) AR" 0x00,0x00,0x00,0x73,0x73
+112
+EndModule
+Module = "PAR       + PZD( 5W) AR" 0x00,0x00,0x00,0x73,0x74
+113
+EndModule
+Module = "PAR       + PZD( 6W) AR" 0x00,0x00,0x00,0x73,0x75
+114
+EndModule
+Module = "PAR       + PZD( 7W) AR" 0x00,0x00,0x00,0x73,0x76
+115
+EndModule
+Module = "PAR       + PZD( 8W) AR" 0x00,0x00,0x00,0x73,0x77
+116
+EndModule
+Module = "PAR       + PZD( 9W) AR" 0x00,0x00,0x00,0x73,0x78
+117
+EndModule
+Module = "PAR       + PZD(10W) AR" 0x00,0x00,0x00,0x73,0x79
+118
+EndModule
+Module = "PAR       + PZD(11W) AR" 0x00,0x00,0x00,0x73,0x7A
+119
+EndModule
+Module = "PAR       + PZD(12W) AR" 0x00,0x00,0x00,0x73,0x7B
+120
+EndModule
+;
+;* Drivecom Parameterkanal / Geraete-Steuerung *
+Module = "PAR       + PZD( 1W  Kon) AR" 0x00,0x00,0x00,0xF3,0xF0
+121
+EndModule
+Module = "PAR       + PZD( 2W  Kon) AR" 0x00,0x00,0x00,0xF3,0xF1
+122
+EndModule
+Module = "PAR       + PZD( 3W  Kon) AR" 0x00,0x00,0x00,0xF3,0xF2
+123
+EndModule
+Module = "PAR       + PZD( 4W  Kon) AR" 0x00,0x00,0x00,0xF3,0xF3
+124
+EndModule
+Module = "PAR       + PZD( 5W  Kon) AR" 0x00,0x00,0x00,0xF3,0xF4
+125
+EndModule
+Module = "PAR       + PZD( 6W  Kon) AR" 0x00,0x00,0x00,0xF3,0xF5
+126
+EndModule
+Module = "PAR       + PZD( 7W  Kon) AR" 0x00,0x00,0x00,0xF3,0xF6
+127
+EndModule
+Module = "PAR       + PZD( 8W  Kon) AR" 0x00,0x00,0x00,0xF3,0xF7
+128
+EndModule
+Module = "PAR       + PZD( 9W  Kon) AR" 0x00,0x00,0x00,0xF3,0xF8
+129
+EndModule
+Module = "PAR       + PZD(10W  Kon) AR" 0x00,0x00,0x00,0xF3,0xF9
+130
+EndModule
+Module = "PAR       + PZD(11W  Kon) AR" 0x00,0x00,0x00,0xF3,0xFA
+131
+EndModule
+Module = "PAR       + PZD(12W  Kon) AR" 0x00,0x00,0x00,0xF3,0xFB
+132
+EndModule
+;
+;* Prozessdaten / Geraete-Steuerung ***********
+Module = "PZD( 1W Kons.) AR          " 0x00,0x00,0x00,0xF0
+133
+EndModule
+Module = "PZD( 2W Kons.) AR          " 0x00,0x00,0x00,0xF1
+134
+EndModule
+Module = "PZD( 3W Kons.) AR          " 0x00,0x00,0x00,0xF2
+135
+EndModule
+Module = "PZD( 4W Kons.) AR          " 0x00,0x00,0x00,0xF3
+136
+EndModule
+Module = "PZD( 5W Kons.) AR          " 0x00,0x00,0x00,0xF4
+137
+EndModule
+Module = "PZD( 6W Kons.) AR          " 0x00,0x00,0x00,0xF5
+138
+EndModule
+Module = "PZD( 7W Kons.) AR          " 0x00,0x00,0x00,0xF6
+139
+EndModule
+Module = "PZD( 8W Kons.) AR          " 0x00,0x00,0x00,0xF7
+140
+EndModule
+Module = "PZD( 9W Kons.) AR          " 0x00,0x00,0x00,0xF8
+141
+EndModule
+Module = "PZD(10W Kons.) AR          " 0x00,0x00,0x00,0xF9
+142
+EndModule
+Module = "PZD(11W Kons.) AR          " 0x00,0x00,0x00,0xFA
+143
+EndModule
+Module = "PZD(12W Kons.) AR          " 0x00,0x00,0x00,0xFB
+144
+EndModule
+;
+;************* PPO Typen **************************************
+Module = "PPO1" 0x00,0xF3,0x71
+145
+EndModule
+Module = "PPO2" 0x00,0xF3,0x75
+146
+EndModule
+Module = "PPO3" 0x00,0x00,0x71
+147
+EndModule
+Module = "PPO4" 0x00,0x00,0x75
+148
+EndModule
+Module = "PPO5" 0x00,0xF3,0x79
+149
+EndModule
+;
+;************* PPO Typen **************************************
+Module = "PPO1 (Prozessdatenkonsistenz)   " 0x00,0xF3,0xF1
+150
+EndModule
+Module = "PPO2 (Prozessdatenkonsistenz)   " 0x00,0xF3,0xF5
+151
+EndModule
+Module = "PPO3 (Prozessdatenkonsistenz)   " 0x00,0x00,0xF1
+152
+EndModule
+Module = "PPO4 (Prozessdatenkonsistenz)   " 0x00,0x00,0xF5
+153
+EndModule
+Module = "PPO5 (Prozessdatenkonsistenz)   " 0x00,0xF3,0xF9
+154
+EndModule
+;
+

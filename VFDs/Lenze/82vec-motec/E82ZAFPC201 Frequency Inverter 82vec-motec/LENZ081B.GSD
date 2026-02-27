@@ -1,0 +1,396 @@
+; (c) Lenze
+;
+; Profibus-DP        Geraetestammdatei
+;
+; Autor:             ELE/Industrielle Kommunikation (TH)
+; Erstellungsdatum:  14.06.2000
+; Aenderungen:       03.08.2000 Prozessdatenkonsistenz hinzugefügt                                
+;                    10.10.2002 Umfirmierung
+;                               Anpassung an GSD_Revision 2
+;                    19.03.2004 Anpassung an neues Modul V201
+;                               Ergänzung um Profidrive
+;                    10.02.2005 Ergänzung um DPV1 Parametrierdaten
+;                    11.10.2006 I&M0 Funktionalität
+;                    02.07.2007 User_Param_Data mit Defaultwerten angeben
+;                    05.12.2007 Max_User_Prm_Data_Len genutzt und Defaultwerte in Ext_User_Prm_Data_Const eingetragen
+; Allgemeine Angaben:
+;
+#Profibus_DP
+;
+GSD_Revision=5
+;
+; Herstellername
+Vendor_Name = "Lenze"
+;
+; Herstellerbezeichnung des DP-Geraetes
+Model_Name = "E82ZAFPC2XX"
+;
+; Ausgabestand des DP-Geraetes
+Revision = "V1.0"
+;
+; Ident-Nummer
+Ident_Number = 0x081b
+;
+; Protokollkennung des DP-Geraetes
+;       0: Profibus-DP
+;  16-255: Herstellerspezifisch
+Protocol_Ident = 0
+;
+; DP-Geraetetyp
+;       0: DP-Slave
+;       1: DP-Master Klasse 1
+Station_Type = 0
+;
+; kein FMS/DP-Mischgeraet
+FMS_supp = 0
+;
+; Hardware Ausgabestand des DP-Geraetes
+Hardware_Release = "2A"
+;
+; Software Ausgabestand des DP-Geraetes
+Software_Release = "1.0"
+;
+9.6_supp = 1
+19.2_supp = 1
+45.45_supp = 1
+93.75_supp = 1
+187.5_supp = 1
+500_supp = 1
+1.5M_supp = 1
+3M_supp = 1
+6M_supp = 1
+12M_supp = 1
+;
+MaxTsdr_9.6   =  15
+MaxTsdr_19.2  =  15
+MaxTsdr_45.45 =  15
+MaxTsdr_93.75 =  15
+MaxTsdr_187.5 =  15
+MaxTsdr_500   =  15
+MaxTsdr_1.5M  =  25
+MaxTsdr_3M    =  50
+MaxTsdr_6M    = 100
+MaxTsdr_12M   = 200
+;
+; keine redundante Uebertragungstechnik
+Redundancy = 0
+;
+; RTS-Signalpegel (CNTR-P) Pin 4 des 9pol. SUB-D
+;     0: nicht vorhanden
+;     1: RS 485
+;     2: TTL
+Repeater_Ctrl_Sig = 2
+;
+; Bedeutung der 24V Pins des 9pol. SUB-D (Pin 7  24V;  Pin 2 GND)
+;     0: nicht angeschlossen
+;     1: Input
+;     2: Output
+24V_Pins = 0
+;
+Implementation_Type = "Asic solution"
+;
+Bitmap_Device = "82evm1"
+Bitmap_Diag   = "82evm2"
+Bitmap_SF     = "82evm3"
+;
+; Slave spezifische Werte
+;
+; Freeze-Mode wird nicht unterstuetzt
+Freeze_Mode_supp = 0
+;
+; Sync-Mode wird unterstuetzt
+Sync_Mode_supp = 1
+;
+; Automatische Baudratenerkennung wird unterstuetzt
+Auto_Baud_supp = 1
+;
+; Slave-Adresse kann nicht vom Master gesetzt werden
+Set_Slave_Add_supp = 0
+;
+; Hoechstlaenge von User_Param_Data
+;User_Prm_Data_Len = 3
+;
+; Default-Wert fuer User_Param_Data
+;User_Prm_Data = 0x80, 0x00, 0x00
+;
+; Mindestabstand zwischen 2 Slavelistenumlaeufen  fuer das DP-Geraet
+; (xx * 100us)
+Min_Slave_Intervall = 1
+;
+; Modulare Station
+Modular_Station = 1
+;
+; Hoechstanzahl der Module einer Modularen Station
+Max_Module = 1
+;
+; Hoechstlaenge der Eingangsdaten einer Modularen Station
+Max_Input_Len = 40
+;
+; Hoechstlaenge der Ausgangsdaten einer Modularen Station
+Max_Output_Len = 40
+;
+; Groesste Summe der Ein- und Ausgangsdaten einer Modularen Station in Bytes
+Max_Data_Len = 80
+;
+Max_Diag_Data_Len = 10
+;
+Slave_Family=1@Lenze
+;
+Fail_Safe=0
+
+;--- GSD R3 slave extensions ---
+;Info_Text               = "DP-Slave FIOF mit DP-V1-Schnittstelle(azyklische Kommunikation)"
+DPV1_Slave               = 1
+C1_Read_Write_supp       = 1
+C2_Read_Write_supp       = 1
+C1_Max_Data_Len          = 240
+C2_Max_Data_Len          = 240
+C1_Response_Timeout      = 100
+C2_Response_Timeout      = 100
+;C1_Read_Write_required  = 0
+;C2_Read_Write_required  = 0
+C2_Max_Count_Channels    = 1
+Max_Initiate_PDU_Length  = 64
+;DPV1_Data_Types         = 0
+;WD_Base_1ms_supp        = 1
+;Check_Cfg_Mode          = 0
+;Publisher_supp          = 1
+
+;--- GSD R4 slave extensions ---
+;Prm_Block_Structure_supp = 1
+;Prm_Block_Structure_req  = 0
+; isochron mode
+;Isochron_Mode_supp       = 1
+;Isochron_Mode_required   = 0
+;TBASE_DP                 = 1500  ; * 1/12 µs    =  125 µs
+;TDP_MIN	                  = 8     ; * TBASE_DP   = 1000 µs
+;TDP_MAX                  = 256   ; * TBASE_DP   =   32 ms
+;T_PLL_W_MAX              = 12    ; * 1/12 µs    =    1 µs
+;TBASE_IO                 = 1500  ; * 1/12 µs    =  125 µs
+;TI_MIN                   = 1     ; * TBASE_IO
+;TO_MIN                   = 1     ; * TBASE_IO
+; DXB
+;Subscriber_supp          = 0
+;DXB_Max_Link_Count       = 16
+;DXB_Max_Data_Length      = 244
+
+;--- DP-V1 Alarm ---
+;Diagnostic_Alarm_supp	= 1
+;Process_Alarm_supp	= 1
+;Pull_Plug_Alarm_supp	= 1
+;Status_Alarm_supp	= 1
+;Update_Alarm_supp	= 1
+;Manufacturer_Specific_Alarm_supp = 0
+;Alarm_Sequence_Mode_Count	= 3
+;Alarm_Type_Mode_supp		= 1
+;Diagnostic_Alarm_required 	 = 1
+
+;--- I&M Funktionality ---
+Ident_Maintenance_supp = 1
+
+;--- UsrPrmData Definitions ----------------------------------------
+Max_User_Prm_Data_Len  = 3
+Ext_User_Prm_Data_Const(0) = 0x80,0,0
+
+
+; Modulkennzeichnung
+;
+;************* mit konsistentem Drivecom Parameterkanal ***************
+Module = "Drivecom-PAR(Kons)+PZD(1W)" 0xF3,0x70
+01
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(2W)" 0xF3,0x71
+02
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(3W)" 0xF3,0x72
+03
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(4W)" 0xF3,0x73
+04
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(5W)" 0xF3,0x74
+05
+EndModule
+Module = "Drivecom-PAR(Kons.)+PZD(6W)" 0xF3,0x75
+06
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(7W)" 0xF3,0x76
+07
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(8W)" 0xF3,0x77
+08
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(9W)" 0xF3,0x78
+09
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(10W)" 0xF3,0x79
+10
+EndModule
+;
+;****** mit konsistentem Drivecom Parameterkanal und konsisten PZD *****
+Module = "Drivecom-PAR(Kons)+PZD(1W Kons)" 0xF3,0xF0
+11
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(2W Kons)" 0xF3,0xF1
+12
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(3W Kons)" 0xF3,0xF2
+13
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(4W Kons)" 0xF3,0xF3
+14
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(5W Kons)" 0xF3,0xF4
+15
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(6W Kons)" 0xF3,0xF5
+16
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(7W Kons)" 0xF3,0xF6
+17
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(8W Kons)" 0xF3,0xF7
+18
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(9W Kons)" 0xF3,0xF8
+19
+EndModule
+Module = "Drivecom-PAR(Kons)+PZD(10W Kons)" 0xF3,0xF9
+20
+EndModule
+;
+;********* mit konsistentem Profidrive Parameterkanal ***************
+Module = "PKW(Kons)+PZD(1W)" 0x00,0xF3,0x70
+21
+EndModule
+Module = "PKW(Kons)+PZD(2W)" 0x00,0xF3,0x71
+22
+EndModule
+Module = "PKW(Kons)+PZD(3W)" 0x00,0xF3,0x72
+23
+EndModule
+Module = "PKW(Kons)+PZD(4W)" 0x00,0xF3,0x73
+24
+EndModule
+Module = "PKW(Kons)+PZD(5W)" 0x00,0xF3,0x74
+25
+EndModule
+Module = "PKW(Kons)+PZD(6W)" 0x00,0xF3,0x75
+26
+EndModule
+Module = "PKW(Kons)+PZD(7W)" 0x00,0xF3,0x76
+27
+EndModule
+Module = "PKW(Kons)+PZD(8W)" 0x00,0xF3,0x77
+28
+EndModule
+Module = "PKW(Kons)+PZD(9W)" 0x00,0xF3,0x78
+29
+EndModule
+Module = "PKW(Kons)+PZD(10W)" 0x00,0xF3,0x79
+30
+EndModule
+;
+;*** mit konsistentem Profidrive Parameterkanal und konsisten PZD ****
+Module = "PKW(Kons)+PZD(1W Kons)" 0x00,0xF3,0xF0
+31
+EndModule
+Module = "PKW(Kons)+PZD(2W Kons)" 0x00,0xF3,0xF1
+32
+EndModule
+Module = "PKW(Kons)+PZD(3W Kons)" 0x00,0xF3,0xF2
+33
+EndModule
+Module = "PKW(Kons)+PZD(4W Kons)" 0x00,0xF3,0xF3
+34
+EndModule
+Module = "PKW(Kons)+PZD(5W Kons)" 0x00,0xF3,0xF4
+35
+EndModule
+Module = "PKW(Kons)+PZD(6W Kons)" 0x00,0xF3,0xF5
+36
+EndModule
+Module = "PKW(Kons)+PZD(7W Kons)" 0x00,0xF3,0xF6
+37
+EndModule
+Module = "PKW(Kons)+PZD(8W Kons)" 0x00,0xF3,0xF7
+38
+EndModule
+Module = "PKW(Kons)+PZD(9W Kons)" 0x00,0xF3,0xF8
+39
+EndModule
+Module = "PKW(Kons)+PZD(10W Kons)" 0x00,0xF3,0xF9
+40
+EndModule
+;
+;************* Prozessdaten *************************
+Module = "PZD(1W)" 0x70
+41
+EndModule
+Module = "PZD(2W)" 0x71
+42
+EndModule
+Module = "PZD(3W)" 0x72
+43
+EndModule
+Module = "PZD(4W)" 0x73
+44
+EndModule
+Module = "PZD(5W)" 0x74
+45
+EndModule
+Module = "PZD(6W)" 0x75
+46
+EndModule
+Module = "PZD(7W)" 0x76
+47
+EndModule
+Module = "PZD(8W)" 0x77
+48
+EndModule
+Module = "PZD(9W)" 0x78
+49
+EndModule
+Module = "PZD(10W)" 0x79
+50
+EndModule
+;
+;************* Prozessdaten mit Konsistenz **********
+Module = "PZD(1W Kons)" 0xF0
+51
+EndModule
+Module = "PZD(2W Kons)" 0xF1
+52
+EndModule
+Module = "PZD(3W Kons)" 0xF2
+53
+EndModule
+Module = "PZD(4W Kons)" 0xF3
+54
+EndModule
+Module = "PZD(5W Kons)" 0xF4
+55
+EndModule
+Module = "PZD(6W Kons)" 0xF5
+56
+EndModule
+Module = "PZD(7W Kons)" 0xF6
+57
+EndModule
+Module = "PZD(8W Kons.)" 0xF7
+58
+EndModule
+Module = "PZD(9W Kons)" 0xF8
+59
+EndModule
+Module = "PZD(10W Kons)" 0xF9
+60
+EndModule
+;
+
+
+
+
+
+
+

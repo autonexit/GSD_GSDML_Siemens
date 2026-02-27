@@ -1,0 +1,1254 @@
+;==============================================================================
+;
+;    Manufacturer : Lenze GmbH
+;                   Postfach 10 13 52
+;                   31763 Hameln
+;                   Germany
+;
+;    Phone        : +49 5154 82-0
+;    FAX          : +49 5154 82-1920
+;    EMAIL        : support@Lenze.de
+;    WEB          : www.Lenze.de
+;    Hotline      : +49 5154 82-0
+;
+;    Version      : 1.71
+;    Author       : P. Fredehorst
+;    Date         : 21.08.2006 11:14:50
+;    File         : LE000A68.gsd
+;
+;==============================================================================
+#Profibus_DP
+
+;==============================================================================
+;==== Prm-Text-Def-List =======================================================
+;==============================================================================
+
+;Text-Referenz 3
+PrmText=3
+Text(0)="Aus"
+Text(1)="Ein"
+EndPrmText
+
+;Text-Referenz 4
+PrmText=4
+Text(0)="deaktivieren"
+Text(1)="aktivieren"
+EndPrmText
+
+;Text-Referenz 6
+PrmText=6
+Text(0)="freigeben"
+Text(1)="sperren"
+EndPrmText
+
+;Text-Referenz 7
+PrmText=7
+Text(1)="100 kBaud"
+Text(2)="300 kBaud"
+Text(3)="600 kBaud"
+EndPrmText
+
+;Text-Referenz 8
+PrmText=8
+Text(0)="ignorieren"
+Text(1)="auswerten"
+EndPrmText
+
+;Text-Referenz 19
+PrmText=19
+Text(0)="Encoder vier Flanken"
+Text(1)="Impuls- und Richtungsauswertung"
+Text(2)="Clk up / Clk down Auswertung"
+Text(3)="Frequenzmessung"
+Text(4)="Periodendauermessung"
+EndPrmText
+
+;Text-Referenz 20
+PrmText=20
+Text(1)="S5 Spannung +/-10V"
+Text(2)="S5 Spannung 1..5V"
+Text(3)="S5 Strom +/-20mA"
+Text(4)="S5 Strom 4..20mA"
+Text(5)="S5 Spannung 0..10V"
+Text(6)="S5 Strom 0..20mA"
+Text(9)="S7 Spannung +/-10V"
+Text(10)="S7 Spannung 1..5V"
+Text(11)="S7 Strom +/-20mA"
+Text(12)="S7 Strom 4..20mA"
+Text(13)="S7 Spannung 0..10V"
+Text(14)="S7 Strom 0..20mA"
+Text(255)="Deaktiviert            "
+EndPrmText
+
+;Text-Referenz 22
+PrmText=22
+Text(0)="Ersatzwert aufschalten"
+Text(1)="Letzten Wert halten"
+EndPrmText
+
+;Text-Referenz 23
+PrmText=23
+Text(40)="S7 Spannung +/-10V"
+Text(43)="S5 Spannung +/-10V"
+Text(44)="S7 Strom +/-20mA"
+Text(45)="S7 Strom 4..20mA"
+Text(46)="S5 Strom 4..20mA"
+Text(47)="S5 Strom +/-20mA"
+Text(58)="S5 Strom +/-20mA,Zweierkompl."
+Text(59)="S5 Spannung +/-10V,Zweierkompl."
+Text(114)="S5 Spannung 1..5V"
+Text(117)="S5 Spannung 0..10V"
+Text(118)="S5 Strom 0..20mA"
+Text(122)="S7 Spannung 1..5V"
+Text(125)="S7 Spannung 0..10V"
+Text(126)="S7 Strom 0..20mA"
+Text(255)="Deaktiviert            "
+EndPrmText
+
+;Text-Referenz 24
+PrmText=24
+Text(0)="15 Messungen/s"
+Text(1)="30 Messungen/s"
+Text(2)="60 Messungen/s"
+Text(3)="120 Messungen/s"
+Text(4)="170 Messungen/s"
+Text(5)="200 Messungen/s"
+Text(6)="3.7 Messungen/s"
+Text(7)="7.5 Messungen/s"
+EndPrmText
+
+;Text-Referenz 25
+PrmText=25
+Text(1)="Pt100  2-Leiter -200°C..850°C"
+Text(2)="Pt1000 2-Leiter -200°C..500°C"
+Text(3)="Ni100  2-Leiter -50°C..250°C"
+Text(4)="Ni1000 2-Leiter -50°C..250°C"
+Text(5)="Widerstand 2-Leiter  60 Ohm"
+Text(6)="Widerstand 2-Leiter  600 Ohm"
+Text(7)="Widerstand 2-Leiter  3000 Ohm"
+Text(8)="Widerstand 2-Leiter  6000 Ohm"
+Text(9)="Pt100  4-Leiter -200°C..850°C"
+Text(10)="Pt1000 4-Leiter -200°C..500°C"
+Text(11)="Ni100  4-Leiter -50°C..250°C"
+Text(12)="Ni1000 4-Leiter -50°C..250°C"
+Text(13)="Widerstand 4-Leiter  60 Ohm"
+Text(14)="Widerstand 4-Leiter  600 Ohm"
+Text(15)="Widerstand 4-Leiter  3000 Ohm"
+Text(16)="Thermoelement Typ J ext. Komp."
+Text(17)="Thermoelement Typ K ext. Komp."
+Text(18)="Thermoelement Typ N ext. Komp."
+Text(19)="Thermoelement Typ R ext. Komp."
+Text(20)="Thermoelement Typ T ext. Komp."
+Text(21)="Thermoelement Typ S ext. Komp."
+Text(24)="Thermoelement Typ J int. Komp."
+Text(25)="Thermoelement Typ K int. Komp."
+Text(26)="Thermoelement Typ N int. Komp."
+Text(27)="Thermoelement Typ R int. Komp."
+Text(28)="Thermoelement Typ T int. Komp."
+Text(29)="Thermoelement Typ S int. Komp."
+Text(39)="S7 Spannung 0..50mV"
+Text(40)="S7 Spannung +/-10V"
+Text(41)="S7 Spannung +/-4V"
+Text(42)="S7 Spannung +/-400mV"
+Text(43)="S5 Spannung +/-10V"
+Text(44)="S7 Strom +/-20mA"
+Text(45)="S7 Strom 4..20mA"
+Text(46)="S5 Strom 4..20mA"
+Text(47)="S5 Strom +/-20mA"
+Text(50)="Widerstand 4-L 6000 Ohm"
+Text(51)="Widerstand 4-L 6000 Ohm (II)"
+Text(53)="Widerstand 2-L 60 Ohm (II)"
+Text(54)="Widerstand 2-L 600 Ohm (II)"
+Text(55)="Widerstand 2-L 3000 Ohm (II)"
+Text(56)="Widerstand 2-L 6000 Ohm (II)"
+Text(58)="S5 Strom +/-20mA,Zweierkompl."
+Text(59)="S5 Spannung +/-10V,Zweierkompl."
+Text(61)="Widerstand 4-L 60 Ohm (II)"
+Text(62)="Widerstand 4-L 600 Ohm (II)"
+Text(63)="Widerstand 4-L 3000 Ohm (II)"
+Text(87)="Spannung 0..50mV (II)"
+Text(88)="Spannung +/-10V (II)"
+Text(89)="Spannung +/-4V (II)"
+Text(90)="Spannung +/-400mV (II)"
+Text(92)="Strom +/-20mA (II)"
+Text(93)="Strom 4..20mA (II)"
+Text(255)="Deaktiviert            "
+EndPrmText
+
+;Text-Referenz 26
+PrmText=26
+Text(0)="Aus"
+Text(1)="Mittelwert 2 aus 3"
+Text(2)="Mittelwert 4 aus 6"
+EndPrmText
+
+;Text-Referenz 27
+PrmText=27
+Text(0)="Aus"
+Text(1)="+/-8"
+Text(2)="+/-16"
+EndPrmText
+
+;Text-Referenz 54
+PrmText=54
+Text(0)="sperren"
+Text(1)="freigeben"
+EndPrmText
+
+;Text-Referenz 81
+PrmText=81
+Text(0)="Multiturn  (24bit)"
+Text(1)="Singleturn (12bit)"
+EndPrmText
+
+;Text-Referenz 86
+PrmText=86
+Text(0)=" 0: 32 Bit Zähler"
+Text(1)=" 1: Encoder eine Flanke"
+Text(3)=" 3: Encoder zwei Flanken"
+Text(5)=" 5: Encoder vier Flanken"
+Text(6)=" 6: Puls low 50 kHz Dir-Input"
+Text(8)=" 8: 2 x 16 Bit Zähler U/U"
+Text(9)=" 9: 2 x 16 Bit Zähler D/U"
+Text(10)="10: 2 x 16 Bit Zähler U/D"
+Text(11)="11: 2 x 16 Bit Zähler D/D"
+Text(12)="12: 32 Bit Zähler U+G"
+Text(13)="13: 32 Bit Zähler D+G"
+Text(14)="14: 32 Bit Zähler U+G+Autoreload"
+Text(15)="15: 32 Bit Zähler D+G+Autoreload"
+Text(16)="16: Frequenzmessung 1"
+Text(17)="17: Periodendauer Messung 1"
+Text(18)="18: Frequenzmessung 2"
+Text(19)="19: Periodendauer Messung 2"
+Text(20)="20: Puls low prog Zeitbasis Dir"
+Text(21)="21: Puls low up prog Zeitbasis"
+Text(22)="22: Puls low down,prog Zeitbasis"
+Text(23)="23: OneShot up Gate InOut set"
+Text(24)="24: OneShot down Gate InOut set"
+Text(25)="25: OneShot up Gate InOut reset"
+Text(26)="26: OneShot down Gate InOut res."
+Text(27)="27: 32 Bit Zähler"
+Text(28)="28: Encoder eine Flanke"
+Text(29)="29: Encoder zwei Flanken"
+Text(30)="30: Encoder vier Flanken"
+Text(31)="31: 32 Bit Zähler U+G"
+Text(32)="32: 32 Bit Zähler D+G"
+Text(33)="33: 32 Bit Zähler U+G+Autoreload"
+Text(34)="34: 32 Bit Zähler D+G+Autoreload"
+Text(35)="35: 32 Bit Zähler"
+Text(36)="36: Encoder eine Flanke"
+Text(37)="37: Encoder zwei Flanken"
+Text(38)="38: Encoder vier Flanken"
+Text(39)="39: 32 Bit Timer up (GATE#)"
+Text(40)="40: 32 Bit Timer down (GATE#)"
+Text(41)="41: 32 Bit Timer up (GATE)"
+Text(42)="42: 32 Bit Timer down (GATE)"
+EndPrmText
+
+;Text-Referenz 91
+PrmText=91
+Text(0)="Binaer code"
+Text(1)="Gray  code"
+EndPrmText
+
+;Text-Referenz 93
+PrmText=93
+Text(255)="Deaktiviert            "
+Text(53)="Widerstand 2-L 60 Ohm (II)"
+Text(51)="Widerstand 4-L 6000 Ohm (II)"
+Text(50)="Widerstand 4-L 6000 Ohm"
+Text(47)="S5 Strom +/-20mA"
+Text(46)="S5 Strom 4..20mA"
+Text(45)="S7 Strom 4..20mA"
+Text(56)="Widerstand 2-L 6000 Ohm (II)"
+Text(44)="S7 Strom +/-20mA"
+Text(43)="S5 Spannung +/-10V"
+Text(42)="S7 Spannung +/-400mV"
+Text(41)="S7 Spannung +/-4V"
+Text(40)="S7 Spannung +/-10V"
+Text(93)="Strom 4..20mA (II)"
+Text(55)="Widerstand 2-L 3000 Ohm (II)"
+Text(58)="S5 Strom +/-20mA,Zweierkompl."
+Text(59)="S5 Spannung +/-10V,Zweierkompl."
+Text(61)="Widerstand 4-L 60 Ohm (II)"
+Text(62)="Widerstand 4-L 600 Ohm (II)"
+Text(63)="Widerstand 4-L 3000 Ohm (II)"
+Text(87)="Spannung +/-50mV (II)"
+Text(88)="Spannung +/-10V (II)"
+Text(89)="Spannung +/-4V (II)"
+Text(90)="Spannung +/-400mV (II)"
+Text(92)="Strom +/-20mA (II)"
+Text(39)="S7 Spannung +/-50mV"
+Text(19)="Thermoelement Typ R ext. Komp."
+Text(54)="Widerstand 2-L 600 Ohm (II)"
+Text(5)="Widerstand 2-Leiter  60 Ohm"
+Text(1)="Pt100  2-Leiter -200°C..850°C"
+Text(2)="Pt1000 2-Leiter -200°C..850°C"
+Text(21)="Thermoelement Typ S ext. Komp."
+Text(4)="Ni1000 2-Leiter -60°C..250°C"
+Text(29)="Thermoelement Typ S int. Komp."
+Text(6)="Widerstand 2-Leiter  600 Ohm"
+Text(7)="Widerstand 2-Leiter  3000 Ohm"
+Text(8)="Widerstand 2-Leiter  6000 Ohm"
+Text(9)="Pt100  4-Leiter -200°C..850°C"
+Text(10)="Pt1000 4-Leiter -200°C..850°C"
+Text(11)="Ni100  4-Leiter -60°C..250°C"
+Text(12)="Ni1000 4-Leiter -60°C..250°C"
+Text(14)="Widerstand 4-Leiter  600 Ohm"
+Text(15)="Widerstand 4-Leiter  3000 Ohm"
+Text(16)="Thermoelement Typ J ext. Komp."
+Text(17)="Thermoelement Typ K ext. Komp."
+Text(18)="Thermoelement Typ N ext. Komp."
+Text(20)="Thermoelement Typ T ext. Komp."
+Text(24)="Thermoelement Typ J int. Komp."
+Text(25)="Thermoelement Typ K int. Komp."
+Text(26)="Thermoelement Typ N int. Komp."
+Text(27)="Thermoelement Typ R int. Komp."
+Text(28)="Thermoelement Typ T int. Komp."
+Text(13)="Widerstand 4-Leiter  60 Ohm"
+Text(3)="Ni100  2-Leiter -60°C..250°C"
+Text(22)="Thermoelement Typ E ext. Komp."
+Text(30)="Thermoelement Typ E int. Komp."
+Text(98)="CU 50 2-Leiter  -50°C..150°C"
+Text(106)="CU 50 4-Leiter  -50°C..150°C"
+EndPrmText
+
+;Text-Referenz 121
+PrmText=121
+Text(40)="S7 Spannung +/-10V"
+Text(43)="S5 Spannung +/-10V"
+Text(59)="S5 Spannung +/-10V,Zweierkompl."
+Text(255)="Deaktiviert            "
+EndPrmText
+
+;Text-Referenz 122
+PrmText=122
+Text(44)="S7 Strom +/-20mA"
+Text(45)="S7 Strom 4..20mA"
+Text(46)="S5 Strom 4..20mA"
+Text(47)="S5 Strom +/-20mA"
+Text(57)="S5 Strom 4..20mA,Zweierkompl."
+Text(58)="S5 Strom +/-20mA,Zweierkompl."
+Text(255)="Deaktiviert            "
+EndPrmText
+
+;Text-Referenz 123
+PrmText=123
+Text(1)="S5 Spannung +/-10V,Zweierkompl."
+Text(5)="S5 Spannung 0..10V,Zweierkompl."
+Text(9)="S7 Spannung +/-10V"
+Text(13)="S7 Spannung 0..10V"
+Text(255)="Deaktiviert            "
+EndPrmText
+
+;Text-Referenz 124
+PrmText=124
+Text(4)="S5 Strom 4..20mA,Zweierkompl."
+Text(6)="S5 Strom 0..20mA,Zweierkompl."
+Text(12)="S7 Strom 4..20mA"
+Text(14)="S7 Strom 0..20mA"
+Text(255)="Deaktiviert            "
+EndPrmText
+
+
+
+;==============================================================================
+;==== Ext-User-Prm-Data-Def-List ==============================================
+;==============================================================================
+
+;Parameter-Referenz 1
+ExtUserPrmData=1 "[SlotNumber]"
+Unsigned8 0 0-31
+EndExtUserPrmData
+
+;Parameter-Referenz 2
+ExtUserPrmData=2 "Zähler: Funktion"
+Unsigned8 0 0-4
+Prm_Text_Ref=19
+EndExtUserPrmData
+
+;Parameter-Referenz 3
+ExtUserPrmData=3 "Zähler 1: Funktion"
+Unsigned8 0 0-42
+Prm_Text_Ref=86
+EndExtUserPrmData
+
+;Parameter-Referenz 4
+ExtUserPrmData=4 "Zähler 2: Funktion"
+Unsigned8 0 0-42
+Prm_Text_Ref=86
+EndExtUserPrmData
+
+;Parameter-Referenz 5
+ExtUserPrmData=5 "Baudrate"
+Unsigned8 2 1-3
+Prm_Text_Ref=7
+EndExtUserPrmData
+
+;Parameter-Referenz 6
+ExtUserPrmData=6 "Kodierung"
+Bit(0) 0 0-1
+Prm_Text_Ref=91
+EndExtUserPrmData
+
+;Parameter-Referenz 7
+ExtUserPrmData=7 "SSI-Format"
+Bit(2) 0 0-1
+Prm_Text_Ref=81
+EndExtUserPrmData
+
+;Parameter-Referenz 8
+ExtUserPrmData=8 "Holdfunktion"
+Bit(4) 0 0-1
+Prm_Text_Ref=4
+EndExtUserPrmData
+
+;Parameter-Referenz 9
+ExtUserPrmData=9 "BASP Signal"
+Bit(7) 0 0-1
+Prm_Text_Ref=8
+EndExtUserPrmData
+
+;Parameter-Referenz 44
+ExtUserPrmData=44 "Kanal 0: Funktion"
+Unsigned8 9 1-255
+Prm_Text_Ref=20
+EndExtUserPrmData
+
+;Parameter-Referenz 45
+ExtUserPrmData=45 "Kanal 1: Funktion"
+Unsigned8 9 1-255
+Prm_Text_Ref=20
+EndExtUserPrmData
+
+;Parameter-Referenz 46
+ExtUserPrmData=46 "Kanal 2: Funktion"
+Unsigned8 9 1-255
+Prm_Text_Ref=20
+EndExtUserPrmData
+
+;Parameter-Referenz 47
+ExtUserPrmData=47 "Kanal 3: Funktion"
+Unsigned8 9 1-255
+Prm_Text_Ref=20
+EndExtUserPrmData
+
+;Parameter-Referenz 52
+ExtUserPrmData=52 "Diagnosealarm"
+Bit(6) 0 0-1
+Prm_Text_Ref=3
+EndExtUserPrmData
+
+;Parameter-Referenz 53
+ExtUserPrmData=53 "Kanal 0: Drahtbrucherkennung"
+Bit(0) 0 0-1
+Prm_Text_Ref=3
+EndExtUserPrmData
+
+;Parameter-Referenz 54
+ExtUserPrmData=54 "Kanal 1: Drahtbrucherkennung"
+Bit(1) 0 0-1
+Prm_Text_Ref=3
+EndExtUserPrmData
+
+;Parameter-Referenz 55
+ExtUserPrmData=55 "Kanal 2: Verhalten bei CPU_STOP"
+Bit(2) 0 0-1
+Prm_Text_Ref=22
+EndExtUserPrmData
+
+;Parameter-Referenz 56
+ExtUserPrmData=56 "Kanal 3: Verhalten bei CPU_STOP"
+Bit(3) 0 0-1
+Prm_Text_Ref=22
+EndExtUserPrmData
+
+;Parameter-Referenz 57
+ExtUserPrmData=57 "Kanal 0: Funktion"
+Unsigned8 40 40-255
+Prm_Text_Ref=23
+EndExtUserPrmData
+
+;Parameter-Referenz 58
+ExtUserPrmData=58 "Kanal 1: Funktion"
+Unsigned8 40 40-255
+Prm_Text_Ref=23
+EndExtUserPrmData
+
+;Parameter-Referenz 59
+ExtUserPrmData=59 "Kanal 2: Funktion"
+Unsigned8 9 1-255
+Prm_Text_Ref=20
+EndExtUserPrmData
+
+;Parameter-Referenz 60
+ExtUserPrmData=60 "Kanal 3: Funktion"
+Unsigned8 9 1-255
+Prm_Text_Ref=20
+EndExtUserPrmData
+
+;Parameter-Referenz 61
+ExtUserPrmData=61 "Kanal 0: Messzyklus"
+BitArea(0-3) 0 0-7
+Prm_Text_Ref=24
+EndExtUserPrmData
+
+;Parameter-Referenz 62
+ExtUserPrmData=62 "Kanal 1: Messzyklus"
+BitArea(0-3) 0 0-7
+Prm_Text_Ref=24
+EndExtUserPrmData
+
+;Parameter-Referenz 63
+ExtUserPrmData=63 "Kanal 2: Ersatzwert"
+Signed16 0 -32768-32767
+EndExtUserPrmData
+
+;Parameter-Referenz 64
+ExtUserPrmData=64 "Kanal 3: Ersatzwert"
+Signed16 0 -32768-32767
+EndExtUserPrmData
+
+;Parameter-Referenz 65
+ExtUserPrmData=65 "Kanal 0: Funktion"
+Unsigned8 40 1-255
+Prm_Text_Ref=25
+EndExtUserPrmData
+
+;Parameter-Referenz 66
+ExtUserPrmData=66 "Kanal 1: Funktion"
+Unsigned8 40 1-255
+Prm_Text_Ref=25
+EndExtUserPrmData
+
+;Parameter-Referenz 67
+ExtUserPrmData=67 "Kanal 2: Funktion"
+Unsigned8 40 1-255
+Prm_Text_Ref=25
+EndExtUserPrmData
+
+;Parameter-Referenz 68
+ExtUserPrmData=68 "Kanal 3: Funktion"
+Unsigned8 40 1-255
+Prm_Text_Ref=25
+EndExtUserPrmData
+
+;Parameter-Referenz 69
+ExtUserPrmData=69 "Kanal 2: Messzyklus"
+BitArea(0-3) 0 0-7
+Prm_Text_Ref=24
+EndExtUserPrmData
+
+;Parameter-Referenz 70
+ExtUserPrmData=70 "Kanal 3: Messzyklus"
+BitArea(0-3) 0 0-7
+Prm_Text_Ref=24
+EndExtUserPrmData
+
+;Parameter-Referenz 71
+ExtUserPrmData=71 "Kanal 0: Mittelwertbildung"
+BitArea(4-5) 0 0-2
+Prm_Text_Ref=26
+EndExtUserPrmData
+
+;Parameter-Referenz 72
+ExtUserPrmData=72 "Kanal 1: Mittelwertbildung"
+BitArea(4-5) 0 0-2
+Prm_Text_Ref=26
+EndExtUserPrmData
+
+;Parameter-Referenz 73
+ExtUserPrmData=73 "Kanal 2: Mittelwertbildung"
+BitArea(4-5) 0 0-2
+Prm_Text_Ref=26
+EndExtUserPrmData
+
+;Parameter-Referenz 74
+ExtUserPrmData=74 "Kanal 3: Mittelwertbildung"
+BitArea(4-5) 0 0-2
+Prm_Text_Ref=26
+EndExtUserPrmData
+
+;Parameter-Referenz 75
+ExtUserPrmData=75 "Kanal 0: Hüllfunktion"
+BitArea(6-7) 0 0-2
+Prm_Text_Ref=27
+EndExtUserPrmData
+
+;Parameter-Referenz 76
+ExtUserPrmData=76 "Kanal 1: Hüllfunktion"
+BitArea(6-7) 0 0-2
+Prm_Text_Ref=27
+EndExtUserPrmData
+
+;Parameter-Referenz 77
+ExtUserPrmData=77 "Kanal 2: Hüllfunktion"
+BitArea(6-7) 0 0-2
+Prm_Text_Ref=27
+EndExtUserPrmData
+
+;Parameter-Referenz 78
+ExtUserPrmData=78 "Kanal 3: Hüllfunktion"
+BitArea(6-7) 0 0-2
+Prm_Text_Ref=27
+EndExtUserPrmData
+
+;Parameter-Referenz 301
+ExtUserPrmData=301 "Kanal 0: Funktion"
+Unsigned8 40 1-255
+Prm_Text_Ref=93
+EndExtUserPrmData
+
+;Parameter-Referenz 302
+ExtUserPrmData=302 "Kanal 1: Funktion"
+Unsigned8 40 1-255
+Prm_Text_Ref=93
+EndExtUserPrmData
+
+;Parameter-Referenz 303
+ExtUserPrmData=303 "Kanal 2: Funktion"
+Unsigned8 40 1-255
+Prm_Text_Ref=93
+EndExtUserPrmData
+
+;Parameter-Referenz 304
+ExtUserPrmData=304 "Kanal 3: Funktion"
+Unsigned8 40 1-255
+Prm_Text_Ref=93
+EndExtUserPrmData
+
+;Parameter-Referenz 561
+ExtUserPrmData=561 "Kanalbezogene Diagnose"
+Bit(2) 0 0-1
+Prm_Text_Ref=6
+EndExtUserPrmData
+
+;Parameter-Referenz 562
+ExtUserPrmData=562 "Kennungsbezogene Diagnose"
+Bit(0) 0 0-1
+Prm_Text_Ref=6
+EndExtUserPrmData
+
+;Parameter-Referenz 563
+ExtUserPrmData=563 "Modulstatus"
+Bit(1) 0 0-1
+Prm_Text_Ref=6
+EndExtUserPrmData
+
+;Parameter-Referenz 564
+ExtUserPrmData=564 "V0: Diagnosealarm"
+Bit(5) 1 0-1
+Prm_Text_Ref=54
+EndExtUserPrmData
+
+;Parameter-Referenz 565
+ExtUserPrmData=565 "V0: Herstellerspez. Diagnose"
+Bit(4) 1 0-1
+Prm_Text_Ref=54
+EndExtUserPrmData
+
+;Parameter-Referenz 566
+ExtUserPrmData=566 "V0: Prozeßalarm"
+Bit(6) 1 0-1
+Prm_Text_Ref=54
+EndExtUserPrmData
+
+;Parameter-Referenz 568
+ExtUserPrmData=568 "Filter (Teiler 0)"
+Unsigned8 0 0-255
+EndExtUserPrmData
+
+;Parameter-Referenz 569
+ExtUserPrmData=569 "Filter (Teiler 1)"
+Unsigned8 0 0-255
+EndExtUserPrmData
+
+;Parameter-Referenz 699
+ExtUserPrmData=699 "Kanal 0: Funktion"
+Unsigned8 40 40-255
+Prm_Text_Ref=121
+EndExtUserPrmData
+
+;Parameter-Referenz 700
+ExtUserPrmData=700 "Kanal 1: Funktion"
+Unsigned8 40 40-255
+Prm_Text_Ref=121
+EndExtUserPrmData
+
+;Parameter-Referenz 701
+ExtUserPrmData=701 "Kanal 2: Funktion"
+Unsigned8 40 40-255
+Prm_Text_Ref=121
+EndExtUserPrmData
+
+;Parameter-Referenz 702
+ExtUserPrmData=702 "Kanal 3: Funktion"
+Unsigned8 40 40-255
+Prm_Text_Ref=121
+EndExtUserPrmData
+
+;Parameter-Referenz 703
+ExtUserPrmData=703 "Kanal 0: Funktion"
+Unsigned8 44 44-255
+Prm_Text_Ref=122
+EndExtUserPrmData
+
+;Parameter-Referenz 704
+ExtUserPrmData=704 "Kanal 1: Funktion"
+Unsigned8 44 44-255
+Prm_Text_Ref=122
+EndExtUserPrmData
+
+;Parameter-Referenz 705
+ExtUserPrmData=705 "Kanal 2: Funktion"
+Unsigned8 44 44-255
+Prm_Text_Ref=122
+EndExtUserPrmData
+
+;Parameter-Referenz 706
+ExtUserPrmData=706 "Kanal 3: Funktion"
+Unsigned8 44 44-255
+Prm_Text_Ref=122
+EndExtUserPrmData
+
+;Parameter-Referenz 707
+ExtUserPrmData=707 "Kanal 0: Funktion"
+Unsigned8 1 1-255
+Prm_Text_Ref=123
+EndExtUserPrmData
+
+;Parameter-Referenz 708
+ExtUserPrmData=708 "Kanal 1: Funktion"
+Unsigned8 1 1-255
+Prm_Text_Ref=123
+EndExtUserPrmData
+
+;Parameter-Referenz 709
+ExtUserPrmData=709 "Kanal 2: Funktion"
+Unsigned8 1 1-255
+Prm_Text_Ref=123
+EndExtUserPrmData
+
+;Parameter-Referenz 710
+ExtUserPrmData=710 "Kanal 3: Funktion"
+Unsigned8 1 1-255
+Prm_Text_Ref=123
+EndExtUserPrmData
+
+;Parameter-Referenz 711
+ExtUserPrmData=711 "Kanal 0: Funktion"
+Unsigned8 12 4-255
+Prm_Text_Ref=124
+EndExtUserPrmData
+
+;Parameter-Referenz 712
+ExtUserPrmData=712 "Kanal 1: Funktion"
+Unsigned8 12 4-255
+Prm_Text_Ref=124
+EndExtUserPrmData
+
+;Parameter-Referenz 713
+ExtUserPrmData=713 "Kanal 2: Funktion"
+Unsigned8 12 4-255
+Prm_Text_Ref=124
+EndExtUserPrmData
+
+;Parameter-Referenz 714
+ExtUserPrmData=714 "Kanal 3: Funktion"
+Unsigned8 12 4-255
+Prm_Text_Ref=124
+EndExtUserPrmData
+
+;Parameter-Referenz 716
+ExtUserPrmData=716 "Diagnose"
+Bit(3) 0 0-1
+Prm_Text_Ref=6
+EndExtUserPrmData
+
+
+
+;==============================================================================
+;==== General DP Keywords =====================================================
+;==============================================================================
+
+GSD_Revision=5
+Vendor_Name="Lenze"
+Model_Name="Lenze EPM-T120 Gateway (DPV0)"
+Revision="1.00"
+Ident_Number=0x0A68
+Protocol_Ident=0
+Station_Type=0
+FMS_supp=0
+Hardware_Release="1.00"
+Software_Release="1.71"
+
+
+;==============================================================================
+;==== Supported baudrates =====================================================
+;==============================================================================
+
+9.6_supp=1
+19.2_supp=1
+45.45_supp=1
+93.75_supp=1
+187.5_supp=1
+500_supp=1
+1.5M_supp=1
+3M_supp=1
+6M_supp=1
+12M_supp=1
+
+MaxTsdr_9.6=15
+MaxTsdr_19.2=15
+MaxTsdr_45.45=15
+MaxTsdr_93.75=15
+MaxTsdr_187.5=15
+MaxTsdr_500=15
+MaxTsdr_1.5M=20
+MaxTsdr_3M=35
+MaxTsdr_6M=50
+MaxTsdr_12M=95
+
+Redundancy=0
+Repeater_Ctrl_Sig=2
+24V_Pins=0
+Implementation_Type="VPC3+/C"
+Bitmap_Device="EPMT120_"
+
+
+;==============================================================================
+;==== Slave specific values ===================================================
+;==============================================================================
+
+OrderNumber="EPM-T120"
+Slave_Family=3@Lenze
+Info_Text="GSD Version: 1.71, PROFIBUS DPV0 Gerät, Sende- und Empfangsfähigkeit für direkten Datenaustausch, einzeiliger Aufbau bis 32 Baugruppen"
+Freeze_Mode_supp=1
+Sync_Mode_supp=1
+Fail_Safe=1
+Auto_Baud_supp=1
+Set_Slave_Add_supp=0
+
+Min_Slave_Intervall=30
+
+Modular_Station=1
+Max_Module=32
+Modul_Offset=0
+Max_Input_Len=244
+Max_Output_Len=244
+Max_Data_Len=488
+Max_Diag_Data_Len=64
+
+
+;==============================================================================
+;==== User-Prm-Data ===========================================================
+;==============================================================================
+
+Max_User_Prm_Data_Len=237
+Ext_User_Prm_Data_Const(0)=0x00,0x00,0x08,0x0A,0x81,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(7)=716
+Ext_User_Prm_Data_Ref(7)=562
+Ext_User_Prm_Data_Ref(7)=563
+Ext_User_Prm_Data_Ref(7)=561
+Ext_User_Prm_Data_Ref(7)=565
+Ext_User_Prm_Data_Ref(7)=564
+Ext_User_Prm_Data_Ref(7)=566
+
+Publisher_supp = 1
+
+
+;==============================================================================
+;==== Modulstatus =============================================================
+;==============================================================================
+
+UnitDiagType=130
+X_Unit_Diag_Area = 24 - 25
+X_Value(1)= "Slot 1: Modulfehler"
+X_Value(2)= "Slot 1: falsches Modul"
+X_Value(3)= "Slot 1: kein Modul"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 26 - 27
+X_Value(1)= "Slot 2: Modulfehler"
+X_Value(2)= "Slot 2: falsches Modul"
+X_Value(3)= "Slot 2: kein Modul"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 28 - 29
+X_Value(1)= "Slot 3: Modulfehler"
+X_Value(2)= "Slot 3: falsches Modul"
+X_Value(3)= "Slot 3: kein Modul"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 30 - 31
+X_Value(1)= "Slot 4: Modulfehler"
+X_Value(2)= "Slot 4: falsches Modul"
+X_Value(3)= "Slot 4: kein Modul"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 32 - 33
+X_Value(1)= "Slot 5: Modulfehler"
+X_Value(2)= "Slot 5: falsches Modul"
+X_Value(3)= "Slot 5: kein Modul"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 34 - 35
+X_Value(1)= "Slot 6: Modulfehler"
+X_Value(2)= "Slot 6: falsches Modul"
+X_Value(3)= "Slot 6: kein Modul"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 36 - 37
+X_Value(1)= "Slot 7: Modulfehler"
+X_Value(2)= "Slot 7: falsches Modul"
+X_Value(3)= "Slot 7: kein Modul"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 38 - 39
+X_Value(1)= "Slot 8: Modulfehler"
+X_Value(2)= "Slot 8: falsches Modul"
+X_Value(3)= "Slot 8: kein Modul"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 40 - 41
+X_Value(1)= "Slot 9: Modulfehler"
+X_Value(2)= "Slot 9: falsches Modul"
+X_Value(3)= "Slot 9: kein Modul"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 42 - 43
+X_Value(1)= "Slot 10: Modulfehler"
+X_Value(2)= "Slot 10: falsches Modul"
+X_Value(3)= "Slot 10: kein Modul"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 44 - 45
+X_Value(1)= "Slot 11: Modulfehler"
+X_Value(2)= "Slot 11: falsches Modul"
+X_Value(3)= "Slot 11: kein Modul"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 46 - 47
+X_Value(1)= "Slot 12: Modulfehler"
+X_Value(2)= "Slot 12: falsches Modul"
+X_Value(3)= "Slot 12: kein Modul"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 48 - 49
+X_Value(1)= "Slot 13: Modulfehler"
+X_Value(2)= "Slot 13: falsches Modul"
+X_Value(3)= "Slot 13: kein Modul"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 50 - 51
+X_Value(1)= "Slot 14: Modulfehler"
+X_Value(2)= "Slot 14: falsches Modul"
+X_Value(3)= "Slot 14: kein Modul"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 52 - 53
+X_Value(1)= "Slot 15: Modulfehler"
+X_Value(2)= "Slot 15: falsches Modul"
+X_Value(3)= "Slot 15: kein Modul"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 54 - 55
+X_Value(1)= "Slot 16: Modulfehler"
+X_Value(2)= "Slot 16: falsches Modul"
+X_Value(3)= "Slot 16: kein Modul"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 56 - 57
+X_Value(1)= "Slot 17: Modulfehler"
+X_Value(2)= "Slot 17: falsches Modul"
+X_Value(3)= "Slot 17: kein Modul"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 58 - 59
+X_Value(1)= "Slot 18: Modulfehler"
+X_Value(2)= "Slot 18: falsches Modul"
+X_Value(3)= "Slot 18: kein Modul"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 60 - 61
+X_Value(1)= "Slot 19: Modulfehler"
+X_Value(2)= "Slot 19: falsches Modul"
+X_Value(3)= "Slot 19: kein Modul"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 62 - 63
+X_Value(1)= "Slot 20: Modulfehler"
+X_Value(2)= "Slot 20: falsches Modul"
+X_Value(3)= "Slot 20: kein Modul"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 64 - 65
+X_Value(1)= "Slot 21: Modulfehler"
+X_Value(2)= "Slot 21: falsches Modul"
+X_Value(3)= "Slot 21: kein Modul"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 66 - 67
+X_Value(1)= "Slot 22: Modulfehler"
+X_Value(2)= "Slot 22: falsches Modul"
+X_Value(3)= "Slot 22: kein Modul"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 68 - 69
+X_Value(1)= "Slot 23: Modulfehler"
+X_Value(2)= "Slot 23: falsches Modul"
+X_Value(3)= "Slot 23: kein Modul"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 70 - 71
+X_Value(1)= "Slot 24: Modulfehler"
+X_Value(2)= "Slot 24: falsches Modul"
+X_Value(3)= "Slot 24: kein Modul"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 72 - 73
+X_Value(1)= "Slot 25: Modulfehler"
+X_Value(2)= "Slot 25: falsches Modul"
+X_Value(3)= "Slot 25: kein Modul"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 74 - 75
+X_Value(1)= "Slot 26: Modulfehler"
+X_Value(2)= "Slot 26: falsches Modul"
+X_Value(3)= "Slot 26: kein Modul"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 76 - 77
+X_Value(1)= "Slot 27: Modulfehler"
+X_Value(2)= "Slot 27: falsches Modul"
+X_Value(3)= "Slot 27: kein Modul"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 78 - 79
+X_Value(1)= "Slot 28: Modulfehler"
+X_Value(2)= "Slot 28: falsches Modul"
+X_Value(3)= "Slot 28: kein Modul"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 80 - 81
+X_Value(1)= "Slot 29: Modulfehler"
+X_Value(2)= "Slot 29: falsches Modul"
+X_Value(3)= "Slot 29: kein Modul"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 82 - 83
+X_Value(1)= "Slot 30: Modulfehler"
+X_Value(2)= "Slot 30: falsches Modul"
+X_Value(3)= "Slot 30: kein Modul"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 84 - 85
+X_Value(1)= "Slot 31: Modulfehler"
+X_Value(2)= "Slot 31: falsches Modul"
+X_Value(3)= "Slot 31: kein Modul"
+X_Unit_Diag_Area_End
+X_Unit_Diag_Area = 86 - 87
+X_Value(1)= "Slot 32: Modulfehler"
+X_Value(2)= "Slot 32: falsches Modul"
+X_Value(3)= "Slot 32: kein Modul"
+X_Unit_Diag_Area_End
+EndUnitDiagType
+
+
+;==============================================================================
+;==== Channel-Diag ============================================================
+;==============================================================================
+
+Channel_Diag(16)= "Parametrierfehler"
+Channel_Diag(17)= "Geber- oder Lastspannung fehlt"
+Channel_Diag(18)= "Sicherung defekt"
+Channel_Diag(19)= "Steckplatz nicht ansprechbar"
+Channel_Diag(20)= "Massefehler"
+Channel_Diag(21)= "Referenzkanalfehler"
+Channel_Diag(22)= "Prozessalarm verloren"
+Channel_Diag(23)= "Aktorwarnung"
+Channel_Diag(24)= "Aktorabschaltung"
+Channel_Diag(25)= "Sicherheitsgericht. Abschalt."
+Channel_Diag(26)= "externer Fehler"
+Channel_Diag(27)= "unklarer Fehler"
+
+
+;==============================================================================
+;==== Module-Definition-List ==================================================
+;==============================================================================
+
+Module="EPM-T210.1x DI 8xDC 24V" 0x44,0x00,0x00,0x00,0x9F,0xC1
+20
+EndModule
+
+Module="EPM-T211.1x DI 16xDC24V" 0x44,0x01,0x00,0x00,0x9F,0xC2
+24
+EndModule
+
+Module="EPM-T220.1x DO 8xDC24V 1A" 0x84,0x00,0x00,0x00,0xAF,0xC8
+35
+EndModule
+
+Module="EPM-T221.1x DO 8xDC24V 2A" 0x84,0x00,0x00,0x00,0xAF,0xC8
+36
+EndModule
+
+Module="EPM-T222.1x DO 4xRELAIS" 0x84,0x00,0x00,0x00,0xAF,0xC8
+38
+EndModule
+
+Module="EPM-T223.1x DO 16xDC24V 1A" 0x84,0x01,0x00,0x00,0xAF,0xD0
+44
+EndModule
+
+Module="EPM-T224.1x DO 8xDC24V 0.5A" 0x84,0x00,0x00,0x00,0xAF,0xC8
+125
+EndModule
+
+Module="EPM-T225.1x DO 16xDC24V 0.5A" 0x84,0x01,0x00,0x00,0xAF,0xD0
+128
+EndModule
+
+Module="EPM-T230.1x DIO 8xDC24V 1A" 0xC3,0x00,0x00,0x00,0xBF,0xC9
+48
+EndModule
+
+Module="EPM-T310.1x.10 AI4x16BIT" 0x44,0x43,0x00,0x00,0x15,0xC4
+50
+Ext_Module_Prm_Data_Len=12
+Ext_User_Prm_Data_Const(0)=0x0c,0x01,0x00,0x00,0x28,0x28,0x28,0x28,0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(1)=1
+Ext_User_Prm_Data_Ref(2)=52
+Ext_User_Prm_Data_Ref(4)=65
+Ext_User_Prm_Data_Ref(5)=66
+Ext_User_Prm_Data_Ref(6)=67
+Ext_User_Prm_Data_Ref(7)=68
+Ext_User_Prm_Data_Ref(8)=61
+Ext_User_Prm_Data_Ref(8)=71
+Ext_User_Prm_Data_Ref(8)=75
+Ext_User_Prm_Data_Ref(9)=62
+Ext_User_Prm_Data_Ref(9)=72
+Ext_User_Prm_Data_Ref(9)=76
+Ext_User_Prm_Data_Ref(10)=69
+Ext_User_Prm_Data_Ref(10)=73
+Ext_User_Prm_Data_Ref(10)=77
+Ext_User_Prm_Data_Ref(11)=70
+Ext_User_Prm_Data_Ref(11)=74
+Ext_User_Prm_Data_Ref(11)=78
+EndModule
+
+Module="EPM-T310.1x.11 AI4x16BIT" 0x44,0x43,0x00,0x00,0x15,0xC4
+131
+Ext_Module_Prm_Data_Len=12
+Ext_User_Prm_Data_Const(0)=0x0c,0x01,0x00,0x00,0x28,0x28,0x28,0x28,0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(1)=1
+Ext_User_Prm_Data_Ref(2)=52
+Ext_User_Prm_Data_Ref(4)=301
+Ext_User_Prm_Data_Ref(5)=302
+Ext_User_Prm_Data_Ref(6)=303
+Ext_User_Prm_Data_Ref(7)=304
+Ext_User_Prm_Data_Ref(8)=61
+Ext_User_Prm_Data_Ref(8)=71
+Ext_User_Prm_Data_Ref(8)=75
+Ext_User_Prm_Data_Ref(9)=62
+Ext_User_Prm_Data_Ref(9)=72
+Ext_User_Prm_Data_Ref(9)=76
+Ext_User_Prm_Data_Ref(10)=69
+Ext_User_Prm_Data_Ref(10)=73
+Ext_User_Prm_Data_Ref(10)=77
+Ext_User_Prm_Data_Ref(11)=70
+Ext_User_Prm_Data_Ref(11)=74
+Ext_User_Prm_Data_Ref(11)=78
+EndModule
+
+Module="EPM-T311.1x.10 AI4x12BIT,+/-10V" 0x44,0x43,0x00,0x00,0x15,0xC4
+170
+Ext_Module_Prm_Data_Len=12
+Ext_User_Prm_Data_Const(0)=0x0c,0x01,0x00,0x00,0x28,0x28,0x28,0x28,0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(1)=1
+Ext_User_Prm_Data_Ref(4)=699
+Ext_User_Prm_Data_Ref(5)=700
+Ext_User_Prm_Data_Ref(6)=701
+Ext_User_Prm_Data_Ref(7)=702
+EndModule
+
+Module="EPM-T312.1x.10 AI4x12BIT,+/-20mA" 0x44,0x43,0x00,0x00,0x15,0xC4
+169
+Ext_Module_Prm_Data_Len=12
+Ext_User_Prm_Data_Const(0)=0x0c,0x01,0x00,0x00,0x2C,0x2C,0x2C,0x2C,0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(1)=1
+Ext_User_Prm_Data_Ref(4)=703
+Ext_User_Prm_Data_Ref(5)=704
+Ext_User_Prm_Data_Ref(6)=705
+Ext_User_Prm_Data_Ref(7)=706
+EndModule
+
+Module="EPM-T320.1x.10 AO4x12BIT" 0x84,0x43,0x00,0x00,0xA5,0xE0
+55
+Ext_Module_Prm_Data_Len=8
+Ext_User_Prm_Data_Const(0)=0x08,0x01,0x00,0x00,0x09,0x09,0x09,0x09
+Ext_User_Prm_Data_Ref(1)=1
+Ext_User_Prm_Data_Ref(2)=52
+Ext_User_Prm_Data_Ref(4)=44
+Ext_User_Prm_Data_Ref(5)=45
+Ext_User_Prm_Data_Ref(6)=46
+Ext_User_Prm_Data_Ref(7)=47
+EndModule
+
+Module="EPM-T320.1x.11 AO4x12BIT" 0x84,0x43,0x00,0x00,0x25,0xE0
+133
+Ext_Module_Prm_Data_Len=8
+Ext_User_Prm_Data_Const(0)=0x08,0x01,0x00,0x00,0x09,0x09,0x09,0x09
+Ext_User_Prm_Data_Ref(1)=1
+Ext_User_Prm_Data_Ref(2)=52
+Ext_User_Prm_Data_Ref(4)=44
+Ext_User_Prm_Data_Ref(5)=45
+Ext_User_Prm_Data_Ref(6)=46
+Ext_User_Prm_Data_Ref(7)=47
+EndModule
+
+Module="EPM-T321.1x.10 AO4x12BIT,+/-10V" 0x84,0x43,0x00,0x00,0x25,0xE0
+168
+Ext_Module_Prm_Data_Len=8
+Ext_User_Prm_Data_Const(0)=0x08,0x01,0x00,0x00,0x09,0x09,0x09,0x09
+Ext_User_Prm_Data_Ref(1)=1
+Ext_User_Prm_Data_Ref(4)=707
+Ext_User_Prm_Data_Ref(5)=708
+Ext_User_Prm_Data_Ref(6)=709
+Ext_User_Prm_Data_Ref(7)=710
+EndModule
+
+Module="EPM-T322.1x.10 AO4x12BIT,0.20mA" 0x84,0x43,0x00,0x00,0x25,0xE0
+167
+Ext_Module_Prm_Data_Len=8
+Ext_User_Prm_Data_Const(0)=0x08,0x01,0x00,0x00,0x0C,0x0C,0x0C,0x0C
+Ext_User_Prm_Data_Ref(1)=1
+Ext_User_Prm_Data_Ref(4)=711
+Ext_User_Prm_Data_Ref(5)=712
+Ext_User_Prm_Data_Ref(6)=713
+Ext_User_Prm_Data_Ref(7)=714
+EndModule
+
+Module="EPM-T330.1x.10 2AI/2AOx12BIT" 0xC3,0x41,0x41,0x00,0x45,0xDB
+57
+Ext_Module_Prm_Data_Len=14
+Ext_User_Prm_Data_Const(0)=0x0E,0x01,0x03,0x00,0x28,0x28,0x09,0x09,0x00,0x00,0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(1)=1
+Ext_User_Prm_Data_Ref(2)=52
+Ext_User_Prm_Data_Ref(2)=53
+Ext_User_Prm_Data_Ref(2)=54
+Ext_User_Prm_Data_Ref(3)=55
+Ext_User_Prm_Data_Ref(3)=56
+Ext_User_Prm_Data_Ref(4)=57
+Ext_User_Prm_Data_Ref(5)=58
+Ext_User_Prm_Data_Ref(6)=59
+Ext_User_Prm_Data_Ref(7)=60
+Ext_User_Prm_Data_Ref(8)=61
+Ext_User_Prm_Data_Ref(9)=62
+Ext_User_Prm_Data_Ref(10)=63
+Ext_User_Prm_Data_Ref(12)=64
+EndModule
+
+Module="EPM-T410.1x.11 2xCOUNTER 2xDO" 0xC3,0xC4,0xC4,0x00,0xB5,0xF4
+66
+Ext_Module_Prm_Data_Len=4
+Ext_User_Prm_Data_Const(0)=0x04,0x01,0x00,0x00
+Ext_User_Prm_Data_Ref(1)=1
+Ext_User_Prm_Data_Ref(2)=3
+Ext_User_Prm_Data_Ref(3)=4
+EndModule
+
+Module="EPM-T411.1x.10 SSI" 0xC3,0x41,0x41,0x00,0xB5,0xDB
+67
+Ext_Module_Prm_Data_Len=6
+Ext_User_Prm_Data_Const(0)=0x06,0x01,0x00,0x00,0x02,0x00
+Ext_User_Prm_Data_Ref(1)=1
+Ext_User_Prm_Data_Ref(4)=5
+Ext_User_Prm_Data_Ref(5)=6
+Ext_User_Prm_Data_Ref(5)=7
+Ext_User_Prm_Data_Ref(5)=8
+Ext_User_Prm_Data_Ref(5)=9
+EndModule
+
+Module="EPM-T430.1x.10 1C/DI 16xDC24V" 0xC3,0x42,0x42,0x00,0x08,0xC0
+25
+Ext_Module_Prm_Data_Len=5
+Ext_User_Prm_Data_Const(0)=0x05,0x01,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(1)=1
+Ext_User_Prm_Data_Ref(2)=2
+Ext_User_Prm_Data_Ref(3)=568
+Ext_User_Prm_Data_Ref(4)=569
+EndModule
+
+
+;11:14:53

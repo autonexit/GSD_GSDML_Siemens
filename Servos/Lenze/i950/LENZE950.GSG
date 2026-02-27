@@ -1,0 +1,264 @@
+; (c) Lenze SE
+;
+; Profibus-DP        Geraetestammdatei
+;
+; Autor:             Lenze
+; Erstellungsdatum:  01.12.2025
+;
+; Allgemeine Angaben:
+;
+#Profibus_DP
+;
+GSD_Revision = 5
+;
+; Herstellername
+Vendor_Name = "Lenze"
+;
+; Herstellerbezeichnung des DP-Geraetes
+Model_Name = "i950"
+;
+; Ausgabestand des DP-Geraetes
+Revision = "1.2"
+;
+; Ident-Nummer
+Ident_Number = 0xe950
+;
+; Protokollkennung des DP-Geraetes
+;       0: Profibus-DP
+;  16-255: Herstellerspezifisch
+Protocol_Ident = 0
+;
+; DP-Geraetetyp
+;       0: DP-Slave
+;       1: DP-Master Klasse 1
+Station_Type = 0
+;
+; kein FMS/DP-Mischgeraet
+FMS_supp = 0
+;
+; Hardware Ausgabestand des DP-Geraetes
+Hardware_Release = "1A"
+;
+; Software Ausgabestand des DP-Geraetes
+Software_Release = "1.2"
+;
+9.6_supp = 1
+19.2_supp = 1
+45.45_supp = 1
+93.75_supp = 1
+187.5_supp = 1
+500_supp = 1
+1.5M_supp = 1
+3M_supp = 1
+6M_supp = 1
+12M_supp = 1
+;
+MaxTsdr_9.6   =  15
+MaxTsdr_19.2  =  15
+MaxTsdr_45.45 =  15
+MaxTsdr_93.75 =  15
+MaxTsdr_187.5 =  15
+MaxTsdr_500   =  15
+MaxTsdr_1.5M  =  25
+MaxTsdr_3M    =  50
+MaxTsdr_6M   =  100
+MaxTsdr_12M  =  200
+;
+; keine redundante Uebertragungstechnik
+Redundancy = 0
+;
+; RTS-Signalpegel (CNTR-P) Pin 4 des 9pol. SUB-D
+;     0: nicht vorhanden
+;     1: RS 485
+;     2: TTL
+Repeater_Ctrl_Sig = 2
+;
+; Bedeutung der 24V Pins des 9pol. SUB-D (Pin 7  24V;  Pin 2 GND)
+;     0: nicht angeschlossen
+;     1: Input
+;     2: Output
+24V_Pins = 0
+;
+Implementation_Type = "VPC3"
+;
+Bitmap_Device = "LENZ950N"
+Bitmap_Diag   = "LENZ950D"
+Bitmap_SF     = "LENZ950S"
+;
+; Slave spezifische Werte
+;
+; Freeze-Mode wird nicht unterstuetzt
+Freeze_Mode_supp = 1
+;
+; Sync-Mode wird unterstuetzt
+Sync_Mode_supp = 1
+;
+; Automatische Baudratenerkennung wird unterstuetzt
+Auto_Baud_supp = 1
+;
+; Slave-Adresse kann vom Master gesetzt werden
+Set_Slave_Add_supp = 1
+;
+; Hoechstlaenge von User_Param_Data
+;User_Prm_Data_Len = 0
+;
+; Default-Wert fuer User_Param_Data
+;User_Param_Data = 0
+;
+; Mindestabstand zwischen 2 Slavelistenumlaeufen  fuer das DP-Geraet
+; (xx * 100us)
+Min_Slave_Intervall = 3
+;
+; Modulare Station
+Modular_Station = 1
+;
+; Hoechstanzahl der Module einer Modularen Station
+Max_Module = 1
+;
+; Hoechstlaenge der Eingangsdaten einer Modularen Station
+Max_Input_Len = 64
+;
+; Hoechstlaenge der Ausgangsdaten einer Modularen Station
+Max_Output_Len = 64
+;
+; Groesste Summe der Ein- und Ausgangsdaten einer Modularen Station in Bytes
+Max_Data_Len = 128
+;
+Max_Diag_Data_Len = 64
+;
+Slave_Family=1@Lenze
+;
+Fail_Safe = 1
+;
+;--- GSD R3 slave extensions ---
+;Info_Text  = "DP-Slave f r AIF-Schnittstelle mit DP-V1-Schnittstelle(azyklische Kommunikation)"
+DPV1_Slave               = 1
+C1_Read_Write_supp       = 1
+C2_Read_Write_supp       = 1
+C1_Max_Data_Len          = 240
+C2_Max_Data_Len          = 240
+C1_Response_Timeout      = 100
+C2_Response_Timeout      = 100
+;C1_Read_Write_required  = 0
+;C2_Read_Write_required  = 0
+C2_Max_Count_Channels    = 1
+Max_Initiate_PDU_Length  = 64
+;DPV1_Data_Types         = 0
+;WD_Base_1ms_supp        = 0
+Check_Cfg_Mode           = 1
+;Publisher_supp          = 1
+;
+;--- I&M Funktionality ---
+Ident_Maintenance_supp   = 1
+
+;--- UsrPrmData Definitions ----------------------------------------
+Max_User_Prm_Data_Len  = 3
+Ext_User_Prm_Data_Const(0) = 0x80,0,0
+;
+; Modulkennzeichnung
+;
+;* Prozessdaten ***********
+Module = "PZD( 1W Kons.)             " 0xF0
+1
+EndModule
+Module = "PZD( 2W Kons.)             " 0xF1
+2
+EndModule
+Module = "PZD( 3W Kons.)             " 0xF2
+3
+EndModule
+Module = "PZD( 4W Kons.)             " 0xF3
+4
+EndModule
+Module = "PZD( 5W Kons.)             " 0xF4
+5
+EndModule
+Module = "PZD( 6W Kons.)             " 0xF5
+6
+EndModule
+Module = "PZD( 7W Kons.)             " 0xF6
+7
+EndModule
+Module = "PZD( 8W Kons.)             " 0xF7
+8
+EndModule
+Module = "PZD( 9W Kons.)             " 0xF8
+9
+EndModule
+Module = "PZD(10W Kons.)             " 0xF9
+10
+EndModule
+Module = "PZD(11W Kons.)             " 0xFA
+11
+EndModule
+Module = "PZD(12W Kons.)             " 0xFB
+12
+EndModule
+Module = "PZD(13W Kons.)             " 0xFC
+13
+EndModule
+Module = "PZD(14W Kons.)             " 0xFD
+14
+EndModule
+Module = "PZD(15W Kons.)             " 0xFE
+15
+EndModule
+Module = "PZD(16W Kons.)             " 0xFF
+16
+EndModule
+Module = "PZD(17W Kons.)             " 0xC0, 0xD0, 0xD0
+17
+EndModule
+Module = "PZD(18W Kons.)             " 0xC0, 0xD1, 0xD1
+18
+EndModule
+Module = "PZD(19W Kons.)             " 0xC0, 0xD2, 0xD2
+19
+EndModule
+Module = "PZD(20W Kons.)             " 0xC0, 0xD3, 0xD3
+20
+EndModule
+Module = "PZD(21W Kons.)             " 0xC0, 0xD4, 0xD4
+21
+EndModule
+Module = "PZD(22W Kons.)             " 0xC0, 0xD5, 0xD5
+22
+EndModule
+Module = "PZD(23W Kons.)             " 0xC0, 0xD6, 0xD6
+23
+EndModule
+Module = "PZD(24W Kons.)             " 0xC0, 0xD7, 0xD7
+24
+EndModule
+Module = "PZD(25W Kons.)             " 0xC0, 0xD8, 0xD8
+25
+EndModule
+Module = "PZD(26W Kons.)             " 0xC0, 0xD9, 0xD9
+26
+EndModule
+Module = "PZD(27W Kons.)             " 0xC0, 0xDA, 0xDA
+27
+EndModule
+Module = "PZD(28W Kons.)             " 0xC0, 0xDB, 0xDB
+28
+EndModule
+Module = "PZD(29W Kons.)             " 0xC0, 0xDC, 0xDC
+29
+EndModule
+Module = "PZD(30W Kons.)             " 0xC0, 0xDD, 0xDD
+30
+EndModule
+Module = "PZD(31W Kons.)             " 0xC0, 0xDE, 0xDE
+31
+EndModule
+Module = "PZD(32W Kons.)             " 0xC0, 0xDF, 0xDF
+32
+EndModule
+
+
+
+
+
+
+
+
